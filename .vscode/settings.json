@@ -5,7 +5,9 @@
         "LUKS",
         "mklabel",
         "mkpart",
+        "Moviea",
         "nixos",
+        "nixpkgs",
         "vgchange"
     ]
 }
