@@ -14,9 +14,9 @@ info() {
 DISK="/dev/vda"
 EFI_PART="${DISK}1"
 LUKS_PART="${DISK}2"
-CRYPT_NAME="root"
+CRYPT_NAME="cryptroot"
 VG_NAME="vg0"
-LV_ROOT="lv0"
+LV_ROOT="root"
 
 # 1. Partition the disk
 info "01 / 11 | Partitioning disk $DISK..."
@@ -61,7 +61,7 @@ nixos-generate-config --root /mnt
 # 9. Prompt to edit configuration.nix and add LUKS config
 info "09 / 11 | Please add the following line to /mnt/etc/nixos/configuration.nix:"
 echo
-echo "boot.initrd.luks.devices.$CRYPT_NAME.device = \"$LUKS_PART\";"
+echo "boot.initrd.luks.devices.\"$CRYPT_NAME\".device = \"$LUKS_PART\";"
 echo
 read -rp "Press Enter to open nano and edit the file..."
 
@@ -69,10 +69,11 @@ nano /mnt/etc/nixos/configuration.nix
 
 # 10. Install NixOS without setting root password
 info "10 / 11 | Installing NixOS..."
-nixos-install --no-root-passwd
+nixos-install # --no-root-passwd
 
 # 11. Cleanup and reboot
 info "11 / 11 | Cleaning up and rebooting..."
 umount -R /mnt
+vgchange -an "$VG_NAME"
 cryptsetup close "$CRYPT_NAME"
 reboot
