@@ -1,0 +1,4 @@
+- linpeas
+- links
+- oh-my-posh
+- pipes
