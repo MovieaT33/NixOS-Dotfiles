@@ -1,17 +1,30 @@
-environment.systemPackages = with pkgs; [
-    btop
-    cmatrix
+{ config, lib, pkgs, ... }:
+
+{
+  imports = [
+    ../base/configuration.nix
+    ../system/configuration.nix
+    ../development/configuration.nix
+    ../security/configuration.nix
+    ../fun/configuration.nix
+  ];
+
+  environment.systemPackages = with pkgs; [
+    atuin
+    bat
     eza
-    fastfetch
-    fish
-    git
-    hello
-    kitty
-    libsForQt5.sddm
+    fd
+    lf
     lolcat
+    mprocs
     tldr
+    tig
     tmux
+    tokei
+    tor
     tree
-    neovim
-    wget
-];
+    wordgrinder
+    yazi
+    zoxide
+  ];
+}
