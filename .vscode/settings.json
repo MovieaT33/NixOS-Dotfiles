@@ -14,6 +14,7 @@
         "dysk",
         "fastfetch",
         "figlet",
+        "hyprland",
         "iftop",
         "inxi",
         "jless",
@@ -34,6 +35,7 @@
         "vgchange",
         "whois",
         "wordgrinder",
+        "xwayland",
         "yazi"
     ]
 }

@@ -13,7 +13,6 @@
     iftop
     inxi
     mtr
-    mtr
     nethogs
     pfetch
     tcpdump

@@ -2,13 +2,13 @@
 
 {
   environment.systemPackages = with pkgs; [
-    delta
-    difftastic
-    docker
+    # delta
+    # difftastic
+    # docker
     git
     jless
-    just
-    kondo
+    # just
+    # kondo
     lazygit
     neovim
     python314

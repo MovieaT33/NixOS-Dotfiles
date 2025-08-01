@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     gnupg
-    pass
+    # pass
     whois
   ];
 }

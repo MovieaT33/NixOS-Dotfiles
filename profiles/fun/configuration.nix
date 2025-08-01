@@ -9,6 +9,7 @@
     figlet
     fortune
     hello
+    hollywood
     sl
   ];
 }
