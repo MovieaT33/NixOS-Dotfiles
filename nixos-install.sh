@@ -61,7 +61,7 @@ nixos-generate-config --root /mnt
 # 9. Prompt to edit configuration.nix and add LUKS config
 info "09 / 11 | Please add the following line to /mnt/etc/nixos/configuration.nix:"
 echo
-echo "boot.initrd.luks.devices.\"$CRYPT_NAME\" = \"$LUKS_PART\";"
+echo "boot.initrd.luks.devices.$CRYPT_NAME.device = \"$LUKS_PART\";"
 echo
 read -rp "Press Enter to open nano and edit the file..."
 
