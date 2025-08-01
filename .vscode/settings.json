@@ -1,0 +1,9 @@
+{
+    "cSpell.words": [
+        "cryptsetup",
+        "LUKS",
+        "mklabel",
+        "mkpart",
+        "nixos"
+    ]
+}
