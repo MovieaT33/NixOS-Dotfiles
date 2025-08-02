@@ -3,10 +3,10 @@
 {
   imports = [
     ../base/configuration.nix
-    ../system/configuration.nix
-    ../development/configuration.nix
-    ../security/configuration.nix
-    ../fun/configuration.nix
+    ../../app/system.nix
+    ../../app/security.nix
+    ../../app/development.nix
+    ../../app/fun.nix
   ];
 
   # SDDM, Hyprland and Wayland
@@ -18,13 +18,13 @@
   programs.hyprland.xwayland.enable = true;
 
   # Users
+  programs.zsh.enable = true;
+
   users.users.mvt33 = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
-
-  programs.zsh.enable = true;
 
   # Packages
   environment.systemPackages = with pkgs; [
@@ -40,7 +40,6 @@
     tig
     tmux
     # tokei
-    tor
     tree
     wordgrinder
     yazi
