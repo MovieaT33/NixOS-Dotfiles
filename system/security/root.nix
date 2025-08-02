@@ -2,6 +2,6 @@
 
 {
   users.users.root = {
-    password = "!";
+    shell = "/sbin/nologin";
   };
 }
