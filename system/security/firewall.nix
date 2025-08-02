@@ -42,5 +42,5 @@ in
     iptables -A OUTPUT ! -o lo ! -m owner --uid-owner tor -j DROP
   '';
 
-  networking.disableIPv6 = true;
+  boot.kernelParams = [ "ipv6.disable=1" ];
 }
