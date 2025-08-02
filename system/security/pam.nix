@@ -3,6 +3,8 @@
 {
   security.pam.services.login.enable = true;
   security.pam.services.login.text = ''
-    auth required pam_tally2.so deny=5 onerr=fail unlock_time=900
+    auth required pam_faillock.so preauth silent deny=3 unlock_time=900
+    auth [default=die] pam_faillock.so authfail deny=3 unlock_time=900
+    account required pam_faillock.so
   '';
 }
