@@ -10,8 +10,8 @@ in
     settings = {
       VirtualAddrNetworkIPv4 = "10.192.0.0/10";
       AutomapHostsOnResolve = true;
-      TransPort = "${torTransPort}";
-      DNSPort = "${torDnsPort}";
+      TransPort = torTransPort;
+      DNSPort = torDnsPort;
       SocksPort = "9050";
     };
   };
