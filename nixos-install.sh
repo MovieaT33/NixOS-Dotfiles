@@ -17,6 +17,13 @@ LUKS_PART="${DISK}2"
 CRYPT_NAME="cryptroot"
 VG_NAME="vg0"
 LV_ROOT="root"
+LV_HOME="home"
+LV_TMP="tmp"
+LV_VAR="var"
+
+SIZE_HOME="5G"
+SIZE_TMP="2G"
+SIZE_VAR="4G"
 
 # 1. Partition the disk
 info "01 / 11 | Partitioning disk $DISK..."
@@ -40,19 +47,35 @@ info "04 / 11 | Creating LVM physical volume and volume group..."
 pvcreate "/dev/mapper/$CRYPT_NAME"
 vgcreate "$VG_NAME" "/dev/mapper/$CRYPT_NAME"
 
-# 5. Create a single logical volume occupying all free space
-info "05 / 11 | Creating logical volume $LV_ROOT..."
+# 5. Create logical volumes
+info "05 / 11 | Creating logical volumes..."
+
+lvcreate -L "$SIZE_HOME" "$VG_NAME" -n "$LV_HOME"
+lvcreate -L "$SIZE_TMP" "$VG_NAME" -n "$LV_TMP"
+lvcreate -L "$SIZE_VAR" "$VG_NAME" -n "$LV_VAR"
+
+# Use remaining space for root
 lvcreate -l 100%FREE "$VG_NAME" -n "$LV_ROOT"
 
-# 6. Format the root logical volume
-info "06 / 11 | Formatting logical volume..."
-mkfs.ext4 "/dev/$VG_NAME/$LV_ROOT"
+# 6. Format logical volumes
+info "06 / 11 | Formatting logical volumes..."
 
-# 7. Mount the root volume and EFI partition
-info "07 / 11 | Mounting root and EFI partitions..."
+mkfs.ext4 "/dev/$VG_NAME/$LV_ROOT"
+mkfs.ext4 "/dev/$VG_NAME/$LV_HOME"
+mkfs.ext4 "/dev/$VG_NAME/$LV_TMP"
+mkfs.ext4 "/dev/$VG_NAME/$LV_VAR"
+
+# 7. Mount partitions
+info "07 / 11 | Mounting partitions..."
+
 mount "/dev/$VG_NAME/$LV_ROOT" /mnt
 mkdir -p /mnt/boot
 mount "$EFI_PART" /mnt/boot
+
+mkdir -p /mnt/{home,tmp,var}
+mount "/dev/$VG_NAME/$LV_HOME" /mnt/home
+mount "/dev/$VG_NAME/$LV_TMP" /mnt/tmp
+mount "/dev/$VG_NAME/$LV_VAR" /mnt/var
 
 # 8. Generate NixOS hardware configuration
 info "08 / 11 | Generating NixOS hardware configuration..."
@@ -71,9 +94,12 @@ nano /mnt/etc/nixos/configuration.nix
 info "10 / 11 | Installing NixOS..."
 nixos-install # --no-root-passwd
 
-# 11. Cleanup and reboot
-info "11 / 11 | Cleaning up and rebooting..."
+# 11. Unmount and close LUKS
+info "11 / 12 | Unmounting and closing LUKS..."
 umount -R /mnt
 vgchange -an "$VG_NAME"
 cryptsetup close "$CRYPT_NAME"
+
+# 12. Reboot system
+info "12 / 12 | Rebooting system..."
 reboot
