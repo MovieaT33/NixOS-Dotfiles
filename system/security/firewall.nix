@@ -34,8 +34,8 @@ in
 
     iptables -A INPUT -p tcp --dport 22 -j DROP
 
-    iptables -t nat -A OUTPUT -p udp --dport 53 -j REDIRECT --to-ports ${torDnsPort}
-    iptables -t nat -A OUTPUT -p tcp --dport 53 -j REDIRECT --to-ports ${torDnsPort}
+    iptables -t nat -A OUTPUT -p udp --dport 53 -j REDIRECT --to-ports ${toString torDnsPort}
+    iptables -t nat -A OUTPUT -p tcp --syn -j REDIRECT --to-ports ${toString torTransPort}
 
     iptables -t nat -A OUTPUT -p tcp --syn ! -o lo -m owner ! --uid-owner tor -j REDIRECT --to-ports ${torTransPort}
 
