@@ -88,7 +88,9 @@ mount "/dev/$VG_NAME/$LV_ROOT" /mnt
 mkdir -p /mnt/boot
 mount "$EFI_PART" /mnt/boot
 
-mkdir -p /mnt/{var,nix/store,home,tmp,var/tmp}
+mkdir -p /mnt/{var,nix/store,home,tmp}
+mkdir -p /mnt/var/tmp
+
 mount "/dev/$VG_NAME/$LV_VAR" /mnt/var
 mount "/dev/$VG_NAME/$LV_NIXSTORE" /mnt/nix/store
 mount "/dev/$VG_NAME/$LV_HOME" /mnt/home
