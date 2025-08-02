@@ -1,7 +1,7 @@
 - linpeas
 - links
 - oh-my-posh
-- pipes
+- pipes-rs
 
 - systemd-analyze security
 - lynis
@@ -14,4 +14,33 @@
 - rds
 - tipc
 
-- Add 0.5G swap
+- ddate
+
+- broot
+- httpie
+- bat-extrashyperfine
+- taskwarrior
+- ripgrep-all
+
+- bb
+
+- youtube
+- browser
+- bad-apple
+- mandelbrot
+
+- oh-my-posh
+
+- wttr.in
+- tty-clock
+- glow
+
+- dust
+- cava
+
+- asciinema
+- xsv
+- dry
+- mcfly
+
+- Fix firewall

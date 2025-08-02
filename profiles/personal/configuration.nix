@@ -29,21 +29,8 @@
   # Packages
   environment.systemPackages = with pkgs; [
     # General
-    atuin
-    bat
-    eza
-    fd
-    lf
-    lolcat
+    inetutils
     # mprocs
-    tldr
-    tig
-    tmux
-    # tokei
-    tree
-    wordgrinder
-    yazi
-    zoxide
 
     # Hyprland
     kitty

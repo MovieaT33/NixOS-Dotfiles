@@ -14,7 +14,9 @@
     inxi
     # mtr
     nethogs
+    neofetch
     pfetch
+    screenfetch
     speedtest-cli
     tcpdump
     wget
