@@ -13,3 +13,5 @@
 - sctp
 - rds
 - tipc
+
+- Separate `/usr` and `/var/tmp`
