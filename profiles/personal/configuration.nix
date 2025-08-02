@@ -5,7 +5,7 @@
     ../base/configuration.nix
     ../../app/system.nix
     ../../app/security.nix
-    ../../app/development.nix
+    ../../app/dev.nix
     ../../app/fun.nix
   ];
 

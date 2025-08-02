@@ -1,1 +1,2 @@
-sudo nixos-rebuild switch --flake .#personal
+PROFILE="personal"
+sudo nixos-rebuild switch --flake .#${PROFILE}
