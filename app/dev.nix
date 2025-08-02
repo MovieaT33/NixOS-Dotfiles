@@ -12,6 +12,6 @@
     # lazygit
     neovim
     # python314
-    ripgrep
+    # ripgrep
   ];
 }

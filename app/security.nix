@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    gnupg
+    # gnupg
     nmap
     # pass
     whois

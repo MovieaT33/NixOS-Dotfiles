@@ -28,11 +28,11 @@ LV_HOME="home"
 LV_TMP="tmp"
 LV_VARTMP="vartmp"
 
-SIZE_VAR="4G"
-SIZE_NIXSTORE="10G"
-SIZE_HOME="5G"
-SIZE_TMP="1G"
-SIZE_VARTMP="1G"
+SIZE_VAR="1G"
+SIZE_NIXSTORE="5G"
+SIZE_HOME="3G"
+SIZE_TMP="0.5G"
+SIZE_VARTMP="0.5G"
 
 # NixOS config
 NIXOS_CONFIG="/mnt/etc/nixos/configuration.nix"
