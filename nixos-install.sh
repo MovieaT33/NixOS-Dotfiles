@@ -10,10 +10,14 @@ info() {
   echo -e "${BLUE}[INFO]${RESET} $*"
 }
 
-# Disk configuration
+# Disk config
 DISK="/dev/vda"
+EFI_START=1MiB
+EFI_END=513MiB
 EFI_PART="${DISK}1"
 LUKS_PART="${DISK}2"
+
+# LUKS config
 CRYPT_NAME="cryptroot"
 VG_NAME="vg0"
 LV_ROOT="root"
@@ -25,12 +29,15 @@ SIZE_HOME="5G"
 SIZE_TMP="2G"
 SIZE_VAR="4G"
 
+# NixOS config
+NIXOS_CONFIG="/mnt/etc/nixos/configuration.nix"
+
 # 1. Partition the disk
 info "01 / 11 | Partitioning disk $DISK..."
 parted --script "$DISK" \
   mklabel gpt \
-  mkpart ESP fat32 1MiB 513MiB \
-  mkpart primary 513MiB 100% \
+  mkpart ESP fat32 $EFI_START $EFI_END \
+  mkpart primary $EFI_END 100% \
   set 1 esp on
 
 # 2. Format the EFI partition
@@ -82,24 +89,21 @@ info "08 / 11 | Generating NixOS hardware configuration..."
 nixos-generate-config --root /mnt
 
 # 9. Prompt to edit configuration.nix and add LUKS config
-info "09 / 11 | Please add the following line to /mnt/etc/nixos/configuration.nix:"
+info "09 / 11 | Please add the following line to $NIXOS_CONFIG:"
 echo
 echo "boot.initrd.luks.devices.\"$CRYPT_NAME\".device = \"$LUKS_PART\";"
 echo
 read -rp "Press Enter to open nano and edit the file..."
 
-nano /mnt/etc/nixos/configuration.nix
+nano "$NIXOS_CONFIG"
 
 # 10. Install NixOS without setting root password
 info "10 / 11 | Installing NixOS..."
 nixos-install # --no-root-passwd
 
-# 11. Unmount and close LUKS
-info "11 / 12 | Unmounting and closing LUKS..."
+# 11. Close LUKS and reboot
+info "11 / 11 | Cleaning up and rebooting..."
 umount -R /mnt
 vgchange -an "$VG_NAME"
 cryptsetup close "$CRYPT_NAME"
-
-# 12. Reboot system
-info "12 / 12 | Rebooting system..."
 reboot
