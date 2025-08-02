@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -6,12 +6,12 @@
     # difftastic
     # docker
     git
-    jless
-    # just
+    # jless
+    just
     # kondo
-    lazygit
+    # lazygit
     neovim
-    python314
+    # python314
     ripgrep
   ];
 }

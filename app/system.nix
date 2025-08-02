@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -12,9 +12,10 @@
     htop
     iftop
     inxi
-    mtr
+    # mtr
     nethogs
     pfetch
+    speedtest-cli
     tcpdump
     wget
     xh
