@@ -2,8 +2,8 @@
 
 {
   networking.firewall.enable = true;
-  networking.firewall.extraCommands = ''
-  '';
+  # networking.firewall.extraCommands = ''
+  # '';
 
   boot.kernelParams = [ "ipv6.disable=1" ];
 }
