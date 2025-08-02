@@ -31,12 +31,12 @@ LV_VARTMP="vartmp"
 LV_SWAP="swap"
 
 SIZE_VAR="2G"
-SIZE_NIXSTORE="4G"
-SIZE_HOME="2G"
-SIZE_TMP="0.5G"
-SIZE_VARTMP="0.5G"
+SIZE_NIXSTORE="8G"
+SIZE_HOME="4G"
+SIZE_TMP="0.25G"
+SIZE_VARTMP="0.25G"
 
-SIZE_SWAP="32M"
+SIZE_SWAP="0.5G"
 
 # NixOS config
 NIXOS_CONFIG="/mnt/etc/nixos/configuration.nix"
@@ -132,7 +132,11 @@ nixos-install # --no-root-passwd
 
 # 12. Close LUKS and reboot
 info "12 / 12 | Cleaning up and rebooting..."
+
+swapoff "/dev/$VG_NAME/$LV_SWAP"
+
 umount -R /mnt
 vgchange -an "$VG_NAME"
 cryptsetup close "$CRYPT_NAME"
+
 reboot
