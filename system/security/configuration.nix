@@ -4,7 +4,7 @@
   imports = [
     ./drivers.nix
     ./firewall.nix
-    ./pam.nix
+    # TODO: uncomment this: `./pam.nix`
     ./passwords.nix
   ];
 }

@@ -13,5 +13,3 @@
 - sctp
 - rds
 - tipc
-
-- Add new disk partitions for more security: `/home`, `/tmp`, `/var` (`lynis audit system` result)
