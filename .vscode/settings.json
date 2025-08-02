@@ -32,6 +32,7 @@
         "nmap",
         "pfetch",
         "pkgs",
+        "swapon",
         "tcpdump",
         "tokei",
         "VARTMP",

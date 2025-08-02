@@ -28,17 +28,21 @@ LV_HOME="home"
 LV_TMP="tmp"
 LV_VARTMP="vartmp"
 
-SIZE_VAR="1G"
-SIZE_NIXSTORE="5G"
-SIZE_HOME="3G"
+LV_SWAP="swap"
+
+SIZE_VAR="2G"
+SIZE_NIXSTORE="4G"
+SIZE_HOME="2G"
 SIZE_TMP="0.5G"
 SIZE_VARTMP="0.5G"
+
+SIZE_SWAP="32M"
 
 # NixOS config
 NIXOS_CONFIG="/mnt/etc/nixos/configuration.nix"
 
 # 1. Partition the disk
-info "01 / 11 | Partitioning disk $DISK..."
+info "01 / 12 | Partitioning disk $DISK..."
 parted --script "$DISK" \
   mklabel gpt \
   mkpart ESP fat32 $EFI_START $EFI_END \
@@ -46,21 +50,21 @@ parted --script "$DISK" \
   set 1 esp on
 
 # 2. Format the EFI partition
-info "02 / 11 | Formatting EFI partition $EFI_PART..."
+info "02 / 12 | Formatting EFI partition $EFI_PART..."
 mkfs.fat -F32 "$EFI_PART"
 
 # 3. Setup LUKS encryption
-info "03 / 11 | Setting up LUKS encryption on $LUKS_PART..."
+info "03 / 12 | Setting up LUKS encryption on $LUKS_PART..."
 cryptsetup luksFormat "$LUKS_PART"
 cryptsetup open "$LUKS_PART" "$CRYPT_NAME"
 
 # 4. Create LVM physical volume inside the decrypted LUKS device
-info "04 / 11 | Creating LVM physical volume and volume group..."
+info "04 / 12 | Creating LVM physical volume and volume group..."
 pvcreate "/dev/mapper/$CRYPT_NAME"
 vgcreate "$VG_NAME" "/dev/mapper/$CRYPT_NAME"
 
 # 5. Create logical volumes
-info "05 / 11 | Creating logical volumes..."
+info "05 / 12 | Creating logical volumes..."
 
 lvcreate -L "$SIZE_VAR" "$VG_NAME" -n "$LV_VAR"
 lvcreate -L "$SIZE_NIXSTORE" "$VG_NAME" -n "$LV_NIXSTORE"
@@ -68,11 +72,13 @@ lvcreate -L "$SIZE_HOME" "$VG_NAME" -n "$LV_HOME"
 lvcreate -L "$SIZE_TMP" "$VG_NAME" -n "$LV_TMP"
 lvcreate -L "$SIZE_VARTMP" "$VG_NAME" -n "$LV_VARTMP"
 
+lvcreate -L "$SIZE_SWAP" "$VG_NAME" -n "$LV_SWAP"  # Swap
+
 # Use remaining space for root
 lvcreate -l 100%FREE "$VG_NAME" -n "$LV_ROOT"
 
 # 6. Format logical volumes
-info "06 / 11 | Formatting logical volumes..."
+info "06 / 12 | Formatting logical volumes..."
 
 mkfs.ext4 "/dev/$VG_NAME/$LV_ROOT"
 mkfs.ext4 "/dev/$VG_NAME/$LV_VAR"
@@ -81,41 +87,51 @@ mkfs.ext4 "/dev/$VG_NAME/$LV_HOME"
 mkfs.ext4 "/dev/$VG_NAME/$LV_TMP"
 mkfs.ext4 "/dev/$VG_NAME/$LV_VARTMP"
 
+mkswap "/dev/$VG_NAME/$LV_SWAP"  # Swap
+
 # 7. Mount partitions
-info "07 / 11 | Mounting partitions..."
+info "07 / 12 | Mounting partitions..."
 
 mount "/dev/$VG_NAME/$LV_ROOT" /mnt
 mkdir -p /mnt/boot
 mount "$EFI_PART" /mnt/boot
 
 mkdir -p /mnt/{var,nix/store,home,tmp}
-mkdir -p /mnt/var/tmp
 
 mount "/dev/$VG_NAME/$LV_VAR" /mnt/var
+
+mkdir -p /mnt/var/tmp
+
 mount "/dev/$VG_NAME/$LV_NIXSTORE" /mnt/nix/store
 mount "/dev/$VG_NAME/$LV_HOME" /mnt/home
 mount "/dev/$VG_NAME/$LV_TMP" /mnt/tmp
 mount "/dev/$VG_NAME/$LV_VARTMP" /mnt/var/tmp
 
-# 8. Generate NixOS hardware configuration
-info "08 / 11 | Generating NixOS hardware configuration..."
+# 8. Enable swap
+info "08 / 12 | Enabling swap..."
+swapon "/dev/$VG_NAME/$LV_SWAP"
+
+# 9. Generate NixOS hardware configuration
+info "09 / 12 | Generating NixOS hardware configuration..."
 nixos-generate-config --root /mnt
 
-# 9. Prompt to edit configuration.nix and add LUKS config
-info "09 / 11 | Please add the following line to $NIXOS_CONFIG:"
+# 10. Prompt to edit NixOS config
+info "10 / 12 | Please add the following line to $NIXOS_CONFIG:"
 echo
 echo "boot.initrd.luks.devices.\"$CRYPT_NAME\".device = \"$LUKS_PART\";"
+echo
+echo "swapDevices = [ { device = \"/dev/$VG_NAME/$LV_SWAP\"; } ];"
 echo
 read -rp "Press Enter to open nano and edit the file..."
 
 nano "$NIXOS_CONFIG"
 
-# 10. Install NixOS without setting root password
-info "10 / 11 | Installing NixOS..."
+# 11. Install NixOS without setting root password
+info "11 / 12 | Installing NixOS..."
 nixos-install # --no-root-passwd
 
-# 11. Close LUKS and reboot
-info "11 / 11 | Cleaning up and rebooting..."
+# 12. Close LUKS and reboot
+info "12 / 12 | Cleaning up and rebooting..."
 umount -R /mnt
 vgchange -an "$VG_NAME"
 cryptsetup close "$CRYPT_NAME"

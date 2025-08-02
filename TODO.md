@@ -14,4 +14,4 @@
 - rds
 - tipc
 
-- Separate `/usr` and `/var/tmp`
+- Add 0.5G swap
