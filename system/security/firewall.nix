@@ -14,6 +14,8 @@
     iptables -A INPUT -i lo -j ACCEPT
     iptables -A OUTPUT -o lo -j ACCEPT
 
+    iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
     iptables -A OUTPUT -m owner --uid-owner tor -j ACCEPT
   '';
 
