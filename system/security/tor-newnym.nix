@@ -28,6 +28,5 @@ in {
   systemd.services.tor-newnym = torNewnymService;
   systemd.timers.tor-newnym = lib.mkForce (lib.recursiveUpdate torNewnymTimer {
     wantedBy = [ "timers.target" ];
-    unit = "tor-newnym.service";
   });
 }
