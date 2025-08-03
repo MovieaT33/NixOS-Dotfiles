@@ -2,6 +2,6 @@
 
 {
   users.users.root = {
-    shell = "/sbin/nologin";
+    shell = pkgs.nologin;
   };
 }

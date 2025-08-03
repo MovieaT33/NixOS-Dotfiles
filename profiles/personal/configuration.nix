@@ -3,18 +3,18 @@
 {
   imports = [
     ../base/configuration.nix
-    ../../app/system.nix
-    ../../app/security.nix
-    ../../app/dev.nix
-    ../../app/fun.nix
+    ../../app/all.nix
   ];
 
-  # SDDM, Hyprland and Wayland
+  # SDDM
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.defaultSession = "hyprland";
 
+  # Hyprland
   programs.hyprland.enable = true;
+
+  # Xwayland
   programs.hyprland.xwayland.enable = true;
 
   # Users
@@ -25,14 +25,4 @@
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
-
-  # Packages
-  environment.systemPackages = with pkgs; [
-    # General
-    inetutils
-    # mprocs
-
-    # Hyprland
-    kitty
-  ];
 }

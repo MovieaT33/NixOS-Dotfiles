@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./drivers.nix
-    ./firewall.nix
+    ./root.nix
     ./pam.nix
     ./passwords.nix
-    ./root.nix
+    ./firewall.nix
     ./ssh.nix
+    ./drivers.nix
   ];
 }

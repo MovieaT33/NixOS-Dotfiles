@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
-  # boot.blacklistedKernelModules = [ "usb_storage" "firewire_core" "bluetooth" ];
+  # boot.blacklistedKernelModules = [
+  #   "usb_storage"
+  #   "firewire_core"
+  #   "bluetooth"
+  # ];
 }

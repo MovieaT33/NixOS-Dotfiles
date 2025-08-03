@@ -22,17 +22,18 @@ CRYPT_NAME="cryptroot"
 VG_NAME="vg0"
 
 LV_ROOT="root"
-LV_VAR="var"
+
 LV_NIXSTORE="nixstore"
 LV_HOME="home"
+LV_VAR="var"
 LV_TMP="tmp"
 LV_VARTMP="vartmp"
 
 LV_SWAP="swap"
 
-SIZE_VAR="2G"
 SIZE_NIXSTORE="8G"
 SIZE_HOME="4G"
+SIZE_VAR="2G"
 SIZE_TMP="0.25G"
 SIZE_VARTMP="0.25G"
 
@@ -66,9 +67,9 @@ vgcreate "$VG_NAME" "/dev/mapper/$CRYPT_NAME"
 # 5. Create logical volumes
 info "05 / 12 | Creating logical volumes..."
 
-lvcreate -L "$SIZE_VAR" "$VG_NAME" -n "$LV_VAR"
 lvcreate -L "$SIZE_NIXSTORE" "$VG_NAME" -n "$LV_NIXSTORE"
 lvcreate -L "$SIZE_HOME" "$VG_NAME" -n "$LV_HOME"
+lvcreate -L "$SIZE_VAR" "$VG_NAME" -n "$LV_VAR"
 lvcreate -L "$SIZE_TMP" "$VG_NAME" -n "$LV_TMP"
 lvcreate -L "$SIZE_VARTMP" "$VG_NAME" -n "$LV_VARTMP"
 
@@ -81,9 +82,9 @@ lvcreate -l 100%FREE "$VG_NAME" -n "$LV_ROOT"
 info "06 / 12 | Formatting logical volumes..."
 
 mkfs.ext4 "/dev/$VG_NAME/$LV_ROOT"
-mkfs.ext4 "/dev/$VG_NAME/$LV_VAR"
 mkfs.ext4 "/dev/$VG_NAME/$LV_NIXSTORE"
 mkfs.ext4 "/dev/$VG_NAME/$LV_HOME"
+mkfs.ext4 "/dev/$VG_NAME/$LV_VAR"
 mkfs.ext4 "/dev/$VG_NAME/$LV_TMP"
 mkfs.ext4 "/dev/$VG_NAME/$LV_VARTMP"
 
@@ -96,16 +97,16 @@ mount "/dev/$VG_NAME/$LV_ROOT" /mnt
 mkdir -p /mnt/boot
 mount "$EFI_PART" /mnt/boot
 
-mkdir -p /mnt/{var,nix/store,home,tmp}
-
-mount "/dev/$VG_NAME/$LV_VAR" /mnt/var
-
-mkdir -p /mnt/var/tmp
+mkdir -p /mnt/{nix/store,home,var,tmp}
 
 mount "/dev/$VG_NAME/$LV_NIXSTORE" /mnt/nix/store
 mount "/dev/$VG_NAME/$LV_HOME" /mnt/home
-mount "/dev/$VG_NAME/$LV_TMP" /mnt/tmp
+
+mount "/dev/$VG_NAME/$LV_VAR" /mnt/var
+mkdir -p /mnt/var/tmp
 mount "/dev/$VG_NAME/$LV_VARTMP" /mnt/var/tmp
+
+mount "/dev/$VG_NAME/$LV_TMP" /mnt/tmp
 
 # 8. Enable swap
 info "08 / 12 | Enabling swap..."

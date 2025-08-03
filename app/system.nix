@@ -9,10 +9,12 @@
     duf
     dysk
     fastfetch
+    # gdu
     htop
     iftop
     inxi
     # mtr
+    ncdu
     nethogs
     neofetch
     pfetch
