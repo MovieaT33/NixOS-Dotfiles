@@ -26,8 +26,8 @@
   services.tor = {
     enable = true;
     settings = {
-      SocksPort = "9050";
-      SocksPolicy = "accept 127.0.0.1";
+      SOCKSPort = "9050";
+      SocksPolicy = [ "accept 127.0.0.1" ];
     };
   };
 
