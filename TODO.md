@@ -45,6 +45,5 @@
 - Hardening
 
 - wake up, neo
-- torsocks
 
 - Tor change IP every 1 minute
