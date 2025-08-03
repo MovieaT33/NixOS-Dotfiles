@@ -1,7 +1,15 @@
 { config, ... }:
 
 {
-  security.sudo.extraRules = ''
-    mvt33 ALL=(ALL) NOPASSWD: /run/current-system/sw/bin/reboot
-  '';
+  security.sudo.extraRules = [
+    {
+      users = [ "mvt33" ];
+      commands = [
+        {
+          command = "/run/current-system/sw/bin/reboot";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 }
