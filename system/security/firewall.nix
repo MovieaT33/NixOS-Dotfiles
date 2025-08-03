@@ -1,8 +1,11 @@
 { config, ... }:
 
+let
+  firewallConf = builtins.readFile ./config/firewall.conf;
+in
 {
   networking.firewall.enable = true;
-  networking.firewall.extraCommands = builtins.readFile ./config/firewall.conf;
+  networking.firewall.extraCommands = firewallConf;
 
   services.tor.enable = true;
 
