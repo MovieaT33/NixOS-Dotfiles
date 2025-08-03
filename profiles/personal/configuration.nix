@@ -3,7 +3,8 @@
 {
   imports = [
     ../base/configuration.nix
-    ../../app/all.nix
+    # ../../app/all.nix
+    ../../app/dev.nix
   ];
 
   # SDDM
