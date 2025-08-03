@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, ... }:
 
 let
   controlPortPassword = "torpassword";
@@ -9,7 +9,7 @@ let
     serviceConfig = {
       Type = "oneshot";
       ExecStart = ''
-        /bin/sh -c 'echo -e "AUTHENTICATE \"${controlPortPassword}\"\r\nSIGNAL NEWNYM\r\nQUIT\r\n" | nc 127.0.0.1 9051'
+        /bin/sh -c 'echo -e "AUTHENTICATE \"${controlPortPassword}\"\r\nSIGNAL NEWNYM\r\nQUIT\r\n" | /run/current-system/sw/bin/nc 127.0.0.1 9051'
       '';
     };
   };
@@ -22,8 +22,6 @@ let
     };
   };
 in {
-  environment.systemPackages = with pkgs; [ netcat ];
-
   systemd.services.tor-newnym = torNewnymService;
   systemd.timers.tor-newnym = lib.mkForce (lib.recursiveUpdate torNewnymTimer {
     wantedBy = [ "timers.target" ];
