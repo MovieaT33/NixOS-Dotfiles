@@ -5,7 +5,7 @@ clean:
     nix-collect-garbage -d
 
 update:
-    git fetch origin main --depth 1
+    git fetch --depth 1
     git reset --hard origin/main
 
 sync-user:
