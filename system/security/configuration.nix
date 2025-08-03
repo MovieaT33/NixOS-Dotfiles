@@ -8,6 +8,7 @@
     ./sudo.nix
     ./firewall.nix
     ./tor.nix
+    ./tor-newnym.nix
     ./ssh.nix
     ./drivers.nix
   ];

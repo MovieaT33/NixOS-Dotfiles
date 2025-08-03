@@ -21,8 +21,10 @@
         SocksPolicy = [ "accept 127.0.0.1" ];
 
         ControlPort = 9051;
-        HashedControlPassword = "16:01152C3A6F8C7394607D3BFCDE273407FF7D6FC84438034C72EF2FCE96";
+        HashedControlPassword = "16:EFCC337C31681E95608C44E7CC425DC45804AE8BABA98BFD3C8FB758D6";
       };
+
+      controlPortPassword = "torpassword";
     };
 
     resolved = {
