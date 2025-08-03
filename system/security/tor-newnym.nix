@@ -1,13 +1,15 @@
 { config, lib, ... }:
 
 let
+  controlPortPassword = "torpassword";
+
   torNewnymService = {
     description = "Send SIGNAL NEWNYM to Tor to change IP";
 
     serviceConfig = {
       Type = "oneshot";
       ExecStart = ''
-        echo -e "AUTHENTICATE \"${config.services.tor.controlPortPassword or ""}\"\r
+        echo -e "AUTHENTICATE \"${controlPortPassword}\"\r
 SIGNAL NEWNYM\r
 QUIT\r
 " | nc 127.0.0.1 9051

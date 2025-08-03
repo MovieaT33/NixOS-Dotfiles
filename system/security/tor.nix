@@ -23,8 +23,6 @@
         ControlPort = 9051;
         HashedControlPassword = "16:EFCC337C31681E95608C44E7CC425DC45804AE8BABA98BFD3C8FB758D6";
       };
-
-      controlPortPassword = "torpassword";
     };
 
     resolved = {
