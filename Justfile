@@ -9,7 +9,7 @@ update:
     sudo git reset --hard origin/main
 
 sync-user:
-    cp -r {{NIXOS_USER}}/* .
+    sudo cp -r {{NIXOS_USER}}/* .
     sudo git add .
 
 sync:
