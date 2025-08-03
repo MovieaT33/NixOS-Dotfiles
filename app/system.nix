@@ -16,8 +16,9 @@
     inxi
     # mtr
     ncdu
-    nethogs
     neofetch
+    net-tools
+    nethogs
     pfetch
     screenfetch
     speedtest-cli
