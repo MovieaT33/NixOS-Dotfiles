@@ -1,18 +1,16 @@
 { config, ... }:
 
+let
+  rebootBin = "${config.systemd.package}/bin/reboot";
+  shutdownBin = "${config.systemd.package}/bin/shutdown";
+in
 {
   security.sudo.extraRules = [
     {
       users = [ "mvt33" ];
       commands = [
-        {
-          command = "/run/current-system/sw/bin/reboot";
-          options = [ "NOPASSWD" ];
-        }
-        {
-          command = "/run/current-system/sw/bin/shutdown";
-          options = [ "NOPASSWD" ];
-        }
+        { command = rebootBin; options = [ "NOPASSWD" ]; }
+        { command = shutdownBin; options = [ "NOPASSWD" ]; }
       ];
     }
   ];
