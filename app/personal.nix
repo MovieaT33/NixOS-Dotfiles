@@ -5,6 +5,7 @@
     # General
     inetutils
     # mprocs
+    tty-clock
 
     # Hyprland
     kitty

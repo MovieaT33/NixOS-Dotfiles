@@ -6,6 +6,7 @@
     bmon
     bottom
     btop
+    dig
     duf
     dysk
     fastfetch

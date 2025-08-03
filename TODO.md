@@ -11,7 +11,6 @@
 - dccp
 - sctp
 - rds
-- tty-clock
 - tipc
 - gdu
 - ddate

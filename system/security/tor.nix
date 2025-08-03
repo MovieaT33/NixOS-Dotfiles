@@ -5,10 +5,15 @@
     tor = {
       enable = true;
       client.dns.enable = true;
-      settings.DNSPort = [ {
-        addr = "127.0.0.1";
-        port = 53;
-      } ];
+      settings = {
+        DNSPort = [
+          { addr = "127.0.0.1"; port = 53; }
+        ];
+        SOCKSPort = [
+          { port = 9050; }
+        ];
+        SocksPolicy = [ "accept 127.0.0.1" ];
+      };
     };
     resolved = {
       enable = true;
@@ -21,12 +26,4 @@
   };
   
   networking.nameservers = [ "127.0.0.1" ];
-
-  # services.tor = {
-  #   enable = true;
-  #   settings = {
-  #     SOCKSPort = "9050";
-  #     SocksPolicy = [ "accept 127.0.0.1" ];
-  #   };
-  # };
 }
