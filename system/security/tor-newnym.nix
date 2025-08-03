@@ -22,7 +22,7 @@ let
     };
   };
 in {
-  environment.systemPackages = [ netcat ];
+  environment.systemPackages = with pkgs; [ netcat ];
 
   systemd.services.tor-newnym = torNewnymService;
   systemd.timers.tor-newnym = lib.mkForce (lib.recursiveUpdate torNewnymTimer {
