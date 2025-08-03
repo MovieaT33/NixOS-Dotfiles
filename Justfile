@@ -10,9 +10,11 @@ update:
 
 sync-user:
     cp -r {{NIXOS_USER}} .
+    git add .
 
 sync:
-    git add system/modules/hardware.nix
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
 
-upgrade: update sync-user sync
+full-update: update sync-user
+
+upgrade: full-update sync
