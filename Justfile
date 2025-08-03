@@ -5,12 +5,12 @@ clean:
     nix-collect-garbage -d
 
 update:
-    git fetch --depth 1
-    git reset --hard origin/main
+    sudo git fetch --depth 1
+    sudo git reset --hard origin/main
 
 sync-user:
     cp -r {{NIXOS_USER}}/* .
-    git add .
+    sudo git add .
 
 sync:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
