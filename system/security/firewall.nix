@@ -2,11 +2,15 @@
 
 {
   networking.firewall.enable = true;
+  networking.firewall.logRefusedConnections = true;
 
   networking.firewall.extraCommands = ''
     iptables -P INPUT DROP
     iptables -P OUTPUT DROP
     iptables -P FORWARD DROP
+
+    iptables -A INPUT -m owner --uid-owner tor -j ACCEPT
+    iptables -A OUTPUT -m owner --uid-owner tor -j ACCEPT
   '';
 
   networking.firewall.extraStopCommands = ''
