@@ -29,6 +29,7 @@
         "mapscii",
         "mklabel",
         "mkpart",
+        "mktemp",
         "Moviea",
         "mprocs",
         "ncdu",
