@@ -9,7 +9,7 @@ update:
     git reset --hard
 
 sync-user:
-    cp -r {{NIXOS_USER}} .
+    cp -r {{NIXOS_USER}}/* .
     git add .
 
 sync:
