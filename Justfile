@@ -4,6 +4,7 @@ clean:
     nix-collect-garbage -d
 
 update:
+    git config pull.rebase true
     git pull --depth 1
 
 sync:

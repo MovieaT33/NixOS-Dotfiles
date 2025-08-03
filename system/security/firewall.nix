@@ -2,8 +2,7 @@
 
 {
   networking.firewall.enable = true;
-  # networking.firewall.extraCommands = ''
-  # '';
+  networking.firewall.extraCommands = builtins.readFile ./config/firewall.conf;
 
   services.tor.enable = true;
 
