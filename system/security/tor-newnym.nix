@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   controlPortPassword = "torpassword";
@@ -22,6 +22,8 @@ let
     };
   };
 in {
+  environment.systemPackages = [ netcat ];
+
   systemd.services.tor-newnym = torNewnymService;
   systemd.timers.tor-newnym = lib.mkForce (lib.recursiveUpdate torNewnymTimer {
     wantedBy = [ "timers.target" ];
