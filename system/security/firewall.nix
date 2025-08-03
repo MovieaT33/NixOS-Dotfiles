@@ -2,7 +2,8 @@
 
 {
   networking.firewall.enable = true;
-  networking.firewall.logRefusedConnections = true;
+
+  networking.firewall.allowedTCPPorts = [ 9050 ];
 
   # TODO: use builtins.readFile
   networking.firewall.extraCommands = ''
@@ -22,7 +23,13 @@
     iptables -P FORWARD ACCEPT
   '';
 
-  services.tor.enable = true;
+  services.tor = {
+    enable = true;
+    settings = {
+      SocksPort = "9050";
+      SocksPolicy = "accept 127.0.0.1";
+    };
+  }
 
   boot.kernelParams = [ "ipv6.disable=1" ];
 }
