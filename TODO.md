@@ -39,6 +39,7 @@
 - mcfly
 
 - Fix firewall
+- Home-manager
 
 - wake up, neo
 - torsocks
