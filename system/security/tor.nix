@@ -14,6 +14,12 @@
           port = 9050;
         };
       };
+      settings = {
+        DNSPort = [
+          { addr = "127.0.0.1"; port = 53; }
+        ];
+        SocksPolicy = [ "accept 127.0.0.1" ];
+      };
     };
 
     resolved = {
