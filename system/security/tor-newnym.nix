@@ -9,13 +9,7 @@ let
     serviceConfig = {
       Type = "oneshot";
       ExecStart = ''
-        /bin/sh -c ''
-          nc 127.0.0.1 9051 <<EOF
-          AUTHENTICATE "${controlPortPassword}"
-          SIGNAL NEWNYM
-          QUIT
-          EOF
-        ''
+        /bin/sh -c 'echo -e "AUTHENTICATE \"${controlPortPassword}\"\r\nSIGNAL NEWNYM\r\nQUIT\r\n" | nc 127.0.0.1 9051'
       '';
     };
   };
