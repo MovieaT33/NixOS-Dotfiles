@@ -35,6 +35,7 @@
 
 - asciinema
 - xsv
+- finger
 - dry
 - mcfly
 
