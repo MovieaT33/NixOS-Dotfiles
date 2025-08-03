@@ -19,7 +19,7 @@
 
   # Users
   programs.zsh.enable = true;
-  users.defaultUserShell = "${pkgs.zsh}/bin/zsh";;
+  users.defaultUserShell = "${pkgs.zsh}/bin/zsh";
 
   users.users.mvt33 = {
     isNormalUser = true;
