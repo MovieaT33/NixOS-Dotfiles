@@ -3,7 +3,13 @@
 {
   boot.blacklistedKernelModules = [
     "usb_storage"
-    "firewire_core"
     "bluetooth"
+    "firewire_core"
+    "cramfs"
+    "freevxfs"
+    "jffs2"
+    "hfs"
+    "hfsplus"
+    "udf"
   ];
 }

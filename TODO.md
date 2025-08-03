@@ -54,3 +54,4 @@
 **Security & Privacy**:
 
 - Hardening
+- `fileSystems."/boot".options = [ "ro" ];`
