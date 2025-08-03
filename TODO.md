@@ -42,5 +42,8 @@
 - Fix firewall
 - Home-manager
 
+- TODO / FIXME
+- Hardening
+
 - wake up, neo
 - torsocks
