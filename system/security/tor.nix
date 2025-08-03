@@ -12,10 +12,10 @@
     };
     resolved = {
       enable = true;
-      dns = [ "127.0.0.1" ];
       fallbackDns = [ ];
       extraConfig = ''
         DNSStubListener=no
+        DNS=127.0.0.1
       '';
     };
   };
