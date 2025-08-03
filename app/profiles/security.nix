@@ -2,10 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
-    age
+    # age
     # gnupg
     nmap
     # pass
-    whois
+    # whois
   ];
 }

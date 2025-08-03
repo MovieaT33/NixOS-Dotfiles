@@ -8,6 +8,6 @@
     tty-clock
 
     # Hyprland
-    kitty
+    # kitty
   ];
 }

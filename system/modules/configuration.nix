@@ -7,5 +7,6 @@
     ./network.nix
     ./locale.nix
     ./system.nix
+    ./docs.nix
   ];
 }

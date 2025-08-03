@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./selinux.nix
     ./root.nix
     # FIXME: ./pam.nix
     # FIXME: ./passwords.nix

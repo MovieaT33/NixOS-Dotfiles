@@ -40,6 +40,7 @@
 
 - Fix firewall
 - Home-manager
+- Antivirus
 
 - TODO / FIXME
 - Hardening

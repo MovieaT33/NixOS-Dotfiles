@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    atuin
+    # atuin
     bat
     eza
     fd
@@ -19,10 +19,10 @@
     neovim
     ranger
     tldr
-    tig
+    # tig
     tmux
     tree
-    wordgrinder
+    # wordgrinder
     # python314
     # ripgrep
     # tokei
