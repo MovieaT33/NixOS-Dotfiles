@@ -23,13 +23,5 @@
   #   iptables -P FORWARD ACCEPT
   # '';
 
-  services.tor = {
-    enable = true;
-    settings = {
-      SOCKSPort = "9050";
-      SocksPolicy = [ "accept 127.0.0.1" ];
-    };
-  };
-
   boot.kernelParams = [ "ipv6.disable=1" ];
 }

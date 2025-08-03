@@ -7,6 +7,7 @@
     ./passwords.nix
     ./sudo.nix
     ./firewall.nix
+    ./tor.nix
     ./ssh.nix
     ./drivers.nix
   ];
