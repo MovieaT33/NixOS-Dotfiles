@@ -5,9 +5,10 @@ clean:
 
 update:
     git fetch --depth 1
-    git reset --hard origin/main
+    git reset --hard
 
 sync:
-    sudo nixos-rebuild switch --flake .#{{PROFILE}} --impure
+    git add system/modules/hardware.nix
+    sudo nixos-rebuild switch --flake .#{{PROFILE}}
 
 upgrade: update sync
