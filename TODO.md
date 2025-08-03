@@ -1,4 +1,5 @@
 **Packages**:
+
 - linpeas
 - links
 - oh-my-posh
@@ -24,6 +25,7 @@
 - bb
 
 **Other**:
+
 - youtube
 - browser
 - bad-apple
@@ -38,13 +40,17 @@
 - dry
 - mcfly
 
-- Fix firewall
-- Home-manager
+- TODO / FIXME
+
+- `Wake up, Neo` utility
+
+**System**:
+
+- SELinux
+- Firewall
+- Home manager
 - Antivirus
 
-- TODO / FIXME
+**Security & Privacy**:
+
 - Hardening
-
-- wake up, neo
-
-- Tor change IP every 1 minute
