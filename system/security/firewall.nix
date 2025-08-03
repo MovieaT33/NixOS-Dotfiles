@@ -1,11 +1,11 @@
 { config, ... }:
 
-let
-  firewallConf = builtins.readFile ./config/firewall.conf;
-in
 {
   networking.firewall.enable = true;
-  networking.firewall.extraCommands = firewallConf;
+
+  services.ufw.enable = true;
+  services.ufw.defaultInputPolicy = "deny";
+  services.ufw.defaultOutputPolicy = "deny";
 
   services.tor.enable = true;
 

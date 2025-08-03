@@ -1,7 +1,7 @@
 { config, ... }:
 
 let
-  pamConfig = builtins.readFile ./config/pam.conf;
+  pamConfig = builtins.readFile ./config/pam;
 in
 {
   # security.pam.services.login.enable = false;  # FIXME: enable
