@@ -3,7 +3,7 @@
 {
   imports = [
     ./kernel.nix  # TODO: check
-    ./security.nix  # TODO: check
+    ./general.nix  # TODO: check
     ./apparmor.nix
     ./root.nix
     # FIXME: ./pam.nix
