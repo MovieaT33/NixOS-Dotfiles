@@ -2,8 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
+    _2048-in-terminal
     aalib
     asciiquarium
+    bb
     boxes
     cbonsai
     # charasay

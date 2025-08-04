@@ -10,5 +10,19 @@ in
   security.pam.services.sshd.enable = true;
   security.pam.services.sshd.text = pamConfig;
 
+  # security.pam.services = {
+  #   passwd = {
+  #     required = [ "pam_pwquality.so retry=3" ];
+  #   };
+  # };
+
+  # security.pwquality = {
+  #   enable = true;
+  #   minLen = 12;
+  #   minClass = 3;
+  #   maxRepeat = 3; 
+  #   maxSequence = 3;
+  # };
+
   # TODO: max opened files and login limits for users
 }

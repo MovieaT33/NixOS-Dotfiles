@@ -13,12 +13,12 @@
 - sctp
 - rds
 - tipc
+- pokemon-colorscipts
 - gdu
 - ddate
 - dust
 - cava
 - broot
-- httpie
 - bat-extrashyperfine
 - taskwarrior
 - ripgrep-all
@@ -49,6 +49,7 @@
 - SELinux
 - Firewall
 - Home manager
+- Systemd only with root
 - Antivirus
 
 **Security & Privacy**:
