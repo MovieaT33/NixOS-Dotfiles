@@ -9,4 +9,6 @@ in
 
   security.pam.services.sshd.enable = true;
   security.pam.services.sshd.text = pamConfig;
+
+  # TODO: max opened files and login limits for users
 }
