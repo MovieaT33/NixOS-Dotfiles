@@ -171,9 +171,10 @@ def main() -> None:
     prompt_edit_config(nixos_config_path, crypt_name, luks_part, vg_name)
     install_nixos()
 
-    cleanup(vg_name, crypt_name)
-
     print(f"Commands history:\n{CMDS_HISTORY}")
+    input("Press Enter to cleanup...")
+
+    cleanup(vg_name, crypt_name)
 
 
 if __name__ == "__main__":
