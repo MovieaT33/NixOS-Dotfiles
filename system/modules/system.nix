@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   system.stateVersion = "25.05";
@@ -13,4 +13,6 @@
   nix.gc.options = "--delete-older-than 7d";
 
   nix.settings.experimental-features = [ "nix-daemon" "nix-command" "flakes" ];
+
+  environment.systemPackages = with pkgs; [ git just ];
 }
