@@ -7,7 +7,7 @@
   };
 
   boot.initrd.luks.devices."cryptroot" = {
-    device = "/dev/sda2";
+    device = "/dev/vda2";
     preLVM = true;
   };
 

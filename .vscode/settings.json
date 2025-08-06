@@ -5,6 +5,7 @@
         "Moviea",
         "Networkd",
         "nixos",
-        "nixpkgs"
+        "nixpkgs",
+        "optimise"
     ]
 }
