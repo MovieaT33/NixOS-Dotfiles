@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # home-manager.url = "";
   };
 
   outputs = { self, nixpkgs }: let
@@ -12,7 +11,7 @@
     nixosConfigurations = {
       personal = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./profiles/personal/configuration.nix ];
+        modules = [ ./profiles/personal/config.nix ];
       };
     };
   };
