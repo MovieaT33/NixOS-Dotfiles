@@ -1,4 +1,4 @@
-#!/usr/bin/env python314
+#!/usr/bin/env python3
 
 # region [ Imports ]
 
@@ -20,9 +20,9 @@ CMDS_HISTORY: list[str] = []
 
 
 def run(cmd: str) -> None:
-    subprocess.run(cmd, check=True, shell=True)
     print(f"\033[1m{cmd}\033[0m")
     CMDS_HISTORY.append(cmd)
+    subprocess.run(cmd, check=True, shell=True)
 
 
 def partition_disk(disk: str, efi_start: str, efi_end: str) -> None:
@@ -147,7 +147,7 @@ def main() -> None:
         "home": {"size": "1G", "mount": "/mnt/home"},
         "var": {"size": "1G", "mount": "/mnt/var"},
         "tmp": {"size": "0.75G", "mount": "/mnt/tmp"},
-        "var/tmp": {"size": "0.125G", "mount": "/mnt/var/tmp"},
+        "var_tmp": {"size": "0.125G", "mount": "/mnt/var/tmp"},
         "swap": {"size": "0.125G", "mount": None},
         "root": {"size": "100%FREE", "mount": "/mnt"}
     }
