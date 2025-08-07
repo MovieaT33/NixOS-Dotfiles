@@ -6,7 +6,7 @@ install:
     ./install_nixos.py
 
 update:
-    sudo git pull
+    sudo git pull --depth 1
 
 sync:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
