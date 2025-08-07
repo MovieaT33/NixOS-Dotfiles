@@ -7,5 +7,6 @@
     ./boot.nix
     ./locale.nix
     ./network.nix
+    ./users.nix
   ];
 }

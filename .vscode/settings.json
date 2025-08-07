@@ -6,6 +6,7 @@
         "Networkd",
         "nixos",
         "nixpkgs",
+        "nologin",
         "optimise",
         "pkgs",
         "timesyncd"
