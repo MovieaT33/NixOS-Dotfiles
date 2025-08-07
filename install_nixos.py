@@ -130,6 +130,7 @@ def cleanup(vg_name: str, crypt_name: str) -> None:
     run("umount -R /mnt")
     run(f"vgchange -an {vg_name}")
     run(f"cryptsetup close {crypt_name}")
+    input("Press Enter to reboot system...")
     run("reboot")
 
 
@@ -143,11 +144,11 @@ def main() -> None:
     vg_name: str = "vg0"
 
     lv_config: dict[str, dict[str, str | None]] = {
-        "nix": {"size": "5G", "mount": "/mnt/nix"},
+        "nix": {"size": "10G", "mount": "/mnt/nix"},
         "home": {"size": "1G", "mount": "/mnt/home"},
-        "var": {"size": "1G", "mount": "/mnt/var"},
-        "tmp": {"size": "0.75G", "mount": "/mnt/tmp"},
-        "var_tmp": {"size": "0.125G", "mount": "/mnt/var/tmp"},
+        "var": {"size": "0.25G", "mount": "/mnt/var"},
+        "tmp": {"size": "1M", "mount": "/mnt/tmp"},
+        "var_tmp": {"size": "1M", "mount": "/mnt/var/tmp"},
         "swap": {"size": "0.125G", "mount": None},
         "root": {"size": "100%FREE", "mount": "/mnt"}
     }

@@ -2,18 +2,25 @@
     "cSpell.words": [
         "auditd",
         "cryptroot",
+        "cryptsetup",
         "hardlinks",
         "kptr",
         "luks",
+        "mklabel",
+        "mkpart",
         "Moviea",
         "Networkd",
         "nixos",
         "nixpkgs",
         "nologin",
+        "oneshot",
         "optimise",
         "pkgs",
+        "swapoff",
+        "swapon",
         "syncookies",
         "timesyncd",
+        "vgchange",
         "virtualisation"
     ]
 }

@@ -10,8 +10,4 @@
     device = "/dev/vda2";
     preLVM = true;
   };
-
-  swapDevices = [
-    { device = "/dev/vg0/swap"; }
-  ];
 }

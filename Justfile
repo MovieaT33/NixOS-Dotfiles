@@ -2,6 +2,9 @@ PROFILE := "personal"
 
 default: upgrade
 
+install:
+    ./install_nixos.py
+
 update:
     sudo git pull
 
