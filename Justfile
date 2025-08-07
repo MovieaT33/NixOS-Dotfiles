@@ -18,7 +18,7 @@ init:
 
 # update the repository
 update: init
-    sudo git pull --depth 1
+    sudo git pull origin main  --depth 1
 
 # sync nixos configuration with profile
 sync:
