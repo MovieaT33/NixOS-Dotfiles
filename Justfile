@@ -5,7 +5,10 @@ default: upgrade
 install:
     ./install_nixos.py
 
-update:
+init:
+    sudo git config pull.rebase true
+
+update: init
     sudo git pull --depth 1
 
 sync:
