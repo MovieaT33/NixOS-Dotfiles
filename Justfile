@@ -1,9 +1,11 @@
 PROFILE := "personal"
 
-upgrade: update sync
+default: upgrade
 
 update:
     sudo git pull
 
 sync:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
+
+upgrade: update sync
