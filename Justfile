@@ -1,5 +1,11 @@
 PROFILE := "personal"
 
+alias i := install
+alias u := update
+alias s := sync
+alias g := upgrade
+alias c := clean
+
 default: upgrade
 
 install:
