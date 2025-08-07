@@ -6,4 +6,5 @@ update:
 sync:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
 
+@default
 upgrade: update sync
