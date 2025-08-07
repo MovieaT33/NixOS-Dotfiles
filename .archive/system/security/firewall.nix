@@ -22,6 +22,4 @@
   #   iptables -P OUTPUT ACCEPT
   #   iptables -P FORWARD ACCEPT
   # '';
-
-  boot.kernelParams = [ "ipv6.disable=1" ];
 }

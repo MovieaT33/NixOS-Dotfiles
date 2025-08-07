@@ -10,5 +10,6 @@
     ./nix.nix
     ./sudo.nix
     ./root.nix
+    ./network/config.nix
   ];
 }

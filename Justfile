@@ -12,7 +12,7 @@ default: upgrade
 install:
     ./install_nixos.py
 
-# init — set git config for pull rebase
+# set git config for pull rebase
 init:
     sudo git config pull.rebase true
 
@@ -29,4 +29,4 @@ upgrade: update sync
 
 # clean nix garbage cache
 clean:
-    nix-collect-garbage -d
+    sudo nix-collect-garbage -d
