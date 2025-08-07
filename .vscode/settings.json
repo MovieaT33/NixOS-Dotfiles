@@ -21,6 +21,9 @@
         "syncookies",
         "timesyncd",
         "vgchange",
-        "virtualisation"
+        "virtualisation",
+        "zram",
+        "zstd",
+        "zswap"
     ]
 }
