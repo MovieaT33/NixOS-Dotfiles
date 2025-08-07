@@ -1,6 +1,8 @@
 { config, ... }:
 
 {
+  services.timesyncd.enable = true;
+
   time.hardwareClockInLocalTime = false;
   time.timeZone = "UTC";
 

@@ -1,12 +1,12 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   system.stateVersion = "25.05";
 
   system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = false;
 
   nix.settings.sandbox = true;
-
   nix.settings.auto-optimise-store = true;
 
   nix.gc.automatic = true;
