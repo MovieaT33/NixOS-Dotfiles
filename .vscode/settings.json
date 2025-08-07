@@ -1,6 +1,9 @@
 {
     "cSpell.words": [
+        "auditd",
         "cryptroot",
+        "hardlinks",
+        "kptr",
         "luks",
         "Moviea",
         "Networkd",
@@ -9,6 +12,8 @@
         "nologin",
         "optimise",
         "pkgs",
-        "timesyncd"
+        "syncookies",
+        "timesyncd",
+        "virtualisation"
     ]
 }

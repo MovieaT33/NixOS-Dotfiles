@@ -9,3 +9,6 @@ sync:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
 
 upgrade: update sync
+
+clean:
+    nix-collect-garbage -d
