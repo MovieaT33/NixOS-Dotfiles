@@ -17,14 +17,4 @@
 
   # Xwayland
   # programs.hyprland.xwayland.enable = true;
-
-  # Users
-  programs.zsh.enable = true;
-  users.defaultUserShell = "${pkgs.zsh}/bin/zsh";
-
-  users.users.mvt33 = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    useDefaultShell = true;
-  };
 }
