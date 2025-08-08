@@ -20,6 +20,7 @@
         "oneshot",
         "optimise",
         "pkgs",
+        "substituters",
         "swapoff",
         "swapon",
         "syncookies",

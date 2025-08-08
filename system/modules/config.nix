@@ -10,7 +10,6 @@
     ./zram.nix
 
     ./nix.nix
-    ./repo.nix
 
     ./locale.nix
     ./users.nix

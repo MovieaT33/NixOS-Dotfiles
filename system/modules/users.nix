@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  programs.zsh.enable = true;
+  imports = [ ../../app/zsh.nix ];
   users.defaultUserShell = pkgs.zsh;
 
   users.users.mvt33 = {
