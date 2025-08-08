@@ -21,6 +21,7 @@
         "swapon",
         "syncookies",
         "timesyncd",
+        "tmpfiles",
         "vgchange",
         "virtualisation",
         "zram",

@@ -16,3 +16,6 @@
     iptables -A OUTPUT -p tcp --dport 80 -j REJECT
   '';
 }
+
+# TODO: zsh vim
+# TODO: shred

@@ -11,5 +11,7 @@
     ./sudo.nix
     ./root.nix
     ./network/config.nix
+
+    ./hardening.nix
   ];
 }
