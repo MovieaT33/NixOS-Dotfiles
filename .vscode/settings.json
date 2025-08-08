@@ -1,9 +1,12 @@
 {
     "cSpell.words": [
+        "ahci",
         "auditd",
         "cryptroot",
         "cryptsetup",
+        "dmask",
         "dport",
+        "fmask",
         "hardlinks",
         "kptr",
         "luks",
@@ -22,8 +25,11 @@
         "syncookies",
         "timesyncd",
         "tmpfiles",
+        "vfat",
         "vgchange",
+        "virtio",
         "virtualisation",
+        "xhci",
         "zram",
         "zstd",
         "zswap"

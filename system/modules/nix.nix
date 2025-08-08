@@ -10,4 +10,5 @@
   nix.gc.options = "--delete-older-than 7d";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.hostPlatform = "x86_64-linux";
 }

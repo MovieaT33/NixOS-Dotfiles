@@ -7,7 +7,6 @@
     ./boot.nix
 
     ./zswap.nix
-    ./swap.nix
     ./zram.nix
 
     ./nix.nix

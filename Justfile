@@ -14,8 +14,8 @@ install:
 
 # update the repository
 update:
-    sudo git config pull.rebase false
-    sudo git pull origin main
+    sudo git fetch --depth 1
+    sudo git reset --hard origin/main
 
 # sync nixos configuration with profile
 sync:
