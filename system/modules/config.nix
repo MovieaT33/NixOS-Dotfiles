@@ -11,9 +11,10 @@
     ./zram.nix
 
     ./nix.nix
+    ./repo.nix
 
     ./locale.nix
-    ./network.nix
     ./users.nix
+    ./network.nix
   ];
 }
