@@ -13,7 +13,7 @@ install:
     ./install_nixos.py
 
 # update the repository
-update: init
+update:
     sudo git config pull.rebase false
     sudo git pull origin main
 
