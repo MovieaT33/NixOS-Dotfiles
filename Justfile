@@ -12,13 +12,10 @@ default: upgrade
 install:
     ./install_nixos.py
 
-# set git config for pull merge
-init:
-    sudo git config pull.rebase false
-
 # update the repository
 update: init
-    sudo git pull origin main  --depth 1
+    sudo git config pull.rebase false
+    sudo git pull origin main
 
 # sync nixos configuration with profile
 sync:
