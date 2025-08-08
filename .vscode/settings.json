@@ -3,6 +3,7 @@
         "auditd",
         "cryptroot",
         "cryptsetup",
+        "dport",
         "hardlinks",
         "kptr",
         "luks",
