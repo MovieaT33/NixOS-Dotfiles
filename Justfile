@@ -12,9 +12,9 @@ default: upgrade
 install:
     ./install_nixos.py
 
-# set git config for pull rebase
+# set git config for pull merge
 init:
-    sudo git config pull.rebase true
+    sudo git config pull.rebase false
 
 # update the repository
 update: init
