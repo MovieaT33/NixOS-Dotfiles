@@ -3,6 +3,6 @@
 {
   imports = [
     ../base.nix
-    ../..//app/profiles/dev.nix
+    ../../app/profiles/dev.nix
   ];
 }
