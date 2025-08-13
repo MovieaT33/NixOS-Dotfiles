@@ -22,14 +22,5 @@
         ];
       };
     };
-
-    homeConfigurations = {
-      mvt33 = home-manager.lib.homeManagerConfiguration {
-        inherit system;
-        username = "mvt33";
-        homeDirectory = "/home/mvt33";
-        configuration = ./profiles/personal/home.nix;
-      };
-    };
   };
 }
