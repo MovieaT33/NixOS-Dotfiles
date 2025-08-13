@@ -1,3 +1,3 @@
 { config, ... }:
 
-{ imports = [ ../system ]; }
+{ importAll ../system/. }
