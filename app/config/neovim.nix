@@ -8,7 +8,7 @@
     vimAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      tokyonight-nvim
+      gruvbox
     ];
 
     extraConfig = ''
@@ -19,7 +19,7 @@
       set number relativenumber
 
       syntax enable
-      colorscheme tokyonight-nvim
+      colorscheme gruvbox
     '';
   };
 
