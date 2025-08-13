@@ -1,17 +1,24 @@
 { lib, config, ... }:
 
+with lib; with builtins;
+
 let
-  importAll = dir:
+  getDir = dir:
+    mapAttrs
+      (file: type: if type == "directory"
+                   then getDir (dir + "/" + file)
+                   else type)
+      (readDir dir);
+
+  files = dir:
     let
-      entries = builtins.attrNames (builtins.readDir dir);
+      collectFiles = mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir);
     in
-      builtins.concatLists (map (name:
-        let path = dir + "/" + name;
-        in if builtins.isDirectory path
-           then importAll path
-           else if lib.strings.hasSuffix ".nix" name
-                then [ (import path) ]
-                else []
-      ) entries);
+      builtins.attrValues collectFiles;
+
+  nixFiles = dir:
+    map (file: dir + "/" + file)
+      (filter (file: hasSuffix ".nix" file) (files dir));
+
 in
-{ imports = importAll ./.; }
+{ imports = nixFiles ./.; }
