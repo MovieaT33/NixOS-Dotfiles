@@ -18,7 +18,9 @@
         inherit system;
         modules = [
           ./profiles/personal/config.nix
-          home-manager.nixosModules.home-manager
+          (import home-manager.nixosModule { 
+            pkgs = nixpkgs.legacyPackages.${system}; 
+          })
         ];
       };
     };
