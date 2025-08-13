@@ -9,5 +9,6 @@
         set number
         syntax on
       '';
+    };
   };
 }
