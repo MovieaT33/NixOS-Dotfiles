@@ -20,6 +20,11 @@
 
       syntax enable
       colorscheme gruvbox
+
+      hi Normal guibg=NONE
+      hi StatusLine guibg=NONE
+      hi LineNr guibg=NONE
+      hi VertSplit guibg=NONE
     '';
   };
 
