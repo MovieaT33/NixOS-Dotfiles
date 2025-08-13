@@ -1,13 +1,25 @@
 let
-  importDir = dir: 
+  dropNix = name:
+    let m = builtins.match "^(.*)\\.nix$" name;
+    in if m == null then name else builtins.elemAt m 0;
+
+  importDir = dir:
     let
-      entries = builtins.attrNames (builtins.readDir dir);
-      nixFiles = builtins.filter (name: builtins.match ".+\\.nix$" name != null) entries;
-      dirs = builtins.filter (name: builtins.pathExists (dir + "/" + name) && builtins.isDirectory (dir + "/" + name)) entries;
+      listing = builtins.readDir dir;
+      names   = builtins.attrNames listing;
+
+      nixFiles = builtins.filter (n:
+        listing.${n} == "regular"
+        && builtins.match ".*\\.nix$" n != null
+        && n != "default.nix"
+      ) names;
+
+      subdirs = builtins.filter (n: listing.${n} == "directory") names;
     in
       builtins.listToAttrs (
-        (map (name: { name = name; value = import (dir + "/" + name); }) nixFiles) ++
-        (map (name: { name = name; value = importDir (dir + "/" + name); }) dirs)
+        (map (n: { name = dropNix n; value = import (dir + "/${n}"); }) nixFiles)
+        ++
+        (map (d: { name = d; value = importDir (dir + "/${d}"); }) subdirs)
       );
 in
   importDir ./. 
