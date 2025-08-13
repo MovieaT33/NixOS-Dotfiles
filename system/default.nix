@@ -1,25 +1,13 @@
-{}
-# { lib, config, ... }:
-# 
-# with lib; with builtins;
-# 
-# let
-#   getDir = dir:
-#     mapAttrs
-#       (file: type: if type == "directory"
-#                    then getDir (dir + "/" + file)
-#                    else type)
-#       (readDir dir);
-# 
-#   files = dir:
-#     let
-#       collectFiles = mapAttrsRecursive (path: type: concatStringsSep "/" path) (getDir dir);
-#     in
-#       builtins.attrValues collectFiles;
-# 
-#   nixFiles = dir:
-#     map (file: dir + "/" + file)
-#       (filter (file: hasSuffix ".nix" file) (files dir));
-# 
-# in
-# { imports = nixFiles ./.; }
+let
+  importDir = dir: 
+    let
+      entries = builtins.attrNames (builtins.readDir dir);
+      nixFiles = builtins.filter (name: builtins.match ".+\\.nix$" name != null) entries;
+      dirs = builtins.filter (name: builtins.pathExists (dir + "/" + name) && builtins.isDirectory (dir + "/" + name)) entries;
+    in
+      builtins.listToAttrs (
+        (map (name: { name = name; value = import (dir + "/" + name); }) nixFiles) ++
+        (map (name: { name = name; value = importDir (dir + "/" + name); }) dirs)
+      );
+in
+  importDir ./. 
