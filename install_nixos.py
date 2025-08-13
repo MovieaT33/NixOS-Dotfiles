@@ -144,12 +144,12 @@ def main() -> None:
     vg_name: str = "vg0"
 
     lv_config: dict[str, dict[str, str | None]] = {
-        "nix": {"size": "10G", "mount": "/mnt/nix"},
-        "home": {"size": "1G", "mount": "/mnt/home"},
-        "var": {"size": "0.25G", "mount": "/mnt/var"},
-        "tmp": {"size": "1M", "mount": "/mnt/tmp"},
-        "var_tmp": {"size": "1M", "mount": "/mnt/var/tmp"},
-        "swap": {"size": "0.125G", "mount": None},
+        "nix": {"size": "15G", "mount": "/mnt/nix"},
+        "home": {"size": "5G", "mount": "/mnt/home"},
+        "var": {"size": "1G", "mount": "/mnt/var"},
+        "tmp": {"size": "1G", "mount": "/mnt/tmp"},
+        "var_tmp": {"size": "1G", "mount": "/mnt/var/tmp"},
+        "swap": {"size": "1G", "mount": None},
         "root": {"size": "100%FREE", "mount": "/mnt"}
     }
 
