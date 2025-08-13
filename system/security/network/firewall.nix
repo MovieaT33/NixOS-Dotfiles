@@ -6,14 +6,19 @@
   networking.firewall.allowPing = false;
   networking.firewall.checkReversePath = true;
 
-  networking.firewall.allowedTCPPorts = [ 443 ];
-  networking.firewall.allowedUDPPorts = [ 53 ];
-
-  # networking.firewall.interfaces.enp1s0.allowedTCPPorts = [ ];
-  # networking.firewall.interfaces.enp1s0.allowedUDPPorts = [ ];
+  # networking.firewall.allowedTCPPorts = [ ];
+  # networking.firewall.allowedUDPPorts = [ ];
 
   networking.firewall.extraCommands = ''
-    iptables -A OUTPUT -p tcp --dport 80 -j REJECT
+    iptables -P INPUT DROP
+    iptables -P FORWARD DROP
+    iptables -P OUTPUT ACCEPT
+
+    # Allow DNS
+    iptables -A INPUT -p udp --dport 53 -j ACCEPT
+
+    # Allow HTTPS
+    iptables -A INPUT -m state --state NEW -p tcp --dport 443 -j ACCEPT
   '';
 }
 
