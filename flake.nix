@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs }: let
+  outputs = { self, nixpkgs, home-manager }: let
     system = "x86_64-linux";
   in {
     nixosConfigurations = {
@@ -18,9 +18,7 @@
         inherit system;
         modules = [
           ./profiles/personal/config.nix
-          (import home-manager.nixosModule { 
-            pkgs = nixpkgs.legacyPackages.${system}; 
-          })
+          home-manager.nixosModules.home-manager
         ];
       };
     };
