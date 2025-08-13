@@ -37,6 +37,7 @@
         "virtualisation",
         "vnoremap",
         "xhci",
+        "xwayland",
         "zram",
         "zstd",
         "zswap"
