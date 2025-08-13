@@ -2,21 +2,19 @@ let
   importDir = dir:
     let
       entries = builtins.readDir dir;
+      names = builtins.attrNames entries;
+
+      nixFiles = builtins.filter (n: 
+        entries.${n} == "regular" 
+        && n != "default.nix"
+        && builtins.match ".*\\.nix$" n != null
+      ) names;
+
+      dirs = builtins.filter (n: entries.${n} == "directory") names;
+
+      importedFiles = map (n: { name = builtins.replaceStrings [".nix"] [""] n; value = import (dir + "/" + n); }) nixFiles;
+      importedDirs  = map (n: { name = n; value = importDir (dir + "/" + n); }) dirs;
     in
-      builtins.listToAttrs (
-        [ for name in builtins.attrNames entries
-          : { name = builtins.replaceStrings [".nix"] [""] name;
-              value = import (dir + "/${name}");
-            }
-          | entries.${name} == "regular"
-          && name != "default.nix"
-          && builtins.match ".*\\.nix$" name != null
-        ]
-        ++
-        [ for name in builtins.attrNames entries
-          : { name = name; value = importDir (dir + "/${name}"); }
-          | entries.${name} == "directory"
-        ]
-      );
+      builtins.listToAttrs (importedFiles ++ importedDirs);
 in
   importDir ./. 
