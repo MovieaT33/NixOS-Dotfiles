@@ -28,7 +28,7 @@
         inherit system;
         username = "mvt33";
         homeDirectory = "/home/mvt33";
-        configuration = ./profiles/home.nix;
+        configuration = ./profiles/personal/home.nix;
       };
     };
   };
