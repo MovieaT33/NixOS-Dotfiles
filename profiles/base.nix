@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
-{
-  imports = [ ../system/config.nix ];
-}
+{ imports = [ ../system ]; }

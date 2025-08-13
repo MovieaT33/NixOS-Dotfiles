@@ -19,6 +19,7 @@
         "nixpkgs",
         "nnoremap",
         "nologin",
+        "nvim",
         "oneshot",
         "optimise",
         "pkgs",

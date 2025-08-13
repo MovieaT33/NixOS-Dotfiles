@@ -3,6 +3,10 @@
 {
   programs.neovim = {
     enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+
     configure = {
       customRC = ''
         nnoremap <Tab> <Esc>
@@ -14,4 +18,6 @@
       '';
     };
   };
+
+  environment.variables.EDITOR = "nvim";
 }

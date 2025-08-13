@@ -1,5 +1,5 @@
 {
-  description = "Flake of MovieaT33";
+  description = "A NixOS configuration by MovieaT33";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -11,7 +11,7 @@
     nixosConfigurations = {
       personal = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ ./profiles/personal/config.nix ];
+        modules = [ ./profiles/personal.nix ];
       };
     };
   };
