@@ -6,8 +6,7 @@
   home.stateVersion = "25.05";
 
   imports = [
-    ../../app/config/hyprland.nix
-    ../../app/config/sddm.nix
-    ../../app/profiles/dev.nix
+    ../../app/config/home/hyprland.nix
+    ../../app/profiles/dev-home.nix
   ];
 }

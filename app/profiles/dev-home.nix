@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ../config/neovim.nix
+    ../config/home/neovim.nix
   ];
 }
