@@ -1,30 +1,28 @@
-let
-  importDir = dir:
-    let
-      entries = builtins.readDir dir;
-      names   = builtins.attrNames entries;
+# FIXME: use recursive search for importing
+{
+  imports = [
+    ./modules/boot.nix
+    ./modules/hardware.nix
+    ./modules/locale.nix
+    ./modules/network.nix
+    ./modules/nix.nix
+    ./modules/system.nix
+    ./modules/users.nix
+    ./modules/zram.nix
+    ./modules/zswap.nix
 
-      nixFiles = builtins.filter (n:
-        entries.${n} == "regular"
-        && n != "default.nix"
-        && builtins.match ".*\\.nix$" n != null
-      ) names;
+    ./security/network/firewall.nix
+    ./security/network/ipv6.nix
+    ./security/apparmor.nix
+    ./security/audit.nix
+    ./security/general.nix
+    ./security/hardening.nix
+    ./security/journald.nix
+    ./security/kernel.nix
+    ./security/nix.nix
+    ./security/root.nix
+    ./security/sudo.nix
 
-      dirs = builtins.filter (n: entries.${n} == "directory") names;
-
-      importedFiles = map (n: {
-        name  = builtins.replaceStrings [".nix"] [""] n;
-        value = import (dir + "/" + n);
-      }) nixFiles;
-
-      importedDirs = map (n: {
-        name  = n;
-        value = importDir (dir + "/" + n);
-      }) dirs;
-    in
-      if nixFiles == [] && dirs == [] then
-        import dir
-      else
-        builtins.listToAttrs (importedFiles ++ importedDirs);
-in
-  importDir ./. 
+    ./app.nix
+  ];
+}
