@@ -1,8 +1,5 @@
 { config, ... }:
 
 {
-  imports = [
-    ../base.nix
-    ../../app/profiles/dev.nix
-  ];
+  imports = [ ../base.nix ];
 }

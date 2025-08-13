@@ -7,17 +7,17 @@
     viAlias = true;
     vimAlias = true;
 
-    configure = {
-      customRC = ''
-        nnoremap <Tab> <Esc>
-        vnoremap <Tab> <Esc>
-        inoremap <Tab> <Esc>
+    extraConfig = ''
+      nnoremap <Tab> <Esc>
+      vnoremap <Tab> <Esc>
+      inoremap <Tab> <Esc>
 
-        set number
-        syntax on
-      '';
-    };
+      set number relativenumber
+      syntax on
+    '';
   };
 
-  environment.variables.EDITOR = "nvim";
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 }

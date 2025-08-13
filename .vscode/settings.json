@@ -23,6 +23,7 @@
         "oneshot",
         "optimise",
         "pkgs",
+        "relativenumber",
         "substituters",
         "swapoff",
         "swapon",
