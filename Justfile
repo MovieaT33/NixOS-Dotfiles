@@ -1,4 +1,5 @@
 PROFILE := "personal"
+USER := "mvt33"
 
 alias i := install
 alias u := update
@@ -20,6 +21,7 @@ update:
 # sync nixos configuration with profile
 sync:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
+    home-manager switch --flake .#{{USER}}
 
 # upgrade: runs update then sync
 upgrade: update sync
