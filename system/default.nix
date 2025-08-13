@@ -13,7 +13,11 @@ let
       dirs = builtins.filter (n: entries.${n} == "directory") names;
 
       importedFiles = map (n: { name = builtins.replaceStrings [".nix"] [""] n; value = import (dir + "/" + n); }) nixFiles;
-      importedDirs  = map (n: { name = n; value = importDir (dir + "/" + n); }) dirs;
+
+      importedDirs  = map (n: 
+        let child = importDir (dir + "/" + n); in
+        { name = n; value = child; }
+      ) dirs;
     in
       builtins.listToAttrs (importedFiles ++ importedDirs);
 in
