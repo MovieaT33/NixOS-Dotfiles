@@ -1,11 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    eza
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-  ];
+  environment.systemPackages = with pkgs; [ eza ];
 
   programs.zsh = {
     enable = true;
@@ -19,7 +15,7 @@
       enable = true;
 
       theme = "afowler";
-      plugins = [ "git" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
+      plugins = [ "git" ];
     };
   };
 }
