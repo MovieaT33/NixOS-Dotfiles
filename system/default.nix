@@ -7,6 +7,7 @@
     ./modules/network.nix
     ./modules/nix.nix
     ./modules/system.nix
+    ./modules/tty.nix
     ./modules/users.nix
     ./modules/zram.nix
     ./modules/zswap.nix

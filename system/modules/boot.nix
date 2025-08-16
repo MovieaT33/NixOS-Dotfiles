@@ -15,9 +15,4 @@
     device = "/dev/vda2";
     preLVM = true;
   };
-
-  boot.kernelParams = [
-    "console=tty1"
-    "video=1920x1200"
-  ];
 }
