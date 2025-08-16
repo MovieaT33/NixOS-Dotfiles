@@ -17,7 +17,9 @@
 - gdu
 - ddate
 - dust
+- pv
 - cava
+- glances
 - broot
 - bat-extrashyperfine
 - taskwarrior

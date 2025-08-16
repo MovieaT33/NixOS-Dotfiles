@@ -15,11 +15,7 @@
       enable = true;
 
       theme = "afowler";
-      plugins = [ "git" ];
-      extraPlugins = [
-        pkgs.zsh-autosuggestions
-        pkgs.zsh-syntax-highlighting
-      ];
+      plugins = [ "autosuggestions" "git" ];
     };
   };
 }
