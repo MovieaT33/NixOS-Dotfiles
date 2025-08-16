@@ -13,8 +13,13 @@
 
     ohMyZsh = {
       enable = true;
+
       theme = "afowler";
-      plugins = [ "git" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
+      plugins = [ "git" ];
+      extraPlugins = [
+        pkgs.zsh-autosuggestions
+        pkgs.zsh-syntax-highlighting
+      ];
     };
   };
 }
