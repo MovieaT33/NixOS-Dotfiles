@@ -1,7 +1,12 @@
 { config, pkgs, ... }:
 
+let
+  jetbrainsMonoNerd = pkgs.nerdfonts.override {
+    fonts = [ "JetBrainsMonoNerd" ];
+  };
+in
 {
-  fonts.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  environment.systemPackages = with pkgs; [
+    jetbrainsMonoNerd
   ];
 }
