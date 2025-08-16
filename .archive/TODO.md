@@ -10,6 +10,7 @@
 - rkhunter
 - chkrootkit
 - dccp
+- tmate
 - sctp
 - rds
 - tipc
