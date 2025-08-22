@@ -38,6 +38,7 @@
         "swapoff",
         "swapon",
         "syncookies",
+        "sysstat",
         "timesyncd",
         "tmpfiles",
         "togglefloating",

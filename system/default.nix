@@ -13,8 +13,10 @@
     ./modules/zram.nix
     ./modules/zswap.nix
 
+    ./security/network/dns.nix
     ./security/network/firewall.nix
     ./security/network/ipv6.nix
+    ./security/antivirus.nix
     ./security/apparmor.nix
     ./security/audit.nix
     ./security/general.nix
