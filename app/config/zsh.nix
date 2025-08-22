@@ -9,6 +9,8 @@
       l = "exa -l --icons";
       ls = "exa -la --icons";
 
+      v = "nvim";
+
       # NixOS config
       s = "cd /etc/nixos";  # system dir
       j = "just";
