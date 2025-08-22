@@ -12,13 +12,11 @@
 
   outputs = { self, nixpkgs, home-manager }: let
     system = "x86_64-linux";
-    modulesPath = "${nixpkgs}/nixos/modules";
   in {
     nixosConfigurations = {
       personal = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          "${modulesPath}/profiles/hardened.nix"
           ./profiles/personal/config.nix
           home-manager.nixosModules.home-manager
         ];
