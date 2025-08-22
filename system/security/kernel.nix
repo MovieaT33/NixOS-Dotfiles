@@ -12,7 +12,7 @@
     "kernel.ctrl-alt-del" = 0;
     "kernel.dmesg_restrict" = 1;
     "kernel.kptr_restrict" = 2;
-    "kernel.modules_disabled" = 1;
+    # "kernel.modules_disabled" = 1;
     "kernel.perf_event_paranoid" = 3;
     "kernel.randomize_va_space" = 2;
     "kernel.sysrq" = 0;
