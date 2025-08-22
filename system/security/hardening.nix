@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  boot.kernelPackages = pkgs.linux_6_12_hardened;
+  boot.kernelPackages = pkgs.linuxKernel.packagesFor pkgs.linux_6_12_hardened;
 
   systemd.tmpfiles.rules = [
     "d /etc/nixos 0750 root wheel -"
