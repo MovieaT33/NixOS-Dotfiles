@@ -6,5 +6,5 @@
     ./wofi.nix
   ];
 
-  home.file.".config/hypr/hyprland.conf".source = ../dotfiles/hyprland.conf;
+  home.file.".config/hypr/hyprland.conf".source = ../dotfiles/hypr/hyprland.conf;
 }
