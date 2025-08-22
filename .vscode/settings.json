@@ -47,6 +47,7 @@
         "timesyncd",
         "tmpfiles",
         "togglefloating",
+        "Userns",
         "vfat",
         "vgchange",
         "virtio",

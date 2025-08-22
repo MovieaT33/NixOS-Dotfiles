@@ -4,10 +4,6 @@
   environment.memoryAllocator.provider = "scudo";
   environment.variables.SCUDO_OPTIONS = "ZeroContents=1";
 
-  # Enable various kernel hardening features
-  security.lockKernelModules = true;
-  security.unprivilegedUsernsClone = config.virtualisation.containers.enable;
-
   boot.kernelParams = [
     # Slab/slub sanity checks, redzoning, and poisoning
     "slub_debug=FZP"
