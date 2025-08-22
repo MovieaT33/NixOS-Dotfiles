@@ -1,11 +1,13 @@
+# Config
 PROFILE := "personal"
 
 # Aliases
 alias i := install
-alias u := update
+
 alias s := sync
-alias v := verify
+alias u := update
 alias g := upgrade
+alias v := verify
 alias c := clean
 
 default: upgrade
@@ -14,21 +16,21 @@ default: upgrade
 install:
     ./install_nixos.py
 
-# update the repository
-update:
+# sync local repo with remote
+sync:
     sudo git fetch --depth 1
     sudo git reset --hard origin/main
 
-# sync nixos configuration with profile
-sync:
+# sync nixos with profile
+update:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
+
+# upgrade: runs update then sync
+upgrade: sync update
 
 # verify nix store integrity and repair if needed
 verify:
     sudo nix-store --verify --check-contents --repair
-
-# upgrade: runs update then sync
-upgrade: update sync
 
 # clean nix garbage cache
 clean:
