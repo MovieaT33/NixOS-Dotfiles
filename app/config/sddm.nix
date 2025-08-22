@@ -9,4 +9,6 @@
       wayland.enable = true;
     };
   };
+
+  # TODO: change resolution
 }
