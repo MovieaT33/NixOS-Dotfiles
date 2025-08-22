@@ -10,8 +10,9 @@
       ls = "exa -la --icons";
 
       # NixOS config
-      s = "cd /etc/nixos";  # System
+      s = "cd /etc/nixos";  # system dir
       j = "just";
+
       sj = "cd /etc/nixos; just";
     };
 

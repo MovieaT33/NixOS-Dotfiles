@@ -1,5 +1,6 @@
 **Packages**:
 
+- wlr-randr
 - linpeas
 - links
 - oh-my-posh
