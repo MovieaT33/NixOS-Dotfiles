@@ -1,0 +1,22 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode",
+    "custom/launcher"
+  ],
+  "modules-center": [],
+  "modules-right": [
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
+  "font": "JetBrainsMono Nerd Font 10",
+  "bar": {
+    "height": 28,
+    "background": "#222222",
+    "border-color": "#000000",
+    "border-size": 1
+  }
+}
