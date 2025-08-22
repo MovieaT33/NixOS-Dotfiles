@@ -4,6 +4,7 @@
 - links
 - oh-my-posh
 - pipes-rs
+- krusader
 - systemd-analyze security
 - lynis
 - auditd
