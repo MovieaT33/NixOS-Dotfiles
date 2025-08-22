@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ eza ];
+  imports = [ ./eza.nix ]; 
 
   programs.zsh = {
     enable = true;
