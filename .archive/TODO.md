@@ -7,6 +7,7 @@
 - krusader
 - systemd-analyze security
 - lynis
+- dnslookup
 - auditd
 - lunarfetch
 - rkhunter
