@@ -36,6 +36,7 @@
         "nnoremap",
         "nologin",
         "nvim",
+        "oneline",
         "oneshot",
         "optimise",
         "pkgs",
