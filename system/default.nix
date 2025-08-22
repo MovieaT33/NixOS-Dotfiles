@@ -24,6 +24,7 @@
     ./security/nix.nix
     ./security/root.nix
     ./security/sudo.nix
+    ./security/sysstat.nix
 
     ./app.nix
   ];
