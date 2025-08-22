@@ -3,5 +3,8 @@
 {
   home.packages = with pkgs; [ kitty ];
 
-  home.file.".config/kitty/kitty.conf".source = ../dotfiles/.config/kitty/kitty.conf;
+  home.file.".config/kitty" = {
+    source = ../dotfiles/.config/kitty;
+    recursive = true;
+  };
 }
