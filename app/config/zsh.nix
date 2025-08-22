@@ -7,7 +7,7 @@
     enable = true;
     shellAliases = {
       l = "exa -l --icons";
-      ls = "exa -la --icons";
+      ls = "exa -laGhh --icons --group-directories-first --octal-permissions";
 
       v = "nvim";
 

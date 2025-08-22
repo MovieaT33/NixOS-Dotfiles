@@ -11,6 +11,7 @@ alias g := upgrade
 alias r := repair
 alias c := clean
 
+# upgrade
 default: upgrade
 
 # shows the latest git commit
