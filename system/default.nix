@@ -24,7 +24,7 @@
     ./security/boot.nix
     ./security/cis.nix
     ./security/general.nix
-    # ./security/hardened.nix
+    # ./security/profile/hardened.nix
     ./security/hardening.nix
     ./security/journald.nix
     ./security/kernel.nix
