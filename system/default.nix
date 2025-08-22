@@ -22,7 +22,6 @@
     ./security/audit.nix
     ./security/boot.nix
     ./security/general.nix
-    ./hardened-profile.nix
     ./security/hardening.nix
     ./security/journald.nix
     ./security/kernel.nix
