@@ -5,13 +5,16 @@
   "modules-left": [],
   "modules-center": [],
   "modules-right": [
+    "network",
+    "cpu",
+    "memory",
     "battery",
     "clock"
   ],
 
   "font": "JetBrainsMono Nerd Font 10",
   "bar": {
-    "width": 28,
+    "width": 32,
     "background": "#222222",
     "border-color": "#000000",
     "border-size": 1
