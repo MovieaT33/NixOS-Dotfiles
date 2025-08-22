@@ -21,6 +21,7 @@
     ./security/hardening.nix
     ./security/journald.nix
     ./security/kernel.nix
+    ./security/lynis.nix
     ./security/nix.nix
     ./security/root.nix
     ./security/sudo.nix
