@@ -21,6 +21,7 @@
       plugins = [ "git" ];
     };
 
+    # TODO: add
     # interactiveShellInit = ''
     #   command-not-found
     # '';
