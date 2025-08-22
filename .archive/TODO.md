@@ -7,6 +7,7 @@
 - systemd-analyze security
 - lynis
 - auditd
+- lunarfetch
 - rkhunter
 - chkrootkit
 - dccp
