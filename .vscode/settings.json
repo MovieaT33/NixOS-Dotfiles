@@ -7,6 +7,7 @@
         "cryptsetup",
         "dmask",
         "dport",
+        "drun",
         "fetchurl",
         "fmask",
         "hardlinks",
