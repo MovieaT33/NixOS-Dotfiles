@@ -1,4 +1,4 @@
-# FIXME: use recursive search for importing
+# TODO: use recursive search for importing
 {
   imports = [
     ./modules/boot.nix
@@ -24,7 +24,6 @@
     ./security/boot.nix
     ./security/cis.nix
     ./security/general.nix
-    # ./security/profile/hardened.nix
     ./security/hardening.nix
     ./security/journald.nix
     ./security/kernel.nix

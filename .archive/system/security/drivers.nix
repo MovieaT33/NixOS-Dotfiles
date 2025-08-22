@@ -8,7 +8,6 @@
     "cramfs"
     "freevxfs"
     "jffs2"
-    "hfs"
     "hfsplus"
     "udf"
   ];

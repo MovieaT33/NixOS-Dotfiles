@@ -1,6 +1,8 @@
 { config, ... }:
 
 {
+  security.protectKernelImage = true;
+
   # Lynis hardening profile
   boot.kernel.sysctl = {
     "dev.tty.ldisc_autoload" = 0;
