@@ -1,0 +1,5 @@
+{ config, ... }:
+
+{
+  systemd.enableEmergencyMode = false;
+}

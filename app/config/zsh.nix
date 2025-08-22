@@ -17,5 +17,9 @@
       theme = "afowler";
       plugins = [ "git" ];
     };
+
+    # interactiveShellInit = ''
+    #   command-not-found
+    # '';
   };
 }

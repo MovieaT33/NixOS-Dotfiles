@@ -2,6 +2,7 @@
 {
   imports = [
     ./modules/boot.nix
+    ./modules/docs.nix
     ./modules/fonts.nix
     ./modules/hardware.nix
     ./modules/locale.nix
@@ -19,6 +20,7 @@
     ./security/antivirus.nix
     ./security/apparmor.nix
     ./security/audit.nix
+    ./security/boot.nix
     ./security/general.nix
     ./hardened-profile.nix
     ./security/hardening.nix
