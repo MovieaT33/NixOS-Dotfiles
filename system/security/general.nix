@@ -1,6 +1,7 @@
 { config, ... }:
 
 {
-  security.allowSimultaneousMultithreading = false;
-  security.virtualisation.flushL1DataCache = "always";
+  # You may want to disable SMT if you are concerned about side-channel attacks
+  # but it may impact performance on some workloads
+  # security.allowSimultaneousMultithreading = false;
 }

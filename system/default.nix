@@ -32,6 +32,7 @@
     ./security/root.nix
     ./security/sudo.nix
     ./security/sysstat.nix
+    ./security/virtualisation.nix
 
     ./app.nix
   ];

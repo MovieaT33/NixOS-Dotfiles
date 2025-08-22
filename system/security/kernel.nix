@@ -2,6 +2,7 @@
 
 {
   security.protectKernelImage = true;
+  security.forcePageTableIsolation = true;
 
   # Lynis hardening profile
   boot.kernel.sysctl = {

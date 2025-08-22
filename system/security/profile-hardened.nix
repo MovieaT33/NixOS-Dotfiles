@@ -1,3 +1,4 @@
+# TODO: extract configuration options into separate files
 {
   # Use the hardened memory allocator (scudo) with zeroing of allocated memory
   environment.memoryAllocator.provider = "scudo";
@@ -5,11 +6,7 @@
 
   # Enable various kernel hardening features
   security.lockKernelModules = true;
-  security.allowSimultaneousMultithreading = false;
-  security.forcePageTableIsolation = true;
   security.unprivilegedUsernsClone = config.virtualisation.containers.enable;
-  security.virtualisation.flushL1DataCache = "always";
-  security.apparmor.killUnconfinedConfinables = true;
 
   boot.kernelParams = [
     # Slab/slub sanity checks, redzoning, and poisoning
