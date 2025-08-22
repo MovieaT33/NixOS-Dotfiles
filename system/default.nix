@@ -2,6 +2,7 @@
 {
   imports = [
     ./modules/boot.nix
+    ./modules/bootloader.nix
     ./modules/docs.nix
     ./modules/fonts.nix
     ./modules/hardware.nix
@@ -21,7 +22,9 @@
     ./security/apparmor.nix
     ./security/audit.nix
     ./security/boot.nix
+    ./security/cis.nix
     ./security/general.nix
+    # ./security/hardened.nix
     ./security/hardening.nix
     ./security/journald.nix
     ./security/kernel.nix

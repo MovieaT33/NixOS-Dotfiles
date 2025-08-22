@@ -1,6 +1,7 @@
 { config, ... }:
 
 {
+  # Lynis hardening profile
   boot.kernel.sysctl = {
     "dev.tty.ldisc_autoload" = 0;
     "fs.protected_fifos" = 2;

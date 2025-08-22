@@ -1,8 +1,10 @@
 PROFILE := "personal"
 
+# Aliases
 alias i := install
 alias u := update
 alias s := sync
+alias v := verify
 alias g := upgrade
 alias c := clean
 
@@ -21,10 +23,14 @@ update:
 sync:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
 
+# verify nix store integrity and repair if needed
+verify:
+    sudo nix-store --verify --check-contents --repair
+
 # upgrade: runs update then sync
 upgrade: update sync
 
-# FIXME: clean nix garbage cache
+# clean nix garbage cache
 clean:
     sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system
     sudo nix-collect-garbage -d
