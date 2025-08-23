@@ -1,3 +1,4 @@
+# Qemu profile
 { ... }:
 
 {

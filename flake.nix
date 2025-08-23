@@ -1,5 +1,5 @@
 {
-  description = "A NixOS configuration by MovieaT33";
+  description = "A NixOS configuration by MovieaT33 - see more at https://github.com/MovieaT33/NixOS-Dotfiles";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

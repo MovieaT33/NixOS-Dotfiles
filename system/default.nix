@@ -4,7 +4,7 @@
     ./modules/boot/boot.nix
     ./modules/boot/bootloader.nix
     ./modules/boot/hardware.nix
-    ./modules/boot/qemu.nix
+    ./modules/boot/vm.nix
 
     ./modules/docs.nix
     ./modules/fonts.nix
@@ -26,7 +26,7 @@
     ./security/audit.nix
     ./security/boot.nix
     ./security/cis.nix
-    ./security/general.nix
+    ./security/cpu.nix
     ./security/hardening.nix
     ./security/journald.nix
     ./security/kernel.nix

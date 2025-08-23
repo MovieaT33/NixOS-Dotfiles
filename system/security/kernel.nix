@@ -1,9 +1,12 @@
-{ config, ... }:
+{ pkgs, ... }:
 
 {
-  security.protectKernelImage = true;
-  security.lockKernelModules = true;
-  security.forcePageTableIsolation = true;
+  boot.kernelPackages = pkgs.linuxPackages_hardened;
+  security = {
+    protectKernelImage = true;
+    lockKernelModules = true;
+    forcePageTableIsolation = true;
+  };
 
   # Lynis hardening profile
   boot.kernel.sysctl = {

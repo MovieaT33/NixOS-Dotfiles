@@ -1,6 +1,10 @@
 **Packages**:
 
+# TODO: zsh vim
+# TODO: shred
+
 - GDB
+- atuin
 - wlr-randr
 - linpeas
 - links

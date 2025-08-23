@@ -1,7 +1,7 @@
-{ config, ... }:
+{ ... }:
 
 {
-  # FIXME: check if these modules are actually available on the system
+  # FIXME: check if these settings are actually work on the system
   boot.extraModprobeConfig = ''
     install tipc true
     install sctp true

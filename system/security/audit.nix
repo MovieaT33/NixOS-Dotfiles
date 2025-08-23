@@ -1,6 +1,8 @@
-{ config, ... }:
+{ ... }:
 
 {
-  security.audit.enable = true;
-  security.auditd.enable = true;
+  security = {
+    audit.enable = true;
+    auditd.enable = true;
+  };
 }

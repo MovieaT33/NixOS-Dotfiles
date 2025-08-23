@@ -1,4 +1,4 @@
-# Config
+# Vars
 PROFILE := "personal"
 
 # Aliases
