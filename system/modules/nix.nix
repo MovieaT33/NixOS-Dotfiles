@@ -1,14 +1,20 @@
 { system, ... }:
 
 {
-  nix.settings.sandbox = true;
+  nix = {
+    settings.sandbox = true;
 
-  nix.optimise.automatic = true;
-  nix.settings.auto-optimise-store = true;
+    optimise.automatic = true;
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
 
-  nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 7d";
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 7d";
+    };
+  };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.hostPlatform = system;
 }

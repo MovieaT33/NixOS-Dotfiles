@@ -1,9 +1,12 @@
-{ ... }:
+{ stateVersion, ... }:
 
 {
-  system.stateVersion = "25.05";
+  system = {
+    stateVersion = stateVersion;
 
-  # Auto upgrade
-  system.autoUpgrade.enable = true;
-  system.autoUpgrade.allowReboot = false;
+    autoUpgrade = {
+      enable = true;
+      allowReboot = false;
+    };
+  };
 }

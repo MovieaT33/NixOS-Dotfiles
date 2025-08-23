@@ -12,6 +12,7 @@
 
   outputs = { self, nixpkgs, home-manager }: let
     system = "x86_64-linux";
+    stateVersion = "25.05";
   in {
     nixosConfigurations = {
       personal = nixpkgs.lib.nixosSystem {
@@ -20,7 +21,10 @@
           ./profiles/personal/config.nix
           home-manager.nixosModules.home-manager
         ];
-        specialArgs = { inherit system; };
+        specialArgs = {
+          inherit system;
+          inherit stateVersion;
+        };
       };
     };
   };

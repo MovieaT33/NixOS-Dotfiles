@@ -14,10 +14,10 @@
       # NixOS dotfiles
       d = "cd /etc/nixos";
       j = "just";
-      sj = "cd /etc/nixos; just";
+      dj = "cd /etc/nixos; just";
 
-      rb = "sudo reboot now";
-      sh = "sudo shutdown now";
+      r = "sudo reboot now";
+      s = "sudo shutdown now";
     };
 
     ohMyZsh = {
