@@ -3,6 +3,9 @@
 # TODO: zsh vim
 # TODO: shred
 
+- remove config var from Nix configs
+
+- tmux
 - GDB
 - atuin
 - wlr-randr

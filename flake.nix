@@ -18,8 +18,7 @@
       personal = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit system;
-          inherit stateVersion;
+          inherit system stateVersion;
         };
         modules = [
           ./profiles/personal/config.nix

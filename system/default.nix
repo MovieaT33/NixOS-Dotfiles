@@ -1,4 +1,4 @@
-# TODO: use recursive search for importing
+# TODO: Use recursive search for importing
 {
   imports = [
     ./modules/boot/boot.nix
