@@ -20,6 +20,7 @@
           ./profiles/personal/config.nix
           home-manager.nixosModules.home-manager
         ];
+        specialArgs = { inherit system; };
       };
     };
   };

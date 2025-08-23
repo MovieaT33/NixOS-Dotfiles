@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ../../app/config/zsh.nix ];

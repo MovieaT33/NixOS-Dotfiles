@@ -11,11 +11,13 @@
 
       v = "nvim";
 
-      # NixOS config
-      s = "cd /etc/nixos";  # system dir
+      # NixOS dotfiles
+      d = "cd /etc/nixos";
       j = "just";
-
       sj = "cd /etc/nixos; just";
+
+      rb = "sudo reboot now";
+      sh = "sudo shutdown now";
     };
 
     ohMyZsh = {

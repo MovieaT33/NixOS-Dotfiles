@@ -12,19 +12,18 @@
     ];
 
     extraConfig = ''
-      nnoremap <Tab> <Esc>
-      vnoremap <Tab> <Esc>
-      inoremap <Tab> <Esc>
-
       set number relativenumber
-
       syntax enable
       colorscheme gruvbox
 
-      hi Normal guibg=NONE
+      hi Normal     guibg=NONE
       hi StatusLine guibg=NONE
-      hi LineNr guibg=NONE
-      hi VertSplit guibg=NONE
+      hi LineNr     guibg=NONE
+      hi VertSplit  guibg=NONE
+
+      nnoremap <Tab> <Esc>
+      vnoremap <Tab> <Esc>
+      inoremap <Tab> <Esc>
     '';
   };
 
