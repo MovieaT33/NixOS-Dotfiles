@@ -1,11 +1,11 @@
 # TODO: use recursive search for importing
 {
   imports = [
-    ./modules/boot.nix
-    ./modules/bootloader.nix
+    ./modules/boot/boot.nix
+    ./modules/boot/bootloader.nix
+    ./modules/boot/hardware.nix
     ./modules/docs.nix
     ./modules/fonts.nix
-    ./modules/hardware.nix
     ./modules/locale.nix
     ./modules/network.nix
     ./modules/nix.nix
