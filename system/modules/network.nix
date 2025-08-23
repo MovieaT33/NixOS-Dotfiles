@@ -6,5 +6,5 @@
     wireless.enable = true;
     useNetworkd = true;
     # useDHCP = true;
-  }
+  };
 }
