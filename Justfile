@@ -35,7 +35,7 @@ update:
 
 # fast update
 fast-update:
-    sudo nixos-rebuild switch --flake .#{{PROFILE}} --profile
+    sudo nixos-rebuild switch --flake .#{{PROFILE}} --no-reexec
 
 # runs update then sync
 upgrade: sync update version
