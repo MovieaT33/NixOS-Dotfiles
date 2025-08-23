@@ -9,5 +9,5 @@
     ./kitty.nix
   ];
 
-  home.file.".config/hypr/hyprland.conf".source = ../dotfiles/.config/hypr/hyprland.conf;
+  home.file.".config/hypr/hyprland.conf".source = ../dotfiles/hypr/hyprland.conf;
 }

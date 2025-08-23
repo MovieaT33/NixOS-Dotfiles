@@ -35,7 +35,7 @@ def partition_disk(disk: str, efi_start: str, efi_end: str) -> None:
 
 def format_efi(efi_part: str) -> None:
     info(f"Formatting EFI partition {efi_part}...")
-    run(f"mkfs.fat -F32 {efi_part}")
+    run(f"mkfs.fat -F 32 {efi_part}")
 
 
 def setup_luks(luks_part: str, crypt_name: str) -> str:

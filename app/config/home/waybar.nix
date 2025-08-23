@@ -3,5 +3,5 @@
 {
   home.packages = with pkgs; [ waybar ];
 
-  home.file.".config/waybar/config.jsonc".source = ../dotfiles/.config/waybar/config.jsonc;
+  home.file.".config/waybar/config.jsonc".source = ../dotfiles/waybar/config.jsonc;
 }
