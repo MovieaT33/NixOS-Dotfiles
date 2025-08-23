@@ -4,14 +4,14 @@ PROFILE := "personal"
 # Aliases
 alias i := install
 
-alias v  := version
-alias s  := sync
-alias u  := update
-alias fu := fast-update
-alias g  := upgrade
-alias fg := fast-upgrade
-alias r  := repair
-alias c  := clean
+alias v := version
+alias s := sync
+alias u := update
+alias U := fast-update
+alias g := upgrade
+alias G := fast-upgrade
+alias r := repair
+alias c := clean
 
 # upgrade
 default: upgrade
