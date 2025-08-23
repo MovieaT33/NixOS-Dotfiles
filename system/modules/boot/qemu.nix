@@ -4,19 +4,20 @@
   boot = {
     initrd = {
       availableKernelModules = [
-        "virtio_net"
-        "virtio_pci"
-        "virtio_mmio"
-        "virtio_blk"
-        "virtio_scsi"
-        "9p"
-        "9pnet_virtio"
+        "virtio_blk"      # block device (disk)
+        "virtio_pci"      # peripheral component interconnect
+        # "virtio_mmio"   # memory mapped i/o
+        # "virtio_scsi"   # small computer system interface
+        "virtio_net"      # virtio network interface
+
+        # "9p"            # 9p filesystem
+        # "9pnet_virtio"  # network transport for 9p
       ];
       kernelModules = [
-        "virtio_balloon"
-        "virtio_console"
-        "virtio_rng"
-        "virtio_gpu"
+        "virtio_balloon"  # dynamic RAM management for VM
+        "virtio_gpu"      # virtual GPU
+        "virtio_rng"      # virtual random number generator
+        "virtio_console"  # virtual console for communication with the hypervisor
       ];
     };
     kernelModules = [ "kvm-intel" ];
