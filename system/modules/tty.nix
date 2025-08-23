@@ -4,7 +4,7 @@
   boot = {
     kernelParams = [
       "video=1920x1200"
-      "console=tty2"
+      # "console=tty0"
       "quiet"
       "log_level=0"
       "udev.log_level=0"
