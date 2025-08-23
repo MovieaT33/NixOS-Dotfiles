@@ -4,12 +4,14 @@ PROFILE := "personal"
 # Aliases
 alias i := install
 
-alias v := version
-alias s := sync
-alias u := update
-alias g := upgrade
-alias r := repair
-alias c := clean
+alias v  := version
+alias s  := sync
+alias u  := update
+alias fu := fast-update
+alias g  := upgrade
+alias fg := fast-upgrade
+alias r  := repair
+alias c  := clean
 
 # upgrade
 default: upgrade
@@ -31,8 +33,15 @@ sync:
 update:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
 
-# upgrade: runs update then sync
+# fast update
+fast-update:
+    sudo nixos-rebuild switch --flake .#{{PROFILE}} --profile
+
+# runs update then sync
 upgrade: sync update version
+
+# fast upgrade
+fast-upgrade: sync fast-update version
 
 # verify nix store integrity and repair if needed
 repair:

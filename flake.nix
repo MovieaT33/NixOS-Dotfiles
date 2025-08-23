@@ -17,14 +17,14 @@
     nixosConfigurations = {
       personal = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [
-          ./profiles/personal/config.nix
-          home-manager.nixosModules.home-manager
-        ];
         specialArgs = {
           inherit system;
           inherit stateVersion;
         };
+        modules = [
+          ./profiles/personal/config.nix
+          home-manager.nixosModules.home-manager
+        ];
       };
     };
   };
