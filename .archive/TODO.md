@@ -1,5 +1,6 @@
 **Packages**:
 
+- GDB
 - wlr-randr
 - linpeas
 - links

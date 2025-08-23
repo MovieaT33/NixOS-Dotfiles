@@ -4,6 +4,8 @@
     ./modules/boot/boot.nix
     ./modules/boot/bootloader.nix
     ./modules/boot/hardware.nix
+    ./modules/boot/qemu.nix
+
     ./modules/docs.nix
     ./modules/fonts.nix
     ./modules/locale.nix
@@ -18,6 +20,7 @@
     ./security/network/dns.nix
     ./security/network/firewall.nix
     ./security/network/ipv6.nix
+
     ./security/antivirus.nix
     ./security/apparmor.nix
     ./security/audit.nix

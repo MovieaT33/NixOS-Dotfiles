@@ -4,7 +4,9 @@
   boot = {
     initrd = {
       availableKernelModules = [
-        "ahci" "xhci_pci" "virtio_pci" "sr_mod" "virtio_blk"
+        "ahci"
+        # "xhci_pci"
+        # "sr_mod"
       ];
       kernelModules = [ "dm-snapshot" ];
 
@@ -13,7 +15,6 @@
         preLVM = true;
       };
     };
-    kernelModules = [ "kvm-intel" ];
     # extraModulePackages = [ ];
   };
 }

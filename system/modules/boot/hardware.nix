@@ -1,11 +1,6 @@
-{ modulesPath, ... }:
+{ ... }:
 
 {
-  imports = [
-    (modulesPath + "/profiles/qemu-guest.nix")  # FIXME: extract into a new separated module
-  ];
-
-  # Filesystem
   fileSystems = {
     "/" = {
       device = "/dev/mapper/vg0-root";
