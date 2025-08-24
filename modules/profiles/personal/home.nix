@@ -1,9 +1,14 @@
-{ config, ... }:
+{ stateVersion, ... }:
 
+let
+  username = "mvt33";
+in
 {
-  home.username = "mvt33";
-  home.homeDirectory = "/home/mvt33";
-  home.stateVersion = "25.05";
+  home = {
+    inherit stateVersion;
+    username = username;
+    homeDirectory = "/home/${username}";
+  };
 
   imports = [
     ../../app/profiles/dev-home.nix

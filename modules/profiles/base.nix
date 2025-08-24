@@ -1,1 +1,2 @@
-{ config, ... }: { imports = [ ../system/default.nix ]; }
+{ ... }:
+{ imports = [ ../system/default.nix ]; }

@@ -1,7 +1,5 @@
-{ config, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-    ../config/tldr.nix
-  ];
+  environment.systemPackages = with pkgs; [ tldr ];
 }

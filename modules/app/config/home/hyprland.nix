@@ -9,5 +9,10 @@
     ./kitty.nix
   ];
 
-  home.file.".config/hypr/hyprland.conf".source = ../dotfiles/hypr/hyprland.conf;
+  home = {
+    file.".config/hypr" = {
+      source = ../dotfiles/hypr;
+      recursive = true;
+    };
+  };
 }

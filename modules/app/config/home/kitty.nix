@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ kitty ];
-
-  home.file.".config/kitty" = {
-    source = ../dotfiles/kitty;
-    recursive = true;
+  home = {
+    packages = with pkgs; [ kitty ];
+    file.".config/kitty" = {
+      source = ../dotfiles/kitty;
+      recursive = true;
+    };
   };
 }

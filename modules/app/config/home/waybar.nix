@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ waybar ];
-
-  home.file.".config/waybar/config.jsonc".source = ../dotfiles/waybar/config.jsonc;
+  home = {
+    packages = with pkgs; [ waybar ];
+    file.".config/waybar/config.jsonc".source = ../dotfiles/waybar/config.jsonc;
+  };
 }

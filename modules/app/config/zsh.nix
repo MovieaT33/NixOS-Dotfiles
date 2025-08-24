@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 {
   imports = [ ./eza.nix ]; 
@@ -18,7 +18,7 @@
       r = "sudo reboot now";
       s = "sudo shutdown now";
 
-      # NixOS dotfiles
+      # Dotfiles
       d =  "cd /etc/nixos";
       j =  "just";
       dj = "cd /etc/nixos; just";
@@ -30,10 +30,5 @@
       theme = "afowler";
       plugins = [ "git" ];
     };
-
-    # TODO: add
-    # interactiveShellInit = ''
-    #   command-not-found
-    # '';
   };
 }

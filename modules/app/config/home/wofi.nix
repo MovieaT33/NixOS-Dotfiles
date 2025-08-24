@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ wofi ];
-
-  home.file.".config/wofi/style.css".source = ../dotfiles/wofi/style.css;
+  home = {
+    packages = with pkgs; [ wofi ];
+    file.".config/wofi/style.css".source = ../dotfiles/wofi/style.css;
+  };
 }

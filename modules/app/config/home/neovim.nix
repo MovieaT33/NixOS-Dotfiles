@@ -1,16 +1,20 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+
+    # Aliases
     viAlias = true;
     vimAlias = true;
 
+    # Plugins
     plugins = with pkgs.vimPlugins; [
       gruvbox
     ];
 
+    # Config
     extraConfig = ''
       set number relativenumber
       syntax enable
@@ -27,6 +31,7 @@
     '';
   };
 
+  # FIXME: Check if this really work correctly
   home.sessionVariables = {
     EDITOR = "nvim";
   };

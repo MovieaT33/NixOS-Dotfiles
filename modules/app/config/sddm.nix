@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 {
   services.xserver.enable = true;
@@ -10,5 +10,5 @@
     };
   };
 
-  # TODO: change resolution
+  # TODO: Change resolution
 }
