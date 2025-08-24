@@ -19,6 +19,8 @@ def info(message: str) -> None:
 CMDS_HISTORY: list[str] = []
 
 
+# region [ Functions ]
+
 def run(cmd: str) -> None:
     print(f"\033[1m{cmd}\033[0m")
     CMDS_HISTORY.append(cmd)
@@ -133,23 +135,25 @@ def cleanup(vg_name: str, crypt_name: str) -> None:
     input("Press Enter to reboot system...")
     run("reboot")
 
+# endregion
+
 
 def main() -> None:
-    disk: str = "/dev/vda"
+    disk: str = "/dev/vda"          # Virtual disk
     efi_start: str = "1MiB"
     efi_end: str = "513MiB"
-    efi_part: str = f"{disk}1"
-    luks_part: str = f"{disk}2"
+    efi_part: str = f"{disk}1"      # /dev/vda1
+    luks_part: str = f"{disk}2"     # /dev/vda2
     crypt_name: str = "cryptroot"
     vg_name: str = "vg0"
 
     lv_config: dict[str, dict[str, str | None]] = {
         "nix": {"size": "15G", "mount": "/mnt/nix"},
-        "home": {"size": "5G", "mount": "/mnt/home"},
-        "var": {"size": "1G", "mount": "/mnt/var"},
-        "tmp": {"size": "1G", "mount": "/mnt/tmp"},
-        "var_tmp": {"size": "1G", "mount": "/mnt/var/tmp"},
-        "swap": {"size": "1G", "mount": None},
+        "home": {"size": "1G", "mount": "/mnt/home"},
+        "var": {"size": "0.5G", "mount": "/mnt/var"},
+        "tmp": {"size": "2M", "mount": "/mnt/tmp"},
+        "var_tmp": {"size": "1M", "mount": "/mnt/var/tmp"},
+        "swap": {"size": "64M", "mount": None},
         "root": {"size": "100%FREE", "mount": "/mnt"}
     }
 
