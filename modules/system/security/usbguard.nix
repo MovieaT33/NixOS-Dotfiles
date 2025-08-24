@@ -1,6 +1,10 @@
 { ... }:
 
 {
-  services.usbguard.enable = true;
-  # TODO: Add rules
+  services.usbguard = {
+    enable = true;
+    rules = ''
+      deny with-interface all
+    '';
+  };
 }
