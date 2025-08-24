@@ -44,6 +44,7 @@
         "pnet",
         "reexec",
         "relativenumber",
+        "resizeactive",
         "substituters",
         "swapoff",
         "swapon",
