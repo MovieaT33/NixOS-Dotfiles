@@ -3,6 +3,8 @@
 # TODO: zsh vim
 # TODO: shred
 
+- efibootmgr, mokutil
+- bastet vitetris
 - remove config var from Nix configs
 
 - tmux
