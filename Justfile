@@ -1,23 +1,23 @@
 # TODO: Check fast variants of update and upgrade
-# Vars
+# Variables
 PROFILE := "personal"
 
 # Aliases
-alias i := install
-
 alias v := version
+alias i := install
 alias s := sync
 alias u := update
 alias U := fast-update
-alias g := upgrade
-alias G := fast-upgrade
 alias r := repair
 alias c := clean
+alias l := list
+alias g := upgrade
+alias G := fast-upgrade
 
-# upgrade
+# default target: `upgrade`
 default: upgrade
 
-# shows the latest git commit
+# shows the latest repository commit
 version:
     sudo git log -1 --oneline
 
@@ -25,30 +25,34 @@ version:
 install:
     ./install_nixos.py
 
-# sync local repo with remote
+# sync local repository with remote
 sync:
     sudo git fetch --depth 1
     sudo git reset --hard origin/main
 
-# sync nixos with profile
+# rebuild nixos with current profile
 update:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
 
-# fast update
+# fast update: rebuild without re-exec
 fast-update:
     sudo nixos-rebuild switch --flake .#{{PROFILE}} --no-reexec
 
-# runs update then sync
-upgrade: sync update version
-
-# fast upgrade
-fast-upgrade: sync fast-update version
-
-# verify nix store integrity and repair if needed
+# verify nix store integrity and repair if necessary
 repair:
     sudo nix-store --verify --check-contents --repair
 
-# clean nix garbage cache
+# clean old generations and garbage
 clean:
     sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system
     sudo nix-collect-garbage -d
+
+# list all system generations (profiles)
+list:
+    sudo nix-env -p /nix/var/nix/profiles/system --list-generations
+
+# sync, update, then show current version
+upgrade: sync update version
+
+# sync, fast update, then show current version
+fast-upgrade: sync fast-update version
