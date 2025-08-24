@@ -29,15 +29,17 @@ sync:
     sudo git fetch --depth 1
     sudo git reset --hard origin/main
 
-# rebuild nixos with current profile
+# rebuild NixOS with current profile (updates flake.lock first)
 update:
+    sudo nix flake update
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
 
-# fast update: rebuild without re-exec
+# fast update: rebuild without re-exec (updates flake.lock first)
 fast-update:
+    sudo nix flake update
     sudo nixos-rebuild switch --flake .#{{PROFILE}} --no-reexec
 
-# verify nix store integrity and repair if necessary
+# verify Nix store integrity and repair if necessary
 repair:
     sudo nix-store --verify --check-contents --repair
 
