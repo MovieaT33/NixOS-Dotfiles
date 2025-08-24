@@ -5,7 +5,7 @@
     kernelParams = [
       "video=1920x1200"
       # "console=tty0"
-      "quiet"
+      # TEMPORARY REMOVE: "quiet"
     ];
     consoleLogLevel = 0;
   };

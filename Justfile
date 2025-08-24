@@ -1,4 +1,3 @@
-# TODO: Check fast variants of update and upgrade
 # Variables
 PROFILE := "personal"
 
