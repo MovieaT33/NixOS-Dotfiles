@@ -1,4 +1,4 @@
-{ ... }:
+{ stateVersion, ... }:
 
 {
   imports = [
