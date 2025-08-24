@@ -8,5 +8,7 @@
     ../../app/profiles/dev.nix
   ];
 
-  home-manager.users.mvt33 = import ./home.nix;
+  home-manager.users.mvt33 = import ./home.nix {
+    inherit stateVersion;
+  };
 }
