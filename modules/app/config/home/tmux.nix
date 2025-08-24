@@ -4,9 +4,9 @@
   programs.tmux = {
     enable = true;
     extraConfig = ''
-      set -g mouse on
+      set  -g mouse on
       setw -g mode-keys vi
-      set -g history-limit 10000
+      set  -g history-limit 10000
     '';
   };
 }
