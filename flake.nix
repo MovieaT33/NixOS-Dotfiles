@@ -21,7 +21,7 @@
           inherit system stateVersion;
         };
         modules = [
-          ./profiles/personal/config.nix
+          ./modules/profiles/personal/config.nix
           home-manager.nixosModules.home-manager
         ];
       };
