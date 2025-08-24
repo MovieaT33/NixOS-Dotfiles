@@ -5,6 +5,7 @@ PROFILE := "personal"
 alias v := version
 alias i := install
 alias s := sync
+alias f := update-flake
 alias u := update
 alias U := fast-update
 alias r := repair
@@ -29,14 +30,16 @@ sync:
     sudo git fetch --depth 1
     sudo git reset --hard origin/main
 
-# rebuild NixOS with current profile (updates flake.lock first)
-update:
+# update flake.lock to the latest versions
+update-flake:
     sudo nix flake update
+
+# rebuild NixOS with current profile
+update:
     sudo nixos-rebuild switch --flake .#{{PROFILE}}
 
-# fast update: rebuild without re-exec (updates flake.lock first)
+# fast update: rebuild without re-exec
 fast-update:
-    sudo nix flake update
     sudo nixos-rebuild switch --flake .#{{PROFILE}} --no-reexec
 
 # verify Nix store integrity and repair if necessary
@@ -52,8 +55,8 @@ clean:
 list:
     sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
-# sync, update, then show current version
-upgrade: sync update version
+# sync repository, update flake.lock, rebuild NixOS, and show current version
+upgrade: sync update-flake update version
 
-# sync, fast update, then show current version
-fast-upgrade: sync fast-update version
+# sync repository, update flake.lock, rebuild without re-exec, and show current version
+fast-upgrade: sync update-flake fast-update version

@@ -42,6 +42,7 @@
         "optimise",
         "pkgs",
         "pnet",
+        "reexec",
         "relativenumber",
         "substituters",
         "swapoff",
