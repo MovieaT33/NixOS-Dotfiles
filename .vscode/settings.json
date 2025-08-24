@@ -54,6 +54,7 @@
         "timesyncd",
         "tmpfiles",
         "togglefloating",
+        "usbguard",
         "Userns",
         "vfat",
         "vgchange",

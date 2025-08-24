@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  # TODO: enable and configure antivirus software
+  # TODO: Enable and configure antivirus software
 }

@@ -30,11 +30,13 @@
     ./security/hardening.nix
     ./security/journald.nix
     ./security/kernel.nix
+    ./security/logrotate.nix
     ./security/lynis.nix
     ./security/nix.nix
     ./security/root.nix
     ./security/sudo.nix
     ./security/sysstat.nix
+    ./security/usbguard.nix
     ./security/virtualisation.nix
 
     ./app.nix
