@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  security.allowSimultaneousMultithreading = false;
+  # security.allowSimultaneousMultithreading = false;
 }
