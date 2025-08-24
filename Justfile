@@ -55,8 +55,8 @@ clean:
 list:
     sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
-# sync repository, update flake.lock, rebuild NixOS, and show current version
-upgrade: sync update-flake update version
+# sync repository, update flake.lock, rebuild NixOS, clean garbage, and show current version 
+upgrade: sync update-flake update clean version
 
 # sync repository, update flake.lock, rebuild without re-exec, and show current version
 fast-upgrade: sync update-flake fast-update version
