@@ -1,4 +1,4 @@
-# TODO: Update firewall `extraCommands`
+# TODO: Update `networking.firewall.extraCommands`
 { ... }:
 
 {

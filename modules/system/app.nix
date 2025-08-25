@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ git just ];
+  environment.systemPackages = with pkgs; [
+    git just
+    lynis
+  ];
 }

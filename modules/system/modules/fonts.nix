@@ -2,7 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # Nerd fonts
+    # region [ Nerd fonts ]
     nerd-fonts.jetbrains-mono
+    # endregion
   ];
 }

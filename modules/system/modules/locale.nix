@@ -3,7 +3,7 @@
 {
   # region [ Time ]
   # services.timesyncd.enable = true;     # systemd-timesyncd
-  services.ntp.enable = true;
+  services.ntp.enable = true;             # NTP
 
   time = {
     hardwareClockInLocalTime = false;

@@ -2,10 +2,9 @@
 
 {
   nix = {
-    settings.sandbox = true;
-
     optimise.automatic = true;
     settings = {
+      sandbox = true;
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
     };
