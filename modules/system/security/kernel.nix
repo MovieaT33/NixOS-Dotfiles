@@ -42,7 +42,7 @@
 
     # Network
     # protect against SYN flood attacks (denial of service attack)
-    "net.ipv4.tcp_syncookies" = 1;
+    # "net.ipv4.tcp_syncookies" = 1;
     # protection against TIME-WAIT assassination
     "net.ipv4.tcp_rfc1337" = 1;
     # enable source validation of packets received (prevents IP spoofing)
