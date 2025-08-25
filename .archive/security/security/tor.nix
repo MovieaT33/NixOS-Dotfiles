@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 {
   services = {
@@ -26,8 +26,6 @@
     };
 
     resolved = {
-      enable = true;
-      fallbackDns = [ ];
       extraConfig = ''
         DNSStubListener=no
         DNS=127.0.0.1
@@ -36,6 +34,4 @@
   };
 
   networking.nameservers = [ "127.0.0.1" ];
-
-  boot.kernelParams = [ "ipv6.disable=1" ];
 }

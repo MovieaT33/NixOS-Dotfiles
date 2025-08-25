@@ -1,8 +1,6 @@
-{ config, ... }:
+{ ... }:
 
 {
-  # networking.firewall.enable = true;
-
   # networking.firewall.allowedTCPPorts = [ 9050 ];
 
   # TODO: use builtins.readFile

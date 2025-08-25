@@ -13,6 +13,7 @@
 - atuin
 - wlr-randr
 - linpeas
+- .archive
 - links
 - oh-my-posh
 - pipes-rs

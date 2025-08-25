@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 let
   loginDefsConf = ./config/login.defs;

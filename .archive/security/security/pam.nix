@@ -1,4 +1,4 @@
-{ config, ... }:
+{ ... }:
 
 let
   pamConfig = builtins.readFile ./config/pam;
@@ -24,5 +24,5 @@ in
   #   maxSequence = 3;
   # };
 
-  # TODO: max opened files and login limits for users
+  # TODO: Max opened files and login limits for users
 }
