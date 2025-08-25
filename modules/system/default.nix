@@ -27,13 +27,13 @@
     ./security/boot.nix
     ./security/cis.nix
     ./security/dbus.nix
+    ./security/doas.nix
     ./security/journald.nix
     ./security/kernel.nix
     ./security/logrotate.nix
     ./security/nix.nix
     ./security/root.nix
     ./security/rtkit.nix
-    ./security/sudo.nix
     ./security/sysstat.nix
     ./security/systemd.nix
     # ./security/usbguard.nix

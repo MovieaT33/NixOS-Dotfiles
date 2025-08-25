@@ -9,6 +9,7 @@
         "CTYPE",
         "dbus",
         "dmask",
+        "doas",
         "dport",
         "drun",
         "dumpable",
