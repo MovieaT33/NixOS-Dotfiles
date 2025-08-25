@@ -1,17 +1,7 @@
 { pkgs, ... }:
 
-let
-  monetPlugin = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    pname = "monet.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "fynnfluegge";
-      repo = "monet.nvim";
-      rev = "main";
-      sha256 = "<встав-тут-дійсний-sha256-hash>";
-    };
-  };
-in
-{ programs.neovim = {
+{
+  programs.neovim = {
     enable = true;
     defaultEditor = true;
 
@@ -20,7 +10,7 @@ in
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      monetPlugin
+      catppuccin-nvim
       lualine-nvim
       nvim-web-devicons
     ];
@@ -32,10 +22,17 @@ in
       vim.o.termguicolors = true
 
       -- Theme
-      require("monet").setup {
-        dark_mode = true,
+      require("catppuccin").setup {
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        background = {
+          light = "latte",
+          dark = "mocha",
+        },
+        integrations = {
+          lualine = true,
+        },
       }
-      vim.cmd.colorscheme("monet")
+      vim.cmd.colorscheme("catppuccin")
 
       -- Statusline with full mode names
       require("lualine").setup {
