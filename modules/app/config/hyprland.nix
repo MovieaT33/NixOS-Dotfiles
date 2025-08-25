@@ -1,10 +1,7 @@
 { ... }:
 
 {
-  services.xserver = {
-    enable = true;
-    layout = "us";
-  };
+  services.xserver.enable = true;
 
   programs.hyprland = {
     enable = true;
