@@ -19,7 +19,7 @@ default: upgrade
 
 # shows the latest repository commit
 version:
-    sudo git log -1 --oneline
+    doas git log -1 --oneline
 
 # install nixos
 install:
@@ -27,33 +27,33 @@ install:
 
 # sync local repository with remote
 sync:
-    sudo git fetch --depth 1
-    sudo git reset --hard origin/main
+    doas git fetch --depth 1
+    doas git reset --hard origin/main
 
 # update flake.lock to the latest versions
 update-flake:
-    sudo nix flake update
+    doas nix flake update
 
 # rebuild NixOS with current profile
 update:
-    sudo nixos-rebuild switch --flake .#{{PROFILE}}
+    doas nixos-rebuild switch --flake .#{{PROFILE}}
 
 # fast update: rebuild without re-exec
 fast-update:
-    sudo nixos-rebuild switch --flake .#{{PROFILE}} --no-reexec
+    doas nixos-rebuild switch --flake .#{{PROFILE}} --no-reexec
 
 # verify Nix store integrity and repair if necessary
 repair:
-    sudo nix-store --verify --check-contents --repair
+    doas nix-store --verify --check-contents --repair
 
 # clean old generations and garbage
 clean:
-    sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system
-    sudo nix-collect-garbage -d
+    doas nix-env --delete-generations old --profile /nix/var/nix/profiles/system
+    doas nix-collect-garbage -d
 
 # list all system generations (profiles)
 list:
-    sudo nix-env -p /nix/var/nix/profiles/system --list-generations
+    doas nix-env -p /nix/var/nix/profiles/system --list-generations
 
 # sync repository, update flake.lock, rebuild NixOS, clean garbage, and show current version 
 upgrade: sync update-flake update clean version

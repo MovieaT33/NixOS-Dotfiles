@@ -7,7 +7,7 @@
     enable = true;
     extraRules = [
       {
-        users = ["userName"];
+        users = ["mvt33"];
 
         keepEnv = true;       # often necessary
         # persist = true;     # convenient but less secure

@@ -14,6 +14,7 @@
 - wlr-randr
 - linpeas
 - https://saylesss88.github.io/nix/hardening_NixOS.html
+- tree
 - .archive
 - links
 - oh-my-posh
