@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    git just
-    lynis kernel-hardening-checker
+    git just                            # repository
+    lynis kernel-hardening-checker      # security
   ];
 }
