@@ -23,8 +23,8 @@
       j  =  "just";
       dj = "cd /etc/nixos; just";
 
-      dd = "cd /etc/nixos; just";
-      D  = "cd /etc/nixos; just";
+      ddd = "cd /etc/nixos; just";
+      D   = "cd /etc/nixos; just";
     };
 
     ohMyZsh = {

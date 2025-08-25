@@ -2,21 +2,51 @@
   "layer": "top",
   "position": "left",
 
-  "modules-left": [],
-  "modules-center": [],
-  "modules-right": [
-    "network",
-    "cpu",
-    "memory",
-    "battery",
-    "clock"
-  ],
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "cpu", "memory", "battery", "temperature"],
 
   "font": "JetBrainsMono Nerd Font 10",
   "bar": {
-    "width": 32,
-    "background": "#222222",
+    "width": 40,
+    "height": 30,
+    "background": "#1e1e2e",
     "border-color": "#000000",
-    "border-size": 1
+    "border-size": 1,
+    "padding": 5,
+    "radius": 6
+  },
+  "modules": {
+    "clock": {
+      "format": "{:%a %d %b %Y %H:%M:%S}",
+      "tooltip-format": "{:%A, %d %B %Y}"
+    },
+    "network": {
+      "interface": "wlp3s0",
+      "format": "{ifname}: {ipaddr} ({speed} Mbps)"
+    },
+    "cpu": {
+      "format": "CPU: {usage}%"
+    },
+    "memory": {
+      "format": "RAM: {used} / {total} GB"
+    },
+    "battery": {
+      "format": "{capacity}% {status}",
+      "format-charging": "⚡ {capacity}%"
+    },
+    "pulseaudio": {
+      "format": "🔊 {volume}%"
+    },
+    "temperature": {
+      "format": "🌡 {temp}°C"
+    }
+  },
+  "colors": {
+    "background": "#1e1e2e",
+    "foreground": "#cdd6f4",
+    "focused": "#89b4fa",
+    "urgent": "#f38ba8",
+    "attention": "#fab387"
   }
 }

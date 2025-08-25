@@ -49,26 +49,9 @@
         hi FloatBorder guibg=NONE
       ]]
 
-      local transparent_lualine = {
-        normal = {
-          a = { fg = nil, bg = 'NONE', gui = 'bold' },
-          b = { fg = nil, bg = 'NONE' },
-          c = { fg = nil, bg = 'NONE' },
-        },
-        insert = { a = { fg = nil, bg = 'NONE', gui = 'bold' } },
-        visual = { a = { fg = nil, bg = 'NONE', gui = 'bold' } },
-        replace = { a = { fg = nil, bg = 'NONE', gui = 'bold' } },
-        command = { a = { fg = nil, bg = 'NONE', gui = 'bold' } },
-        inactive = {
-          a = { fg = nil, bg = 'NONE', gui = 'bold' },
-          b = { fg = nil, bg = 'NONE' },
-          c = { fg = nil, bg = 'NONE' },
-        },
-      }
-
       require("lualine").setup {
         options = {
-          theme = transparent_lualine,
+          theme = "catppuccin",
           section_separators = "",
           component_separators = "",
         },
@@ -90,9 +73,9 @@
               end,
             },
           },
-          lualine_b = {},
+          lualine_b = { "branch" },
           lualine_c = { "filename" },
-          lualine_x = {},
+          lualine_x = { "encoding", "fileformat", "filetype" },
           lualine_y = { "progress" },
           lualine_z = { "location" },
         },
