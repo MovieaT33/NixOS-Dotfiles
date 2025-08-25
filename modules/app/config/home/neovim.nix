@@ -5,44 +5,60 @@
     enable = true;
     defaultEditor = true;
 
-    # Aliases
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
 
-    # Plugins
     plugins = with pkgs.vimPlugins; [
-      gruvbox-material
-      nvim-lspconfig
-      nvim-treesitter.withAllGrammars
-      plenary-nvim
-      mini-nvim
+      monet-nvim
+      lualine-nvim
+      nvim-web-devicons
     ];
 
     extraLuaConfig = ''
+      -- Basic options
       vim.o.number = true
       vim.o.relativenumber = true
       vim.o.termguicolors = true
-      vim.cmd.colorscheme("gruvbox-material")
 
-      vim.cmd [[
-        hi Normal     guibg=NONE
-        hi StatusLine guibg=NONE
-        hi LineNr     guibg=NONE
-        hi VertSplit  guibg=NONE
-      ]]
-
-      require("nvim-treesitter.configs").setup {
-        highlight = { enable = true },
-        indent = { enable = true }
+      -- Theme
+      require("monet").setup {
+        dark_mode = true,
       }
+      vim.cmd.colorscheme("monet")
 
-      local lspconfig = require("lspconfig")
-      lspconfig.pyright.setup {}
-      lspconfig.tsserver.setup {}
-
-      -- Mini.nvim (example: statusline)
-      require("mini.statusline").setup()
+      -- Statusline with full mode names
+      require("lualine").setup {
+        options = {
+          theme = "auto",
+          section_separators = "",
+          component_separators = "",
+        },
+        sections = {
+          lualine_a = {
+            {
+              "mode",
+              fmt = function(str)
+                return ({
+                  ["NORMAL"]   = "NORMAL",
+                  ["INSERT"]   = "INSERT",
+                  ["VISUAL"]   = "VISUAL",
+                  ["V-LINE"]   = "VISUAL LINE",
+                  ["V-BLOCK"]  = "VISUAL BLOCK",
+                  ["REPLACE"]  = "REPLACE",
+                  ["COMMAND"]  = "COMMAND",
+                  ["TERMINAL"] = "TERMINAL",
+                })[str] or str
+              end,
+            },
+          },
+          lualine_b = { "branch" },
+          lualine_c = { "filename" },
+          lualine_x = { "encoding", "fileformat", "filetype" },
+          lualine_y = { "progress" },
+          lualine_z = { "location" },
+        },
+      }
     '';
   };
 

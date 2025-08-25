@@ -56,6 +56,7 @@
         "Userns",
         "vfat",
         "vgchange",
+        "vimdiff",
         "virtio",
         "virtualisation",
         "vnoremap",
