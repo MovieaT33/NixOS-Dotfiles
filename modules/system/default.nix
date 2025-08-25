@@ -1,11 +1,14 @@
 # TODO: Use recursive search for importing
 {
   imports = [
-    ./modules/boot/boot.nix
-    ./modules/boot/bootloader.nix
-    ./modules/boot/hardware.nix
-    ./modules/boot/vm.nix
+    # region [ Boot ]
+    ./boot/boot.nix
+    ./boot/bootloader.nix
+    ./boot/hardware.nix
+    ./boot/vm.nix
+    # endregion
 
+    # region [ Modules ]
     ./modules/docs.nix
     ./modules/fonts.nix
     ./modules/locale.nix
@@ -16,7 +19,9 @@
     ./modules/users.nix
     ./modules/zram.nix
     ./modules/zswap.nix
+    # endregion
 
+    # region [ Security ]
     ./security/network/dns.nix
     ./security/network/firewall.nix
     ./security/network/ipv6.nix
@@ -37,6 +42,7 @@
     ./security/sysstat.nix
     ./security/systemd.nix
     # ./security/usbguard.nix
+    # endregion
 
     ./app.nix
   ];

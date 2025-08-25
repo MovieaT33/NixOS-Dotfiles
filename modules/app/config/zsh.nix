@@ -6,6 +6,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
+      sudo = "doas";
       l  = "exa -l --icons";
       ls = "exa -laGhh --icons --group-directories-first --octal-permissions";
       v  = "nvim";
@@ -14,8 +15,11 @@
       luks-add =    "sudo cryptsetup luksAddKey /dev/vda2";
       luks-remove = "sudo cryptsetup luksRemoveKey /dev/vda2";
 
-      # System
+      # Security
       security = "systemd-analyze security";
+      lynis-security = "sudo lynis audit system";
+
+      # System
       r = "sudo reboot now";
       s = "sudo shutdown now";
 

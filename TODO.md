@@ -13,6 +13,7 @@
 - atuin
 - wlr-randr
 - linpeas
+- https://saylesss88.github.io/nix/hardening_NixOS.html
 - .archive
 - links
 - oh-my-posh
