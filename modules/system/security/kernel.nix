@@ -64,8 +64,8 @@
 
     # ignore ICMP request, helps avoid Smurf attacks
     # "net.ipv4.conf.all.forwarding" = 0;
-    "net.ipv4.conf.default.accept_source_route" = 0;
-    "net.ipv4.conf.all.accept_source_route" = 0;
+    # "net.ipv4.conf.default.accept_source_route" = 0;
+    # "net.ipv4.conf.all.accept_source_route" = 0;
     "net.ipv6.conf.all.accept_source_route" = 0;
     "net.ipv6.conf.default.accept_source_route" = 0;
     # Reverse path filtering causes the kernel to do source validation of
@@ -75,7 +75,7 @@
 
     ## TCP hardening
     # Prevent bogus ICMP errors from filling up logs.
-    "net.ipv4.icmp_ignore_bogus_error_responses" = 1;
+    # "net.ipv4.icmp_ignore_bogus_error_responses" = 1;
 
     # Disable TCP SACK
     "net.ipv4.tcp_sack" = 0;
