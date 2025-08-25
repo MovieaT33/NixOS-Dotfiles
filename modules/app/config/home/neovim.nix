@@ -27,7 +27,6 @@
         -- show_end_of_buffer = false,
         term_colors = false,
         integrations = {
-            lualine = true,
             cmp = true,
             gitsigns = true,
             nvimtree = true,

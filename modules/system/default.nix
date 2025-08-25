@@ -35,7 +35,7 @@
     ./security/root.nix
     ./security/sudo.nix
     ./security/sysstat.nix
-    ./security/usbguard.nix
+    # ./security/usbguard.nix
     ./security/virtualisation.nix
 
     ./app.nix

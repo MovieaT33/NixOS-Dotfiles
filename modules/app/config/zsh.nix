@@ -22,6 +22,8 @@
       d  =  "cd /etc/nixos";
       j  =  "just";
       dj = "cd /etc/nixos; just";
+
+      dd = "cd /etc/nixos; just";
       D  = "cd /etc/nixos; just";
     };
 
