@@ -11,6 +11,7 @@
         "dumpable",
         "fifos",
         "fmask",
+        "guibg",
         "hardlinks",
         "hjkl",
         "hypr",

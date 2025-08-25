@@ -27,6 +27,7 @@
         -- show_end_of_buffer = false,
         term_colors = false,
         integrations = {
+            lualine = true,
             cmp = true,
             gitsigns = true,
             nvimtree = true,
@@ -49,9 +50,26 @@
         hi FloatBorder guibg=NONE
       ]]
 
+      local transparent_lualine = {
+        normal = {
+          a = { fg = nil, bg = 'NONE', gui = 'bold' },
+          b = { fg = nil, bg = 'NONE' },
+          c = { fg = nil, bg = 'NONE' },
+        },
+        insert = { a = { fg = nil, bg = 'NONE', gui = 'bold' } },
+        visual = { a = { fg = nil, bg = 'NONE', gui = 'bold' } },
+        replace = { a = { fg = nil, bg = 'NONE', gui = 'bold' } },
+        command = { a = { fg = nil, bg = 'NONE', gui = 'bold' } },
+        inactive = {
+          a = { fg = nil, bg = 'NONE', gui = 'bold' },
+          b = { fg = nil, bg = 'NONE' },
+          c = { fg = nil, bg = 'NONE' },
+        },
+      }
+
       require("lualine").setup {
         options = {
-          theme = "catppuccin",
+          theme = transparent_lualine,
           section_separators = "",
           component_separators = "",
         },
@@ -73,9 +91,9 @@
               end,
             },
           },
-          lualine_b = { "branch" },
+          lualine_b = {},
           lualine_c = { "filename" },
-          lualine_x = { "encoding", "fileformat", "filetype" },
+          lualine_x = {},
           lualine_y = { "progress" },
           lualine_z = { "location" },
         },
