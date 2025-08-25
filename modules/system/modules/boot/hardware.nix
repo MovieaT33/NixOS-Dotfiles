@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # region [ Partitions ]
   fileSystems = {
     "/" = {
       device = "/dev/mapper/vg0-root";
@@ -38,9 +39,11 @@
       fsType = "ext4";
     };
   };
+  # endregion
 
-  # Swap
+  # region [ Swap ]
   swapDevices = [
     { device = "/dev/mapper/vg0-swap"; }
   ];
+  # endregion
 }

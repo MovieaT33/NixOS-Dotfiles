@@ -12,10 +12,9 @@
   # endregion
 
   # region [ Language and Keyboard ]
-  console.keyMap = "us";                  # TODO: Check is work correctly
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    availableLocales = [ "en_US.UTF-8" ];
+  # console.keyMap = "us";                  # TODO: Check is work correctly
+  # i18n = {
+    # defaultLocale = "en_US.UTF-8";
     # extraLocaleSettings = {
     #   LC_CTYPE =          "en_US.UTF-8";
     #   LC_NUMERIC =        "en_US.UTF-8";
@@ -30,7 +29,7 @@
     #   LC_MEASUREMENT =    "en_US.UTF-8";
     #   LC_IDENTIFICATION = "en_US.UTF-8";
     # };
-  };
-  services.xserver.xkb.layout = "us";      # TODO: Check is work correctly
+  # };
+  # services.xserver.xkb.layout = "us";      # TODO: Check is work correctly
   # endregion
 }
