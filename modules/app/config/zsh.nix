@@ -15,6 +15,7 @@
       luks-remove = "sudo cryptsetup luksRemoveKey /dev/vda2";
 
       # System
+      security = "systemd-analyze security";
       r = "sudo reboot now";
       s = "sudo shutdown now";
 

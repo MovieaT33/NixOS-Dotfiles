@@ -6,6 +6,7 @@
 - efibootmgr, mokutil
 - bastet vitetris
 - remove config var from Nix configs
+- pkgs.chkrootkit pkgs.aide -> services.cron
 
 - tmux
 - GDB

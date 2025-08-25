@@ -5,10 +5,5 @@
     "usb_storage"
     "bluetooth"
     "firewire_core"
-    "cramfs"
-    "freevxfs"
-    "jffs2"
-    "hfsplus"
-    "udf"
   ];
 }

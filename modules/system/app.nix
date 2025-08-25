@@ -3,6 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     git just
-    lynis
+    lynis kernel-hardening-checker
   ];
 }

@@ -26,17 +26,17 @@
     ./security/audit.nix
     ./security/boot.nix
     ./security/cis.nix
-    ./security/cpu.nix
-    ./security/hardening.nix
+    ./security/dbus.nix
     ./security/journald.nix
     ./security/kernel.nix
+    ./security/logrotate.nix
     ./security/nix.nix
     ./security/root.nix
     ./security/rtkit.nix
     ./security/sudo.nix
     ./security/sysstat.nix
+    ./security/systemd.nix
     # ./security/usbguard.nix
-    ./security/virtualisation.nix
 
     ./app.nix
   ];
