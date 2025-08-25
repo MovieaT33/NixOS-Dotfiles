@@ -16,7 +16,7 @@
       luks-remove = "sudo cryptsetup luksRemoveKey /dev/vda2";
 
       # Security
-      security = "systemd-analyze security";
+      security       = "systemd-analyze security";
       lynis-security = "sudo lynis audit system";
 
       # System
