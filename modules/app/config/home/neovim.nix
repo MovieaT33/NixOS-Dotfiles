@@ -8,30 +8,45 @@
     # Aliases
     viAlias = true;
     vimAlias = true;
+    vimdiffAlias = true;
 
     # Plugins
     plugins = with pkgs.vimPlugins; [
-      gruvbox
+      gruvbox-material
+      nvim-lspconfig
+      nvim-treesitter.withAllGrammars
+      plenary-nvim
+      mini-nvim
     ];
 
-    # Config
-    extraConfig = ''
-      set number relativenumber
-      syntax enable
-      colorscheme gruvbox
+    extraLuaConfig = ''
+      vim.o.number = true
+      vim.o.relativenumber = true
+      vim.o.termguicolors = true
+      vim.cmd.colorscheme("gruvbox-material")
 
-      hi Normal     guibg=NONE
-      hi StatusLine guibg=NONE
-      hi LineNr     guibg=NONE
-      hi VertSplit  guibg=NONE
+      vim.cmd [[
+        hi Normal     guibg=NONE
+        hi StatusLine guibg=NONE
+        hi LineNr     guibg=NONE
+        hi VertSplit  guibg=NONE
+      ]]
 
-      nnoremap <Tab> <Esc>
-      vnoremap <Tab> <Esc>
-      inoremap <Tab> <Esc>
+      require("nvim-treesitter.configs").setup {
+        highlight = { enable = true },
+        indent = { enable = true }
+      }
+
+      local lspconfig = require("lspconfig")
+      lspconfig.pyright.setup {}
+      lspconfig.tsserver.setup {}
+
+      -- Mini.nvim (example: statusline)
+      require("mini.statusline").setup()
     '';
   };
 
-  # FIXME: Check if this really work correctly
+  # FIXME: Do not work correctly
   home.sessionVariables = {
     EDITOR = "nvim";
   };
