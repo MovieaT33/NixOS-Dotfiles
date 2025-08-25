@@ -15,14 +15,14 @@
 
   # region [ https://saylesss88.github.io/nix/hardening_NixOS.html#further-hardening-with-sysctl ]
   boot.kernel.sysctl = {
-    "fs.suid_dumpable" = 0;
+    # "fs.suid_dumpable" = 0;
     # prevent pointer leaks
-    "kernel.kptr_restrict" = 2;
+    # "kernel.kptr_restrict" = 2;
     # restrict kernel log to CAP_SYSLOG capability
-    "kernel.dmesg_restrict" = 1;
+    # "kernel.dmesg_restrict" = 1;
     # Note: certian container runtimes or browser sandboxes might rely on the following
     # restrict eBPF to the CAP_BPF capability
-    "kernel.unprivileged_bpf_disabled" = 1;
+    # "kernel.unprivileged_bpf_disabled" = 1;
     # should be enabled along with bpf above
     # "net.core.bpf_jit_harden" = 2;
     # restrict loading TTY line disciplines to the CAP_SYS_MODULE
@@ -34,11 +34,11 @@
     # Kernel self-protection
     # SysRq exposes a lot of potentially dangerous debugging functionality to unprivileged users
     # 4 makes it so a user can only use the secure attention key. A value of 0 would disable completely
-    "kernel.sysrq" = 4;
+    # "kernel.sysrq" = 4;
     # disable unprivileged user namespaces, Note: Docker, NH, and other apps may need this
     # "kernel.unprivileged_userns_clone" = 0; # commented out because it makes NH and other programs fail
     # restrict all usage of performance events to the CAP_PERFMON capability
-    "kernel.perf_event_paranoid" = 3;
+    # "kernel.perf_event_paranoid" = 3;
 
     # Network
     # protect against SYN flood attacks (denial of service attack)
@@ -47,16 +47,16 @@
     "net.ipv4.tcp_rfc1337" = 1;
     # enable source validation of packets received (prevents IP spoofing)
     "net.ipv4.conf.default.rp_filter" = 1;
-    "net.ipv4.conf.all.rp_filter" = 1;
+    # "net.ipv4.conf.all.rp_filter" = 1;
 
-    "net.ipv4.conf.all.accept_redirects" = 0;
-    "net.ipv4.conf.default.accept_redirects" = 0;
+    # "net.ipv4.conf.all.accept_redirects" = 0;
+    # "net.ipv4.conf.default.accept_redirects" = 0;
     "net.ipv4.conf.all.secure_redirects" = 0;
     "net.ipv4.conf.default.secure_redirects" = 0;
     # Protect against IP spoofing
     "net.ipv6.conf.all.accept_redirects" = 0;
     "net.ipv6.conf.default.accept_redirects" = 0;
-    "net.ipv4.conf.all.send_redirects" = 0;
+    # "net.ipv4.conf.all.send_redirects" = 0;
     "net.ipv4.conf.default.send_redirects" = 0;
 
     # prevent man-in-the-middle attacks
@@ -84,21 +84,21 @@
 
     # Userspace
     # restrict usage of ptrace
-    "kernel.yama.ptrace_scope" = 2;
+    # "kernel.yama.ptrace_scope" = 2;
 
     # ASLR memory protection (64-bit systems)
     "vm.mmap_rnd_bits" = 32;
     "vm.mmap_rnd_compat_bits" = 16;
 
     # only permit symlinks to be followed when outside of a world-writable sticky directory
-    "fs.protected_symlinks" = 1;
-    "fs.protected_hardlinks" = 1;
+    # "fs.protected_symlinks" = 1;
+    # "fs.protected_hardlinks" = 1;
     # Prevent creating files in potentially attacker-controlled environments
-    "fs.protected_fifos" = 2;
-    "fs.protected_regular" = 2;
+    # "fs.protected_fifos" = 2;
+    # "fs.protected_regular" = 2;
 
     # Randomize memory
-    "kernel.randomize_va_space" = 2;
+    # "kernel.randomize_va_space" = 2;
     # Exec Shield (Stack protection)
     "kernel.exec-shield" = 1;
 
