@@ -1,16 +1,36 @@
 { ... }:
 
 {
-  # services.timesyncd.enable = true;
+  # region [ Time ]
+  # services.timesyncd.enable = true;     # systemd-timesyncd
   services.ntp.enable = true;
 
   time = {
     hardwareClockInLocalTime = false;
     timeZone = "UTC";
   };
+  # endregion
 
-  i18n.defaultLocale = "en_US.UTF-8";
-  console.keyMap = "us";  # TODO: Check is work correctly
-
-  services.xserver.layout = "us";
+  # region [ Language and Keyboard ]
+  console.keyMap = "us";                  # TODO: Check is work correctly
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    availableLocales = [ "en_US.UTF-8" ];
+    # extraLocaleSettings = {
+    #   LC_CTYPE =          "en_US.UTF-8";
+    #   LC_NUMERIC =        "en_US.UTF-8";
+    #   LC_TIME =           "en_US.UTF-8";
+    #   LC_COLLATE =        "en_US.UTF-8";
+    #   LC_MONETARY =       "en_US.UTF-8";
+    #   LC_MESSAGES =       "en_US.UTF-8";
+    #   LC_PAPER =          "en_US.UTF-8";
+    #   LC_NAME =           "en_US.UTF-8";
+    #   LC_ADDRESS =        "en_US.UTF-8";
+    #   LC_TELEPHONE =      "en_US.UTF-8";
+    #   LC_MEASUREMENT =    "en_US.UTF-8";
+    #   LC_IDENTIFICATION = "en_US.UTF-8";
+    # };
+  };
+  services.xserver.xkb.layout = "us";      # TODO: Check is work correctly
+  # endregion
 }

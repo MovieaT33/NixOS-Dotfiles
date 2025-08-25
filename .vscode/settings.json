@@ -5,6 +5,7 @@
         "Confinables",
         "cryptroot",
         "cryptsetup",
+        "CTYPE",
         "dmask",
         "dport",
         "drun",
