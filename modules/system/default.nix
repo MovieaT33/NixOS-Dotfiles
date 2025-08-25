@@ -33,6 +33,7 @@
     ./security/lynis.nix
     ./security/nix.nix
     ./security/root.nix
+    ./security/rtkit.nix
     ./security/sudo.nix
     ./security/sysstat.nix
     # ./security/usbguard.nix

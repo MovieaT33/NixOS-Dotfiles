@@ -1,7 +1,6 @@
 { ... }:
 
 {
-  services.xserver.enable = true;
   services.displayManager = {
     defaultSession = "hyprland";
     sddm = {
