@@ -1,7 +1,17 @@
 { pkgs, ... }:
 
-{
-  programs.neovim = {
+let
+  monetPlugin = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    pname = "monet.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "fynnfluegge";
+      repo = "monet.nvim";
+      rev = "main";
+      sha256 = "<встав-тут-дійсний-sha256-hash>";
+    };
+  };
+in
+{ programs.neovim = {
     enable = true;
     defaultEditor = true;
 
@@ -10,7 +20,7 @@
     vimdiffAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-      monet-nvim
+      monetPlugin
       lualine-nvim
       nvim-web-devicons
     ];
