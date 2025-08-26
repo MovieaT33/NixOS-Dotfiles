@@ -7,21 +7,21 @@
       enable = true;
       wayland.enable = true;
 
-      theme = "elarun";
+      theme = "maldives";
     };
   };
 
   services.displayManager.sddm.settings = {
-    Autologin = {
-      User = "temp";
-    };
     General = {
+      # Screen size
+      ScreenWidth  = "1920";
+      ScreenHeight = "1200";
+
       InputMethod = "";
       Numlock = "on";
-
-      # Screen
-      ScreenWidth  = "1920";
-      ScreenHeight = "1080";
+    };
+    Autologin = {
+      User = "mvt33";
     };
   };
 

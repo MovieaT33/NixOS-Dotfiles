@@ -9,7 +9,7 @@
     forcePageTableIsolation = true;
     # allowSimultaneousMultithreading = true;
 
-    unprivilegedUsernsClone = config.virtualisation.containers.enable;
+    unprivilegedUsernsClone = true;             # config.virtualisation.containers.enable;
     virtualisation.flushL1DataCache = "always";
   };
 
