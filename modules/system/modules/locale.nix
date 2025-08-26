@@ -13,8 +13,8 @@
 
   # region [ Language and Keyboard ]
   console.keyMap = "us";
-  # i18n = {
-    # defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
     # extraLocaleSettings = {
     #   LC_CTYPE =          "en_US.UTF-8";
     #   LC_NUMERIC =        "en_US.UTF-8";
@@ -29,7 +29,6 @@
     #   LC_MEASUREMENT =    "en_US.UTF-8";
     #   LC_IDENTIFICATION = "en_US.UTF-8";
     # };
-  # };
-  services.xserver.xkb.layout = "us,ru";      # TODO: Check is work correctly
+  };
   # endregion
 }

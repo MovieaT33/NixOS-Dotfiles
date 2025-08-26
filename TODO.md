@@ -35,14 +35,18 @@
 - dust
 - pv
 - cava
-- glances
 - broot
 - bat-extrashyperfine
 - taskwarrior
 - ripgrep-all
 - bb
+- nmon
+- iotop
 
+- pkgs.atop
+- pkgs.dnstop
 - gh fzf ...
+- stress stress-ng
 
 **Other**:
 

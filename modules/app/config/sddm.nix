@@ -1,20 +1,22 @@
 { ... }:
 
 {
+  services.xserver.xkb.layout = "us";   # TODO: Check is work correctly
   services.displayManager = {
     defaultSession = "hyprland";
     sddm = {
       enable = true;
       wayland.enable = true;
-
       theme = "maldives";
     };
   };
 
   services.displayManager.sddm.settings = {
     General = {
+      # FIXME: Layout. Current `zz`
+
       # Screen size
-      # FIXME: Check resolution
+      # FIXME: Do not work correctly
       ScreenWidth  = "1920";
       ScreenHeight = "1200";
 
@@ -24,6 +26,4 @@
       User = "mvt33";
     };
   };
-
-  # FIXME: Layout. Current `zz`
 }

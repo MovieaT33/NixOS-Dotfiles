@@ -9,6 +9,7 @@
     bsd-finger
     btop
     dig
+    glances
     disfetch
     duf
     dysk

@@ -46,6 +46,7 @@
         "nixpkgs",
         "nnoremap",
         "nologin",
+        "Numlock",
         "nvim",
         "oneline",
         "oneshot",
