@@ -151,8 +151,8 @@ def main() -> None:
         "nix": {"size": "20G", "mount": "/mnt/nix"},
         "home": {"size": "0.5G", "mount": "/mnt/home"},
         "var": {"size": "1G", "mount": "/mnt/var"},
-        "tmp": {"size": "2M", "mount": "/mnt/tmp"},
-        "var_tmp": {"size": "1M", "mount": "/mnt/var/tmp"},
+        "tmp": {"size": "128M", "mount": "/mnt/tmp"},
+        "var_tmp": {"size": "128M", "mount": "/mnt/var/tmp"},
         "swap": {"size": "1M", "mount": None},
         "root": {"size": "100%FREE", "mount": "/mnt"}
     }

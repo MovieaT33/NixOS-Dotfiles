@@ -14,6 +14,7 @@
   services.displayManager.sddm.settings = {
     General = {
       # Screen size
+      # FIXME: Check resolution
       ScreenWidth  = "1920";
       ScreenHeight = "1200";
 
@@ -25,6 +26,5 @@
     };
   };
 
-  # TODO: Change resolution
   # FIXME: Layout. Current `zz`
 }

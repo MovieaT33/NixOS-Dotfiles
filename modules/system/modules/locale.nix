@@ -12,7 +12,7 @@
   # endregion
 
   # region [ Language and Keyboard ]
-  # console.keyMap = "us";                  # TODO: Check is work correctly
+  console.keyMap = "us";
   # i18n = {
     # defaultLocale = "en_US.UTF-8";
     # extraLocaleSettings = {
@@ -30,6 +30,6 @@
     #   LC_IDENTIFICATION = "en_US.UTF-8";
     # };
   # };
-  # services.xserver.xkb.layout = "us";      # TODO: Check is work correctly
+  services.xserver.xkb.layout = "us,ru";      # TODO: Check is work correctly
   # endregion
 }
