@@ -3,9 +3,12 @@
 {
   imports = [
     ../base.nix
+
+    ../../app/profiles/dev.nix
+    ../../app/profiles/fun.nix
+
     ../../app/config/sddm.nix
     ../../app/config/hyprland.nix
-    ../../app/profiles/dev.nix
   ];
 
   home-manager.users.mvt33 = import ./home.nix {

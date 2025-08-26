@@ -1,13 +1,10 @@
-**Packages**:
-
-# TODO: zsh vim
-# TODO: shred
-
-- efibootmgr, mokutil
-- bastet vitetris
-- remove config var from Nix configs
-- pkgs.chkrootkit pkgs.aide -> services.cron
-
+- shred
+- vim combinations in Zsh
+- efibootmgr
+- mokutil
+- bastet
+- vitetris
+- pkgs.chkrootkit, pkgs.aide -> services.cron
 - tmux
 - GDB
 - atuin
@@ -45,13 +42,15 @@
 - ripgrep-all
 - bb
 
+- gh fzf ...
+
 **Other**:
 
 - youtube
 - browser
 - bad-apple
 - mandelbrot
-
+- mc (*midnight commander*)
 - wttr.in
 - glow
 

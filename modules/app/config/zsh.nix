@@ -19,9 +19,8 @@
       security       = "systemd-analyze security";
       lynis-security = "sudo lynis audit system";
 
-      # System
-      r = "sudo reboot now";
-      s = "sudo shutdown now";
+      # Nix
+      info = "nix-info -m";
 
       # Dotfiles
       d  =  "cd /etc/nixos";
@@ -30,6 +29,10 @@
 
       ddd = "cd /etc/nixos; just";
       D   = "cd /etc/nixos; just";
+
+      # System
+      r = "sudo reboot now";
+      s = "sudo shutdown now";
     };
 
     ohMyZsh = {
