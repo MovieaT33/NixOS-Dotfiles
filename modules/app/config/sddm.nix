@@ -18,7 +18,6 @@
       ScreenWidth  = "1920";
       ScreenHeight = "1200";
 
-      InputMethod = "";
       Numlock = "on";
     };
     Autologin = {

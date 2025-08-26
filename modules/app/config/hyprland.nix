@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  services.xserver.enable = true;
+  imports = [ ./xserver.nix ];
 
   programs.hyprland = {
     enable = true;
