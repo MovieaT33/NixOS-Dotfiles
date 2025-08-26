@@ -3,7 +3,6 @@
 {
   services.xserver = {
     enable = true;
-    layout = "us";
     monitorSection = ''
       Section "Monitor"
         Identifier "HDMI-1"
