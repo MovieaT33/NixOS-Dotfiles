@@ -5,7 +5,7 @@
     ../base.nix
 
     ../../app/profiles/dev.nix
-    ../../app/profiles/fun.nix
+    # ../../app/profiles/fun.nix
 
     ../../app/config/sddm.nix
     ../../app/config/hyprland.nix

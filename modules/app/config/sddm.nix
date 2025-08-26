@@ -11,7 +11,7 @@
     };
   };
 
-  services.xserver.displayManager.sddm.settings = {
+  services.displayManager.sddm.settings = {
     Autologin = {
       User = "temp";
     };
