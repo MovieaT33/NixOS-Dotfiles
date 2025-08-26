@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  services.logrotate.enable = true;
+  services.logrotate = {
+    enable = true;
+    checkConfig = false;
+  };
 }
