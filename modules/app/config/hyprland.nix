@@ -7,4 +7,7 @@
     enable = true;
     xwayland.enable = true;
   };
+
+  # Cursor theme
+  environment.systemPackages = with pkgs; [ bibata-cursors ];
 }
