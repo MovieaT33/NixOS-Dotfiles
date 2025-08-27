@@ -7,8 +7,10 @@
     enable = true;
     shellAliases = {
       sudo = "doas";
-      l  = "exa -l --icons";
-      ls = "exa -laGhh --icons --group-directories-first --octal-permissions";
+      l  = "exa -l --icons --git-ignore";
+      ls = "exa -lG --icons -a --group-directories-first -ghHiMOS --total-size -o --git";
+      L  = "exa -lG --icons -a --group-directories-first -ghHiMOS --total-size -o --git -Z";
+
       v  = "nvim";
 
       # Cryptsetup
