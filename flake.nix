@@ -15,13 +15,19 @@
     stateVersion = "25.05";
   in {
     nixosConfigurations = {
-      base = nixpkgs.lib.nixosSystem {
+      boot = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [ ./modules/profiles/boot.nix ];
+      }
+
+      system = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit system stateVersion;
         };
-        modules = [ ./modules/profiles/base.nix ];
+        modules = [ ./modules/profiles/system.nix ];
       };
+
       personal = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {

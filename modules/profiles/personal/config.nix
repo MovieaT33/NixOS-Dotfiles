@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../base.nix
+    ../system.nix
 
     ../../app/profiles/dev.nix
     # ../../app/profiles/fun.nix
