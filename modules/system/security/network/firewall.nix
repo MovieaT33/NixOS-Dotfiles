@@ -18,7 +18,7 @@
       iptables -P OUTPUT  ACCEPT
 
       # 1. Block non-net
-      iptables -A OUTPUT -m owner ! --gid-owner net -j REJECT
+      iptables -A OUTPUT -m owner ! --gid-owner 991 -j REJECT
 
       # 2. Allow loopback
       iptables -A INPUT  -i lo -j ACCEPT
