@@ -1,9 +1,11 @@
 **Packages**:
 
+- pkgs.nerdfetch
 - kdePackages.filelight
 - pkgs.unimatrix
-
 - shred
+- firejail
+
 - vim combinations in Zsh
 - efibootmgr
 - mokutil

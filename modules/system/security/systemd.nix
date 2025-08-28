@@ -8,8 +8,4 @@
       # "d /etc/nixos 0700 root root -"
     ];
   };
-
-  # region [ Hardening ]
-  # users.groups.netdev = {};
-  # endregion
 }
