@@ -18,4 +18,11 @@
     };
     # endregion
   };
+
+  # region [ Crash dump ]
+  boot.crashDump = {
+    enable = true;
+    kernelParams = [ "crashkernel=256M" ];
+  };
+  # endregion
 }

@@ -11,8 +11,7 @@
   };
   # endregion
 
-  # region [ Language and Keyboard ]
-  console.keyMap = "us";
+  # region [ Internationalization ]
   i18n = {
     defaultLocale = "en_US.UTF-8";
     # extraLocaleSettings = {

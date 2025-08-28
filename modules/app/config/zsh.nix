@@ -12,6 +12,9 @@
       ll = "exa -lG --icons -a --group-directories-first -ghHiMOS --total-size -o --git";
       v  = "nvim";
 
+      # Atuin
+      stats = "atuin stats";
+
       # Cryptsetup
       luks-add    = "sudo cryptsetup luksAddKey /dev/vda2";     # add a new key  (rotate periodically)
       luks-remove = "sudo cryptsetup luksRemoveKey /dev/vda2";  # remove old key (rotate periodically)
@@ -40,6 +43,7 @@
       plugins = [ "git" ];
     };
 
+    # FIXME: Do not work correctly
     interactiveShellInit = ''
       eval "$(atuin init zsh)"
     '';

@@ -9,6 +9,7 @@
     # endregion
 
     # region [ Modules ]
+    ./modules/console.nix
     ./modules/docs.nix
     ./modules/fonts.nix
     ./modules/groups.nix

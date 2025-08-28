@@ -41,6 +41,8 @@
 - ripgrep-all
 - bb
 - nmon
+- watchdog
+- whomade
 - iotop
 
 - pkgs.atop
