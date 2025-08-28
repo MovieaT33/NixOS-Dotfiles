@@ -1,3 +1,8 @@
+**Packages**:
+
+- kdePackages.filelight
+- pkgs.unimatrix
+
 - shred
 - vim combinations in Zsh
 - efibootmgr
