@@ -2,7 +2,13 @@
 
 {
   boot.loader = {
-    systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
+
+    systemd-boot = {
+      enable = true;
+      editor = false;
+    };
+    secureBoot = true;
+    timeout = 2;
   };
 }

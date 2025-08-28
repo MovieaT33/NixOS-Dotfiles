@@ -4,7 +4,7 @@
   boot.initrd = {
     # region [ Kernel modules ]
     availableKernelModules = [
-      "ahci"                            # SATA drives
+      # "ahci"                          # SATA drives
       # "xhci_pci"                      # USB 3.0 / 3.1
       # "sr_mod"                        # SCSI CD / DVD
     ];

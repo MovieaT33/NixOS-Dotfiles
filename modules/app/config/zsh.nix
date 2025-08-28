@@ -1,7 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  imports = [ ./atuin.nix ./eza.nix ]; 
+  imports = [ ./eza.nix ]; 
+  environment.systemPackages = with pkgs; [ atuin ];  # Atuin
 
   programs.zsh = {
     enable = true;
@@ -26,8 +27,9 @@
       D  = "cd /etc/nixos; just";
       dj = "cd /etc/nixos; just";
 
-      # System
+      # System and Nix
       system-info = "nix-info -m";
+      nix-info    = "nix show-config";
       r           = "sudo reboot now";
       s           = "sudo shutdown now";
     };
@@ -38,7 +40,7 @@
       plugins = [ "git" ];
     };
 
-    shellInit = ''
+    interactiveShellInit = ''
       eval "$(atuin init zsh)"
     '';
   };
