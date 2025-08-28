@@ -15,5 +15,11 @@
     };
   };
 
-  nixpkgs.hostPlatform = system;
+  nixpkgs = {
+    hostPlatform = system;
+    config = {
+      allowBroken = false;
+      allowUnfree = false;
+    };
+  }
 }

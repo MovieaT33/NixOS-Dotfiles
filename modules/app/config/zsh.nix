@@ -9,7 +9,6 @@
       sudo = "doas";
       l  = "exa -l --icons --git-ignore";
       ls = "exa -lG --icons -a --group-directories-first -ghHiMOS --total-size -o --git";
-      L  = "exa -lG --icons -a --group-directories-first -ghHiMOS --total-size -o --git -Z";
 
       v  = "nvim";
 
@@ -18,8 +17,8 @@
       luks-remove = "sudo cryptsetup luksRemoveKey /dev/vda2";
 
       # Security
-      security       = "systemd-analyze security";
-      lynis-security = "sudo lynis audit system";
+      systemd-security = "systemd-analyze security";
+      lynis-security   = "sudo lynis audit system";
 
       # Nix
       info = "nix-info -m";

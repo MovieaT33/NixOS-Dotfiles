@@ -3,8 +3,13 @@
 {
   networking = {
     hostName = "nixos";
-    wireless.enable = true;
+    wireless = {
+      enable = true;
+      # networks = { };
+    };
     useNetworkd = true;
-    # useDHCP = true;
+
+    useDHCP = true;
+    # interfaces = { };
   };
 }

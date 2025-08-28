@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../../app/config/zsh.nix ];
+  imports = [ ../../app/config/zsh.nix ];   # Shell
 
   users = {
     defaultUserShell = pkgs.zsh;
@@ -9,7 +9,6 @@
     users = {
       mvt33 = {
         isNormalUser = true;
-        extraGroups = [ "wheel" ];
         useDefaultShell = true;
       };
     };

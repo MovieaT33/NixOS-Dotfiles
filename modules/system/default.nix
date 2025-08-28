@@ -1,4 +1,4 @@
-# TODO: Use recursive search for importing
+# TODO: Use recursive search for importing modules
 {
   imports = [
     # region [ Boot ]
@@ -11,6 +11,7 @@
     # region [ Modules ]
     ./modules/docs.nix
     ./modules/fonts.nix
+    ./modules/groups.nix
     ./modules/locale.nix
     ./modules/network.nix
     ./modules/nix.nix
