@@ -9,6 +9,6 @@
       editor = false;
       consoleMode = "0";
     };
-    timeout = 2;
+    timeout = 3;
   };
 }

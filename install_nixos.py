@@ -138,7 +138,7 @@ def cleanup(vg_name: str, crypt_name: str) -> None:
 # endregion
 
 
-def main() -> None:
+def install() -> None:
     disk: str = "/dev/vda"          # Virtual disk
     efi_start: str = "1MiB"
     efi_end: str = "513MiB"
@@ -183,4 +183,31 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    install()
+
+
+#
+# LiveCD recovery tips
+#
+# If you boot a LiveCD to edit an already installed system:
+#
+# 1. Mount your root partition:
+#       sudo cryptsetup open /dev/sdX2 cryptroot
+#       sudo vgchange -ay vg0
+#       sudo mount /dev/vg0/root /mnt
+#
+# 2. Mount EFI:
+#       sudo mount /dev/sdX1 /mnt/boot
+#
+# 3. Mount other LVs:
+#       sudo mount /dev/vg0/nix /mnt/nix
+#       sudo mount /dev/vg0/home /mnt/home
+#       sudo mount /dev/vg0/var /mnt/var
+#       sudo mount /dev/vg0/tmp /mnt/tmp
+#       sudo mount /dev/vg0/var_tmp /mnt/var/tmp
+#
+# 4. Chroot into the system:
+#       sudo nixos-enter --root /mnt
+#
+# 5. Exit chroot and reboot.
+#

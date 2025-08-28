@@ -57,6 +57,7 @@
         "optimise",
         "pkgs",
         "pnet",
+        "poweroff",
         "reexec",
         "relatime",
         "relativenumber",
