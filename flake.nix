@@ -17,7 +17,7 @@
     nixosConfigurations = {
       base = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit system };
+        specialArgs = { inherit system; };
         modules = [ ./modules/profiles/base.nix ];
       };
       personal = nixpkgs.lib.nixosSystem {
