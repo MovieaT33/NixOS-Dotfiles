@@ -7,7 +7,7 @@
     systemd-boot = {
       enable = true;
       editor = false;
-      consoleMode = 0;
+      consoleMode = "0";
     };
     timeout = 2;
   };
