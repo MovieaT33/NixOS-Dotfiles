@@ -10,10 +10,10 @@
       interval = "12h";
     };
 
-    fangfrisch = {
-      enable = true;
-      interval = "1h";
-    };
+    # fangfrisch = {
+    #   enable = true;
+    #   interval = "1h";
+    # };
 
     updater = {
       enable = true;
