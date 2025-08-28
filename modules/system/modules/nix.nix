@@ -21,5 +21,5 @@
       allowBroken = false;
       allowUnfree = false;
     };
-  }
+  };
 }
