@@ -17,6 +17,7 @@
     nixosConfigurations = {
       boot = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit stateVersion };
         modules = [ ./modules/profiles/boot.nix ];
       };
 
