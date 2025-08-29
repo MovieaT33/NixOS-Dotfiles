@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  imports = [ ./command-not-found ];
+  imports = [ ./command-not-found.nix ];
 
   home.shellAliases = {
     # Utilities
