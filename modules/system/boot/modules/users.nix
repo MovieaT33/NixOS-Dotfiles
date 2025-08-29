@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../../app/config/zsh.nix ];   # Shell
+  imports = [ ../../../app/config/zsh.nix ];   # Shell
 
   users = {
     defaultUserShell = pkgs.zsh;
