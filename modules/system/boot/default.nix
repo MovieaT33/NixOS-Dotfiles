@@ -2,7 +2,7 @@
 
 {
   home-manager.users.mvt33 = import ./modules/home-manager.nix {
-    inherit stateVersion
+    inherit stateVersion;
   };
 
   imports = [
