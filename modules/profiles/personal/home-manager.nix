@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../app/profiles/dev-home.nix
-    ../../app/config/home/hyprland.nix
+    ../../app/profiles/home-manager/dev-home.nix
+    ../../app/config/home-manager/hyprland.nix
   ];
 }

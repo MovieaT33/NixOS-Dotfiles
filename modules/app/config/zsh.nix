@@ -2,5 +2,5 @@
 
 {
   imports = [ ./eza.nix ];
-  home-manager.users.mvt33 = import ./home/zsh.nix;
+  home-manager.users.mvt33 = import ./home-manager/zsh.nix;
 }
