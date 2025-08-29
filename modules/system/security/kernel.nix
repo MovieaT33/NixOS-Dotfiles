@@ -58,8 +58,6 @@
   boot.kernel.sysctl = {
     "net.core.bpf_jit_enable" = false;
     "kernel.ftrace_enabled" = false;
-    "net.ipv6.conf.all.accept_redirects" = false;
-    "net.ipv6.conf.default.accept_redirects" = false;
   };
   # endregion
 
@@ -104,8 +102,8 @@
     "net.ipv4.conf.all.secure_redirects" = false;
     "net.ipv4.conf.default.secure_redirects" = false;
     # Protect against IP spoofing
-    "net.ipv6.conf.all.accept_redirects" = 0;
-    "net.ipv6.conf.default.accept_redirects" = 0;
+    "net.ipv6.conf.all.accept_redirects" = false;
+    "net.ipv6.conf.default.accept_redirects" = false;
     # "net.ipv4.conf.all.send_redirects" = 0;
     "net.ipv4.conf.default.send_redirects" = false;
 
