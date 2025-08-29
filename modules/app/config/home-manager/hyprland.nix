@@ -2,11 +2,15 @@
 
 {
   imports = [
-    ./hyprpaper.nix
-    ./waybar.nix
-    ./wofi.nix
+    ./hyprpaper.nix   # Wallpaper
+    ./waybar.nix      # Bar
+    ./hyprlock.nix    # Lock screen
 
-    ./kitty.nix
+    # Hyprland apps
+    ./wofi.nix        # Menu
+
+    # Apps
+    ./kitty.nix       # Terminal
   ];
 
   home.file.".config/hypr" = {

@@ -33,7 +33,7 @@
     nix-info    = "nix show-config";
     r           = "sudo reboot now";
     s           = "sudo shutdown now";
-    p           = "sudo systemctl poweroff -i";
+    p           = "sudo poweroff -i";
   };
 
   programs.zsh = {
