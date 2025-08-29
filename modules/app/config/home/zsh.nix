@@ -1,6 +1,10 @@
 { ... }:
 
 {
+  home.shellAliases = {
+    test = "just";
+  };
+
   # shellAliases = {
   #   # Utilities
   #   l  = "exa -l --icons --group-directories-first --git-ignore";
@@ -43,6 +47,12 @@
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
+
+    oh-my-zsh = {
+      enable  = true;
+      theme   = "afowler";
+      plugins = [ "git" "sudo" ];
+    };
   };
 
   programs.atuin = {
