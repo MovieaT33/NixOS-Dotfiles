@@ -12,7 +12,6 @@
     ./boot.nix
     ./cis.nix
     ./dbus.nix
-    ./doas.nix
     ./journald.nix
     ./kernel.nix
     ./logrotate.nix
