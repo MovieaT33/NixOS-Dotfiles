@@ -5,13 +5,18 @@ PROFILE := "nixos"
 # Aliases
 alias v := version
 alias i := install
+
 alias s := sync
 alias f := update-flake
 alias u := update
 alias U := fast-update
+
 alias r := repair
 alias c := clean
-alias l := list
+
+alias l := list-profiles
+
+alias p := packages-upgrade
 alias g := upgrade
 alias G := fast-upgrade
 
@@ -53,8 +58,12 @@ clean:
     doas nix-collect-garbage -d
 
 # list all system generations (profiles)
-list:
+list-profiles:
     doas nix-env -p /nix/var/nix/profiles/system --list-generations
+
+# upgrade all system packages and rebuild NixOS
+packages-upgrade:
+    doas nixos-rebuild switch --upgrade
 
 # sync repository, update flake.lock, rebuild NixOS, and show current version 
 upgrade: sync update-flake update version
