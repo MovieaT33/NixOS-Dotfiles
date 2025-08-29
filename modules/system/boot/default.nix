@@ -3,6 +3,7 @@
 {
   imports = [
     # Modules
+    ./modules/home-manager.nix
     ./modules/network.nix
     ./modules/nix.nix
     ./modules/system.nix

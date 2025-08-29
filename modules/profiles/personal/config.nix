@@ -11,7 +11,5 @@
     ../../app/config/hyprland.nix
   ];
 
-  home-manager.users.mvt33 = import ./home.nix {
-    inherit stateVersion;
-  };
+  home-manager.users.mvt33 = import ./home.nix
 }
