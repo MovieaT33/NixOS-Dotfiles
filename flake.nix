@@ -39,6 +39,9 @@
           home-manager.nixosModules.home-manager
         ];
       };
+
+      # Aliases
+      nixos = self.nixosConfigurations.system;
     };
   };
 }

@@ -1,5 +1,6 @@
 # Variables
-PROFILE := "personal"
+# WARNING: Do not change PROFILE; "nixos" is reserved
+PROFILE := "nixos"
 
 # Aliases
 alias v := version

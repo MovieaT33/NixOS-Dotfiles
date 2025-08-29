@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  imports = [ ../system/boot/default.nix ];
+  imports = [
+    ../system/boot/default.nix
+    ../system/app.nix
+  ];
 }

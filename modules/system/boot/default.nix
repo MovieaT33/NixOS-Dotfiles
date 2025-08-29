@@ -6,6 +6,7 @@
     ./bootloader.nix
     ./hardware.nix
     ./network.nix
+    ./nix.nix
     ./system.nix
     ./users.nix
     ./vm.nix
