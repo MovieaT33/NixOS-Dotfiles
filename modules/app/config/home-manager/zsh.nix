@@ -31,6 +31,7 @@
     # System and Nix
     system-info = "nix-info -m";
     nix-info    = "nix show-config";
+    fonts       = "gnome-font-viewer";
     r           = "sudo reboot now";
     s           = "sudo shutdown now";
     p           = "sudo poweroff -i";

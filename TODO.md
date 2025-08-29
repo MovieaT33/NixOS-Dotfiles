@@ -3,6 +3,7 @@
 - pkgs.nerdfetch
 - kdePackages.filelight
 - pkgs.unimatrix
+- pkgs.gnome-font-viewer
 - firejail
 
 - vim combinations in Zsh

@@ -129,7 +129,7 @@
     "timezone": "UTC",
     "format": "<span color='#BF00FF'>  </span>{:%H:%M} ",
     "tooltip": true,
-    "tooltip-format": "{:L%Y %m %d, %A}"
+    "tooltip-format": "{:L%Y-%m-%d, %A}"
   },
   "tray": {
     "icon-size": 17,
