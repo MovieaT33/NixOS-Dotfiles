@@ -44,9 +44,10 @@
       plugins = [ "git" ];
     };
 
-    initExtra = ''
-      # Atuin shell integration
-      eval "$(atuin init zsh)"
+    interactiveShellInit = ''
+      # Ensure this runs after oh-my-zsh initialization
+      autoload -U add-zsh-hook
+      add-zsh-hook precmd 'eval "$(atuin init zsh)"'
     '';
   };
 }
