@@ -44,8 +44,8 @@
       plugins = [ "git" ];
     };
 
-    # FIXME: Do not work correctly
-    interactiveShellInit = ''
+    initExtra = ''
+      # Atuin shell integration
       eval "$(atuin init zsh)"
     '';
   };
