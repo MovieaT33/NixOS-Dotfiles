@@ -1,3 +1,5 @@
+{ ... }:
+
 {
   imports = [
     ./boot/default.nix
