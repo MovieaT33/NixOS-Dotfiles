@@ -8,6 +8,7 @@
       mvt33 = {
         isNormalUser = true;
         shell = pkgs.zsh;
+        ignoreShellProgramCheck = true;
       };
     };
   };
