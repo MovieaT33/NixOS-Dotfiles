@@ -1,9 +1,9 @@
 { home-manager, ... }:
 
 {
+  home-manager.users.mvt33 = import ./home-manager.nix;
   imports = [
     # Modules
-    home-manager.users.mvt33 = import ./home-manager.nix
     ./modules/network.nix
     ./modules/nix.nix
     ./modules/system.nix
