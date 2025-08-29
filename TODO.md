@@ -1,9 +1,9 @@
-**Packages**:
-
 - pkgs.nerdfetch
 - kdePackages.filelight
 - pkgs.unimatrix
 - pkgs.gnome-font-viewer
+- useXkbConfig
+- README.md
 - firejail
 
 - vim combinations in Zsh

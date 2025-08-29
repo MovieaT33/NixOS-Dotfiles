@@ -5,32 +5,46 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/MovieaT33/NixOS-Dotfiles)](https://github.com/MovieaT33/NixOS-Dotfiles/commits)
 [![License: GPL v3.0](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-**My NixOS dotfiles.**
+My NixOS dotfiles:
+
+**OS**: NixOS (in virt-manager on WSL)
+**Disk**: 6 partitions + swap
+**Sudo**: doas
+**Antivirus**: ClamAV
+**Security (lynis audit)**: 74 / 100
+**User**: `mvt33` (you can change it in configs)
+**Shell**: Zsh
+**Editor**: Neovim
+**Window Manager**: Hyprland
 
 ## Usage
 
 ### Installation 
 
-1. `nix-shell -p just python3.14`
+1. `nix-shell -p just python314`
 
-2. `git clone https://github.com/MovieaT33/NixOS-Dotfiles`
+2. `git clone https://github.com/MovieaT33/NixOS-Dotfiles --depth 1`
 
 3. `cd NixOS-Dotfiles`
 
-4. `sudo just i`
+4. `chmod +x install_nixos.py`
+
+5. `just i`
 
 ### Dotfiles
 
-1. `nix-shell -p git just`
+6. `nix-shell -p git just`
 
-2. `cd /etc`
+7. `cd /etc`
 
-3. `rm -rf nixos`
+8. `rm -rf nixos`
 
-4. `git clone https://github.com/MovieaT33/NixOS-Dotfiles nixos`
+9. `git clone https://github.com/MovieaT33/NixOS-Dotfiles nixos`
 
-5. `cd nixos`
+10. `cd nixos`
 
-6. In label `update` of `justfile` change `doas` to `sudo` using nano editor
+11. In label `update` of `justfile` change `doas` to `sudo` using nano editor
 
-7. `just`
+12. `just`
+
+*README.md in processing...*

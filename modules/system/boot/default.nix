@@ -12,9 +12,6 @@
     ./modules/system.nix
     ./modules/users.nix
 
-    # Security
-    ./security/doas.nix
-
     # Boot
     ./boot.nix
     ./bootloader.nix

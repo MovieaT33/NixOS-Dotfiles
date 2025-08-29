@@ -114,7 +114,11 @@ def prompt_edit_config(
 ) -> None:
     info("Please update the NixOS config with the following:")
     print()
-    print(f'boot.initrd.luks.devices."{crypt_name}".device = "{luks_part}";')
+    print(f'boot.initrd.luks.devices."{crypt_name}" = {{')
+    print(f'  device = "{luks_part}";')
+    print("  preLVM = true;")
+    print("};")
+    print()
     print(f'swapDevices = [ {{ device = "/dev/{vg_name}/swap"; }} ];')
     print()
     input("Press Enter to open config in nano...")
