@@ -4,6 +4,8 @@
 - pkgs.gnome-font-viewer
 - useXkbConfig
 - README.md
+- systemd.services."getty@tty1".enable = true;
+- Justfile -> justfile
 - firejail
 
 - vim combinations in Zsh

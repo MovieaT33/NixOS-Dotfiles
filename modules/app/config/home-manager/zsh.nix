@@ -3,6 +3,7 @@
 {
   imports = [ ./command-not-found.nix ];
 
+  # TODO: Update aliases
   home.shellAliases = {
     # Utilities
     l  = "exa -l --icons --group-directories-first --git-ignore";

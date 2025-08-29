@@ -19,7 +19,7 @@ My NixOS dotfiles:
 
 ## Usage
 
-### Installation 
+### NixOS Installation 
 
 1. `nix-shell -p just python314`
 
@@ -31,20 +31,24 @@ My NixOS dotfiles:
 
 5. `just i`
 
+*Rebooting...*
+
 ### Dotfiles
 
-6. `nix-shell -p git just`
+6. Enter to `root` account
 
-7. `cd /etc`
+7. `nix-shell -p git just`
 
-8. `rm -rf nixos`
+8. `cd /etc`
 
-9. `git clone https://github.com/MovieaT33/NixOS-Dotfiles nixos`
+9. `rm -rf nixos`
 
-10. `cd nixos`
+10. `git clone https://github.com/MovieaT33/NixOS-Dotfiles nixos`
 
-11. In label `update` of `justfile` change `doas` to `sudo` using nano editor
+11. `cd nixos`
 
-12. `just`
+12. In label `update` of `justfile` change `doas` to `sudo` using nano editor: `nano justfile`
+
+13. `just u`
 
 *README.md in processing...*
