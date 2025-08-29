@@ -47,7 +47,7 @@
     interactiveShellInit = ''
       # Ensure this runs after oh-my-zsh initialization
       autoload -U add-zsh-hook
-      add-zsh-hook precmd 'eval "$(atuin init zsh)"'
+      add-zsh-hook precmd 'eval "$(/run/current-system/sw/bin/atuin init zsh)"'
     '';
   };
 }
