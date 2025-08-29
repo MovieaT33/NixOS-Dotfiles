@@ -1,4 +1,4 @@
-{ home-manager, stateVersion, ... }:
+{ home-manager, stateVersion, pkgs, ... }:
 
 {
   home-manager.users.mvt33 = import ./modules/home-manager.nix {
