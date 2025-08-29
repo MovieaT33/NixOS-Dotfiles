@@ -8,8 +8,7 @@
       auto-optimise-store = true;
 
       # Binary cache settings
-      # Default: `https://cache.nixos.org/`
-      substituters = [ ];
+      substituters = [ ];       # default: `https://cache.nixos.org/`
 
       experimental-features = [ "nix-command" "flakes" ];
     };

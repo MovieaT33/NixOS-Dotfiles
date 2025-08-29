@@ -1,7 +1,7 @@
-# Qemu profile
 { ... }:
 
 {
+  # QEMU profile
   boot = {
     initrd = {
       availableKernelModules = [
@@ -16,9 +16,9 @@
       ];
       kernelModules = [
         "virtio_balloon"  # dynamic RAM management for VM
+        "virtio_console"  # virtual console for communication with the hypervisor
         "virtio_gpu"      # virtual GPU
         "virtio_rng"      # virtual random number generator
-        "virtio_console"  # virtual console for communication with the hypervisor
       ];
     };
     kernelModules = [ "kvm-intel" ];

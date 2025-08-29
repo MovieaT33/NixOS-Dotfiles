@@ -14,7 +14,7 @@ alias U := fast-update
 alias r := repair
 alias c := clean
 
-alias l := list-profiles
+alias l := list
 
 alias p := packages-upgrade
 alias g := upgrade
@@ -58,7 +58,7 @@ clean:
     doas nix-collect-garbage -d
 
 # list all system generations (profiles)
-list-profiles:
+list:
     doas nix-env -p /nix/var/nix/profiles/system --list-generations
 
 # upgrade all system packages and rebuild NixOS
