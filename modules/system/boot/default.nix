@@ -1,7 +1,10 @@
-{ home-manager, ... }:
+{ home-manager, stateVersion, ... }:
 
 {
-  home-manager.users.mvt33 = import ./modules/home-manager.nix;
+  home-manager.users.mvt33 = import ./modules/home-manager.nix {
+    inherit stateVersion
+  };
+
   imports = [
     # Modules
     ./modules/network.nix
