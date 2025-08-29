@@ -40,7 +40,7 @@
   # };
 
   programs.zsh = {
-    enable = true; some-error-test
+    enable = true;
     autosuggestion.enable = true;
   };
 
