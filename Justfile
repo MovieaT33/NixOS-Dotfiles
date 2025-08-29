@@ -24,7 +24,7 @@ version:
 
 # install nixos
 install:
-    ./install_nixos.py
+    sudo ./install_nixos.py
 
 # sync local repository with remote
 sync:
