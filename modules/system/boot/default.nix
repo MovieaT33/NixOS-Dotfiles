@@ -3,10 +3,10 @@
 {
   imports = [
     # Modules
-    ./network.nix
-    ./nix.nix
-    ./system.nix
-    ./users.nix
+    ./modules/network.nix
+    ./modules/nix.nix
+    ./modules/system.nix
+    ./modules/users.nix
 
     # Security
     ./security/doas.nix

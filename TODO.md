@@ -13,7 +13,6 @@
 - pkgs.chkrootkit, pkgs.aide -> services.cron
 - tmux
 - GDB
-- atuin
 - wlr-randr
 - linpeas
 - https://saylesss88.github.io/nix/hardening_NixOS.html
