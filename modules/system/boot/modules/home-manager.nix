@@ -9,6 +9,4 @@ in
     username = username;
     homeDirectory = "/home/${username}";
   };
-
-  home.shell = pkgs.zsh;
 }
