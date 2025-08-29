@@ -48,7 +48,7 @@
         ];
       };
 
-      # Aliases
+      # NixOS alias (see `nixos-rebuild switch --upgrade`)
       nixos = self.nixosConfigurations.system;
     };
   };
