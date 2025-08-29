@@ -3,8 +3,9 @@
 {
   # shellAliases = {
   #   # Utilities
-  #   l  = "exa -l --icons --git-ignore";
-  #   ll = "exa -lG --icons -a --group-directories-first -ghHiMOS --total-size -o --git";
+  #   l  = "exa -l --icons --group-directories-first --git-ignore";
+  #   ll = "exa -lG --icons -a --group-directories-first --git";
+  #   ls = "exa -lG --icons -a --group-directories-first -ghHiMOS --total-size -o --git";
   #   v  = "nvim";
 
   #   # Atuin

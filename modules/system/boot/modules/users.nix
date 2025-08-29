@@ -7,6 +7,7 @@
     users = {
       mvt33 = {
         isNormalUser = true;
+        shell = pkgs.zsh;
       };
     };
   };
