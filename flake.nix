@@ -17,14 +17,16 @@
     nixosConfigurations = {
       boot = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit system stateVersion; };
+        specialArgs = {
+          inherit system stateVersion home-manager;
+        };
         modules = [ ./modules/profiles/boot.nix ];
       };
 
       system = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit system stateVersion;
+          inherit system stateVersion home-manager;
         };
         modules = [ ./modules/profiles/system.nix ];
       };
@@ -32,7 +34,7 @@
       personal = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit system stateVersion;
+          inherit system stateVersion home-manager;
         };
         modules = [
           ./modules/profiles/personal/config.nix
