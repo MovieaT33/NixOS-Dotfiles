@@ -51,4 +51,8 @@ My NixOS dotfiles:
 
 13. `just u`
 
+14. `passwd mvt33`
+
+15. `reboot now`
+
 *README.md in processing...*
