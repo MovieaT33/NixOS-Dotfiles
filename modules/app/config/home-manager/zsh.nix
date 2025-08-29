@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  imports = [ ./command-not-found ];
+
   home.shellAliases = {
     # Utilities
     l  = "exa -l --icons --group-directories-first --git-ignore";
