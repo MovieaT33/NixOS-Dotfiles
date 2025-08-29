@@ -1,4 +1,4 @@
-{ stateVersion, ... }:
+{ stateVersion, pkgs, ... }:
 
 let
   username = "mvt33";
@@ -9,4 +9,6 @@ in
     username = username;
     homeDirectory = "/home/${username}";
   };
+
+  home.shell = pkgs.zsh;
 }
