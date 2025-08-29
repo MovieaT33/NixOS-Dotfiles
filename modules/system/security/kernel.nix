@@ -13,6 +13,56 @@
     virtualisation.flushL1DataCache = "always";
   };
 
+  # TODO: Check configuration
+  # TODO: Use bool (`false/true` instead of 0)
+
+  # region [ Lynis hardening profile ]
+  boot.kernel.sysctl = {
+    "dev.tty.ldisc_autoload" = 0;
+    "fs.protected_fifos" = 2;
+    "fs.protected_hardlinks" = 1;
+    "fs.protected_regular" = 2;
+    "fs.protected_symlinks" = 1;
+    "fs.suid_dumpable" = 0;
+    "kernel.core_uses_pid" = 1;
+    "kernel.ctrl-alt-del" = 0;
+    "kernel.dmesg_restrict" = 1;
+    "kernel.kptr_restrict" = 2;
+    # "kernel.modules_disabled" = 1;
+    "kernel.perf_event_paranoid" = 3;
+    "kernel.randomize_va_space" = 2;
+    "kernel.sysrq" = 0;
+    "kernel.unprivileged_bpf_disabled" = 1;
+    "kernel.yama.ptrace_scope" = 3;
+    "net.core.bpf_jit_harden" = 2;
+    "net.ipv4.conf.all.accept_redirects" = 0;
+    "net.ipv4.conf.all.accept_source_route" = 0;
+    "net.ipv4.conf.all.bootp_relay" = 0;
+    "net.ipv4.conf.all.forwarding" = 0;
+    "net.ipv4.conf.all.log_martians" = 1;
+    "net.ipv4.conf.all.mc_forwarding" = 0;
+    "net.ipv4.conf.all.proxy_arp" = 0;
+    "net.ipv4.conf.all.rp_filter" = 1;
+    "net.ipv4.conf.all.send_redirects" = 0;
+    "net.ipv4.conf.default.accept_redirects" = 0;
+    "net.ipv4.conf.default.accept_source_route" = 0;
+    "net.ipv4.conf.default.log_martians" = 1;
+    "net.ipv4.icmp_echo_ignore_broadcasts" = 1;
+    "net.ipv4.icmp_ignore_bogus_error_responses" = 1;
+    "net.ipv4.tcp_syncookies" = 1;
+    "net.ipv4.tcp_timestamps" = 0;
+  };
+  # endregion
+
+  # region [ NixOS hardened profile ]
+  boot.kernel.sysctl = {
+    "net.core.bpf_jit_enable" = false;
+    "kernel.ftrace_enabled" = false;
+    "net.ipv6.conf.all.accept_redirects" = false;
+    "net.ipv6.conf.default.accept_redirects" = false;
+  };
+  # endregion
+
   # region [ https://saylesss88.github.io/nix/hardening_NixOS.html#further-hardening-with-sysctl ]
   boot.kernel.sysctl = {
     # "fs.suid_dumpable" = 0;
@@ -51,13 +101,13 @@
 
     # "net.ipv4.conf.all.accept_redirects" = 0;
     # "net.ipv4.conf.default.accept_redirects" = 0;
-    "net.ipv4.conf.all.secure_redirects" = 0;
-    "net.ipv4.conf.default.secure_redirects" = 0;
+    "net.ipv4.conf.all.secure_redirects" = false;
+    "net.ipv4.conf.default.secure_redirects" = false;
     # Protect against IP spoofing
     "net.ipv6.conf.all.accept_redirects" = 0;
     "net.ipv6.conf.default.accept_redirects" = 0;
     # "net.ipv4.conf.all.send_redirects" = 0;
-    "net.ipv4.conf.default.send_redirects" = 0;
+    "net.ipv4.conf.default.send_redirects" = false;
 
     # prevent man-in-the-middle attacks
     "net.ipv4.icmp_echo_ignore_all" = 1;
@@ -110,44 +160,6 @@
     # Bufferbloat mitigations + slight improvement in throughput & latency
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.core.default_qdisc" = "cake";
-  };
-  # endregion
-
-  # region [ Lynis hardening profile ]
-  boot.kernel.sysctl = {
-    "dev.tty.ldisc_autoload" = 0;
-    "fs.protected_fifos" = 2;
-    "fs.protected_hardlinks" = 1;
-    "fs.protected_regular" = 2;
-    "fs.protected_symlinks" = 1;
-    "fs.suid_dumpable" = 0;
-    "kernel.core_uses_pid" = 1;
-    "kernel.ctrl-alt-del" = 0;
-    "kernel.dmesg_restrict" = 1;
-    "kernel.kptr_restrict" = 2;
-    # "kernel.modules_disabled" = 1;
-    "kernel.perf_event_paranoid" = 3;
-    "kernel.randomize_va_space" = 2;
-    "kernel.sysrq" = 0;
-    "kernel.unprivileged_bpf_disabled" = 1;
-    "kernel.yama.ptrace_scope" = 3;
-    "net.core.bpf_jit_harden" = 2;
-    "net.ipv4.conf.all.accept_redirects" = 0;
-    "net.ipv4.conf.all.accept_source_route" = 0;
-    "net.ipv4.conf.all.bootp_relay" = 0;
-    "net.ipv4.conf.all.forwarding" = 0;
-    "net.ipv4.conf.all.log_martians" = 1;
-    "net.ipv4.conf.all.mc_forwarding" = 0;
-    "net.ipv4.conf.all.proxy_arp" = 0;
-    "net.ipv4.conf.all.rp_filter" = 1;
-    "net.ipv4.conf.all.send_redirects" = 0;
-    "net.ipv4.conf.default.accept_redirects" = 0;
-    "net.ipv4.conf.default.accept_source_route" = 0;
-    "net.ipv4.conf.default.log_martians" = 1;
-    "net.ipv4.icmp_echo_ignore_broadcasts" = 1;
-    "net.ipv4.icmp_ignore_bogus_error_responses" = 1;
-    "net.ipv4.tcp_syncookies" = 1;
-    "net.ipv4.tcp_timestamps" = 0;
   };
   # endregion
 }

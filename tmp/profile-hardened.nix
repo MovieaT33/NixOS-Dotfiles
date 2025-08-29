@@ -1,5 +1,7 @@
-# TODO: Separate configuration into separated modules
+{ ... }:
+
 {
+  # TODO: Separate configuration into modules
   environment = {
     memoryAllocator.provider = "scudo";
     variables.SCUDO_OPTIONS = "ZeroContents=1";
@@ -46,17 +48,5 @@
       "sysv"
       "ufs"
     ];
-
-    kernel.sysctl = {
-      "kernel.yama.ptrace_scope" = 1;
-      "net.core.bpf_jit_enable" = false;
-      "kernel.ftrace_enabled" = false;
-      "net.ipv4.conf.default.rp_filter" = 1;
-      "net.ipv4.conf.all.secure_redirects" = false;
-      "net.ipv4.conf.default.secure_redirects" = false;
-      "net.ipv6.conf.all.accept_redirects" = false;
-      "net.ipv6.conf.default.accept_redirects" = false;
-      "net.ipv4.conf.default.send_redirects" = false;
-    };
   };
 }

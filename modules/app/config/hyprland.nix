@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, home-manager, ... }:
 
 {
   imports = [ ./xserver.nix ];
@@ -10,4 +10,6 @@
 
   # Cursor theme
   environment.systemPackages = with pkgs; [ bibata-cursors ];
+
+  home-manager.users.mvt33 = import ./home-manager/hyprland.nix;
 }
