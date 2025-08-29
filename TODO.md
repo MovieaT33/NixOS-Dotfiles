@@ -1,6 +1,7 @@
 **Packages**:
 
 - pkgs.nerdfetch
+- -> home-manager
 - kdePackages.filelight
 - pkgs.unimatrix
 - firejail
