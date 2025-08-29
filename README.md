@@ -17,8 +17,20 @@
 
 3. `cd NixOS-Dotfiles`
 
-4. `just i`
+4. `sudo just i`
 
 ### Dotfiles
 
-1. `D`, `dj` or `cd /etc/nixos; just`
+1. `nix-shell -p git just`
+
+2. `cd /etc`
+
+3. `rm -rf nixos`
+
+4. `git clone https://github.com/MovieaT33/NixOS-Dotfiles nixos`
+
+5. `cd nixos`
+
+6. In label `update` of `justfile` change `doas` to `sudo` using nano editor
+
+7. `just`
