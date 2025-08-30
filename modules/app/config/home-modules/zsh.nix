@@ -26,6 +26,7 @@
   imports = [
     ./zoxide.nix
     ./command-not-found.nix
+    ./git.nix
   ];
 
   # TODO: Update aliases
