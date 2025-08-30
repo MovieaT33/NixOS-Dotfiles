@@ -14,6 +14,7 @@ in
 
     # Network
     "${networkDir}/dns.nix"
+    "${networkDir}/fail2bun.nix"
     "${networkDir}/firewall.nix"
     "${networkDir}/ipv6.nix"
 

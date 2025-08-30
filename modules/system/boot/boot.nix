@@ -22,7 +22,10 @@
   # region [ Crash dump ]
   boot.crashDump = {
     enable = true;
-    kernelParams = [ "console=ttyS0,115200" "boot.shell_on_fail" ];
+    kernelParams = [
+      "console=tty0,115200"
+      "boot.shell_on_fail"
+    ];
     reservedMemory = "256M";
   };
   # endregion
