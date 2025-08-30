@@ -19,7 +19,7 @@
       "--total-size"
       "--octal-permissions"
     ];
-    icons = true;
+    icons = "auto";
     git = true;
   };
 
