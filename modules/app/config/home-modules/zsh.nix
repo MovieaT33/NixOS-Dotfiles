@@ -9,7 +9,7 @@
   # TODO: Update aliases
   home.shellAliases = {
     # Utilities
-    l  = "exa -l --icons --group-directories-first --git-ignore";
+    l  = "exa -lG --icons --group-directories-first --git-ignore";
     ll = "exa -lG --icons -a --group-directories-first --git";
     ls = "exa -lG --icons -a --group-directories-first -ghHiMOS --total-size -o --git";
     v  = "nvim";
