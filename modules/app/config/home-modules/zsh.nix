@@ -7,7 +7,6 @@
     extraOptions = [
       "--long",
       "--grid",
-      "--icons",
       "--all",
       "--group-directories-first",
       "--group",
@@ -18,8 +17,7 @@
       "--flags",
       "--blocksize",
       "--total-size",
-      "--octal-permissions",
-      "--git"
+      "--octal-permissions"
     ];
     icons = true;
     git = true;
