@@ -3,13 +3,12 @@
 {
   imports = [ ../../../app/config/zsh.nix ];   # Shell
 
-  users = {
-    users = {
-      mvt33 = {
-        isNormalUser = true;
-        shell = pkgs.zsh;
-        ignoreShellProgramCheck = true;
-      };
+  users.users = {
+    mvt33 = {
+      isNormalUser = true;
+
+      shell = pkgs.zsh;
+      ignoreShellProgramCheck = true;
     };
   };
 }

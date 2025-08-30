@@ -1,4 +1,4 @@
-{ stateVersion, pkgs, ... }:
+{ stateVersion, ... }:
 
 let
   username = "mvt33";

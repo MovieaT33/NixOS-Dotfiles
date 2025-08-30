@@ -1,7 +1,10 @@
 { ... }:
 
 {
-  imports = [ ./command-not-found.nix ];
+  imports = [
+    ./nix-index.nix
+    ./command-not-found.nix
+  ];
 
   # TODO: Update aliases
   home.shellAliases = {
@@ -24,8 +27,8 @@
     systemd-security = "systemd-analyze security";
 
     # Dotfiles
-    d  =  "cd /etc/nixos";
-    j  =  "just";
+    d  = "cd /etc/nixos";
+    j  = "just";
     D  = "cd /etc/nixos; just";
     dj = "cd /etc/nixos; just";
 
@@ -33,9 +36,10 @@
     system-info = "nix-info -m";
     nix-info    = "nix show-config";
     fonts       = "gnome-font-viewer";
-    r           = "sudo reboot now";
-    s           = "sudo shutdown now";
-    p           = "sudo poweroff -i";
+    c           = "doas sh -c 'printf c > /proc/sysrq-trigger'";
+    r           = "doas reboot now";
+    s           = "doas shutdown now";
+    p           = "doas poweroff -i";
   };
 
   programs.zsh = {

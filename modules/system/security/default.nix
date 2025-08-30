@@ -11,20 +11,22 @@
     ./network/firewall.nix
     ./network/ipv6.nix
 
+    # Services
+    ./services/antivirus.nix
+    ./services/apparmor.nix
+    ./services/audit.nix
+    ./services/dbus.nix
+    ./services/journald.nix
+    ./services/logrotate.nix
+    ./services/rtkit.nix
+    ./services/sysstat.nix
+    # ./services/usbguard.nix
+
     # Main
-    ./antivirus.nix
-    ./apparmor.nix
-    ./audit.nix
     ./boot.nix
     ./cis.nix
-    ./dbus.nix
-    ./journald.nix
     ./kernel.nix
-    ./logrotate.nix
     ./nix.nix
-    ./rtkit.nix
-    ./sysstat.nix
     ./systemd.nix
-    # ./security/usbguard.nix
   ];
 }
