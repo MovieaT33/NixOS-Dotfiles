@@ -5,11 +5,11 @@
 - useXkbConfig
 - README.md
 - systemd.services."getty@tty1".enable = true;
+- cachex
 - Justfile -> justfile
 - firejail
 - app -> apps | programs
 - `/etc/machine-id`
-
 - vim combinations in Zsh
 - efibootmgr
 - mokutil
@@ -54,41 +54,27 @@
 - watchdog
 - whomade
 - iotop
-
 - pkgs.atop
 - pkgs.dnstop
-- gh fzf ...
-- stress stress-ng
-
-**Other**:
-
-- youtube
+- gh
+- fzf
+- stress
+- stress-ng
+- youtube-cli
 - browser
 - bad-apple
 - mandelbrot
 - mc (*midnight commander*)
 - wttr.in
 - glow
-
 - asciinema
 - xsv
 - finger
 - dry
 - mcfly
 
-- TODO / FIXME
-
-- `Wake up, Neo` utility
-
-**System**:
-
-- SELinux
-- Firewall
-- Home manager
-- Systemd only with root
-- Antivirus
-
-**Security & Privacy**:
-
-- Hardening
+- `TODO` and `FIXME`
+- `Wake up, Neo!`
+- *SELinux*
+- `systemctl` only with root
 - `fileSystems."/boot".options = [ "ro" ];`
