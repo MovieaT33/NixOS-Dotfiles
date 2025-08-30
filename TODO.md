@@ -7,6 +7,7 @@
 - systemd.services."getty@tty1".enable = true;
 - Justfile -> justfile
 - firejail
+- app -> apps | programs
 
 - vim combinations in Zsh
 - efibootmgr

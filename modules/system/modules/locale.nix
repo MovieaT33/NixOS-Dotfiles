@@ -6,8 +6,8 @@
   services.ntp.enable = true;             # NTP
 
   time = {
-    hardwareClockInLocalTime = true;
     timeZone = "Europe/Kyiv";
+    hardwareClockInLocalTime = true;
   };
   # endregion
 

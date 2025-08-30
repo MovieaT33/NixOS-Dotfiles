@@ -44,6 +44,11 @@
 
   programs.zsh = {
     enable = true;
+
+    localVariables = {
+      HISTFILE = "/dev/null";
+    };
+
     autosuggestion.enable = true;
 
     oh-my-zsh = {

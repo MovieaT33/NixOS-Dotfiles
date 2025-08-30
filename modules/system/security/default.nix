@@ -1,26 +1,32 @@
 { ... }:
 
+let
+  authDir = "auth";
+  networkDir = "network";
+  servicesDir = "services";
+in
 {
   imports = [
     # Authentication
-    ./auth/doas.nix
-    ./auth/root.nix
+    ${authDir}/doas.nix
+    ${authDir}/pam.nix
+    ${authDir}/root.nix
 
     # Network
-    ./network/dns.nix
-    ./network/firewall.nix
-    ./network/ipv6.nix
+    ${networkDir}/dns.nix
+    ${networkDir}/firewall.nix
+    ${networkDir}/ipv6.nix
 
     # Services
-    ./services/antivirus.nix
-    ./services/apparmor.nix
-    ./services/audit.nix
-    ./services/dbus.nix
-    ./services/journald.nix
-    ./services/logrotate.nix
-    ./services/rtkit.nix
-    ./services/sysstat.nix
-    # ./services/usbguard.nix
+    ${servicesDir}/antivirus.nix
+    ${servicesDir}/apparmor.nix
+    ${servicesDir}/audit.nix
+    ${servicesDir}/dbus.nix
+    ${servicesDir}/journald.nix
+    ${servicesDir}/logrotate.nix
+    ${servicesDir}/rtkit.nix
+    ${servicesDir}/sysstat.nix
+    # ${servicesDir}/usbguard.nix
 
     # Main
     ./boot.nix

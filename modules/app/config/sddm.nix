@@ -4,6 +4,7 @@
   services.xserver.xkb.layout = "us";   # TODO: Check is work correctly
   services.displayManager = {
     defaultSession = "hyprland";
+    autoLogin.user = "mvt33";
     sddm = {
       enable = true;
       wayland.enable = true;
@@ -21,9 +22,6 @@
       ScreenHeight = "1200";
 
       Numlock = "on";
-    };
-    Autologin = {
-      User = "mvt33";
     };
   };
 }
