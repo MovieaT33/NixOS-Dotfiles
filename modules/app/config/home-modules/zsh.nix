@@ -1,6 +1,30 @@
 { ... }:
 
 {
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+    extraOptions = [
+      "--long",
+      "--grid",
+      "--icons",
+      "--all",
+      "--group-directories-first",
+      "--group",
+      "--header",
+      "--links",
+      "--inode",
+      "--mounts",
+      "--flags",
+      "--blocksize",
+      "--total-size",
+      "--octal-permissions",
+      "--git"
+    ];
+    icons = true;
+    git = true;
+  };
+
   imports = [
     ./zoxide.nix
     ./command-not-found.nix
@@ -9,7 +33,7 @@
   # TODO: Update aliases
   home.shellAliases = {
     # Utilities
-    l  = "exa -lG --icons --group-directories-first --git-ignore";
+    l  = "exa -lG --icons -git-ignore";
     ll = "exa -lG --icons -a --group-directories-first --git";
     ls = "exa -lG --icons -a --group-directories-first -ghHiMOS --total-size -o --git";
     v  = "nvim";
