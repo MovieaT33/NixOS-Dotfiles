@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{ home-manager, pkgs, ... }:
 
 {
+  home-manager.users.mvt33 = import ./git.nix;
+
   environment.systemPackages = with pkgs; [
-    git just                                  # repository and system
-    lynis kernel-hardening-checker            # security
+    just                                    # system
+    lynis kernel-hardening-checker          # security
   ];
 }
