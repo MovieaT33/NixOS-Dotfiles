@@ -1,5 +1,9 @@
 { ... }:
 
+let
+  luksDevice = "/dev/vda2";
+  nixosDir   = "/etc/nixos";
+in
 {
   imports = [
     ./zoxide.nix              # `cd` alternative
@@ -8,28 +12,12 @@
     ./git.nix                 # git configuration
   ];
 
-  # TODO: Update aliases
   home.shellAliases = {
-    # Utilities
-    v  = "nvim";
-
-    # Atuin
-    stats = "atuin stats";
-
-    # Cryptsetup
-    luks-add    = "doas cryptsetup luksAddKey /dev/vda2";     # add a new key  (rotate periodically)
-    luks-remove = "doas cryptsetup luksRemoveKey /dev/vda2";  # remove old key (rotate periodically)
-
-    # Security
-    sudo             = "doas";
-    lynis-security   = "doas lynis audit system";
-    systemd-security = "systemd-analyze security";
-
     # Dotfiles
-    d  = "cd /etc/nixos";
+    d  = "cd ${nixosDir}";
     j  = "just";
-    D  = "cd /etc/nixos; just";
-    dj = "cd /etc/nixos; just";
+    D  = "cd ${nixosDir}; just";
+    dj = "cd ${nixosDir}; just";
 
     # System and Nix
     system-info = "nix-info -m";
@@ -39,23 +27,39 @@
     r           = "doas reboot now";
     s           = "doas shutdown now";
     p           = "doas poweroff -i";
+
+    # Utilities
+    v     = "nvim";         # neovim
+    stats = "atuin stats";
+
+    # Cryptsetup
+    luks-add    = "doas cryptsetup luksAddKey    ${luksDevice}";  # add a new key  (rotate periodically)
+    luks-remove = "doas cryptsetup luksRemoveKey ${luksDevice}";  # remove old key (rotate periodically)
+
+    # Security
+    sudo             = "doas";
+    lynis-security   = "doas lynis audit system";
+    systemd-security = "systemd-analyze security";
   };
 
   programs.zsh = {
     enable = true;
 
-    localVariables = {
-      HISTFILE = "/dev/null";
+    history = {
+      save = 0;
+      size = 0;
     };
 
     autosuggestion.enable = true;
 
     oh-my-zsh = {
-      enable  = true;
-      theme   = "afowler";
-      plugins = [ "git" "sudo" ];
+      enable = true;
+      theme = "afowler";
+      plugins = [
+        "git"
+        "sudo"
+        "vi-mode"
+      ];
     };
   };
-
-  programs.atuin.enable = true;
 }
