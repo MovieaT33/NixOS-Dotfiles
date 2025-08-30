@@ -126,7 +126,7 @@
   },
   "clock": {
     "interval": 1,
-    "timezone": "UTC",
+    "timezone": "Europe/Kyiv",
     "format": "<span color='#BF00FF'>  </span>{:%H:%M} ",
     "tooltip": true,
     "tooltip-format": "{:L%Y-%m-%d, %A}"

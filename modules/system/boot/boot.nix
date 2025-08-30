@@ -22,7 +22,8 @@
   # region [ Crash dump ]
   boot.crashDump = {
     enable = true;
-    kernelParams = [ "crashkernel=256M" ];
+    kernelParams = [ "1" "boot.shell_on_fail" ];
+    reservedMemory = "256M";
   };
   # endregion
 }

@@ -11,5 +11,5 @@
     ../../app/config/hyprland.nix
   ];
 
-  home-manager.users.mvt33 = import ./home-manager.nix;
+  home-manager.users.mvt33 = import ./home.nix;
 }

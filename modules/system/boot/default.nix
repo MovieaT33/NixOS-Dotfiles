@@ -1,7 +1,7 @@
 { home-manager, stateVersion, pkgs, ... }:
 
 {
-  home-manager.users.mvt33 = import ./modules/home-manager.nix {
+  home-manager.users.mvt33 = import ./modules/home.nix {
     inherit stateVersion pkgs;
   };
 

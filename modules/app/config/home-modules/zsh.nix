@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./zoxide.nix
     ./command-not-found.nix
   ];
 
@@ -17,12 +18,12 @@
     stats = "atuin stats";
 
     # Cryptsetup
-    luks-add    = "sudo cryptsetup luksAddKey /dev/vda2";     # add a new key  (rotate periodically)
-    luks-remove = "sudo cryptsetup luksRemoveKey /dev/vda2";  # remove old key (rotate periodically)
+    luks-add    = "doas cryptsetup luksAddKey /dev/vda2";     # add a new key  (rotate periodically)
+    luks-remove = "doas cryptsetup luksRemoveKey /dev/vda2";  # remove old key (rotate periodically)
 
     # Security
     sudo             = "doas";
-    lynis-security   = "sudo lynis audit system";
+    lynis-security   = "doas lynis audit system";
     systemd-security = "systemd-analyze security";
 
     # Dotfiles
