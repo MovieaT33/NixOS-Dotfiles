@@ -5,18 +5,18 @@
     enable = true;
     enableZshIntegration = true;
     extraOptions = [
-      "--long",
-      "--grid",
-      "--all",
-      "--group-directories-first",
-      "--group",
-      "--header",
-      "--links",
-      "--inode",
-      "--mounts",
-      "--flags",
-      "--blocksize",
-      "--total-size",
+      "--long"
+      "--grid"
+      "--all"
+      "--group-directories-first"
+      "--group"
+      "--header"
+      "--links"
+      "--inode"
+      "--mounts"
+      "--flags"
+      "--blocksize"
+      "--total-size"
       "--octal-permissions"
     ];
     icons = true;
