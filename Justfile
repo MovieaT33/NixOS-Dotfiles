@@ -65,8 +65,8 @@ list:
 packages-upgrade:
     doas nixos-rebuild switch --upgrade
 
-# sync repository, update flake.lock, rebuild NixOS, and show current version 
-upgrade: sync update-flake update version
+# sync repository, rebuild NixOS, update flake.lock, and show current version 
+upgrade: sync update update-flake version
 
 # sync repository, rebuild without re-exec, and show current version
 fast-upgrade: sync fast-update version
