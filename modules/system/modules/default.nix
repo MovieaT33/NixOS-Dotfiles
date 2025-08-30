@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./ccache.nix
     ./console.nix
     ./docs.nix
     ./fonts.nix
