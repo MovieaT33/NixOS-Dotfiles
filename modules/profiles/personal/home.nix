@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ../../app/profiles/home-modules/dev.nix
-  ];
+  imports = [ ../../app/profiles/home/dev.nix ];
 }
