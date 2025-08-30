@@ -8,6 +8,7 @@
 - Justfile -> justfile
 - firejail
 - app -> apps | programs
+- `/etc/machine-id`
 
 - vim combinations in Zsh
 - efibootmgr
