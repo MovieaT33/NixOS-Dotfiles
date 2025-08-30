@@ -1,19 +1,19 @@
 { home-manager, stateVersion, pkgs, ... }:
 
 let
-  modulesDir = ./modules;
+  modulesDir = builtins.toPath ./modules;
 in
 {
-  home-manager.users.mvt33 = import ./modules/home.nix {
+  home-manager.users.mvt33 = import "${modulesDir}/home.nix" {
     inherit stateVersion pkgs;
   };
 
   imports = [
     # Modules
-    modulesDir + "/network.nix"
-    modulesDir + "/nix.nix"
-    modulesDir + "/system.nix"
-    modulesDir + "/users.nix"
+    "${modulesDir}/network.nix"
+    "${modulesDir}/nix.nix"
+    "${modulesDir}/system.nix"
+    "${modulesDir}/users.nix"
 
     # Boot
     ./boot.nix
