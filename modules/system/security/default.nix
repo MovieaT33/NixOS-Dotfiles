@@ -1,9 +1,9 @@
 { ... }:
 
 let
-  authDir = "auth";
-  networkDir = "network";
-  servicesDir = "services";
+  authDir = "./auth";
+  networkDir = "./network";
+  servicesDir = "./services";
 in
 {
   imports = [
