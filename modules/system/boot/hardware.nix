@@ -66,10 +66,16 @@
   swapDevices = [
     {
       device = "/dev/mapper/vg0-swap";
-      encrypted = {
+      randomEncryption = {
         enable = true;
-        label = "swap_crypt";
+        cipher = "aes-xts-plain64";
+        keySize = 256;
+        sectorSize = 4096;
+        source = "/dev/urandom";
+        allowDiscards = true;
       };
+      encrypted.label = "swap_crypt";
+      options = [ "discard" ];
     }
   ];
   # endregion
