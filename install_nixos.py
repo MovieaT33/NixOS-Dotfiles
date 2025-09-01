@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# TODO: write on C
+
 # region [ Imports ]
 
 import subprocess
@@ -153,6 +155,7 @@ def install() -> None:
 
     lv_config: dict[str, dict[str, str | None]] = {
         "nix": {"size": "20G", "mount": "/mnt/nix"},
+        "secure": {"size": "128MB", "mount": "/mnt/secure"},
         "home": {"size": "0.5G", "mount": "/mnt/home"},
         "var": {"size": "1G", "mount": "/mnt/var"},
         "tmp": {"size": "128M", "mount": "/mnt/tmp"},
