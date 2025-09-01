@@ -19,7 +19,7 @@ void run(const char *cmd) {
     printf(BOLD "%s" RESET "\n", cmd);
     int ret = system(cmd);
     if (ret != 0) {
-        fprintf(stderr, RED "Command failed" RESET "": %s\n", cmd);
+        fprintf(stderr, RED "Command failed" RESET ": %s\n", cmd);
         exit(1);
     }
 }
@@ -41,4 +41,6 @@ void format_volumes() {}
 #pragma endregion
 
 int main() {
+    run("ls / ");
+    run("get-some-error here");
 }
