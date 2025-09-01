@@ -6,6 +6,7 @@ let
 in
 {
   imports = [
+    ./atuin.nix
     ./zoxide.nix              # `cd` alternative
     ./eza.nix                 # `ls` alternative
     ./command-not-found.nix
