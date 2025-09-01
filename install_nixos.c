@@ -1,10 +1,12 @@
 #pragma region Imports
 #include <stdio.h>
+#include <stdlib.h>
 #pragma endregion
 
 #pragma region Colors
-#define BLUE "\033[34m"
+#define BLUE  "\033[34m"
 #define RESET "\033[0m"
+#define BOLD  "\033[1m"
 #pragma endregion
 
 #pragma region Utilities
@@ -12,7 +14,14 @@ void info(const char *message) {
     printf(BLUE "[INFO]" RESET " %s\n", message);
 }
 
-void run(const char *cmd) {}
+void run(const char *cmd) {
+    printf(BOLD "%s" RESET "\n", cmd);
+    int ret = system(cmd);
+    if (ret != 0) {
+        fprintf(stderr, "Command failed: %s\n", cmd);
+        exit(1);
+    }
+}
 #pragma endregion
 
 #pragma region Disk
