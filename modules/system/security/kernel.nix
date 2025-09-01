@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_hardened;  # Use hardened linux kernel
+  boot.kernelPackages = pkgs.linuxPackages_hardened;  # Hardened linux kernel
   security = {
     protectKernelImage = true;
     lockKernelModules = true;
