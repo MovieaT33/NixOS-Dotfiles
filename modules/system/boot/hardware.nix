@@ -64,7 +64,7 @@
 
   # region [ Swap ]
   swapDevices = [
-    { device = "/dev/mapper/vg0-swap";  encrypted.enable = true; }
+    { device = "/dev/mapper/vg0-swap"; label = "swap_crypt"; encrypted.enable = true; }
   ];
   # endregion
 }
