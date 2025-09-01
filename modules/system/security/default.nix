@@ -8,7 +8,6 @@ in
 {
   imports = [
     # Authentication
-    "${authDir}/doas.nix"
     "${authDir}/pam.nix"
     "${authDir}/root.nix"
 
