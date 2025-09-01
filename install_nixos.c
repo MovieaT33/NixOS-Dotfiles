@@ -7,6 +7,7 @@
 #define BLUE  "\033[34m"
 #define RESET "\033[0m"
 #define BOLD  "\033[1m"
+#define RED   "\033[31m"
 #pragma endregion
 
 #pragma region Utilities
@@ -18,7 +19,7 @@ void run(const char *cmd) {
     printf(BOLD "%s" RESET "\n", cmd);
     int ret = system(cmd);
     if (ret != 0) {
-        fprintf(stderr, "Command failed: %s\n", cmd);
+        fprintf(stderr, RED "Command failed" RESET "": %s\n", cmd);
         exit(1);
     }
 }
