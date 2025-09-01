@@ -20,7 +20,7 @@
     "/nix" = {
       device = "/dev/mapper/vg0-nix";
       fsType = "ext4";
-      options = [ "noatime" "relatime" "nosuid" "nodev "];
+      options = [ "noatime" "relatime" "nodev "];
     };
 
     "/secure" = {
