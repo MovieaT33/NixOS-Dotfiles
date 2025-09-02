@@ -20,7 +20,8 @@ EFI_PART := "/dev/vda1"
 
 MNT_DIR := "/mnt"
 
-default: partition_disk setup_luks create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
+# default: partition_disk setup_luks create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
+default: create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
 
 #
 partition_disk:
