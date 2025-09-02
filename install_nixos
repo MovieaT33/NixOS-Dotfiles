@@ -1,0 +1,164 @@
+DISK      := "/dev/vda"
+EFI_START := "1MiB"
+EFI_END   := "513MiB"
+ROOT_END  := "97.5%"
+DATA_END  := "100%"
+
+ROOT_PART := "{{DISK}}2"
+ROOT_NAME := "cryptroot"
+DATA_PART := "{{DISK}}3"
+DATA_NAME := "secure_data"
+ROOT_LUKS := "/dev/mapper/{{ROOT_NAME}}"
+DATA_LUKS := "/dev/mapper/{{DATA_NAME}}"
+
+ROOT_LVs := [
+    {"name": "nix", "size": "20G"},
+    {"name": "var", "size": "1G"},
+    {"name": "home", "size": "0.5G"},
+    {"name": "tmp", "size": "128M"},
+    {"name": "var_tmp", "size": "64M"},
+    {"name": "swap", "size": "1M"},
+    {"name": "root", "size": "100%FREE"}
+]
+DATA_LVs := [
+    {"name": "secure", "size": "1G"}
+]
+VG_ROOT := "vg0"
+VG_DATA := "vg1"
+
+EFI_PART := "{{DISK}}1"
+
+MNT_DIR := "/mnt"
+
+default: partition_disk setup_luks create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
+
+#
+partition_disk:
+    parted --script {{DISK}} mklabel gpt
+
+    parted --script {{DISK}} mkpart ESP fat32 {{EFI_START}} {{EFI_END}}
+    parted --script {{DISK}} set 1 esp on
+
+    parted --script {{DISK}} mkpart primary {{EFI_END}} {{ROOT_END}}
+
+    parted --script {{DISK}} mkpart primary {{ROOT_END}} {{DATA_END}}
+
+#
+setup_luks:
+    cryptsetup luksFormat {{ROOT_PART}} --type luks2 --pbkdf argon2id
+    cryptsetup open {{ROOT_PART}} {{ROOT_NAME}}
+
+    cryptsetup luksFormat {{DATA_PART}} --type luks2 --pbkdf argon2id
+    cryptsetup open {{DATA_PART}} {{DATA_NAME}}
+
+#
+create_lvm:
+    pvcreate {{ROOT_LUKS}}
+    vgcreate {{VG_ROOT}} {{ROOT_LUKS}}
+
+    pvcreate {{DATA_LUKS}}
+    vgcreate {{VG_DATA}} {{DATA_LUKS}}
+
+#
+create_logical_volumes:
+    {% for lv in ROOT_LVs %}
+    lvcreate -L {{lv.size}} {{VG_ROOT}} -n {{lv.name}}
+    {% endfor %}
+
+    {% for lv in DATA_LVs %}
+    {% if lv.size.endswith("%FREE") %}
+    lvcreate -l {{lv.size}} {{VG_DATA}} -n {{lv.name}}
+    {% else %}
+    lvcreate -L {{lv.size}} {{VG_DATA}} -n {{lv.name}}
+    {% endif %}
+    {% endfor %}
+
+#
+format_efi:
+    mkfs.fat -F 32 {{EFI_PART}}
+
+#
+format_logical_volumes:
+    mkfs.ext4 /dev/{{VG_ROOT}}/root
+    mkfs.ext4 /dev/{{VG_ROOT}}/nix
+    mkfs.ext4 /dev/{{VG_ROOT}}/var
+    mkfs.ext4 /dev/{{VG_ROOT}}/home
+    mkfs.ext4 /dev/{{VG_ROOT}}/tmp
+    mkfs.ext4 /dev/{{VG_ROOT}}/var_tmp
+    mkswap    /dev/{{VG_ROOT}}/swap
+
+    mkfs.ext4 /dev/{{VG_DATA}}/secure
+
+#
+mount_volumes:
+    mount /dev/{{VG_NAME}}/root {{MNT_DIR}}
+
+    mkdir -p {{MNT_DIR}}/boot
+    mount {{EFI_PART}} {{MNT_DIR}}/boot
+
+#
+mount_volumes:
+    mount /dev/{{VG_ROOT}}/root {{MNT_DIR}}
+
+    mkdir -p {{MNT_DIR}}/boot
+    mount {{EFI_PART}} {{MNT_DIR}}/boot
+
+    mkdir -p {{MNT_DIR}}/nix
+    mount /dev/{{VG_ROOT}}/nix {{MNT_DIR}}/nix
+
+    mkdir -p {{MNT_DIR}}/var
+    mount /dev/{{VG_ROOT}}/var {{MNT_DIR}}/var
+
+    mkdir -p {{MNT_DIR}}/home
+    mount /dev/{{VG_ROOT}}/home {{MNT_DIR}}/home
+
+    mkdir -p {{MNT_DIR}}/tmp
+    mount /dev/{{VG_ROOT}}/tmp {{MNT_DIR}}/tmp
+
+    mkdir -p {{MNT_DIR}}/var/tmp
+    mount /dev/{{VG_ROOT}}/var_tmp {{MNT_DIR}}/var/tmp
+
+    mkdir -p {{MNT_DIR}}/secure
+    mount /dev/{{VG_DATA}}/secure {{MNT_DIR}}/secure
+
+#
+enable_swap:
+    swapon /dev/{{VG_ROOT}}/swap
+
+#
+generate_nixos_config:
+    nixos-generate-config --root {{MNT_DIR}}
+
+#
+prompt_edit_config:
+    echo "[INFO] Please update the NixOS config with the following:"
+    echo
+    echo 'boot.initrd.luks.devices."{{ROOT_NAME}}" = {'
+    echo '  device = "{{ROOT_PART}}";'
+    echo '  preLVM = true;'
+    echo '};'
+    echo
+    echo 'boot.initrd.luks.devices."{{DATA_NAME}}" = {'
+    echo '  device = "{{DATA_PART}}";'
+    echo '  preLVM = true;'
+    echo '};'
+    echo
+    echo 'swapDevices = [ { device = "/dev/{{VG_ROOT}}/swap"; } ];'
+    echo
+    read -p "Press Enter to open config in nano..." _
+    nano /mnt/etc/nixos/configuration.nix
+
+#
+install_nixos:
+    nixos-install
+
+#
+cleanup:
+    swapoff /dev/{{VG_ROOT}}/swap
+    umount -R /mnt
+    vgchange -an {{VG_ROOT}}
+    vgchange -an {{VG_DATA}}
+    cryptsetup close {{ROOT_NAME}}
+    cryptsetup close {{DATA_NAME}}
+    read -p "Press Enter to reboot system..." _
+    reboot
