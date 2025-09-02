@@ -56,7 +56,9 @@
     "/secure" = {
       device = "/dev/mapper/vg1-secure";
       fsType = "ext4";
-      options = [ "mode=700" ];
+      postMountCommands = ''
+        chmod 0700 /secure
+      '';
     };
   };
   # endregion
