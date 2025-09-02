@@ -21,7 +21,7 @@ EFI_PART := "/dev/vda1"
 MNT_DIR := "/mnt"
 
 # default: partition_disk setup_luks create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
-default: create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
+default: format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
 
 #
 partition_disk:
@@ -64,19 +64,19 @@ create_logical_volumes:
 
 #
 format_efi:
-    mkfs.fat -F 32 {{EFI_PART}}
+    sudo mkfs.fat -F 32 {{EFI_PART}}
 
 #
 format_logical_volumes:
-    mkfs.ext4 /dev/{{VG_ROOT}}/root
-    mkfs.ext4 /dev/{{VG_ROOT}}/nix
-    mkfs.ext4 /dev/{{VG_ROOT}}/var
-    mkfs.ext4 /dev/{{VG_ROOT}}/home
-    mkfs.ext4 /dev/{{VG_ROOT}}/tmp
-    mkfs.ext4 /dev/{{VG_ROOT}}/var_tmp
-    mkswap    /dev/{{VG_ROOT}}/swap
+    sudo mkfs.ext4 /dev/{{VG_ROOT}}/root
+    sudo mkfs.ext4 /dev/{{VG_ROOT}}/nix
+    sudo mkfs.ext4 /dev/{{VG_ROOT}}/var
+    sudo mkfs.ext4 /dev/{{VG_ROOT}}/home
+    sudo mkfs.ext4 /dev/{{VG_ROOT}}/tmp
+    sudo mkfs.ext4 /dev/{{VG_ROOT}}/var_tmp
+    sudo mkswap    /dev/{{VG_ROOT}}/swap
 
-    mkfs.ext4 /dev/{{VG_DATA}}/secure
+    sudo mkfs.ext4 /dev/{{VG_DATA}}/secure
 
 #
 mount_volumes:
