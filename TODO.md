@@ -1,3 +1,4 @@
+- modules/profiles -> profiles
 - pkgs.nerdfetch
 - kdePackages.filelight
 - pkgs.unimatrix
