@@ -11,20 +11,10 @@ DATA_NAME := "secure_data"
 ROOT_LUKS := "/dev/mapper/{{ROOT_NAME}}"
 DATA_LUKS := "/dev/mapper/{{DATA_NAME}}"
 
-ROOT_LVs := [
-    {"name": "nix", "size": "20G"},
-    {"name": "var", "size": "1G"},
-    {"name": "home", "size": "0.5G"},
-    {"name": "tmp", "size": "128M"},
-    {"name": "var_tmp", "size": "64M"},
-    {"name": "swap", "size": "1M"},
-    {"name": "root", "size": "100%FREE"}
-]
-DATA_LVs := [
-    {"name": "secure", "size": "1G"}
-]
-VG_ROOT := "vg0"
-VG_DATA := "vg1"
+ROOT_LVs := "nix:20G var:1G home:0.5G tmp:128M var_tmp:64M swap:1M root:100%FREE"
+DATA_LVs := "secure:1G"
+VG_ROOT  := "vg0"
+VG_DATA  := "vg1"
 
 EFI_PART := "{{DISK}}1"
 
@@ -61,17 +51,25 @@ create_lvm:
 
 #
 create_logical_volumes:
-    {% for lv in ROOT_LVs %}
-    lvcreate -L {{lv.size}} {{VG_ROOT}} -n {{lv.name}}
-    {% endfor %}
+    @for lv in $(ROOT_LVs); do \
+        name=$$(echo $$lv | cut -d: -f1); \
+        size=$$(echo $$lv | cut -d: -f2); \
+        if [ "$$size" = "100%FREE" ]; then \
+            lvcreate -l $$size $(VG_ROOT) -n $$name; \
+        else \
+            lvcreate -L $$size $(VG_ROOT) -n $$name; \
+        fi; \
+    done
 
-    {% for lv in DATA_LVs %}
-    {% if lv.size.endswith("%FREE") %}
-    lvcreate -l {{lv.size}} {{VG_DATA}} -n {{lv.name}}
-    {% else %}
-    lvcreate -L {{lv.size}} {{VG_DATA}} -n {{lv.name}}
-    {% endif %}
-    {% endfor %}
+    @for lv in $(DATA_LVs); do \
+        name=$$(echo $$lv | cut -d: -f1); \
+        size=$$(echo $$lv | cut -d: -f2); \
+        if [ "$$size" = "100%FREE" ]; then \
+            lvcreate -l $$size $(VG_DATA) -n $$name; \
+        else \
+            lvcreate -L $$size $(VG_DATA) -n $$name; \
+        fi; \
+    done
 
 #
 format_efi:
