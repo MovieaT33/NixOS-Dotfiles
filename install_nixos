@@ -21,7 +21,7 @@ EFI_PART := "/dev/vda1"
 MNT_DIR := "/mnt"
 
 # default: partition_disk setup_luks create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
-default: create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
+default: create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
 
 #
 partition_disk:
@@ -52,25 +52,15 @@ create_lvm:
 
 #
 create_logical_volumes:
-    @for lv in $(ROOT_LVs); do \
-        name=$$(echo $$lv | cut -d: -f1); \
-        size=$$(echo $$lv | cut -d: -f2); \
-        if [ "$$size" = "100%FREE" ]; then \
-            lvcreate -l $$size $(VG_ROOT) -n $$name; \
-        else \
-            lvcreate -L $$size $(VG_ROOT) -n $$name; \
-        fi; \
-    done
+    lvcreate -L 20G {{VG_ROOT}} -n nix
+    lvcreate -L 1G  {{VG_ROOT}} -n var
+    lvcreate -L 0.5G {{VG_ROOT}} -n home
+    lvcreate -L 128M {{VG_ROOT}} -n tmp
+    lvcreate -L 64M {{VG_ROOT}} -n var_tmp
+    lvcreate -L 1M {{VG_ROOT}} -n swap
+    lvcreate -l 100%FREE {{VG_ROOT}} -n root
 
-    @for lv in $(DATA_LVs); do \
-        name=$$(echo $$lv | cut -d: -f1); \
-        size=$$(echo $$lv | cut -d: -f2); \
-        if [ "$$size" = "100%FREE" ]; then \
-            lvcreate -l $$size $(VG_DATA) -n $$name; \
-        else \
-            lvcreate -L $$size $(VG_DATA) -n $$name; \
-        fi; \
-    done
+    lvcreate -L 1G {{VG_DATA}} -n secure
 
 #
 format_efi:
