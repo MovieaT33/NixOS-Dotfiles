@@ -89,13 +89,6 @@ format_logical_volumes:
 
 #
 mount_volumes:
-    mount /dev/{{VG_NAME}}/root {{MNT_DIR}}
-
-    mkdir -p {{MNT_DIR}}/boot
-    mount {{EFI_PART}} {{MNT_DIR}}/boot
-
-#
-mount_volumes:
     mount /dev/{{VG_ROOT}}/root {{MNT_DIR}}
 
     mkdir -p {{MNT_DIR}}/boot
