@@ -1,4 +1,4 @@
-- modules/profiles -> profiles
+- Use other FS type
 - pkgs.nerdfetch
 - kdePackages.filelight
 - pkgs.unimatrix

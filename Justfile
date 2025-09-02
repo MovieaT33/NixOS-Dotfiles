@@ -27,9 +27,9 @@ default: upgrade
 version:
     doas git log -1 --oneline
 
-# install nixos
+# install nixos using install_nixos (justfile)
 install:
-    sudo ./install_nixos.py
+    just --justfile install_nixos
 
 # sync local repository with remote
 sync:

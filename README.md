@@ -63,7 +63,7 @@ If you use Windows install WSL and virt-manager first.
 
 1. Install dependencies to LiveCD:
    ```bash
-   nix-shell -p just python314
+   nix-shell -p just
 
 2. Clone this repository:
    ```bash

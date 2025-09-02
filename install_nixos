@@ -24,14 +24,14 @@ default: partition_disk setup_luks create_lvm create_logical_volumes format_efi 
 
 #
 partition_disk:
-    sudo parted --script {{DISK}} mklabel gpt
+    sudo parted -s {{DISK}} mklabel gpt
 
-    sudo parted --script {{DISK}} mkpart ESP fat32 {{EFI_START}} {{EFI_END}}
-    sudo parted --script {{DISK}} set 1 esp on
+    sudo parted -s {{DISK}} mkpart ESP fat32 {{EFI_START}} {{EFI_END}}
+    sudo parted -s {{DISK}} set 1 esp on
 
-    sudo parted --script {{DISK}} mkpart primary {{EFI_END}} {{ROOT_END}}
+    sudo parted -s {{DISK}} mkpart primary {{EFI_END}} {{ROOT_END}}
 
-    sudo parted --script {{DISK}} mkpart primary {{ROOT_END}} {{DATA_END}}
+    sudo parted -s {{DISK}} mkpart primary {{ROOT_END}} {{DATA_END}}
 
 #
 setup_luks:
@@ -63,7 +63,7 @@ create_logical_volumes:
 
 #
 format_efi:
-    sudo mkfs.fat -F 32 {{EFI_PART}}
+    sudo mkfs.vfat -F 32 {{EFI_PART}}
 
 #
 format_logical_volumes:
