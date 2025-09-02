@@ -12,9 +12,15 @@
     # endregion
 
     # region [ Luks devices ]
-    luks.devices."cryptroot" = {
-      device = "/dev/vda2";
-      preLVM = true;
+    luks.devices = {
+      "cryptroot" = {
+        device = "/dev/vda2";
+        preLVM = true;
+      };
+      "secure_data" = {
+        device = "/dev/vda3";
+        preLVM = true;
+      };
     };
     # endregion
   };

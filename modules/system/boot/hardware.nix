@@ -23,19 +23,6 @@
       options = [ "noatime" "relatime" "nodev "];
     };
 
-    "/secure" = {
-      device = "/dev/mapper/vg0-secure";
-      fsType = "ext4";
-      options = [
-        "ro"          # read-only
-        "nodev"
-        "nosuid"
-        "noexec"
-        "errors=remount-ro"
-        "relatime"
-      ];
-    };
-
     "/home" = {
       device = "/dev/mapper/vg0-home";
       fsType = "ext4";
