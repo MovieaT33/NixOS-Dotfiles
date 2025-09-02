@@ -1,7 +1,7 @@
 DISK      := "/dev/vda"
 EFI_START := "1MiB"
 EFI_END   := "513MiB"
-ROOT_END  := "97.5%"
+ROOT_END  := "97%"
 DATA_END  := "100%"
 
 ROOT_PART := "{{DISK}}2"
