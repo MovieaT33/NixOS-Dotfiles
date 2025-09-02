@@ -21,7 +21,7 @@
           inherit system stateVersion;
         };
         modules = [
-          ./modules/profiles/boot.nix
+          ./profiles/boot.nix
           home-manager.nixosModules.home-manager
         ];
       };
@@ -32,7 +32,7 @@
           inherit system stateVersion;
         };
         modules = [
-          ./modules/profiles/system.nix
+          ./profiles/system.nix
           home-manager.nixosModules.home-manager
         ];
       };
@@ -43,7 +43,7 @@
           inherit system stateVersion;
         };
         modules = [
-          ./modules/profiles/personal/config.nix
+          ./profiles/personal/config.nix
           home-manager.nixosModules.home-manager
         ];
       };

@@ -38,7 +38,7 @@ in
     luks-remove = "doas cryptsetup luksRemoveKey ${luksDevice}";  # remove old key (rotate periodically)
 
     # Security
-    sudo             = "doas";
+    please           = "doas";
     lynis-security   = "doas lynis audit system";
     systemd-security = "systemd-analyze security";
   };
