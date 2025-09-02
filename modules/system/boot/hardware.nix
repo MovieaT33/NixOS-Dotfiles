@@ -52,6 +52,12 @@
       fsType = "ext4";
       options = [ "noatime" ];
     };
+
+    "/secure" = {
+      device = "/dev/mapper/vg1-secure";
+      fsType = "ext4";
+      options = [ "mode=700" ];
+    };
   };
   # endregion
 
