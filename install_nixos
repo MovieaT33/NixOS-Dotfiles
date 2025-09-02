@@ -4,9 +4,9 @@ EFI_END   := "513MiB"
 ROOT_END  := "97%"
 DATA_END  := "100%"
 
-ROOT_PART := "{{DISK}}2"
+ROOT_PART := "$(DISK)2"
 ROOT_NAME := "cryptroot"
-DATA_PART := "{{DISK}}3"
+DATA_PART := "$(DISK)3"
 DATA_NAME := "secure_data"
 ROOT_LUKS := "/dev/mapper/{{ROOT_NAME}}"
 DATA_LUKS := "/dev/mapper/{{DATA_NAME}}"
@@ -16,7 +16,7 @@ DATA_LVs := "secure:1G"
 VG_ROOT  := "vg0"
 VG_DATA  := "vg1"
 
-EFI_PART := "{{DISK}}1"
+EFI_PART := "$(DISK)1"
 
 MNT_DIR := "/mnt"
 
