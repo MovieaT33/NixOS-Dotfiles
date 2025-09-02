@@ -20,8 +20,8 @@ EFI_PART := "/dev/vda1"
 
 MNT_DIR := "/mnt"
 
-# default: partition_disk setup_luks create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
-default: create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
+default: partition_disk setup_luks create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
+# default: create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
 
 #
 partition_disk:
@@ -52,15 +52,15 @@ create_lvm:
 
 #
 create_logical_volumes:
-    lvcreate -L 20G {{VG_ROOT}} -n nix
-    lvcreate -L 1G  {{VG_ROOT}} -n var
-    lvcreate -L 0.5G {{VG_ROOT}} -n home
-    lvcreate -L 128M {{VG_ROOT}} -n tmp
-    lvcreate -L 64M {{VG_ROOT}} -n var_tmp
-    lvcreate -L 1M {{VG_ROOT}} -n swap
-    lvcreate -l 100%FREE {{VG_ROOT}} -n root
+    sudo lvcreate -L 20G {{VG_ROOT}} -n nix
+    sudo lvcreate -L 1G  {{VG_ROOT}} -n var
+    sudo lvcreate -L 0.5G {{VG_ROOT}} -n home
+    sudo lvcreate -L 128M {{VG_ROOT}} -n tmp
+    sudo lvcreate -L 64M {{VG_ROOT}} -n var_tmp
+    sudo lvcreate -L 1M {{VG_ROOT}} -n swap
+    sudo lvcreate -l 100%FREE {{VG_ROOT}} -n root
 
-    lvcreate -L 1G {{VG_DATA}} -n secure
+    sudo lvcreate -L 1G {{VG_DATA}} -n secure
 
 #
 format_efi:
