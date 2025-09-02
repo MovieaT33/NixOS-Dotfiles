@@ -35,10 +35,10 @@ partition_disk:
 
 #
 setup_luks:
-    sudo cryptsetup luksFormat {{ROOT_PART}} ---type luks2 --pbkdf argon2id -y
+    sudo cryptsetup luksFormat {{ROOT_PART}} --batch-mode
     sudo cryptsetup open {{ROOT_PART}} {{ROOT_NAME}}
 
-    sudo cryptsetup luksFormat {{DATA_PART}} ---type luks2 --pbkdf argon2id -y
+    sudo cryptsetup luksFormat {{DATA_PART}} --batch-mode
     sudo cryptsetup open {{DATA_PART}} {{DATA_NAME}}
 
 #
