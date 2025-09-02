@@ -121,7 +121,6 @@ prompt_edit_config:
     @echo
     @echo 'boot.initrd.luks.devices."{{DATA_NAME}}" = {'
     @echo '  device = "{{DATA_PART}}";'
-    @echo '  preLVM = true;'
     @echo '};'
     @echo
     @echo 'swapDevices = [ { device = "/dev/{{VG_ROOT}}/swap"; } ];'

@@ -1,4 +1,5 @@
 - Use other FS type
+- Use GRUB
 - pkgs.nerdfetch
 - kdePackages.filelight
 - pkgs.unimatrix

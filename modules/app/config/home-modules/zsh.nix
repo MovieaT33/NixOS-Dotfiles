@@ -1,7 +1,6 @@
 { ... }:
 
 let
-  luksDevice = "/dev/vda2";
   nixosDir   = "/etc/nixos";
 in
 {
@@ -34,10 +33,11 @@ in
     stats = "atuin stats";
 
     # Cryptsetup
-    luks-add    = "doas cryptsetup luksAddKey    ${luksDevice}";  # add a new key  (rotate periodically)
-    luks-remove = "doas cryptsetup luksRemoveKey ${luksDevice}";  # remove old key (rotate periodically)
+    luks-add    = "doas cryptsetup luksAddKey";     # add a new key  (rotate periodically)
+    luks-remove = "doas cryptsetup luksRemoveKey";  # remove old key (rotate periodically)
 
     # Security
+    sudo             = "doas";
     please           = "doas";
     lynis-security   = "doas lynis audit system";
     systemd-security = "systemd-analyze security";

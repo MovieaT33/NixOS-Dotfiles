@@ -3,9 +3,15 @@
 {
   # region [ Partitions ]
   fileSystems = {
+    # "/" = {
+    #   device = "/dev/mapper/vg0-root";
+    #   fsType = "ext4";
+    #   options = [ "noatime" "relatime" "errors=remount-ro" ];
+    # };
+
     "/" = {
-      device = "/dev/mapper/vg0-root";
-      fsType = "ext4";
+      device = "none";
+      fsType = "tmpfs";
       options = [ "noatime" "relatime" "errors=remount-ro" ];
     };
 

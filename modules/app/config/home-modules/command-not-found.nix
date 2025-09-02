@@ -1,6 +1,6 @@
 { ... }:
 
 {
-  # programs.command-not-found.enable = true;
-  programs.nix-index.enable = true;
+  # FIXME: Remove using `nix-shell` for generating DB
+  programs.command-not-found.enable = true;
 }

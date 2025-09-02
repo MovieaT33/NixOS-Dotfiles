@@ -19,7 +19,6 @@
       };
       "secure_data" = {
         device = "/dev/vda3";
-        preLVM = true;
       };
     };
     # endregion
