@@ -21,7 +21,7 @@ EFI_PART := "/dev/vda1"
 MNT_DIR := "/mnt"
 
 # default: partition_disk setup_luks create_lvm create_logical_volumes format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
-default: format_efi format_logical_volumes mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
+default: mount_volumes enable_swap generate_nixos_config prompt_edit_config install_nixos cleanup
 
 #
 partition_disk:
@@ -80,28 +80,28 @@ format_logical_volumes:
 
 #
 mount_volumes:
-    mount /dev/{{VG_ROOT}}/root {{MNT_DIR}}
+    sudo mount /dev/{{VG_ROOT}}/root {{MNT_DIR}}
 
     mkdir -p {{MNT_DIR}}/boot
-    mount {{EFI_PART}} {{MNT_DIR}}/boot
+    sudo mount {{EFI_PART}} {{MNT_DIR}}/boot
 
     mkdir -p {{MNT_DIR}}/nix
-    mount /dev/{{VG_ROOT}}/nix {{MNT_DIR}}/nix
+    sudo mount /dev/{{VG_ROOT}}/nix {{MNT_DIR}}/nix
 
     mkdir -p {{MNT_DIR}}/var
-    mount /dev/{{VG_ROOT}}/var {{MNT_DIR}}/var
+    sudo mount /dev/{{VG_ROOT}}/var {{MNT_DIR}}/var
 
     mkdir -p {{MNT_DIR}}/home
-    mount /dev/{{VG_ROOT}}/home {{MNT_DIR}}/home
+    sudo mount /dev/{{VG_ROOT}}/home {{MNT_DIR}}/home
 
     mkdir -p {{MNT_DIR}}/tmp
-    mount /dev/{{VG_ROOT}}/tmp {{MNT_DIR}}/tmp
+    sudo mount /dev/{{VG_ROOT}}/tmp {{MNT_DIR}}/tmp
 
     mkdir -p {{MNT_DIR}}/var/tmp
-    mount /dev/{{VG_ROOT}}/var_tmp {{MNT_DIR}}/var/tmp
+    sudo mount /dev/{{VG_ROOT}}/var_tmp {{MNT_DIR}}/var/tmp
 
     mkdir -p {{MNT_DIR}}/secure
-    mount /dev/{{VG_DATA}}/secure {{MNT_DIR}}/secure
+    sudo mount /dev/{{VG_DATA}}/secure {{MNT_DIR}}/secure
 
 #
 enable_swap:
