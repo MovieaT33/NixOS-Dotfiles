@@ -25,7 +25,7 @@
     "kernel.kptr_restrict" = 2;
     "kernel.perf_event_paranoid" = 3;
     "kernel.randomize_va_space" = 2;
-    "kernel.sysrq" = 0  # 4;
+    "kernel.sysrq" = 0;   # 4
     "kernel.unprivileged_bpf_disabled" = 1;
     "kernel.yama.ptrace_scope" = 3;
     "kernel.dmesg_restrict" = 1;
