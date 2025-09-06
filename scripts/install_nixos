@@ -95,4 +95,5 @@ sudo mount "/dev/$VG_DATA/$LV_DATA_SECURE" "$INSTALL_ROOT/secure"
 
 # NixOS installation
 sudo nixos-generate-config --root "$INSTALL_ROOT"
-# sudo nixos-install
+sudo nano /mnt/etc/nixos/configuration.nix
+sudo nixos-install
