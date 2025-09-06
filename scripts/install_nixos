@@ -68,7 +68,8 @@ sudo mkfs.ext4 "/dev/$VG_DATA/$LV_DATA_SECURE"
 
 # Mounts
 sudo mount "/dev/$VG_ROOT/$LV_ROOT_ROOT" "$INSTALL_ROOT"
-sudo mkdir -p "$INSTALL_ROOT"/{boot,nix,var,home,tmp,var/tmp,secure}
+sudo mkdir -p "$INSTALL_ROOT"/{boot,nix,var,home,tmp,secure}
+sudo mkdir -p "$INSTALL_ROOT"/var/tmp
 sudo mount "$EFI_PART" "$INSTALL_ROOT/boot"
 
 sudo mount  "/dev/$VG_ROOT/$LV_ROOT_NIX"     "$INSTALL_ROOT/nix"
@@ -80,5 +81,5 @@ sudo swapon "/dev/$VG_ROOT/$LV_ROOT_SWAP"
 sudo mount  "/dev/$VG_DATA/$LV_DATA_SECURE"  "$INSTALL_ROOT/secure"
 
 # NixOS installation
-sudo nixos-generate-config --root /mnt
+sudo nixos-generate-config --root "$INSTALL_ROOT"
 # sudo nixos-install
