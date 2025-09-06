@@ -6,8 +6,8 @@
       device = "/dev/vda2";
       preLVM = true;
     };
-    "crypt_data" = {
-      device = "/dev/vda3";
-    };
+    # "crypt_data" = {
+    #   device = "/dev/vda3";
+    # };
   };
 }

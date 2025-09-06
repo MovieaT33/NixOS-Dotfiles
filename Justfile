@@ -27,7 +27,7 @@ default: upgrade
 version:
     doas git log -1 --oneline
 
-# install nixos using Python script
+# install nixos using bash script
 install:
     chmod +x ./scripts/{install_nixos,cleanup}
     ./scripts/install_nixos
