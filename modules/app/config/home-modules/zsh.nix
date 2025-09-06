@@ -36,7 +36,7 @@ in
     luks-add     = "doas cryptsetup luksAddKey";     # add a new key  (rotate periodically)
     luks-remove  = "doas cryptsetup luksRemoveKey";  # remove old key (rotate periodically)
     secure-open  = "doas cryptsetup open /dev/vda3 crypt_data; doas vgchange -ay vg_data; doas mkdir -p /secure; doas mount /dev/vg_data/secure /secure";
-    secure-close = "doas umount /secure; doas vgchange -an vg_data; doas cryptsetup close crypt_data; rm -rf /secure";
+    secure-close = "doas umount /secure; doas vgchange -an vg_data; doas cryptsetup close crypt_data; sudo rm -rf /secure";
 
     # Security
     sudo             = "doas";
