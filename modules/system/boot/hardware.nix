@@ -3,17 +3,17 @@
 {
   # region [ Partitions ]
   fileSystems = {
-    # "/" = {
-    #   device = "/dev/mapper/vg0-root";
-    #   fsType = "ext4";
-    #   options = [ "noatime" "relatime" "errors=remount-ro" ];
-    # };
-
     "/" = {
-      device = "none";
-      fsType = "tmpfs";
+      device = "/dev/vg_root/root";
+      fsType = "ext4";
       options = [ "noatime" "relatime" "errors=remount-ro" ];
     };
+
+    # "/" = {
+    #   device = "none";
+    #   fsType = "tmpfs";
+    #   options = [ "noatime" "relatime" "errors=remount-ro" ];
+    # };
 
     "/boot" = {
       device = "/dev/vda1";
@@ -24,41 +24,38 @@
     };
 
     "/nix" = {
-      device = "/dev/mapper/vg0-nix";
+      device = "/dev/vg_root/nix";
       fsType = "ext4";
       options = [ "noatime" "relatime" "nodev "];
     };
 
     "/home" = {
-      device = "/dev/mapper/vg0-home";
+      device = "/dev/vg_root/home";
       fsType = "ext4";
       options = [ "noatime" "noexec" "nosuid" "nodev" ];
     };
 
     "/var" = {
-      device = "/dev/mapper/vg0-var";
+      device = "/dev/vg_root/var";
       fsType = "ext4";
       options = [ "noatime" "nosuid" "nodev" "noexec" ];
     };
 
     "/tmp" = {
-      device = "/dev/mapper/vg0-tmp";
+      device = "/dev/vg_root/tmp";
       fsType = "tmpfs";
       options = [ "mode=1777" "nosuid" "nodev" "noexec" ];
     };
 
     "/var/tmp" = {
-      device = "/dev/mapper/vg0-var_tmp";
+      device = "/dev/vg_root/var_tmp";
       fsType = "ext4";
       options = [ "noatime" ];
     };
 
     "/secure" = {
-      device = "/dev/mapper/vg1-secure";
+      device = "/dev/vg_data/secure";
       fsType = "ext4";
-      postMountCommands = ''
-        chmod 0700 /secure
-      '';
     };
   };
   # endregion
@@ -66,7 +63,7 @@
   # region [ Swap ]
   swapDevices = [
     {
-      device = "/dev/mapper/vg_root-swap";
+      device = "/dev/vg_root/swap";
       randomEncryption = {
         enable = true;
         cipher = "aes-xts-plain64";

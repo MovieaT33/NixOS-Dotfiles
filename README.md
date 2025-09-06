@@ -71,9 +71,7 @@ If you use Windows install WSL and virt-manager first.
 
 3. `cd NixOS-Dotfiles`
 
-4. `chmod +x install_nixos.py`
-
-5. Run installation script:
+4. Run installation script:
    ```bash
    just i
 
@@ -81,34 +79,32 @@ If you use Windows install WSL and virt-manager first.
 
 ### Dotfiles
 
-6. Enter to `root` account
-
-7. Install dependencies:
+5. Install dependencies:
    ```bash
    nix-shell -p git just
 
-8. `cd /etc`
+6. `cd /etc`
 
-9. `rm -rf nixos`
+7. `rm -rf nixos`
 
-10. Clone dotfiles:
+8. Clone dotfiles:
     ```bash
     git clone https://github.com/MovieaT33/NixOS-Dotfiles nixos
 
-11. `cd nixos`
+9. `cd nixos`
 
-12. In label `update` of `justfile` change `doas` to `sudo` using nano editor: `nano justfile`
+10. In label `update` of `justfile` change `doas` to `sudo` using nano editor: `sudo nano justfile`
 
-13. Sync NixOS with the configuration:
+11. Sync NixOS with the configuration:
     ```bash
     just u
 
-14. Change password for user:
+12. Change password for user:
     ```bash
-    passwd <username>
+    passwd <user>
 
-15. Reboot system:
+13. Reboot system:
     ```bash
-    reboot now
+    sudo reboot now
 
 *README.md in processing...*
