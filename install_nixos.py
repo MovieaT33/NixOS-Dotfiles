@@ -51,6 +51,13 @@ class LVMVolume:
         return f"/dev/mapper/{self.name}"
 
 
+@dataclass
+class LogicVolume:
+    vg_name: str
+    name: str
+    size: str | None = None
+
+
 def run_command(cmd: str, sudo: bool = True) -> None:
     if sudo:
         cmd = f"sudo {cmd}"
@@ -84,14 +91,23 @@ def partition_disk(
 def setup_luks(volumes: list[LUKSVolume]) -> None:
     cryptsetup_cmd: str = "cryptsetup"
     for volume in volumes:
-        run_command(f"{cryptsetup_cmd} luksFormat {volume.part} --batch-mode")
-        run_command(f"{cryptsetup_cmd} open {volume.part} {volume.name}")
+        part: str = volume.part
+        run_command(f"{cryptsetup_cmd} luksFormat {part} --batch-mode")
+        run_command(f"{cryptsetup_cmd} open {part} {volume.name}")
 
 
 def create_lvm(volumes: list[LVMVolume]) -> None:
     for volume in volumes:
-        run_command(f"pvcreate {volume.path}")
-        run_command(f"vgcreate {volume.vg_name} {volume.path}")
+        path: str = volume.path
+        run_command(f"pvcreate {path}")
+        run_command(f"vgcreate {volume.vg_name} {path}")
+
+
+def create_logical_volumes(logical_volumes: list[LogicVolume]) -> None:
+    for volume in logical_volumes:
+        size: str | None = volume.size
+        size_cmd: str = f"-L {size}" if size is not None else "-l 100%FREE"
+        run_command(f"lvcreate {volume.vg_name} -n {volume.name} {size_cmd}")
 
 
 def install_nixos(disk: str, label: str) -> None:
@@ -119,11 +135,22 @@ def install_nixos(disk: str, label: str) -> None:
     luks_volumes: list[LUKSVolume] = [luks_root, luks_data]
     setup_luks(luks_volumes)
 
-    lvm_volumes: list[LVMVolume] = [
-        LVMVolume(luks_root.name, "vg_root"),
-        LVMVolume(luks_data.name, "vg_data")
-    ]
+    lvm_root: LVMVolume = LVMVolume(luks_root.name, "vg_root")
+    lvm_data: LVMVolume = LVMVolume(luks_data.name, "vg_data")
+    lvm_volumes: list[LVMVolume] = [lvm_root, lvm_data]
     create_lvm(lvm_volumes)
+
+    logical_volumes: list[LogicVolume] = [
+        LogicVolume(lvm_root.vg_name, "nix", size="20GiB"),
+        LogicVolume(lvm_root.vg_name, "var", size="1GiB"),
+        LogicVolume(lvm_root.vg_name, "home", size="0.5GiB"),
+        LogicVolume(lvm_root.vg_name, "tmp", size="128MiB"),
+        LogicVolume(lvm_root.vg_name, "var_tmp", size="64MiB"),
+        LogicVolume(lvm_root.vg_name, "swap", size="1MiB"),
+        LogicVolume(lvm_root.vg_name, "root"),
+        LogicVolume(lvm_data.vg_name, "secure", size="64MiB"),
+    ]
+    create_logical_volumes(logical_volumes)
 
 
 if __name__ == "__main__":

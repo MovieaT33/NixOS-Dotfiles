@@ -20,17 +20,10 @@ EFI_PART := "/dev/vda1"
 
 MNT_DIR := "/mnt"
 
-#
-create_lvm:
-    sudo pvcreate {{ROOT_LUKS}}
-    sudo vgcreate {{VG_ROOT}} {{ROOT_LUKS}}
-
-    sudo pvcreate {{DATA_LUKS}}
-    sudo vgcreate {{VG_DATA}} {{DATA_LUKS}}
 
 #
 create_logical_volumes:
-    sudo lvcreate -L 20G {{VG_ROOT}} -n nix
+
     sudo lvcreate -L 1G  {{VG_ROOT}} -n var
     sudo lvcreate -L 0.5G {{VG_ROOT}} -n home
     sudo lvcreate -L 128M {{VG_ROOT}} -n tmp
