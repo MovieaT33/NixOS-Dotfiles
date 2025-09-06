@@ -6,6 +6,4 @@
     killUnconfinedConfinables = true;
     enableCache = true;
   };
-
-  services.dbus.apparmor = "enabled";
 }

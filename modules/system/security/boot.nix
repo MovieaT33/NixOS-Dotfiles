@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  # https://saylesss88.github.io/nix/hardening_NixOS.html#hardening-boot-parameters
+  # See more at https://saylesss88.github.io/nix/hardening_NixOS.html#hardening-boot-parameters
   boot.kernelParams = [
     # make it harder to influence slab cache layout
     "slab_nomerge"

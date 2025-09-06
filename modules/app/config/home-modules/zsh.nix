@@ -35,7 +35,8 @@ in
     # LUKS encryption
     luks-add     = "doas cryptsetup luksAddKey";     # add a new key  (rotate periodically)
     luks-remove  = "doas cryptsetup luksRemoveKey";  # remove old key (rotate periodically)
-    secure-open  = "doas cryptsetup open /dev/vda3 crypt_data && doas vgchange -ay vg_data && doas mkdir -p /secure; doas mount /dev/vg_data/secure /secure; cd /secure";
+    secure-open  = "doas cryptsetup open /dev/vda3 crypt_data && doas vgchange -ay vg_data && doas mkdir -p /secure; doas mount /dev/vg_data/secure /secure";
+    sc           = "cd /security";
     secure-close = "doas umount /secure && doas vgchange -an vg_data && doas cryptsetup close crypt_data; doas rmdir /secure";
 
     # Security
