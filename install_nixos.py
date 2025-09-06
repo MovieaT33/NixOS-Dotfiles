@@ -11,10 +11,13 @@ class Partition:
 
 
 def run_command(cmd: str) -> None:
+    BOLD, RESET = "\033[31m", "\033[0m"
+    print(f"{BOLD}{cmd}{RESET}")
     subprocess.run(cmd, shell=True)
 
 
 def partition_disk(disk: str, label: str, partitions: list[Partition]) -> None:
+    # Make label
     parted_cmd: str = f"sudo parted -s {disk}"
     run_command(f"{parted_cmd} mklabel {label}")
 
