@@ -17,8 +17,8 @@ class Partition:
         self.type = type
         self.post_command = post_command
 
-        self.INDEX += 1
-        self.index = self.INDEX
+        Partition.INDEX += 1
+        self.index = Partition.INDEX
 
     def path(self, disk: str) -> str:
         return f"{disk}{self.index}"
