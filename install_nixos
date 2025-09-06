@@ -1,36 +1,3 @@
-mount_volumes:
-    sudo mount /dev/{{VG_ROOT}}/root {{MNT_DIR}}
-
-    sudo mkdir -p {{MNT_DIR}}/boot
-    sudo mount {{EFI_PART}} {{MNT_DIR}}/boot
-
-    sudo mkdir -p {{MNT_DIR}}/nix
-    sudo mount /dev/{{VG_ROOT}}/nix {{MNT_DIR}}/nix
-
-    sudo mkdir -p {{MNT_DIR}}/var
-    sudo mount /dev/{{VG_ROOT}}/var {{MNT_DIR}}/var
-
-    sudo mkdir -p {{MNT_DIR}}/home
-    sudo mount /dev/{{VG_ROOT}}/home {{MNT_DIR}}/home
-
-    sudo mkdir -p {{MNT_DIR}}/tmp
-    sudo mount /dev/{{VG_ROOT}}/tmp {{MNT_DIR}}/tmp
-
-    sudo mkdir -p {{MNT_DIR}}/var/tmp
-    sudo mount /dev/{{VG_ROOT}}/var_tmp {{MNT_DIR}}/var/tmp
-
-    sudo mkdir -p {{MNT_DIR}}/secure
-    sudo mount /dev/{{VG_DATA}}/secure {{MNT_DIR}}/secure
-
-#
-enable_swap:
-    sudo swapon /dev/{{VG_ROOT}}/swap
-
-#
-generate_nixos_config:
-    sudo nixos-generate-config --root {{MNT_DIR}}
-
-#
 prompt_edit_config:
     @echo "Please update the NixOS config with the following:"
     @echo
@@ -47,18 +14,3 @@ prompt_edit_config:
     @echo
     @read -p "Press Enter to open config in nano..." _
     sudo nano /mnt/etc/nixos/configuration.nix
-
-#
-install_nixos:
-    sudo nixos-install
-
-#
-cleanup:
-    sudo swapoff /dev/{{VG_ROOT}}/swap
-    sudo umount -R /mnt
-    sudo vgchange -an {{VG_ROOT}}
-    sudo vgchange -an {{VG_DATA}}
-    sudo cryptsetup close {{ROOT_NAME}}
-    sudo cryptsetup close {{DATA_NAME}}
-    read -p "Press Enter to reboot system..." _
-    sudo reboot
