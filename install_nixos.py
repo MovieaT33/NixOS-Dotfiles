@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 
 class Partition:
-    INDEX: int = 1
+    INDEX: int = 0
 
     def __init__(
         self,
@@ -17,11 +17,11 @@ class Partition:
         self.type = type
         self.post_command = post_command
 
-        self.index = self.INDEX
         self.INDEX += 1
+        self.index = self.INDEX
 
     def path(self, disk: str) -> str:
-        return f"/dev/{disk}{self.index}"
+        return f"{disk}{self.index}"
 
 
 @dataclass
@@ -53,7 +53,7 @@ def partition_disk(disk: str, label: str, parts: list[Partition]) -> None:
 
 def setup_luks(volumes: list[LuksVolume]) -> None:
     for volume in volumes:
-        ...
+        print(volume)
 
 
 def install_nixos(disk: str, label: str) -> None:
