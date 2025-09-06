@@ -11,8 +11,7 @@
     # };
     grub = {
       enable = true;
-      version = 2;
-      device = "/dev/vda";
+      device = "/dev/vda1";
       efiSupport = true;
     };
     timeout = 3;
