@@ -53,10 +53,10 @@
       options = [ "noatime" ];
     };
 
-    "/secure" = {
-      device = "/dev/vg_data/secure";
-      fsType = "ext4";
-    };
+    # "/secure" = {
+    #   device = "/dev/vg_data/secure";
+    #   fsType = "ext4";
+    # };
   };
   # endregion
 
