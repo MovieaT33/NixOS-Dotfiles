@@ -10,18 +10,6 @@
     ];
     kernelModules = [ "dm-snapshot" ];  # Device-mapper snapshot
     # endregion
-
-    # region [ Luks devices ]
-    luks.devices = {
-      "cryptroot" = {
-        device = "/dev/vda2";
-        preLVM = true;
-      };
-      "secure_data" = {
-        device = "/dev/vda3";
-      };
-    };
-    # endregion
   };
 
   # region [ Crash dump ]

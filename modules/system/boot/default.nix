@@ -23,6 +23,7 @@ in
     ./boot.nix
     ./bootloader.nix
     ./hardware.nix
+    ./luks.nix
     ./vm.nix
   ];
 }

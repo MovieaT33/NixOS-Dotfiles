@@ -66,7 +66,7 @@
   # region [ Swap ]
   swapDevices = [
     {
-      device = "/dev/mapper/vg0-swap";
+      device = "/dev/mapper/vg_root-swap";
       randomEncryption = {
         enable = true;
         cipher = "aes-xts-plain64";
