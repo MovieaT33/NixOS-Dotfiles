@@ -1,5 +1,6 @@
 import subprocess
 from dataclasses import dataclass
+from enum import IntEnum, auto
 from typing import NoReturn
 
 
@@ -51,11 +52,21 @@ class LVMVolume:
         return f"/dev/mapper/{self.name}"
 
 
+class FormatType(IntEnum):
+    EXT4 = auto()
+    SWAP = auto()
+
+
 @dataclass
 class LogicVolume:
     vg_name: str
     name: str
     size: str | None = None
+    type: FormatType = FormatType.EXT4
+
+    @property
+    def path(self) -> str:
+        return f"/dev/{self.vg_name}/{self.name}"
 
 
 def run_command(cmd: str, sudo: bool = True) -> None:
@@ -103,15 +114,30 @@ def create_lvm(volumes: list[LVMVolume]) -> None:
         run_command(f"vgcreate {volume.vg_name} {path}")
 
 
-def create_logical_volumes(logical_volumes: list[LogicVolume]) -> None:
-    for volume in logical_volumes:
+def create_logical_volumes(volumes: list[LogicVolume]) -> None:
+    for volume in volumes:
         size: str | None = volume.size
         size_cmd: str = f"-L {size}" if size is not None else "-l 100%FREE"
         run_command(f"lvcreate {volume.vg_name} -n {volume.name} {size_cmd}")
 
 
+def format_esp(part: str) -> None:
+    run_command(f"sudo mkfs.vfat -F 32 {part}")
+
+
+def format_logical_volumes(volumes: list[LogicVolume]) -> None | NoReturn:
+    for volume in volumes:
+        match volume.type:
+            case FormatType.EXT4:
+                run_command(f"mkfs.ext4 {volume.path}")
+            case FormatType.SWAP:
+                run_command(f"mkswap {volume.path}")
+            case _:
+                raise ValueError(f"Unknown format type: {volume.type}")
+    return None
+
+
 def install_nixos(disk: str, label: str) -> None:
-    # Partitions
     esp: Partition = Partition(
         start="1MiB",
         end="513MiB",
@@ -146,11 +172,16 @@ def install_nixos(disk: str, label: str) -> None:
         LogicVolume(lvm_root.vg_name, "home", size="0.5GiB"),
         LogicVolume(lvm_root.vg_name, "tmp", size="128MiB"),
         LogicVolume(lvm_root.vg_name, "var_tmp", size="64MiB"),
-        LogicVolume(lvm_root.vg_name, "swap", size="1MiB"),
+        LogicVolume(
+            lvm_root.vg_name, "swap", size="1MiB", type=FormatType.SWAP
+        ),
         LogicVolume(lvm_root.vg_name, "root"),
         LogicVolume(lvm_data.vg_name, "secure", size="64MiB"),
     ]
     create_logical_volumes(logical_volumes)
+
+    format_esp(IndexedPartition.search(indexed_parts, esp).path(disk))
+    format_logical_volumes(logical_volumes)
 
 
 if __name__ == "__main__":
