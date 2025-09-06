@@ -9,6 +9,7 @@
     ./groups.nix
     ./locale.nix
     ./tty.nix
+    ./users.nix
     ./zram.nix
     ./zswap.nix
   ];
