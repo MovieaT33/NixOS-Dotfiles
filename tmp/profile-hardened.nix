@@ -14,18 +14,9 @@
 
       # Overwrite free'd memory
       "page_poison=1"
-
-      # Enable page allocator randomization
-      "page_alloc.shuffle=1"
     ];
 
     blacklistedKernelModules = [
-      # Obscure network protocols
-      "ax25"
-      "netrom"
-      "rose"
-
-      # Old or rare or insufficiently audited filesystems
       "adfs"
       "affs"
       "bfs"

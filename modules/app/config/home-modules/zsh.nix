@@ -10,6 +10,7 @@ in
     ./eza.nix                 # `ls` alternative
     ./command-not-found.nix
     ./git.nix                 # git configuration
+    ./superfile.nix           # best file manager
   ];
 
   home.shellAliases = {
@@ -24,6 +25,7 @@ in
     nix-info    = "nix show-config";
     fonts       = "gnome-font-viewer";
     c           = "doas sh -c 'printf c > /proc/sysrq-trigger'";
+    dump        = "coredumpctl";
     r           = "doas reboot now";
     s           = "doas shutdown now";
     p           = "doas poweroff -i";
