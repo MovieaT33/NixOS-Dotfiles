@@ -29,7 +29,8 @@ version:
 
 # install nixos using Python script
 install:
-    python install_nixos.py
+    chmod +x ./scripts/{install_nixos,cleanup}
+    ./scripts/install_nixos
 
 # sync local repository with remote
 sync:

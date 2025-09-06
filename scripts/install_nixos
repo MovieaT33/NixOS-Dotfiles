@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+set -euxo pipefail
+
+# Disk & Partitions
+DISK="/dev/vda"
+EFI_PART="${DISK}1"
+ROOT_PART="${DISK}2"
+DATA_PART="${DISK}3"
+
+# Luks names
+CRYPT_ROOT="crypt_root"
+CRYPT_DATA="crypt_data"
+
+# Volume groups
+VG_ROOT="vg_root"
+VG_DATA="vg_data"
+
+# Logical volumes
+LV_ROOT_NIX="nix"
+LV_ROOT_VAR="var"
+LV_ROOT_HOME="home"
+LV_ROOT_TMP="tmp"
+LV_ROOT_VAR_TMP="var_tmp"
+LV_ROOT_SWAP="swap"
+LV_ROOT_ROOT="root"
+LV_DATA_SECURE="secure"
+
+# Install root
+INSTALL_ROOT="/mnt"
+
+# Create GPT and partitions
+sudo parted -s "$DISK" mklabel gpt
+sudo parted -s "$DISK" mkpart ESP fat32 1MiB 513MiB
+sudo parted -s "$DISK" set 1 esp on
+sudo parted -s "$DISK" mkpart primary 513MiB 95%
+sudo parted -s "$DISK" mkpart primary 95% 100%
+
+# LUKS encryption
+sudo cryptsetup luksFormat "$ROOT_PART" --batch-mode
+sudo cryptsetup open       "$ROOT_PART" "$CRYPT_ROOT"
+sudo cryptsetup luksFormat "$DATA_PART" --batch-mode
+sudo cryptsetup open       "$DATA_PART" "$CRYPT_DATA"
+
+# LVM
+sudo pvcreate            "/dev/mapper/$CRYPT_ROOT"
+sudo vgcreate "$VG_ROOT" "/dev/mapper/$CRYPT_ROOT"
+sudo pvcreate            "/dev/mapper/$CRYPT_DATA"
+sudo vgcreate "$VG_DATA" "/dev/mapper/$CRYPT_DATA"
+
+sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_NIX"     -L 20GiB
+sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_VAR"     -L 1GiB
+sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_HOME"    -L 512MiB
+sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_TMP"     -L 128MiB
+sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_VAR_TMP" -L 64MiB
+sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_SWAP"    -L 1MiB
+sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_ROOT"    -l 100%FREE
+sudo lvcreate "$VG_DATA" -n "$LV_DATA_SECURE"  -l 100%FREE
+
+# Filesystems
+sudo mkfs.vfat -F 32 "$EFI_PART"
+
+for lv in "$LV_ROOT_NIX" "$LV_ROOT_VAR" "$LV_ROOT_HOME" "$LV_ROOT_TMP" "$LV_ROOT_VAR_TMP" "$LV_ROOT_ROOT"; do
+    sudo mkfs.ext4 "/dev/$VG_ROOT/$lv"
+done
+
+sudo mkswap    "/dev/$VG_ROOT/$LV_ROOT_SWAP"
+sudo mkfs.ext4 "/dev/$VG_DATA/$LV_DATA_SECURE"
+
+# Mounts
+sudo mount "/dev/$VG_ROOT/$LV_ROOT_ROOT" "$INSTALL_ROOT"
+sudo mkdir -p "$INSTALL_ROOT"/{boot,nix,var,home,tmp,var/tmp,secure}
+sudo mount "$EFI_PART" "$INSTALL_ROOT/boot"
+
+sudo mount  "/dev/$VG_ROOT/$LV_ROOT_NIX"     "$INSTALL_ROOT/nix"
+sudo mount  "/dev/$VG_ROOT/$LV_ROOT_VAR"     "$INSTALL_ROOT/var"
+sudo mount  "/dev/$VG_ROOT/$LV_ROOT_HOME"    "$INSTALL_ROOT/home"
+sudo mount  "/dev/$VG_ROOT/$LV_ROOT_TMP"     "$INSTALL_ROOT/tmp"
+sudo mount  "/dev/$VG_ROOT/$LV_ROOT_VAR_TMP" "$INSTALL_ROOT/var/tmp"
+sudo swapon "/dev/$VG_ROOT/$LV_ROOT_SWAP"
+sudo mount  "/dev/$VG_DATA/$LV_DATA_SECURE"  "$INSTALL_ROOT/secure"
+
+# NixOS installation
+sudo nixos-generate-config --root /mnt
+# sudo nixos-install
