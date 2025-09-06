@@ -46,8 +46,6 @@ in
     systemd-security = "systemd-analyze security";
   };
 
-  # home.file.".oh-my-zsh/custom/themes/headline.zsh-theme".text = builtins.readFile ../dotfiles/oh-my-zsh/headline.zsh-theme;
-
   programs.zsh = {
     enable = true;
 
