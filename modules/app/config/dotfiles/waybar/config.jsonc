@@ -10,7 +10,6 @@
     "margin-left": 10,
 
     "modules-left": [
-        "custom/launcher",
         "hyprland/workspaces"
     ],
 
@@ -26,20 +25,17 @@
         "memory",
         "battery",
         "network",
-        "pulseaudio",
-		"custom/control"
+        "pulseaudio"
     ],
-
-    "custom/launcher":{
-        "format": " ",
-        "on-click": "rofi -show drun",
-        "on-click-right": "killall rofi",
-        "tooltip": false
-    },
 
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%H:%M - %a, %d %b %Y}",
         "tooltip": false
     },
 
@@ -48,10 +44,9 @@
         "tooltip": false
     },
 
-    "clock": {
-        "format": "{:%H:%M - %a, %d %b %Y}",
-        "tooltip": false
-    },
+	"hyprland/language": {
+		"format": "{short}"
+	},
 
     "cpu": {
         "format": "cpu {usage}%",
@@ -97,16 +92,5 @@
         "nospacing": 1,
         "on-click": "pwvucontrol",
         "tooltip": false
-    },
-
-	"hyprland/language": {
-		"format": "{short}",
-	},
-
-	"custom/control":{
-        "format": " ",
-        "on-click": "control",
-        "on-click-right": "killall control",
-        "tooltip": false
-    },
+    }
 }
