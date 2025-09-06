@@ -67,18 +67,31 @@ sudo mkswap    "/dev/$VG_ROOT/$LV_ROOT_SWAP"
 sudo mkfs.ext4 "/dev/$VG_DATA/$LV_DATA_SECURE"
 
 # Mounts
+sudo mkdir -p "$INSTALL_ROOT"
 sudo mount "/dev/$VG_ROOT/$LV_ROOT_ROOT" "$INSTALL_ROOT"
-sudo mkdir -p "$INSTALL_ROOT"/{boot,nix,var,home,tmp,secure}
-sudo mkdir -p "$INSTALL_ROOT"/var/tmp
+
+sudo mkdir -p "$INSTALL_ROOT/boot"
 sudo mount "$EFI_PART" "$INSTALL_ROOT/boot"
 
-sudo mount  "/dev/$VG_ROOT/$LV_ROOT_NIX"     "$INSTALL_ROOT/nix"
-sudo mount  "/dev/$VG_ROOT/$LV_ROOT_VAR"     "$INSTALL_ROOT/var"
-sudo mount  "/dev/$VG_ROOT/$LV_ROOT_HOME"    "$INSTALL_ROOT/home"
-sudo mount  "/dev/$VG_ROOT/$LV_ROOT_TMP"     "$INSTALL_ROOT/tmp"
-sudo mount  "/dev/$VG_ROOT/$LV_ROOT_VAR_TMP" "$INSTALL_ROOT/var/tmp"
+sudo mkdir -p "$INSTALL_ROOT/nix"
+sudo mount "/dev/$VG_ROOT/$LV_ROOT_NIX" "$INSTALL_ROOT/nix"
+
+sudo mkdir -p "$INSTALL_ROOT/var"
+sudo mount "/dev/$VG_ROOT/$LV_ROOT_VAR" "$INSTALL_ROOT/var"
+
+sudo mkdir -p "$INSTALL_ROOT/home"
+sudo mount "/dev/$VG_ROOT/$LV_ROOT_HOME" "$INSTALL_ROOT/home"
+
+sudo mkdir -p "$INSTALL_ROOT/tmp"
+sudo mount "/dev/$VG_ROOT/$LV_ROOT_TMP" "$INSTALL_ROOT/tmp"
+
+sudo mkdir -p "$INSTALL_ROOT/var/tmp"
+sudo mount "/dev/$VG_ROOT/$LV_ROOT_VAR_TMP" "$INSTALL_ROOT/var/tmp"
+
 sudo swapon "/dev/$VG_ROOT/$LV_ROOT_SWAP"
-sudo mount  "/dev/$VG_DATA/$LV_DATA_SECURE"  "$INSTALL_ROOT/secure"
+
+sudo mkdir -p "$INSTALL_ROOT/secure"
+sudo mount "/dev/$VG_DATA/$LV_DATA_SECURE" "$INSTALL_ROOT/secure"
 
 # NixOS installation
 sudo nixos-generate-config --root "$INSTALL_ROOT"
