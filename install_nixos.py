@@ -36,14 +36,28 @@ class IndexedPartition:
 
 
 @dataclass
-class LuksVolume:
+class LUKSVolume:
     part: str
     name: str
 
 
-def run_command(cmd: str) -> None:
+@dataclass
+class LVMVolume:
+    name: str
+    vg_name: str
+
+    @property
+    def path(self) -> str:
+        return f"/dev/mapper/{self.name}"
+
+
+def run_command(cmd: str, sudo: bool = True) -> None:
+    if sudo:
+        cmd = f"sudo {cmd}"
+
     BOLD, RESET = "\033[1m", "\033[0m"
     print(f"{BOLD}{cmd}{RESET}")
+
     subprocess.run(cmd, shell=True)
 
 
@@ -51,7 +65,7 @@ def partition_disk(
     disk: str, label: str, parts: list[Partition]
 ) -> list[IndexedPartition]:
     # Make label
-    parted_cmd: str = f"sudo parted -s {disk}"
+    parted_cmd: str = f"parted -s {disk}"
     run_command(f"{parted_cmd} mklabel {label}")
 
     end: str = "100%"
@@ -67,37 +81,49 @@ def partition_disk(
             for idx, part in enumerate(parts)]
 
 
-def setup_luks(volumes: list[LuksVolume]) -> None:
-    cryptsetup_cmd: str = "sudo cryptsetup"
+def setup_luks(volumes: list[LUKSVolume]) -> None:
+    cryptsetup_cmd: str = "cryptsetup"
     for volume in volumes:
         run_command(f"{cryptsetup_cmd} luksFormat {volume.part} --batch-mode")
         run_command(f"{cryptsetup_cmd} open {volume.part} {volume.name}")
 
 
+def create_lvm(volumes: list[LVMVolume]) -> None:
+    for volume in volumes:
+        run_command(f"pvcreate {volume.path}")
+        run_command(f"vgcreate {volume.vg_name} {volume.path}")
+
+
 def install_nixos(disk: str, label: str) -> None:
     # Partitions
-    esp_part: Partition = Partition(
+    esp: Partition = Partition(
         start="1MiB",
         end="513MiB",
         type="ESP fat32",
         post_command="set 1 esp on"
     )
-    root_part: Partition = Partition(end="99%")
-    data_part: Partition = Partition()
-    parts: list[Partition] = [esp_part, root_part, data_part]
+    root: Partition = Partition(end="99%")
+    data: Partition = Partition()
+    parts: list[Partition] = [esp, root, data]
 
     indexed_parts: list[IndexedPartition] = partition_disk(disk, label, parts)
-    luks_volumes: list[LuksVolume] = [
-        LuksVolume(
-            IndexedPartition.search(indexed_parts, root_part).path(disk),
-            "crypt_root"
-        ),
-        LuksVolume(
-            IndexedPartition.search(indexed_parts, data_part).path(disk),
-            "crypt_data"
-        )
-    ]
+
+    luks_root: LUKSVolume = LUKSVolume(
+        IndexedPartition.search(indexed_parts, root).path(disk),
+        "crypt_root"
+    )
+    luks_data: LUKSVolume = LUKSVolume(
+        IndexedPartition.search(indexed_parts, data).path(disk),
+        "crypt_data"
+    )
+    luks_volumes: list[LUKSVolume] = [luks_root, luks_data]
     setup_luks(luks_volumes)
+
+    lvm_volumes: list[LVMVolume] = [
+        LVMVolume(luks_root.name, "vg_root"),
+        LVMVolume(luks_data.name, "vg_data")
+    ]
+    create_lvm(lvm_volumes)
 
 
 if __name__ == "__main__":
