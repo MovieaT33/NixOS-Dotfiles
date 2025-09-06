@@ -1,10 +1,9 @@
 import subprocess
 from dataclasses import dataclass
+from typing import NoReturn
 
 
 class Partition:
-    INDEX: int = 0
-
     def __init__(
         self,
         start: str | None = None,
@@ -17,8 +16,20 @@ class Partition:
         self.type = type
         self.post_command = post_command
 
-        Partition.INDEX += 1
-        self.index = Partition.INDEX
+
+@dataclass
+class IndexedPartition:
+    index: int
+    part: Partition
+
+    @staticmethod
+    def search(
+        indexed_parts: list["IndexedPartition"], part: Partition
+    ) -> "IndexedPartition" | NoReturn:
+        for indexed_part in indexed_parts:
+            if indexed_part.part == part:
+                return indexed_part
+        raise ValueError(f"Partition {part} not found in indexed partitions.")
 
     def path(self, disk: str) -> str:
         return f"{disk}{self.index}"
@@ -36,7 +47,9 @@ def run_command(cmd: str) -> None:
     subprocess.run(cmd, shell=True)
 
 
-def partition_disk(disk: str, label: str, parts: list[Partition]) -> None:
+def partition_disk(
+    disk: str, label: str, parts: list[Partition]
+) -> list[IndexedPartition]:
     # Make label
     parted_cmd: str = f"sudo parted -s {disk}"
     run_command(f"{parted_cmd} mklabel {label}")
@@ -50,10 +63,15 @@ def partition_disk(disk: str, label: str, parts: list[Partition]) -> None:
         if (post_command := part.post_command) is not None:
             run_command(f"{parted_cmd} {post_command}")
 
+    return [IndexedPartition(idx, part)
+            for idx, part in enumerate(parts)]
+
 
 def setup_luks(volumes: list[LuksVolume]) -> None:
+    cryptsetup_cmd: str = "sudo cryptsetup"
     for volume in volumes:
-        print(volume)
+        run_command(f"{cryptsetup_cmd} luksFormat {volume.part} --batch-mode")
+        run_command(f"{cryptsetup_cmd} open {volume.part} {volume.name}")
 
 
 def install_nixos(disk: str, label: str) -> None:
@@ -68,13 +86,17 @@ def install_nixos(disk: str, label: str) -> None:
     data_part: Partition = Partition()
     parts: list[Partition] = [esp_part, root_part, data_part]
 
-    # Luks
+    indexed_parts: list[IndexedPartition] = partition_disk(disk, label, parts)
     luks_volumes: list[LuksVolume] = [
-        LuksVolume(root_part.path(disk), "crypt_root"),
-        LuksVolume(data_part.path(disk), "crypt_data")
+        LuksVolume(
+            IndexedPartition.search(indexed_parts, root_part).path(disk),
+            "crypt_root"
+        ),
+        LuksVolume(
+            IndexedPartition.search(indexed_parts, data_part).path(disk),
+            "crypt_data"
+        )
     ]
-
-    # partition_disk(disk, label, parts)
     setup_luks(luks_volumes)
 
 
