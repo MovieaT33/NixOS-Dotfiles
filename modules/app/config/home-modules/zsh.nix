@@ -13,8 +13,7 @@ in
     ./superfile.nix           # the best file manager
     ./fzf.nix                 # fuzzy finder
     ./btop.nix                # resource monitor
-    # ./tldr.nix                # simplified
-    # ./fd.nix                  # `find` alternative
+    ./fd.nix                  # `find` alternative
     # ./ripgrep.nix             # `grep` alternative
     # ./ncdu.nix                # disk usage analyzer
     # ./tree.nix                # directory tree
@@ -47,6 +46,7 @@ in
     # Utilities
     v     = "nvim";         # neovim
     t     = "tldr";         # simplified
+    e     = "superfile";    # file manager
     stats = "atuin stats";
 
     # LUKS encryption

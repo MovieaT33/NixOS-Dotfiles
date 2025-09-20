@@ -6,6 +6,6 @@
     ./modules/default.nix
     ./security/default.nix
 
-    ./app.nix
+    ./apps.nix
   ];
 }
