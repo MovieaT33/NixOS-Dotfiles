@@ -14,7 +14,8 @@ in
     ./fzf.nix                 # fuzzy finder
     ./btop.nix                # resource monitor
     ./fd.nix                  # `find` alternative
-    # ./ripgrep.nix             # `grep` alternative
+    ./ripgrep.nix             # `grep` alternative
+    ./ripgrep-all.nix         # `grep` alternative with more features
     # ./ncdu.nix                # disk usage analyzer
     # ./tree.nix                # directory tree
     # ./wget.nix                # network downloader
