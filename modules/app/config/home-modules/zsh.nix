@@ -16,14 +16,15 @@ in
     ./fd.nix                  # `find` alternative
     ./ripgrep.nix             # `grep` alternative
     ./ripgrep-all.nix         # `grep` alternative with more features
+    ./tmux.nix                # terminal multiplexer
+    ./neovim.nix              # neovim editor
     # ./ncdu.nix                # disk usage analyzer
     # ./tree.nix                # directory tree
     # ./wget.nix                # network downloader
     # ./curl.nix                # network downloader
-    # TODO: ./bat.nix                 # `cat` alternative
+    ./bat.nix                 # `cat` alternative
     # TODO: ./delta.nix               # git diff viewer
     # TODO: ./navi.nix                # interactive cheatsheet
-    # TODO: ./nvim.nix                # neovim
     # TODO: ./starship.nix            # shell prompt
   ];
 
