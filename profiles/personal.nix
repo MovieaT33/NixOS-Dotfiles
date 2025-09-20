@@ -2,12 +2,14 @@
 
 {
   imports = [
-    ../system.nix
+    ./system.nix
 
-    ../../modules/app/profiles/dev.nix
+    # Application profiles
+    ../modules/app/profiles/dev.nix
     # ../../modules/app/profiles/fun.nix
 
-    ../../modules/app/config/sddm.nix
-    ../../modules/app/config/hyprland.nix
+    # WM/DE configurations
+    ../modules/app/config/sddm.nix
+    ../modules/app/config/hyprland.nix
   ];
 }
