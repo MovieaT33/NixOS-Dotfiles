@@ -16,7 +16,7 @@ This repository contains my personal **dotfiles** and configurations for **NixOS
 - **Shell:** Zsh  
 - **Editor:** Neovim  
 - **Window Manager:** Hyprland  
-- **Security:** ClamAV + Lynis audit (score: 74/100)  
+- **Security:** ClamAV + Lynis audit (score: 73/100)  
 - **Privilege Management:** `doas`  
 - **Disk Layout:** 6 partitions + swap  
 

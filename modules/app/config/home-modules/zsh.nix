@@ -12,6 +12,14 @@ in
     ./git.nix                 # git configuration
     ./superfile.nix           # the best file manager
     ./fzf.nix                 # fuzzy finder
+    ./btop.nix                # resource monitor
+    # ./tldr.nix                # simplified
+    # ./fd.nix                  # `find` alternative
+    # ./ripgrep.nix             # `grep` alternative
+    # ./ncdu.nix                # disk usage analyzer
+    # ./tree.nix                # directory tree
+    # ./wget.nix                # network downloader
+    # ./curl.nix                # network downloader
     # TODO: ./bat.nix                 # `cat` alternative
     # TODO: ./delta.nix               # git diff viewer
     # TODO: ./navi.nix                # interactive cheatsheet
@@ -38,6 +46,7 @@ in
 
     # Utilities
     v     = "nvim";         # neovim
+    t     = "tldr";         # simplified
     stats = "atuin stats";
 
     # LUKS encryption
