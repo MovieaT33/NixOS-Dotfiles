@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../../../app/config/zsh.nix ];
+  imports = [ ../../app/config/zsh.nix ];
 
   users.users = {
     mvt33 = {
