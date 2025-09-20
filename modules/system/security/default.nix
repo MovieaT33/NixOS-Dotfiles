@@ -32,6 +32,7 @@ in
     ./boot.nix
     ./cis.nix
     ./kernel.nix
+    ./memory-allocator.nix
     ./nix.nix
     ./systemd.nix
   ];
