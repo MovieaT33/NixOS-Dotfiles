@@ -18,7 +18,6 @@
 - bastet
 - vitetris
 - pkgs.chkrootkit, pkgs.aide -> services.cron
-- tmux
 - GDB
 - wlr-randr
 - linpeas
@@ -50,7 +49,6 @@
 - broot
 - bat-extrashyperfine
 - taskwarrior
-- ripgrep-all
 - bb
 - nmon
 - watchdog
@@ -59,7 +57,6 @@
 - pkgs.atop
 - pkgs.dnstop
 - gh
-- fzf
 - stress
 - stress-ng
 - youtube-cli
@@ -77,6 +74,5 @@
 
 - `TODO` and `FIXME`
 - `Wake up, Neo!`
-- *SELinux*
 - `systemctl` only with root
 - `fileSystems."/boot".options = [ "ro" ];`

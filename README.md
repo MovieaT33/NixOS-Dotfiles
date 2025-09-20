@@ -89,7 +89,7 @@ If you use Windows install WSL and virt-manager first.
 
 8. Clone dotfiles:
     ```bash
-    git clone https://github.com/MovieaT33/NixOS-Dotfiles nixos
+    git clone https://github.com/MovieaT33/NixOS-Dotfiles nixos --depth 1
 
 9. `cd nixos`
 

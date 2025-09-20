@@ -24,7 +24,7 @@ in
     # ./curl.nix                # network downloader
     ./bat.nix                 # `cat` alternative
     # TODO: ./delta.nix               # git diff viewer
-    # TODO: ./navi.nix                # interactive cheatsheet
+    ./navi.nix                # interactive cheatsheet
     # TODO: ./starship.nix            # shell prompt
   ];
 
@@ -48,7 +48,9 @@ in
     # Utilities
     v     = "nvim";         # neovim
     t     = "tldr";         # simplified
+    n     = "navi";         # interactive cheatsheet
     e     = "superfile";    # file manager
+    b     = "bat";          # `cat` alternative
     stats = "atuin stats";
 
     # LUKS encryption
