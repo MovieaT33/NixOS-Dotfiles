@@ -15,6 +15,7 @@
 
   # TODO: Check configuration
   # TODO: Use bool (`false/true` instead of 0)
+  # Use `sysctl -a` and
 
   boot.kernel.sysctl = {
     # "kernel.modules_disabled" = 1;
