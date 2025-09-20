@@ -12,7 +12,7 @@ in
 
   imports = [
     # Boot
-    "${bootDir}/boot.nix"
+    "${bootDir}/bootloader.nix"
     "${bootDir}/hardware.nix"
     "${bootDir}/initrd.nix"
 
