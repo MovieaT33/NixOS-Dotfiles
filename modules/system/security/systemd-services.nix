@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # FIXME: Does not work
   systemd.services = {
     "getty@tty1".enable = false;
     "getty@tty2".enable = true;

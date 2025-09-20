@@ -1,3 +1,33 @@
+- `coreutils` -> `uutils`
+- https://pastebin.com/fi6VBm2z
+- https://www.reddit.com/r/NixOS/comments/1aqck9l/systemd_hardening_some_preconfigured_options_d
+- `cal`
+- Youtube CLI
+- `hm.programs.man`
+- `hm.manual`
+- `boot.bootspec`
+- `mitigations=off`
+- `environment.variables`: EDITOR, VISUAl, SHELL, ...
+- `boot.cleanTmpDir`
+- `sudo-rs`
+- `flatpak`
+- `r` (repeat in Zsh)
+- `fuck`
+- `systemd-analyze`
+- `printf b > ...` (break system)
+- `sudoedit`
+- `fc`
+- `cd -`
+- `pushd`, `popd`
+- `namei`
+- `printenv`
+- `qrencode`
+- `gpg`
+- setuid, wrappers
+- `tut`
+
+#
+
 - Use other FS type
 - Use GRUB
 - pkgs.nerdfetch
@@ -5,6 +35,7 @@
 - pkgs.unimatrix
 - pkgs.gnome-font-viewer
 - useXkbConfig
+- Use SELinux
 - README.md
 - cachex
 - Justfile -> justfile

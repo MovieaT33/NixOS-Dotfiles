@@ -29,7 +29,7 @@ in
   ];
 
   home.packages = with pkgs; [
-    nix-info
+    nix-info  # does not work
     # gnumake
     # coreutils
     # findutils
@@ -53,7 +53,7 @@ in
     dj = "cd ${nixosDir}; just";
 
     # System and Nix
-    system-info = "nix-info -m";
+    system-info = "nix-info -m";  # does not work
     nix-info    = "nix show-config";
     doctor      = "doas nix config check";
     fonts       = "gnome-font-viewer";
@@ -79,10 +79,11 @@ in
     secure-close = "doas umount /secure && doas vgchange -an vg_data && doas cryptsetup close crypt_data; doas rmdir /secure";
 
     # Security
-    sudo             = "doas";
-    please           = "doas";
-    lynis-security   = "doas lynis audit system";
-    systemd-security = "systemd-analyze security";
+    # TODO: `block-net = "";`
+    # TODO: `unblock-net = "";`
+    sudo   = "doas";
+    sec    = "doas lynis audit system";
+    dsec   = "systemd-analyze security";
   };
 
   programs.zsh = {
