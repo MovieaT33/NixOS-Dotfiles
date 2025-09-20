@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  nixosDir   = "/etc/nixos";
+  nixosDir = "/etc/nixos";
 in
 {
   imports = [
@@ -10,7 +10,13 @@ in
     ./eza.nix                 # `ls` alternative
     ./command-not-found.nix
     ./git.nix                 # git configuration
-    ./superfile.nix           # best file manager
+    ./superfile.nix           # the best file manager
+    ./fzf.nix                 # fuzzy finder
+    # TODO: ./bat.nix                 # `cat` alternative
+    # TODO: ./delta.nix               # git diff viewer
+    # TODO: ./navi.nix                # interactive cheatsheet
+    # TODO: ./nvim.nix                # neovim
+    # TODO: ./starship.nix            # shell prompt
   ];
 
   home.shellAliases = {
