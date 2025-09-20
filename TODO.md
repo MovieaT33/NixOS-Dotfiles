@@ -6,7 +6,6 @@
 - pkgs.gnome-font-viewer
 - useXkbConfig
 - README.md
-- systemd.services."getty@tty1".enable = true;
 - cachex
 - Justfile -> justfile
 - firejail

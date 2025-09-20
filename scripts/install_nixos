@@ -67,6 +67,7 @@ sudo mkswap    "/dev/$VG_ROOT/$LV_ROOT_SWAP"
 sudo mkfs.ext4 "/dev/$VG_DATA/$LV_DATA_SECURE"
 
 # Mounts
+# TODO: Use `mount --mkdir`
 sudo mkdir -p "$INSTALL_ROOT"
 sudo mount "/dev/$VG_ROOT/$LV_ROOT_ROOT" "$INSTALL_ROOT"
 

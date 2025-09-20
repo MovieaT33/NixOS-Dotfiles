@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 let
   nixosDir = "/etc/nixos";
@@ -28,6 +28,23 @@ in
     # TODO: ./starship.nix            # shell prompt
   ];
 
+  environment.systemPackages = with pkgs; [
+    nix-info
+    # gnumake
+    # coreutils
+    # findutils
+    # diffutils
+    # gnused
+    # gawk
+    # gzip
+    # unzip
+    # zip
+    # xz
+    # file
+    # which
+    # shadow  # for `chage` command (password expiration management)
+  ];
+
   home.shellAliases = {
     # Dotfiles
     d  = "cd ${nixosDir}";
@@ -38,6 +55,7 @@ in
     # System and Nix
     system-info = "nix-info -m";
     nix-info    = "nix show-config";
+    doctor      = "doas nix config check";
     fonts       = "gnome-font-viewer";
     c           = "doas sh -c 'printf c > /proc/sysrq-trigger'";
     dump        = "coredumpctl";

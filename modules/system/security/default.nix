@@ -34,6 +34,7 @@ in
     ./kernel.nix
     ./memory-allocator.nix
     ./nix.nix
+    ./systemd-services.nix
     ./systemd.nix
   ];
 }
