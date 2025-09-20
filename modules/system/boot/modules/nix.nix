@@ -9,7 +9,10 @@
       # Binary cache settings
       substituters = [ ];       # default: `https://cache.nixos.org/`
 
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
 
     optimise.automatic = true;

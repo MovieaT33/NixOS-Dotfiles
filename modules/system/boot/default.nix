@@ -1,6 +1,7 @@
 { home-manager, stateVersion, pkgs, ... }:
 
 let
+  bootDir     = builtins.toPath ./boot;
   modulesDir  = builtins.toPath ./modules;
   securityDir = builtins.toPath ./security;
 in
@@ -10,6 +11,11 @@ in
   };
 
   imports = [
+    # Boot
+    "${bootDir}/boot.nix"
+    "${bootDir}/hardware.nix"
+    "${bootDir}/initrd.nix"
+
     # Modules
     "${modulesDir}/network.nix"
     "${modulesDir}/nix.nix"
@@ -18,12 +24,5 @@ in
 
     # Security
     "${securityDir}/doas.nix"
-
-    # Boot
-    ./boot.nix
-    ./bootloader.nix
-    ./hardware.nix
-    ./luks.nix
-    ./vm.nix
   ];
 }

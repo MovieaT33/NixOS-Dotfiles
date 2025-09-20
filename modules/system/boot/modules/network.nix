@@ -2,7 +2,7 @@
 
 {
   networking = {
-    hostId = "00000000";  # run `hostid`
+    hostId = "00000000";  # Run `hostid`
     hostName = "nixos";
 
     # Systemd-networkd
