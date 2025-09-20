@@ -1,7 +1,6 @@
 { ... }:
 
 {
-  # See more at https://saylesss88.github.io/nix/hardening_NixOS.html#hardening-boot-parameters
   boot.kernelParams = [
     # make it harder to influence slab cache layout
     "slab_nomerge"
@@ -32,6 +31,12 @@
     "lockdown=confidentiality"
     # "rd.udev.log_level=3"
     # "udev.log_priority=3"
+
+    # Slab / slub sanity checks, redzoning, and poisoning
+    "slub_debug=FZP"
+
+    # Overwrite free'd memory
+    "page_poison=1"
   ];
 
   boot.blacklistedKernelModules = [
@@ -73,5 +78,24 @@
     # vivid driver is only useful for testing purposes and has been the
     # cause of privilege escalation vulnerabilities
     # "vivid"
+
+    "adfs"
+    "affs"
+    "bfs"
+    "befs"
+    "efs"
+    "erofs"
+    "exofs"
+    "f2fs"
+    "hpfs"
+    "jfs"
+    "minix"
+    "nilfs2"
+    "ntfs"
+    "omfs"
+    "qnx4"
+    "qnx6"
+    "sysv"
+    "ufs"
   ];
 }

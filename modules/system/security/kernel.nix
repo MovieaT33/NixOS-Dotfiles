@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_hardened;  # Hardened linux kernel
+  boot.kernelPackages = pkgs.linuxPackages_hardened;  # Use hardened linux kernel
   security = {
     protectKernelImage = true;
     lockKernelModules = true;
@@ -15,7 +15,7 @@
 
   # TODO: Check configuration
   # TODO: Use bool (`false/true` instead of 0)
-  # Use `sysctl -a` and
+  # TODO: Use `sysctl -a` and
 
   boot.kernel.sysctl = {
     # "kernel.modules_disabled" = 1;
