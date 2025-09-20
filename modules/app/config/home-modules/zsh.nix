@@ -28,7 +28,7 @@ in
     # TODO: ./starship.nix            # shell prompt
   ];
 
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     nix-info
     # gnumake
     # coreutils
