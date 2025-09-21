@@ -1,4 +1,5 @@
 # TODO: Update `networking.firewall.extraCommands`
+# FIXME: `iptables -Lvn`: shows no rules!
 { ... }:
 
 {

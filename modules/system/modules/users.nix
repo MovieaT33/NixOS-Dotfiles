@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ home-manager, pkgs, ... }:
 
 {
-  imports = [ ../../app/config/zsh.nix ];
+  home-manager.users."mvt33" = import ../../app/config/home-modules/zsh.nix;
 
   users.users = {
-    mvt33 = {
+    "mvt33" = {
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
     };

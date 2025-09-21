@@ -1,4 +1,4 @@
-{ stateVersion, ... }:
+{ stateVersion, home-manager, ... }:
 
 {
   imports = [
@@ -12,4 +12,6 @@
     ../modules/app/config/sddm.nix
     ../modules/app/config/hyprland.nix
   ];
+
+  home-manager.users."mvt33" = import ../modules/app/profiles/system.nix;
 }

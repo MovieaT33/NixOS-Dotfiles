@@ -37,6 +37,7 @@
     starfetch
     # t
     # u
+    unimatrix
     # v
     # w
     # x

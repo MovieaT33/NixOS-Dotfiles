@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  services.fail2ban.enable = false;
+  services.fail2ban.enable = true;
 }

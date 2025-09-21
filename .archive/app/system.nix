@@ -26,7 +26,6 @@
     nethogs
     nload
     pfetch
-    screenfetch
     speedtest-cli
     tcpdump
     wget

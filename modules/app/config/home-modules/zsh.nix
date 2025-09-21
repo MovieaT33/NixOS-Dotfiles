@@ -62,8 +62,8 @@ in
     system-info = "nix-info -m";  # does not work
     ns          = "nix-shell -p";
     nsl         = "nix-shell -p !!";
-    nix-info    = "nix show-config";
-    doctor      = "doas nix config check";
+    i           = "uname -a";
+    doc         = "doas nix config check";
     fonts       = "gnome-font-viewer";
     c           = "doas sh -c 'printf c > /proc/sysrq-trigger'";
     dump        = "coredumpctl";

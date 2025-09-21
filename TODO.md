@@ -43,9 +43,9 @@
 - Use GRUB
 - pkgs.nerdfetch
 - kdePackages.filelight
-- pkgs.unimatrix
 - pkgs.gnome-font-viewer
 - useXkbConfig
+- pandoc
 - Use SELinux
 - README.md
 - cachex
