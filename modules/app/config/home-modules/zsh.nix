@@ -70,6 +70,8 @@ in
     s           = "doas shutdown now";
     p           = "doas poweroff -i";
 
+    # FIXME: `l` is slow, `ls`
+
     # Utilities
     v     = "nvim";         # neovim
     t     = "tldr";         # simplified

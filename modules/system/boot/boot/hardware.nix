@@ -21,7 +21,7 @@
       device = "/dev/vda1";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022"
-                  "noatime" "nosuid" "nodev" "ro"
+                  "noatime" "nosuid" "nodev"
       ];
     };
 
@@ -43,8 +43,15 @@
       options = [ "noatime" "nosuid" "nodev" "noexec" ];
     };
 
+    "/var/log" = {
+      device = "tmpfs";
+      fsType = "tmpfs";
+      options = [ "mode=1777" "nosuid" "nodev" "noexec" ];
+    };
+
     "/tmp" = {
-      device = "/dev/vg_root/tmp";
+      # device = "/dev/vg_root/tmp";
+      device = "tmpfs";
       fsType = "tmpfs";
       options = [ "mode=1777" "nosuid" "nodev" "noexec" ];
     };

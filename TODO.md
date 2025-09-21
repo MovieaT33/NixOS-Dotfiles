@@ -21,6 +21,7 @@
 - `r` (repeat in Zsh)
 - `fuck`
 - `systemd-analyze`
+- whomade
 - `printf b > ...` (break system)
 - `sudoedit`
 - `fc`
