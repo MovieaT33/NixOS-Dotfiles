@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ home, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     # c
     calc
     # t

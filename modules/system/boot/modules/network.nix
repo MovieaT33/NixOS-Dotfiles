@@ -5,7 +5,7 @@
     hostId = "00000000";  # Run `hostid`
     hostName = "nixos";
 
-    # Systemd-networkd
+    # `systemd-networkd`
     useNetworkd = true;
 
     # Networks

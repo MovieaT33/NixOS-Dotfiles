@@ -60,8 +60,8 @@ in
     # System and Nix
     m           = "btop";  # monitor: `htop` alternative
     system-info = "nix-info -m";  # does not work
-    ns          = "nix-shell -p";
-    nsl         = "nix-shell -p !!";
+    ns          = "nix-shell --run zsh -p";
+    nsl         = "nix-shell --run zsh -p !!";
     i           = "uname -a";
     doc         = "doas nix config check";
     fonts       = "gnome-font-viewer";

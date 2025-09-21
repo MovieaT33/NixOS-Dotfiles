@@ -9,10 +9,6 @@
     bsd-finger
     dig
     glances
-    disfetch
-    duf
-    dysk
-    fastfetch
     # gdu
     # htop
     httpie
@@ -21,11 +17,9 @@
     # iproute2
     # mtr
     ncdu
-    neofetch
     net-tools
     nethogs
     nload
-    pfetch
     speedtest-cli
     tcpdump
     wget
