@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  # TODO: Update
+  # TODO: Update configuration
 
   # region [ Partitions ]
   fileSystems = {

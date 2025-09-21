@@ -17,6 +17,5 @@
     # ripgrep
     # tokei
     # yazi
-    zellij
   ];
 }

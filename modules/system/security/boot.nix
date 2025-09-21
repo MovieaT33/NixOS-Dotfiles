@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # TODO: Update formatting
   boot.kernelParams = [
     # make it harder to influence slab cache layout
     "slab_nomerge"

@@ -5,27 +5,53 @@ let
 in
 {
   imports = [
-    ./atuin.nix
-    ./zoxide.nix              # `cd` alternative
-    ./eza.nix                 # `ls` alternative
-    ./command-not-found.nix
-    ./git.nix                 # git configuration
-    ./superfile.nix           # the best file manager
-    ./fzf.nix                 # fuzzy finder
+    # a
+    ./atuin.nix               # shell history manager
+    # b
+    ./bat.nix                 # `cat` alternative
     ./btop.nix                # resource monitor
+    # c
+    ./command-not-found.nix   # suggests packages for unknown commands
+    # TODO: ./curl.nix        # network downloader
+    # d
+    # TODO: ./delta.nix       # git diff viewer
+    # e
+    ./eza.nix                 # `ls` alternative
+    # f
     ./fd.nix                  # `find` alternative
+    ./fzf.nix                 # fuzzy finder
+    # g
+    ./git.nix                 # git configuration
+    # h
+    # j
+    # k
+    # l
+    # m
+    # n
+    ./navi.nix                # interactive cheatsheet
+    # ./ncdu.nix              # disk usage analyzer
+    ./neovim.nix              # neovim editor
+    # o
+    # p
+    # q
+    # r
     ./ripgrep.nix             # `grep` alternative
     ./ripgrep-all.nix         # `grep` alternative with more features
+    # s
+    # TODO: ./starship.nix    # shell prompt
+    ./superfile.nix           # the best file manager
+    # t
     ./tmux.nix                # terminal multiplexer
-    ./neovim.nix              # neovim editor
-    # ./ncdu.nix                # disk usage analyzer
-    # ./tree.nix                # directory tree
-    # ./wget.nix                # network downloader
-    # ./curl.nix                # network downloader
-    ./bat.nix                 # `cat` alternative
-    # TODO: ./delta.nix               # git diff viewer
-    ./navi.nix                # interactive cheatsheet
-    # TODO: ./starship.nix            # shell prompt
+    # ./tree.nix              # directory tree
+    # u
+    # v
+    # w
+    # ./wget.nix              # network downloader
+    # x
+    # y
+    # z
+    ./zellij.nix              # terminal workspace manager
+    ./zoxide.nix              # `cd` alternative
   ];
 
   home.packages = with pkgs; [

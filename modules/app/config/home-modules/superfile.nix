@@ -1,8 +1,5 @@
 { pkgs, ... }:
 
 {
-  programs.superfile = {
-    enable = true;
-    package = pkgs.superfile;
- };
+  programs.superfile.enable = true;
 }

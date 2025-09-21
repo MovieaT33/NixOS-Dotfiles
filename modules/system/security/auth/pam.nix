@@ -4,7 +4,7 @@
   # TODO: Add `login`, `passwd`, ... modules
   # TODO: Use file
   # FIXME: PAM module
-  security.pam.services.su.text = ''
+  security.pam.services."su".text = ''
     auth required pam_faillock.so preauth silent deny=5 unlock_time=900
 
     auth sufficient pam_rootok.so

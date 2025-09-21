@@ -4,7 +4,7 @@
   boot.loader = {
     efi.canTouchEfiVariables = true;
 
-    # Use systemd-boot as the bootloader
+    # Use `systemd-boot` as the bootloader
     systemd-boot = {
       enable = true;
       editor = false;

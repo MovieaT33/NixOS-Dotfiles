@@ -9,8 +9,8 @@ in
     ./system.nix
 
     # WM/DE configurations
-    "${modulesDir}/app/config/sddm.nix"
     "${modulesDir}/app/config/hyprland.nix"
+    "${modulesDir}/app/config/sddm.nix"
   ];
 
   # Personal application profiles

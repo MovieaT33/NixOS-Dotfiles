@@ -11,5 +11,7 @@
   # Cursor theme
   environment.systemPackages = with pkgs; [ bibata-cursors ];
 
-  home-manager.users.mvt33 = import ./home-modules/hyprland.nix;
+  home-manager.users."mvt33" = import ./home-modules/hyprland.nix;
+
+  # TODO: Use modern app for "Application Not Responding" error
 }

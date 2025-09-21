@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_hardened;  # Use hardened linux kernel
+  boot.kernelPackages = pkgs.linuxPackages_hardened;  # use hardened linux kernel
   security = {
     protectKernelImage = true;
     lockKernelModules = true;
@@ -9,19 +9,19 @@
     forcePageTableIsolation = true;
     # allowSimultaneousMultithreading = fa;se;  # commented here, because may cause failings
 
-    # unprivilegedUsernsClone = true;             # config.virtualisation.containers.enable;
+    unprivilegedUsernsClone = true;
     virtualisation.flushL1DataCache = "always";
   };
 
   # TODO: Check configuration
   # TODO: Use bool (`false/true` instead of 0)
-  # TODO: Use `sysctl -a` and
+  # TODO: Use `sysctl -a`
 
   boot.kernel.sysctl = {
-    # "kernel.modules_disabled" = 1;
+    "kernel.modules_disabled" = false;
     "kernel.ftrace_enabled" = false;
     "kernel.core_uses_pid" = 1;
-    "kernel.ctrl-alt-del" = 0;
+    "kernel.ctrl-alt-del" = false;
     "kernel.kexec_load_disabled" = 1;
     "kernel.kptr_restrict" = 2;
     "kernel.perf_event_paranoid" = 3;
@@ -47,18 +47,18 @@
     "net.core.default_qdisc" = "cake";
 
     # IPv4
-    "net.ipv4.conf.all.accept_redirects" = 0;
-    "net.ipv4.conf.all.accept_source_route" = 0;
-    "net.ipv4.conf.all.bootp_relay" = 0;
-    "net.ipv4.conf.all.forwarding" = 0;
+    "net.ipv4.conf.all.accept_redirects" = false;
+    "net.ipv4.conf.all.accept_source_route" = false;
+    "net.ipv4.conf.all.bootp_relay" = false;
+    "net.ipv4.conf.all.forwarding" = false;
     "net.ipv4.conf.all.log_martians" = 1;
-    "net.ipv4.conf.all.mc_forwarding" = 0;
-    "net.ipv4.conf.all.proxy_arp" = 0;
-    "net.ipv4.conf.all.send_redirects" = 0;
+    "net.ipv4.conf.all.mc_forwarding" = false;
+    "net.ipv4.conf.all.proxy_arp" = false;
+    "net.ipv4.conf.all.send_redirects" = false;
     "net.ipv4.conf.all.rp_filter" = 1;
     "net.ipv4.conf.all.secure_redirects" = false;
-    "net.ipv4.conf.default.accept_redirects" = 0;
-    "net.ipv4.conf.default.accept_source_route" = 0;
+    "net.ipv4.conf.default.accept_redirects" = false;
+    "net.ipv4.conf.default.accept_source_route" = false;
     "net.ipv4.conf.default.log_martians" = 1;
     "net.ipv4.conf.default.send_redirects" = false;
     "net.ipv4.conf.default.rp_filter" = 1;
@@ -67,27 +67,27 @@
     "net.ipv4.icmp_echo_ignore_broadcasts" = 1;
     "net.ipv4.icmp_ignore_bogus_error_responses" = 1;
     "net.ipv4.tcp_syncookies" = 1;
-    "net.ipv4.tcp_timestamps" = 0;
+    "net.ipv4.tcp_timestamps" = false;
     "net.ipv4.tcp_rfc1337" = 1;
-    "net.ipv4.tcp_sack" = 0;
-    "net.ipv4.tcp_dsack" = 0;
-    "net.ipv4.tcp_fack" = 0;
+    "net.ipv4.tcp_sack" = false;
+    "net.ipv4.tcp_dsack" = false;
+    "net.ipv4.tcp_fack" = false;
     "net.ipv4.tcp_fastopen" = 3;
     "net.ipv4.tcp_congestion_control" = "bbr";
 
     # IPv6
     "net.ipv6.conf.all.disable_ipv6" = 1;
-    "net.ipv6.conf.all.accept_ra" = 0;
+    "net.ipv6.conf.all.accept_ra" = false;
     "net.ipv6.conf.all.accept_redirects" = false;
-    "net.ipv6.conf.all.accept_source_route" = 0;
-    "net.ipv6.conf.all.forwarding" = 0;
+    "net.ipv6.conf.all.accept_source_route" = false;
+    "net.ipv6.conf.all.forwarding" = false;
     "net.ipv6.conf.default.disable_ipv6" = 1;
     "net.ipv6.conf.default.accept_redirects" = false;
-    "net.ipv6.conf.default.accept_ra" = 0;
-    "net.ipv6.conf.default.accept_source_route" = 0;
+    "net.ipv6.conf.default.accept_ra" = false;
+    "net.ipv6.conf.default.accept_source_route" = false;
 
     # Virtual machine
-    "vm.unprivileged_userfaultfd" = 0;
+    "vm.unprivileged_userfaultfd" = false;
     "vm.mmap_rnd_bits" = 32;
     "vm.mmap_rnd_compat_bits" = 16;
     "vm.overcommit_memory" = 2;

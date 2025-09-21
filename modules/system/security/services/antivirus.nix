@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  # TODO: Add more antivirus software
+  # TODO: Add more antivirus scanners
 
   # region [ ClamAV ]
   # FIXME: Service `clamav-freshclam` failed to start
@@ -9,7 +9,7 @@
     scanner = {
       enable = true;
       interval = "12h";
-      # scanDirectories
+      # TODO: `scanDirectories`
     };
 
     fangfrisch = {

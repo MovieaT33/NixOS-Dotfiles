@@ -3,6 +3,6 @@
 {
   imports = [
     ../modules/system/boot/default.nix
-    ../modules/system/app.nix
+    ../modules/system/apps.nix
   ];
 }

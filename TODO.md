@@ -8,9 +8,12 @@
 - https://github.com/dev-sec/linux-baseline
 - https://www.reddit.com/r/NixOS/comments/1aqck9l/systemd_hardening_some_preconfigured_options_d
 - `pkgs.aide`
+- `pkgs.kernel-hardening-checker`
 - `killall`
 - `librewolf`
-- `wine`
+- `pkgs.wine`
+- `pkgs.dust`
+- `pkgs.cheat`
 - `ntopng`
 - `etherape`
 - `cal`

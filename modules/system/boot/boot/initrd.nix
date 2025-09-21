@@ -4,9 +4,9 @@
   # region [ Kernel modules ]
   boot.initrd = {
     availableKernelModules = [
-      # "ahci"                          # SATA drives
-      # "xhci_pci"                      # USB 3.0 / 3.1
-      # "sr_mod"                        # SCSI CD / DVD
+      # "ahci"          # SATA drives
+      # "xhci_pci"      # USB 3.0 / 3.1
+      # "sr_mod"        # SCSI CD / DVD
 
       # region [ Virtio ]
       "virtio_blk"      # block device (disk)
@@ -19,7 +19,7 @@
       # endregion
     ];
     kernelModules = [
-      "dm-snapshot"   # Device-mapper snapshot
+      "dm-snapshot"     # device-mapper snapshot
 
       # region [ Virtio ]
       "virtio_balloon"  # dynamic RAM management for VM
@@ -31,7 +31,7 @@
   };
   # endregion
 
-  # region [ Encryption: LUKS ]
+  # region [ LUKS encryption ]
   boot.initrd.luks.devices = {
     "crypt_root" = {
       device = "/dev/vda2";
@@ -47,11 +47,11 @@
   # region [ Crash dump ]
   boot.crashDump = {
     enable = true;
-    kernelParams = [
-      "console=tty0,115200"
-      "boot.shell_on_fail"
-    ];
-    reservedMemory = "256M";
+    # kernelParams = [
+    #   "console=tty0,115200"
+    #   "boot.shell_on_fail"
+    # ];
+    reservedMemory = "1G";
   };
   # endregion
 }
