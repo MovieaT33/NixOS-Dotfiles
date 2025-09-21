@@ -45,11 +45,6 @@ in
     # shadow  # for `chage` command (password expiration management)
   ];
 
-  # TODO:
-  # environment.shellAliases = {
-  #   sudo = "doas";
-  # };
-
   home.shellAliases = {
     # Dotfiles
     d  = "cd ${nixosDir}";
@@ -76,6 +71,7 @@ in
     # Utilities
     v     = "nvim";         # neovim
     t     = "tldr";         # simplified
+    f     = "fzf";          # fuzzy finder
     n     = "navi";         # interactive cheatsheet
     e     = "superfile";    # file manager
     b     = "bat";          # `cat` alternative

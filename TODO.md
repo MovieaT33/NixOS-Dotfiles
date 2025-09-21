@@ -9,6 +9,8 @@
 - https://www.reddit.com/r/NixOS/comments/1aqck9l/systemd_hardening_some_preconfigured_options_d
 - `pkgs.aide`
 - `killall`
+- `librewolf`
+- `wine`
 - `ntopng`
 - `etherape`
 - `cal`

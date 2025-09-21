@@ -5,7 +5,7 @@
 
   users.users = {
     "mvt33" = {
-      shell = pkgs.zsh;
+      shell = "${pkgs.zsh}/bin/zsh";
       ignoreShellProgramCheck = true;
     };
   };
