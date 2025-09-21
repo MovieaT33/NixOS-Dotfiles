@@ -72,6 +72,10 @@ in
   ];
 
   home.shellAliases = {
+    # TODO: Temporary aliases for training muscle memory
+    ls = "sl";
+    cd = "sl";
+
     # Dotfiles
     d  = "cd ${nixosDir}";
     j  = "just";
