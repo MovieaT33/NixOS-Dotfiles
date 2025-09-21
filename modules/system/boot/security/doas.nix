@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # Use `doas` instead of `sudo` (less code, less bugs, more secure)
@@ -19,7 +19,10 @@
     } ];
   };
 
-  environment.shellAliases = {
-    sudo = "doas";
-  };
+  environment.systemPackages = with pkgs; [
+    doas-sudo-shim  # for compatibility with `sudo`
+  ];
+  # environment.shellAliases = {
+  #   sudo = "doas";
+  # };
 }

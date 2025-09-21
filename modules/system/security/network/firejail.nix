@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  programs.firejail = {
-    enable = true;
-  };
+  programs.firejail.enable = true;
 }

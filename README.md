@@ -57,6 +57,8 @@ If you use Windows install WSL and virt-manager first.
 
 5. Change firmware to **UEFI x86_64: /usr/share/OVMF/OVMF_CODE_4M.fd**
 
+6. View -> Scale Display -> Never
+
 ---
 
 ### NixOS Installation 
