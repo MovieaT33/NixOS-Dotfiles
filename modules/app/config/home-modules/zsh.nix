@@ -83,15 +83,14 @@ in
     # FIXME: `l` is slow, `ls` is faster
     b     = "bat";                                          # `cat` alternative
     c     = "doas sh -c 'printf c > /proc/sysrq-trigger'";  # crash system (REISUB)
-    D     = "${nixosDir}; just";
     d     = "${nixosDir}";
-    dj    = "${nixosDir}; just";
     doc   = "doas nix config check";
     dump  = "coredumpctl";
     e     = "superfile";                                    # file manager
     f     = "fzf";                                          # fuzzy finder
     fonts = "gnome-font-viewer";
     j     = "just";
+    jj    = "${nixosDir}; just";
     i     = "uname -a";
     m     = "btop";                                         # monitor: `htop` alternative
     n     = "navi";                                         # interactive cheatsheet

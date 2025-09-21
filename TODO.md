@@ -10,6 +10,7 @@
 - `pkgs.aide`
 - `pkgs.kernel-hardening-checker`
 - `killall`
+- `dua-cli` (disk usage analyzer)
 - `librewolf`
 - `pkgs.wine`
 - `pkgs.dust`
