@@ -11,8 +11,12 @@
   ];
 
   # Personal application profiles
-  home-manager.users."mvt33" = import ../modules/app/profiles/dev.nix;
-  home-manager.users."mvt33" = import ../modules/app/profiles/fun.nix;
-  home-manager.users."mvt33" = import ../modules/app/profiles/security.nix;
-  home-manager.users."mvt33" = import ../modules/app/profiles/system.nix;
+  home-manager.users."mvt33" = { ... }: {
+    imports = [
+      ../modules/app/profiles/dev.nix
+      ../modules/app/profiles/fun.nix
+      ../modules/app/profiles/security.nix
+      ../modules/app/profiles/system.nix
+    ];
+  };
 }
