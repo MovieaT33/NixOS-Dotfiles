@@ -4,6 +4,7 @@
   imports = [
     ./ccache.nix
     ./console.nix
+    ./coredump.nix
     ./docs.nix
     ./fonts.nix
     ./groups.nix

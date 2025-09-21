@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  systemd.coredump = {
+    enable = true;
+  };
+}
