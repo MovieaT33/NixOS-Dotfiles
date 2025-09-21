@@ -7,7 +7,6 @@
     bmon
     bottom
     bsd-finger
-    btop
     dig
     glances
     disfetch
@@ -15,7 +14,7 @@
     dysk
     fastfetch
     # gdu
-    htop
+    # htop
     httpie
     iftop
     inxi

@@ -6,7 +6,7 @@
 
     # Application profiles
     ../modules/app/profiles/dev.nix
-    # ../../modules/app/profiles/fun.nix
+    ../../modules/app/profiles/fun.nix
 
     # WM/DE configurations
     ../modules/app/config/sddm.nix

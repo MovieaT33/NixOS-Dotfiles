@@ -13,6 +13,8 @@
     # d
     # e
     # f
+    figlet
+    fortune
     # g
     # h
     hello

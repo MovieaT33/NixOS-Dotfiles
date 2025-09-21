@@ -6,6 +6,8 @@
     historyLimit = 10000;
     clock24 = true;
     extraConfig = ''
+      set -g default-terminal "screen-256color"
+
       set  -g mouse on
       setw -g mode-keys vi
       set -g visual-activity off

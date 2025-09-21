@@ -7,9 +7,6 @@
     bb
     boxes
     # charasay
-    cowsay
-    figlet
-    fortune
     genact
     libcaca
     nyancat
