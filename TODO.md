@@ -1,11 +1,13 @@
 - `coreutils` -> `uutils`
 - https://pastebin.com/fi6VBm2z
+- https://saylesss88.github.io/nix/hardening_NixOS.html
 - https://github.com/nix-community/vulnix
 - https://spectrum-os.org/
 - https://github.com/trimstray/the-practical-linux-hardening-guide
 - https://github.com/imthenachoman/How-To-Secure-A-Linux-Server
 - https://github.com/dev-sec/linux-baseline
 - https://www.reddit.com/r/NixOS/comments/1aqck9l/systemd_hardening_some_preconfigured_options_d
+- `pkgs.aide`
 - `cal`
 - Youtube CLI
 - `hm.programs.man`
@@ -56,7 +58,6 @@
 - GDB
 - wlr-randr
 - linpeas
-- https://saylesss88.github.io/nix/hardening_NixOS.html
 - tree
 - .archive
 - links

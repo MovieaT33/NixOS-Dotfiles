@@ -81,7 +81,6 @@ in
     # Security
     # TODO: `block-net = "";`
     # TODO: `unblock-net = "";`
-    sudo   = "doas";
     sec    = "doas lynis audit system";
     dsec   = "systemd-analyze security";
   };

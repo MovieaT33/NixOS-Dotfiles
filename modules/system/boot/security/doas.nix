@@ -2,7 +2,11 @@
 
 {
   # Use `doas` instead of `sudo` (less code, less bugs, more secure)
+
+  # Disable `sudo`
   security.sudo.enable = false;
+
+  # Enable and configure `doas`
   security.doas = {
     enable = true;
     extraRules = [ {
@@ -11,6 +15,11 @@
 
       keepEnv = true;         # often necessary
       persist = true;         # convenient but less secure
+      noPass = false;         # convenient but even less secure
     } ];
+  };
+
+  environment.shellAliases = {
+    sudo = "doas";
   };
 }

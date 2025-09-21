@@ -14,6 +14,7 @@ in
     # Network
     "${networkDir}/dns.nix"
     "${networkDir}/fail2bun.nix"
+    "${networkDir}/firejail.nix"
     "${networkDir}/firewall.nix"
     "${networkDir}/ipv6.nix"
 
@@ -26,7 +27,7 @@ in
     "${servicesDir}/logrotate.nix"
     "${servicesDir}/rtkit.nix"
     "${servicesDir}/sysstat.nix"
-    # "${servicesDir}/usbguard.nix"
+    "${servicesDir}/usbguard.nix"
 
     # Main
     ./boot.nix
