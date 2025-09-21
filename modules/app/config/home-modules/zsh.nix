@@ -54,6 +54,7 @@ in
     ./zoxide.nix              # `cd` alternative
   ];
 
+  # TODO: Check which packages are really needed
   home.packages = with pkgs; [
     nix-info  # does not work
     # gnumake
@@ -82,43 +83,42 @@ in
     D  = "cd ${nixosDir}; just";
     dj = "cd ${nixosDir}; just";
 
-    # System and Nix
-    m           = "btop";  # monitor: `htop` alternative
-    system-info = "nix-info -m";  # does not work
-    ns          = "nix-shell --run zsh -p";
-    nsl         = "nix-shell --run zsh -p !!";
-    i           = "uname -a";
-    doc         = "doas nix config check";
-    fonts       = "gnome-font-viewer";
-    c           = "doas sh -c 'printf c > /proc/sysrq-trigger'";
-    dump        = "coredumpctl";
-    r           = "doas reboot now";
-    s           = "doas shutdown now";
-    p           = "doas poweroff -i";
-
-    # FIXME: `l` is slow, `ls`
-
-    # Utilities
-    v     = "nvim";         # neovim
-    t     = "tldr";         # simplified
-    f     = "fzf";          # fuzzy finder
-    n     = "navi";         # interactive cheatsheet
-    e     = "superfile";    # file manager
-    b     = "bat";          # `cat` alternative
+    # System, utilities and nix
+    # FIXME: `l` is slow, `ls` is faster
+    b     = "bat";                                          # `cat` alternative
+    c     = "doas sh -c 'printf c > /proc/sysrq-trigger'";  # crash system (REISUB)
+    doc   = "doas nix config check";
+    dump  = "coredumpctl";
+    e     = "superfile";                                    # file manager
+    f     = "fzf";                                          # fuzzy finder
+    fonts = "gnome-font-viewer";
+    i     = "uname -a";
+    m     = "btop";                                         # monitor: `htop` alternative
+    n     = "navi";                                         # interactive cheatsheet
+    ns    = "nix-shell --run zsh -p";
+    nl    = "nix-shell --run zsh -p !!";
+    p     = "doas poweroff -i";
+    r     = "doas reboot now";
+    s     = "doas shutdown now";
     stats = "atuin stats";
+    sys   = "nix-info -m";
+    t     = "tldr";                                         # tldr pages
+    tm    = "tmux";                                         # terminal multiplexer
+    v     = "nvim";                                         # neovim
+    zj    = "zellij";                                       # terminal workspace manager
 
     # LUKS encryption
     luks-add     = "doas cryptsetup luksAddKey";     # add a new key  (rotate periodically)
     luks-remove  = "doas cryptsetup luksRemoveKey";  # remove old key (rotate periodically)
     secure-open  = "doas cryptsetup open /dev/vda3 crypt_data && doas vgchange -ay vg_data && doas mkdir -p /secure; doas mount /dev/vg_data/secure /secure";
-    sc           = "cd /security";
     secure-close = "doas umount /secure && doas vgchange -an vg_data && doas cryptsetup close crypt_data; doas rmdir /secure";
+    sc           = "cd /security";
 
     # Security
     # TODO: `block-net = "";`
-    # TODO: `unblock-net = "";`
-    sec    = "doas lynis audit system";
     dsec   = "systemd-analyze security";
+    sec    = "doas lynis audit system";
+    # TODO: `unblock-net = "";`
   };
 
   programs.zsh = {

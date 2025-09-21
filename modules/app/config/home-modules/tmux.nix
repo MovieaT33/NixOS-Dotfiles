@@ -7,6 +7,7 @@
     historyLimit = 10000;
     clock24 = true;
     extraConfig = ''
+      # Use 256 colors
       set -g default-terminal "screen-256color"
 
       set  -g mouse on
@@ -17,17 +18,17 @@
       setw -g monitor-activity off
       set -g bell-action none
 
-      # clock mode
+      # Clock mode
       setw -g clock-mode-colour yellow
 
-      # copy mode
+      # Copy mode
       setw -g mode-style 'fg=black bg=red bold'
 
-      # panes
+      # Panes
       set -g pane-border-style 'fg=red'
       set -g pane-active-border-style 'fg=yellow'
 
-      # statusbar
+      # Statusbar
       set -g status-position bottom
       set -g status-justify left
       set -g status-style 'fg=red'
@@ -47,7 +48,7 @@
 
       setw -g window-status-bell-style 'fg=yellow bg=red bold'
 
-      # messages
+      # Messages
       set -g message-style 'fg=yellow bg=red bold'
     '';
   };
