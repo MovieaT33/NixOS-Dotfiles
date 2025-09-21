@@ -76,8 +76,8 @@ in
     # TODO: Temporary aliases for training muscle memory
     ls = "sl";
     cd = "sl";
-
-    # Dotfiles
+    l  = "eza";
+    ll = "eza";
 
     # System, dotfiles, utilities and nix
     # FIXME: `l` is slow, `ls` is faster
