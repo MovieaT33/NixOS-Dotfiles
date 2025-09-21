@@ -7,7 +7,7 @@
     lockKernelModules = true;
 
     forcePageTableIsolation = true;
-    # allowSimultaneousMultithreading = fa;se;  # commented here, because may cause failings
+    # allowSimultaneousMultithreading = false;  # commented here, because may cause failings
 
     unprivilegedUsernsClone = true;
     virtualisation.flushL1DataCache = "always";
