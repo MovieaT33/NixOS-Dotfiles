@@ -25,7 +25,7 @@ default: upgrade
 
 # shows the latest repository commit
 version:
-    doas git log -1 --oneline
+    sudo git log -1 --oneline
 
 # install nixos using bash script
 install:
@@ -34,37 +34,37 @@ install:
 
 # sync local repository with remote
 sync:
-    doas git fetch --depth 1
-    doas git reset --hard origin/main
+    sudo git fetch --depth 1
+    sudo git reset --hard origin/main
 
 # update flake.lock to the latest versions
 update-flake:
-    doas nix flake update
+    sudo nix flake update
 
 # rebuild NixOS with current profile
 update:
-    doas nixos-rebuild switch --flake .#{{PROFILE}}
+    sudo nixos-rebuild switch --flake .#{{PROFILE}}
 
 # fast update: rebuild without re-exec
 fast-update:
-    doas nixos-rebuild switch --flake .#{{PROFILE}} --no-reexec
+    sudo nixos-rebuild switch --flake .#{{PROFILE}} --no-reexec
 
 # verify Nix store integrity and repair if necessary
 repair:
-    doas nix-store --verify --check-contents --repair
+    sudo nix-store --verify --check-contents --repair
 
 # clean old generations and garbage
 clean:
-    doas nix-env --delete-generations old --profile /nix/var/nix/profiles/system
-    doas nix-collect-garbage -d
+    sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system
+    sudo nix-collect-garbage -d
 
 # list all system generations (profiles)
 list:
-    doas nix-env -p /nix/var/nix/profiles/system --list-generations
+    sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
 # upgrade all system packages and rebuild NixOS
 packages-upgrade:
-    doas nixos-rebuild switch --upgrade
+    sudo nixos-rebuild switch --upgrade
 
 # sync repository, rebuild NixOS, update flake.lock, and show current version 
 upgrade: sync update update-flake version
