@@ -45,6 +45,11 @@ in
     # shadow  # for `chage` command (password expiration management)
   ];
 
+  # TODO:
+  # environment.shellAliases = {
+  #   sudo = "doas";
+  # };
+
   home.shellAliases = {
     # Dotfiles
     d  = "cd ${nixosDir}";
@@ -53,7 +58,9 @@ in
     dj = "cd ${nixosDir}; just";
 
     # System and Nix
+    m           = "btop";  # monitor: `htop` alternative
     system-info = "nix-info -m";  # does not work
+    ns          = "nix-shell -p";
     nix-info    = "nix show-config";
     doctor      = "doas nix config check";
     fonts       = "gnome-font-viewer";

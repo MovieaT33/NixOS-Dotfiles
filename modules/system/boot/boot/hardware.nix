@@ -21,7 +21,7 @@
       device = "/dev/vda1";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022"
-                  "noatime" "nosuid" "nodev"
+                  "noatime" "nosuid" "nodev" "ro"
       ];
     };
 

@@ -22,7 +22,4 @@
   environment.systemPackages = with pkgs; [
     doas-sudo-shim  # for compatibility with `sudo`
   ];
-  # environment.shellAliases = {
-  #   sudo = "doas";
-  # };
 }

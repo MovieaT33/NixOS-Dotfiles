@@ -3,7 +3,7 @@
 {
   # FIXME: Failed to start
   services.usbguard = {
-    enable = true;
+    enable = false;
     rules = ''
       deny with-interface all
     '';
