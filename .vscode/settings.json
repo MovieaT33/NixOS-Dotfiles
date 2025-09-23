@@ -74,6 +74,7 @@
         "noatime",
         "nologin",
         "Numlock",
+        "nushell",
         "nvim",
         "oneline",
         "oneshot",

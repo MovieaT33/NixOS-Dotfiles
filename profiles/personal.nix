@@ -20,6 +20,8 @@ in
       "${modulesDir}/app/profiles/fun.nix"
       "${modulesDir}/app/profiles/security.nix"
       "${modulesDir}/app/profiles/system.nix"
+
+      "${modulesDir}/config/home-modules/nushell.nix"
     ];
   };
 }
