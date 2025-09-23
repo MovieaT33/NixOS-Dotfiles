@@ -38,7 +38,7 @@ in
     ./ripgrep.nix             # `grep` alternative
     ./ripgrep-all.nix         # `grep` alternative with more features
     # s
-    # TODO: ./starship.nix    # shell prompt
+    ./starship.nix            # shell prompt
     ./superfile.nix           # the best file manager
     # t
     ./tmux.nix                # terminal multiplexer

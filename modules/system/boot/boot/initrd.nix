@@ -51,7 +51,7 @@
     #   "console=tty0,115200"
     #   "boot.shell_on_fail"
     # ];
-    reservedMemory = "1G";
+    reservedMemory = "128M";
   };
   # endregion
 }
