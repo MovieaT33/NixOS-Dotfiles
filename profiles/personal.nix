@@ -21,7 +21,7 @@ in
       "${modulesDir}/app/profiles/security.nix"
       "${modulesDir}/app/profiles/system.nix"
 
-      "${modulesDir}/config/home-modules/nushell.nix"
+      "${modulesDir}/app/config/home-modules/nushell.nix"
     ];
   };
 }
