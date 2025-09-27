@@ -5,7 +5,7 @@
     enable = true;
 
     enableFishIntegration = true;
-    enableNushellIntegration = true;
+    enableNushellIntegration = false;
     enableZshIntegration = true;
 
     extraOptions = [
