@@ -20,7 +20,7 @@
     stateVersion = "25.05";
   in {
     nixosConfigurations = {
-      boot = nixpkgs.lib.nixosSystem {
+      "boot" = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit system stateVersion;
@@ -31,7 +31,7 @@
         ];
       };
 
-      system = nixpkgs.lib.nixosSystem {
+      "system" = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit system stateVersion;
@@ -42,19 +42,22 @@
         ];
       };
 
-      personal = nixpkgs.lib.nixosSystem {
+      "personal" = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit system stateVersion inputs;
+          inherit system stateVersion;
         };
         modules = [
           ./profiles/personal.nix
           home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
         ];
       };
 
       # NixOS alias (see `nixos-rebuild switch --upgrade`)
-      nixos = self.nixosConfigurations.personal;
+      "nixos" = self.nixosConfigurations.personal;
     };
   };
 }
