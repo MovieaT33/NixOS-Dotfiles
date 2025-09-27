@@ -102,6 +102,7 @@ in
     stats = "atuin stats";
     sys   = "nix-info -m";
     t     = "tldr";                                         # tldr pages
+    ta    = "type -a";                                      # show all locations of a command
     tm    = "tmux";                                         # terminal multiplexer
     v     = "nvim";                                         # neovim
     zj    = "zellij";                                       # terminal workspace manager

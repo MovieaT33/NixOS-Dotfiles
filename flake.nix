@@ -10,12 +10,12 @@
     };
 
     zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+      url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, zen-browser, ... } @ inputs: let
     system = "x86_64-linux";
     stateVersion = "25.05";
   in {
