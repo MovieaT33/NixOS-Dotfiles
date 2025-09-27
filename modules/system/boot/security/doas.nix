@@ -14,8 +14,8 @@
       users = [ "mvt33" ];
 
       keepEnv = true;         # often necessary
-      persist = true;         # convenient but less secure
-      noPass =  true;         # convenient but even less secure. TODO: Remove this
+      persist = false;        # convenient but less secure        # FIXME: enable
+      noPass  = true;         # convenient but even less secure.  # FIXME: disable
     } ];
   };
 
