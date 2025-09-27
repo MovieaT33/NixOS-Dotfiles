@@ -7,6 +7,7 @@
       auto-optimise-store = true;
 
       # Binary cache settings
+      # FIXME: Check `substituters` order
       substituters = [
         "https://nix-community.cachix.org/"
       ];  # default: `https://cache.nixos.org/`

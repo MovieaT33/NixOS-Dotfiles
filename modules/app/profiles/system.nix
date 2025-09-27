@@ -30,6 +30,7 @@
     # s
     screenfetch
     # t
+    tmate
     # u
     # v
     # w
