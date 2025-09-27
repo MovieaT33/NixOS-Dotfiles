@@ -3,6 +3,10 @@
 {
   # TODO: Update formatting
   boot.kernelParams = [
+    # disable Intel and AMD CPU mitigations, which can have a significant performance impact
+    # disable this only if you are sure that your system is not vulnerable
+    "mitigations=off"
+
     # make it harder to influence slab cache layout
     "slab_nomerge"
     # enables zeroing of memory during allocation and free time
