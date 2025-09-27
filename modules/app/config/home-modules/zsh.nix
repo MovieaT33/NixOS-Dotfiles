@@ -96,9 +96,6 @@ in
     n     = "navi";                                         # interactive cheatsheet
     ns    = "nix-shell --run zsh -p";
     nl    = "nix-shell --run zsh -p !!";
-    p     = "doas poweroff -i";
-    r     = "doas reboot now";
-    s     = "doas shutdown now";
     stats = "atuin stats";
     sys   = "nix-info -m";
     t     = "tldr";                                         # tldr pages

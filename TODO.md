@@ -9,7 +9,7 @@
 - https://www.reddit.com/r/NixOS/comments/1aqck9l/systemd_hardening_some_preconfigured_options_d
 - `pkgs.aide`
 - `pkgs.kernel-hardening-checker`
-- `killall`
+- `pkill` alias
 - `dua-cli` (disk usage analyzer)
 - `librewolf`
 - `pkgs.wine`
