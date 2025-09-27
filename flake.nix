@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, ... }: let
+  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs: let
     system = "x86_64-linux";
     stateVersion = "25.05";
   in {
