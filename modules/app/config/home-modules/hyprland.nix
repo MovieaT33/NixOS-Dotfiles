@@ -2,11 +2,10 @@
 
 {
   imports = [
+    # Desktop apps
     ./hyprpaper.nix   # Wallpaper
     ./waybar.nix      # Bar
     ./hyprlock.nix    # Lock screen
-
-    # Hyprland apps
     ./wofi.nix        # Menu
 
     # Apps
