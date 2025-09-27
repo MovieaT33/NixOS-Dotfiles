@@ -43,11 +43,11 @@ update-flake:
 
 # rebuild NixOS with current profile
 update:
-    sudo nixos-rebuild switch --flake .#{{PROFILE}}
+    sudo nixos-rebuild switch --flake .#{{PROFILE}} --quiet
 
 # fast update: rebuild without re-exec
 fast-update:
-    sudo nixos-rebuild switch --flake .#{{PROFILE}} --no-reexec
+    sudo nixos-rebuild switch --flake .#{{PROFILE}} --quiet --no-reexec
 
 # verify Nix store integrity and repair if necessary
 repair:
