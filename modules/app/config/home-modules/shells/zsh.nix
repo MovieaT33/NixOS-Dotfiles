@@ -6,52 +6,53 @@ in
 {
   imports = [
     # a
-    ./atuin.nix               # shell history manager
+    ../atuin.nix               # shell history manager
     # b
-    ./bat.nix                 # `cat` alternative
-    ./btop.nix                # resource monitor
+    ../bat.nix                 # `cat` alternative
+    ../btop.nix                # resource monitor
     # c
-    ./command-not-found.nix   # suggests packages for unknown commands
-    # TODO: ./curl.nix        # network downloader
+    ../command-not-found.nix   # suggests packages for unknown commands
+    # TODO: ../curl.nix        # network downloader
     # d
-    # TODO: ./delta.nix       # git diff viewer
+    # TODO: ../delta.nix       # git diff viewer
     # e
-    ./eza.nix                 # `ls` alternative
+    ../eza.nix                 # `ls` alternative
     # f
-    ./fd.nix                  # `find` alternative
-    ./fzf.nix                 # fuzzy finder
+    ../fd.nix                  # `find` alternative
+    ../fzf.nix                 # fuzzy finder
     # g
-    ./git.nix                 # git configuration
+    ../git.nix                 # git configuration
     # h
     # j
     # k
     # l
+    ../lazygit.nix             # git UI
     # m
     # n
-    ./navi.nix                # interactive cheatsheet
-    # ./ncdu.nix              # disk usage analyzer
-    ./neovim.nix              # neovim editor
+    ../navi.nix                # interactive cheatsheet
+    # ../ncdu.nix              # disk usage analyzer
+    ../neovim.nix              # neovim editor
     # o
     # p
     # q
     # r
-    ./ripgrep.nix             # `grep` alternative
-    ./ripgrep-all.nix         # `grep` alternative with more features
+    ../ripgrep.nix             # `grep` alternative
+    ../ripgrep-all.nix         # `grep` alternative with more features
     # s
-    ./starship.nix            # shell prompt
-    ./superfile.nix           # the best file manager
+    ../starship.nix            # shell prompt
+    ../superfile.nix           # the best file manager
     # t
-    ./tmux.nix                # terminal multiplexer
-    # ./tree.nix              # directory tree
+    ../tmux.nix                # terminal multiplexer
+    # ../tree.nix              # directory tree
     # u
     # v
     # w
-    # ./wget.nix              # network downloader
+    # ../wget.nix              # network downloader
     # x
     # y
     # z
-    ./zellij.nix              # terminal workspace manager
-    ./zoxide.nix              # `cd` alternative
+    ../zellij.nix              # terminal workspace manager
+    ../zoxide.nix              # `cd` alternative
   ];
 
   # TODO: Check which packages are really needed
