@@ -3,7 +3,11 @@
 {
   programs.eza = {
     enable = true;
+
+    enableFishIntegration = true;
+    enableNushellIntegration = true;
     enableZshIntegration = true;
+
     extraOptions = [
       "--long"
       "--grid"

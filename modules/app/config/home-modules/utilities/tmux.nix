@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # TODO: Update tmux configuration
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
