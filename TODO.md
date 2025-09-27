@@ -76,7 +76,7 @@
 - oh-my-posh
 - pipes-rs
 - krusader
-- systemd-analyze security
+- systemd-analyze security, bloom
 - lynis
 - dnslookup
 - auditd

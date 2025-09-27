@@ -15,7 +15,7 @@
 
       keepEnv = true;         # often necessary
       persist = true;         # convenient but less secure
-      noPass = false;         # convenient but even less secure
+      noPass =  true;         # convenient but even less secure. TODO: Remove this
     } ];
   };
 

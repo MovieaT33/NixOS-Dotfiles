@@ -7,7 +7,9 @@
       auto-optimise-store = true;
 
       # Binary cache settings
-      substituters = [ ];       # default: `https://cache.nixos.org/`
+      substituters = [
+        "https://nix-community.cachix.org/"
+      ];  # default: `https://cache.nixos.org/`
 
       experimental-features = [
         "nix-command"

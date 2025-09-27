@@ -10,5 +10,6 @@
         Option "PreferredMode" "1920x1200"
       EndSection
     '';
+    xkb.layout = "us";   # TODO: Check is work correctly
   };
 }
