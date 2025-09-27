@@ -1,7 +1,7 @@
 { home-manager, pkgs, ... }:
 
 {
-  home-manager.users."mvt33" = import ../../app/config/home-modules/zsh.nix;
+  home-manager.users."mvt33" = import ../../app/config/home-modules/shells/zsh.nix;
 
   users.users = {
     "mvt33" = {

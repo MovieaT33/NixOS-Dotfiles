@@ -21,7 +21,8 @@ in
       "${modulesDir}/app/profiles/security.nix"
       "${modulesDir}/app/profiles/system.nix"
 
-      "${modulesDir}/app/config/home-modules/nushell.nix"
+      "${modulesDir}/app/config/home-modules/shells/fish.nix"
+      "${modulesDir}/app/config/home-modules/shells/nushell.nix"
     ];
   };
 }

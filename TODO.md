@@ -22,7 +22,6 @@
 - `hm.programs.man`
 - `hm.manual`
 - `boot.bootspec`
-- `mitigations=off`
 - `environment.variables`: EDITOR, VISUAl, SHELL, ...
 - `boot.cleanTmpDir`
 - `sudo-rs`
