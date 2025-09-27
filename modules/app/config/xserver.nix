@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # TODO: Remove this once
   services.xserver = {
     enable = true;
     monitorSection = ''

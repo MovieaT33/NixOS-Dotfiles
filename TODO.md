@@ -66,11 +66,13 @@
 - vitetris
 - pkgs.chkrootkit, pkgs.aide -> services.cron
 - GDB
+- remove xterm
 - wlr-randr
 - linpeas
 - tree
 - .archive
-- links
+- links, links2, elinks
+- zen-browser
 - oh-my-posh
 - pipes-rs
 - krusader
