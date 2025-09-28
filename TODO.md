@@ -1,3 +1,4 @@
+- `ghostty`
 - `coreutils` -> `uutils`
 - https://pastebin.com/fi6VBm2z
 - https://saylesss88.github.io/nix/hardening_NixOS.html
