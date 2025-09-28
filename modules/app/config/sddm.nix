@@ -6,12 +6,15 @@
     autoLogin.user = "mvt33";
   };
 
+  environment.systemPackages = with pkgs; [
+    sddm-astronaut
+  ];
+
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
 
     extraPackages = with pkgs; [
-      sddm-astronaut
       kdePackages.qtbase
       kdePackages.qtwayland
       kdePackages.qtmultimedia
