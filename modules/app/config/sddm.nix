@@ -8,7 +8,7 @@
 
   # TODO: Remove this once
   services.xserver = {
-    enable = false;
+    enable = true;
     monitorSection = ''
       Section "Monitor"
         Identifier "HDMI-1"
