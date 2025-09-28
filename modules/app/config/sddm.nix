@@ -1,6 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    sddm-astronaut
+  ];
+
   services.displayManager = {
     defaultSession = "hyprland";
     autoLogin.user = "mvt33";
@@ -9,7 +13,7 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "maldives";
+    theme = "astronaut";
 
     settings = {
       General = {

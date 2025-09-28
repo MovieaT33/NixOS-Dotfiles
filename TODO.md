@@ -13,6 +13,7 @@
 - `pkill` alias
 - `dua-cli` (disk usage analyzer)
 - `librewolf`
+- `nice`
 - `pkgs.wine`
 - `pkgs.dust`
 - `pkgs.cheat`
