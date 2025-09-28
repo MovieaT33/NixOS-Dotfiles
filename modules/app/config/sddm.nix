@@ -3,6 +3,8 @@
 {
   environment.systemPackages = with pkgs; [
     sddm-astronaut
+    # dependencies
+    kdePackages.qtmultimedia
   ];
 
   services.displayManager = {
