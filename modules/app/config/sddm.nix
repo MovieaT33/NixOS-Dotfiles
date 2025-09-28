@@ -6,19 +6,6 @@
     autoLogin.user = "mvt33";
   };
 
-  # TODO: Remove this once
-  # services.xserver = {
-  #   enable = true;
-  #   monitorSection = ''
-  #     Section "Monitor"
-  #       Identifier "HDMI-1"
-  #       Option "PreferredMode" "1920x1200"
-  #     EndSection
-  #   '';
-  #   xkb.layout = "us";   # TODO: Check is work correctly
-  #   videoDrivers = [ "virtio_gpu" "qxl" ];
-  # };
-
   environment.systemPackages = with pkgs; [
     sddm-astronaut
   ];
@@ -55,7 +42,7 @@
       };
 
       Wayland = {
-        CompositorCommand = "wlr-randr --output Virtual-1 --mode 1920x1200";
+        EnableHiDPI = "true";
       };
     };
   };
