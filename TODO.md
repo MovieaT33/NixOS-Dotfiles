@@ -64,10 +64,11 @@
 - efibootmgr
 - mokutil
 - bastet
+- use hyprland keyboard buffer app
 - vitetris
 - pkgs.chkrootkit, pkgs.aide -> services.cron
 - GDB
-- remove xterm
+- use something instead of `xterm` for wrapped apps
 - wlr-randr
 - linpeas
 - tree
