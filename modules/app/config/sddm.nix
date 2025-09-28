@@ -16,6 +16,7 @@
       EndSection
     '';
     xkb.layout = "us";   # TODO: Check is work correctly
+    videoDrivers = [ "virtio_gpu" "qxl" ];
   };
 
   environment.systemPackages = with pkgs; [
