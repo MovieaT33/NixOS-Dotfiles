@@ -1,12 +1,6 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    sddm-astronaut
-    # dependencies
-    kdePackages.qtmultimedia
-  ];
-
   services.displayManager = {
     defaultSession = "hyprland";
     autoLogin.user = "mvt33";
@@ -15,12 +9,13 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "sddm-astronaut-theme";
 
+    extraPackages = with pkgs; [
+      sddm-astronaut
+    ];
+
+    theme = "sddm-astronaut-theme";
     settings = {
-      SddmGreeterTheme = {
-        ConfigFile = "Themes/astronaut.conf";
-      };
       General = {
         # FIXME: Layout. Current `zz`
 
@@ -30,6 +25,10 @@
         ScreenHeight = "1200";
 
         Numlock = "on";
+      };
+
+      SddmGreeterTheme = {
+        ConfigFile = "Themes/astronaut.conf";
       };
     };
   };

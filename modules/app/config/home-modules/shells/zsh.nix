@@ -74,7 +74,10 @@ in
     # shadow  # for `chage` command (password expiration management)
   ];
 
-  # home.shellAliases = {
+  home.shellAliases = {
+    s = "doas"
+  };
+
   programs.zsh.shellAliases = {
     # TODO: Temporary aliases for training muscle memory
     ls = "sl";
