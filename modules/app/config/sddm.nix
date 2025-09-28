@@ -12,6 +12,9 @@
 
     extraPackages = with pkgs; [
       sddm-astronaut
+      kdePackages.qtbase
+      kdePackages.qtwayland
+      kdePackages.qtmultimedia
     ];
 
     theme = "sddm-astronaut-theme";
@@ -29,6 +32,10 @@
 
       SddmGreeterTheme = {
         ConfigFile = "Themes/astronaut.conf";
+      };
+
+      Theme = {
+        Current = "sddm-astronaut-theme";
       };
     };
   };
