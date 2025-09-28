@@ -75,28 +75,29 @@ in
   ];
 
   home.shellAliases = {
-    s = "doas"
+    d  = "cd ${nixosDir}";
+    l  = "eza";
+    la = "eza";
+    ll = "eza";
+    s  = "doas";
+    j  = "just";
+    jj = "${nixosDir}; just";
   };
 
   programs.zsh.shellAliases = {
     # TODO: Temporary aliases for training muscle memory
     ls = "sl";
     cd = "sl";
-    l  = "eza";
-    ll = "eza";
 
     # System, dotfiles, utilities and nix
     # FIXME: `l` is slow, `ls` is faster
     b     = "bat";                                          # `cat` alternative
     c     = "doas sh -c 'printf c > /proc/sysrq-trigger'";  # crash system (REISUB)
-    d     = "${nixosDir}";
     doc   = "doas nix config check";
     dump  = "coredumpctl";
     e     = "superfile";                                    # file manager
     f     = "fzf";                                          # fuzzy finder
     fonts = "gnome-font-viewer";
-    j     = "just";
-    jj    = "${nixosDir}; just";
     i     = "uname -a";
     m     = "btop";                                         # monitor: `htop` alternative
     n     = "navi";                                         # interactive cheatsheet
