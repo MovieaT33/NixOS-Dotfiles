@@ -16,7 +16,9 @@
     theme = "sddm-astronaut-theme";
 
     settings = {
-      ConfigFile = "Themes/astronaut.conf";
+      SddmGreeterTheme = {
+        ConfigFile = "Themes/astronaut.conf";
+      };
       General = {
         # FIXME: Layout. Current `zz`
 
