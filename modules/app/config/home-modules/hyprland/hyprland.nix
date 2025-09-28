@@ -13,7 +13,7 @@
   ];
 
   home.file.".config/hypr" = {
-    source = ../dotfiles/hypr;
+    source = ../../dotfiles/hypr;
     recursive = true;
   };
 }

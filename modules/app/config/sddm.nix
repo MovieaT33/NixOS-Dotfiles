@@ -40,10 +40,6 @@
       Theme = {
         Current = "sddm-astronaut-theme";
       };
-
-      Wayland = {
-        EnableHiDPI = "true";
-      };
     };
   };
 }

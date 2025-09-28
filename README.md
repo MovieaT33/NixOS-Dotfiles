@@ -13,9 +13,9 @@
 
 This repository contains my personal **dotfiles** and configurations for **NixOS**, including:
 
-- **Shell:** Zsh  
+- **Shells:** Zsh, Nushell and Fish 
 - **Editor:** Neovim  
-- **Window Manager:** Hyprland  
+- **Window Manager:** SDDM and Hyprland  
 - **Security:** ClamAV + Lynis audit (score: 73/100)  
 - **Privilege Management:** `doas`  
 - **Disk Layout:** 6 partitions + swap  
@@ -43,21 +43,24 @@ If you use Windows install WSL and virt-manager first.
    ```bash
    wsl --install
 
-2. Install **Ubuntu distribution**:
+2. Install **Archlinux distribution**:
    ```bash
-   wsl --install -d Ubuntu-25.04
+   wsl --install -d archlinux
 
 3. Install virt-manager
    ```bash
-   sudo apt install virt-manager
+   pacman -Syu
+   pacman -S qemu virt-manager
 
 ## Virt-manager
 
 4. Install **minimal ISO image** from [NixOS Download](https://nixos.org/download/) using **virt-manager**
 
-5. Change firmware to **UEFI x86_64: /usr/share/OVMF/OVMF_CODE_4M.fd**
+5. Change firmware to **UEFI x86_64: /usr/share/edk2/x64/OVMF_CODE.secboot.4m.fd**
 
-6. View -> Scale Display -> Never
+6. `View -> Scale Display -> Never`
+
+7. Change `Video` -> `Virtio`
 
 ---
 
