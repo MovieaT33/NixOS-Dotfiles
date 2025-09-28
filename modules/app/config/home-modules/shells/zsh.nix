@@ -75,7 +75,7 @@ in
   ];
 
   home.shellAliases = {
-    d  = "cd ${nixosDir}";
+    d  = "${nixosDir}";
     l  = "eza";
     la = "eza";
     ll = "eza";
