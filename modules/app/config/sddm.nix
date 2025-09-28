@@ -13,9 +13,10 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "astronaut";
+    theme = "sddm-astronaut-theme";
 
     settings = {
+      ConfigFile = "Themes/astronaut.conf";
       General = {
         # FIXME: Layout. Current `zz`
 
