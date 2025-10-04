@@ -77,8 +77,6 @@ sudo mount --mkdir "/dev/$VG_ROOT/$LV_ROOT_TMP" "$INSTALL_ROOT/tmp"
 sudo mount --mkdir "/dev/$VG_ROOT/$LV_ROOT_VAR_TMP" "$INSTALL_ROOT/var/tmp"
 sudo swapon "/dev/$VG_ROOT/$LV_ROOT_SWAP"
 
-sudo mount --mkdir "/dev/$VG_DATA/$LV_DATA_SECURE" "$INSTALL_ROOT/secure"
-
 # NixOS installation
 sudo nixos-generate-config --root "$INSTALL_ROOT"
 sudo nano /mnt/etc/nixos/configuration.nix
@@ -106,7 +104,6 @@ sudo nixos-install
 #       sudo mount --mkdir /dev/vg_root/var /mnt/var
 #       sudo mount --mkdir /dev/vg_root/tmp /mnt/tmp
 #       sudo mount --mkdir /dev/vg_root/var_tmp /mnt/var/tmp
-#       sudo mount --mkdir /dev/vg_data/secure /mnt/secure
 #
 # 4. Chroot into the system:
 #       sudo nixos-enter --root /mnt

@@ -82,33 +82,35 @@ If you use Windows install WSL and virt-manager first.
    ```bash
    just i
 
-*Rebooting...*
+5. Run cleanup script:
+   ```bash
+   ./scripts/cleanup
 
 ### Dotfiles
 
-5. Install dependencies:
+6. Install dependencies:
    ```bash
    nix-shell -p git just
 
-6. `cd /etc`
+7. `cd /etc`
 
-7. `rm -rf nixos`
+8. `rm -rf nixos`
 
-8. Clone dotfiles:
+9. Clone dotfiles:
     ```bash
     git clone https://github.com/MovieaT33/NixOS-Dotfiles nixos --depth 1
 
-9. `cd nixos`
+10. `cd nixos`
 
-10. Sync NixOS with the configuration:
+11. Sync NixOS with the configuration:
     ```bash
     just u
 
-11. Change password for user:
+12. Change password for user:
     ```bash
     passwd <user>
 
-12. Reboot system:
+13. Reboot system:
     ```bash
     sudo reboot now
 

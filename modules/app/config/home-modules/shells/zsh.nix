@@ -112,16 +112,16 @@ in
     zj    = "zellij";                                       # terminal workspace manager
 
     # LUKS encryption
-    luks-add     = "doas cryptsetup luksAddKey";     # add a new key  (rotate periodically)
-    luks-remove  = "doas cryptsetup luksRemoveKey";  # remove old key (rotate periodically)
-    secure-open  = "doas cryptsetup open /dev/vda3 crypt_data && doas vgchange -ay vg_data && doas mkdir -p /secure; doas mount /dev/vg_data/secure /secure";
-    secure-close = "doas umount /secure && doas vgchange -an vg_data && doas cryptsetup close crypt_data; doas rmdir /secure";
+    luks-add     = "sudo cryptsetup luksAddKey";     # add a new key  (rotate periodically)
+    luks-remove  = "sudo cryptsetup luksRemoveKey";  # remove old key (rotate periodically)
+    secure-open  = "sudo cryptsetup open /dev/vda3 crypt_data && sudo vgchange -ay vg_data; sudo mount --mkdir /dev/vg_data/secure /secure";
+    secure-close = "sudo umount /secure && sudo vgchange -an vg_data && sudo cryptsetup close crypt_data; sudo rmdir /secure";
     sc           = "cd /security";
 
     # Security
     # TODO: `block-net = "";`
     dsec   = "systemd-analyze security";
-    sec    = "doas lynis audit system";
+    sec    = "sudo lynis audit system";
     # TODO: `unblock-net = "";`
   };
 
