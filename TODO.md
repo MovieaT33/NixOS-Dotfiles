@@ -68,7 +68,6 @@
 - use hyprland keyboard buffer app
 - vitetris
 - Animated wallpapers
-- Hyprland update notification
 - pkgs.chkrootkit, pkgs.aide -> services.cron
 - GDB
 - use something instead of `xterm` for wrapped apps
