@@ -24,7 +24,6 @@
     # r
     # s
     # t
-    tldr
     # u
     # v
     # w

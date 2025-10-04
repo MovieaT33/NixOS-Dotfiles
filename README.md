@@ -9,6 +9,8 @@
 
 ---
 
+*README.md in processing...*
+
 ## 📌 Project Overview
 
 This repository contains my personal **dotfiles** and configurations for **NixOS**, including:
@@ -74,44 +76,44 @@ If you use Windows install WSL and virt-manager first.
 
 2. Clone this repository:
    ```bash
-   git clone https://github.com/MovieaT33/NixOS-Dotfiles --depth 1
+   git clone https://github.com/MovieaT33/NixOS-Dotfiles . --depth 1
 
-3. `cd NixOS-Dotfiles`
-
-4. Run installation script:
+3. Run installation script:
    ```bash
    just i
 
-5. Run cleanup script:
+4. Run cleanup script:
    ```bash
    ./scripts/cleanup
 
 ### Dotfiles
 
-6. Install dependencies:
+5. Install dependencies:
    ```bash
    nix-shell -p git just
 
-7. `cd /etc`
+6. `cd /etc`
 
-8. `rm -rf nixos`
+7. `rm -rf nixos`
 
-9. Clone dotfiles:
+8. Clone dotfiles:
     ```bash
     git clone https://github.com/MovieaT33/NixOS-Dotfiles nixos --depth 1
 
-10. `cd nixos`
+9. `cd nixos`
 
-11. Sync NixOS with the configuration:
+10. Sync NixOS with the configuration:
     ```bash
     just u
 
-12. Change password for user:
+11. Change password for user:
     ```bash
     passwd <user>
+
+12. Clean system:
+    ```bash
+    just c
 
 13. Reboot system:
     ```bash
     sudo reboot now
-
-*README.md in processing...*
