@@ -1,10 +1,10 @@
-{ home, tnvim, pkgs, ... }:
+{ home, inputs, pkgs, ... }:
 
 {
   home.file = {
     ".config/nvim" = {
       recursive = true;
-      source = "${tnvim}";
+      source = "${inputs.tnvim.packages.x86_64-linux.default}";
     };
   };
 
