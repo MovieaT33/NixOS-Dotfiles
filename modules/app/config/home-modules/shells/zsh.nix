@@ -78,6 +78,7 @@ in
     d  = "${nixosDir}";
     l  = "eza";
     la = "eza";
+    lg = "lazygit";
     ll = "eza";
     s  = "doas";
     j  = "just";

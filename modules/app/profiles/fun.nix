@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     # a
     asciiquarium
+    astroterm
     # b
     # c
     cbonsai
