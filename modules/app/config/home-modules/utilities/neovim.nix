@@ -1,4 +1,4 @@
-{ home, pkgs, ... }:
+{ home, tnvim, pkgs, ... }:
 
 {
   home.file = {
