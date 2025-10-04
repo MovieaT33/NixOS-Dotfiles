@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    tnvim = {
+      url = "github:tuxdotrs/tnvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,6 +25,7 @@
     self,
     nixpkgs,
     home-manager,
+    tnvim,
     zen-browser,
     ...
   } @ inputs: let
@@ -58,7 +64,7 @@
           ./profiles/personal.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = { inherit inputs tnvim; };
           }
         ];
       };
