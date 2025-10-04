@@ -15,7 +15,9 @@ This repository contains my personal **dotfiles** and configurations for **NixOS
 
 - **Shells:** Zsh, Nushell and Fish 
 - **Editor:** Neovim  
-- **Window Manager:** SDDM and Hyprland  
+- **WM:** SDDM and Hyprland
+- **Bar**: Waybar
+- **Terminal**: Kitty
 - **Security:** ClamAV + Lynis audit (score: 73/100)  
 - **Privilege Management:** `doas`  
 - **Disk Layout:** 6 partitions + swap  

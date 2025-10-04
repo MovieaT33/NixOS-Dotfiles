@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    disko.url = "github:nix-community/disko";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,7 +18,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, ... } @ inputs: let
+  outputs = { self, nixpkgs, disko, home-manager, zen-browser, ... } @ inputs: let
     system = "x86_64-linux";
     stateVersion = "25.05";
   in {
@@ -27,6 +29,9 @@
           inherit system stateVersion;
         };
         modules = [
+          disko.nixosModules.disko
+          ./disko.nix
+
           ./profiles/boot.nix
           home-manager.nixosModules.home-manager
         ];
@@ -38,6 +43,9 @@
           inherit system stateVersion;
         };
         modules = [
+          disko.nixosModules.disko
+          ./disko.nix
+
           ./profiles/system.nix
           home-manager.nixosModules.home-manager
         ];
@@ -49,6 +57,9 @@
           inherit system stateVersion;
         };
         modules = [
+          disko.nixosModules.disko
+          ./disko.nix
+
           ./profiles/personal.nix
           home-manager.nixosModules.home-manager
           {
