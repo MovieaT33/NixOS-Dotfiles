@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euxo pipefail
+set -eux
 
 # Disk & Partitions
 DISK="/dev/vda"
@@ -68,34 +68,47 @@ sudo mkswap    "/dev/$VG_ROOT/$LV_ROOT_SWAP"
 sudo mkfs.ext4 "/dev/$VG_DATA/$LV_DATA_SECURE"
 
 # Mounts
-# TODO: Use `mount --mkdir`
-sudo mkdir -p "$INSTALL_ROOT"
-sudo mount "/dev/$VG_ROOT/$LV_ROOT_ROOT" "$INSTALL_ROOT"
-
-sudo mkdir -p "$INSTALL_ROOT/boot"
-sudo mount "$EFI_PART" "$INSTALL_ROOT/boot"
-
-sudo mkdir -p "$INSTALL_ROOT/nix"
-sudo mount "/dev/$VG_ROOT/$LV_ROOT_NIX" "$INSTALL_ROOT/nix"
-
-sudo mkdir -p "$INSTALL_ROOT/var"
-sudo mount "/dev/$VG_ROOT/$LV_ROOT_VAR" "$INSTALL_ROOT/var"
-
-sudo mkdir -p "$INSTALL_ROOT/home"
-sudo mount "/dev/$VG_ROOT/$LV_ROOT_HOME" "$INSTALL_ROOT/home"
-
-sudo mkdir -p "$INSTALL_ROOT/tmp"
-sudo mount "/dev/$VG_ROOT/$LV_ROOT_TMP" "$INSTALL_ROOT/tmp"
-
-sudo mkdir -p "$INSTALL_ROOT/var/tmp"
-sudo mount "/dev/$VG_ROOT/$LV_ROOT_VAR_TMP" "$INSTALL_ROOT/var/tmp"
-
+sudo mount --mkdir "/dev/$VG_ROOT/$LV_ROOT_ROOT" "$INSTALL_ROOT"
+sudo mount --mkdir "$EFI_PART" "$INSTALL_ROOT/boot"
+sudo mount --mkdir "/dev/$VG_ROOT/$LV_ROOT_NIX" "$INSTALL_ROOT/nix"
+sudo mount --mkdir "/dev/$VG_ROOT/$LV_ROOT_VAR" "$INSTALL_ROOT/var"
+sudo mount --mkdir "/dev/$VG_ROOT/$LV_ROOT_HOME" "$INSTALL_ROOT/home"
+sudo mount --mkdir "/dev/$VG_ROOT/$LV_ROOT_TMP" "$INSTALL_ROOT/tmp"
+sudo mount --mkdir "/dev/$VG_ROOT/$LV_ROOT_VAR_TMP" "$INSTALL_ROOT/var/tmp"
 sudo swapon "/dev/$VG_ROOT/$LV_ROOT_SWAP"
 
-sudo mkdir -p "$INSTALL_ROOT/secure"
-sudo mount "/dev/$VG_DATA/$LV_DATA_SECURE" "$INSTALL_ROOT/secure"
+sudo mount --mkdir "/dev/$VG_DATA/$LV_DATA_SECURE" "$INSTALL_ROOT/secure"
 
 # NixOS installation
 sudo nixos-generate-config --root "$INSTALL_ROOT"
 sudo nano /mnt/etc/nixos/configuration.nix
 sudo nixos-install
+
+# LiveCD recovery tips
+#
+# If you boot a LiveCD to edit an already installed system:
+#
+# 1. Mount your root partition:
+#       sudo cryptsetup open /dev/vda2 crypt_root
+#       sudo cryptsetup open /dev/vda3 crypt_data
+#
+#       sudo vgchange -ay vg_root
+#       sudo vgchange -ay vg_data
+#
+# 2. Mount EFI:
+#       sudo mount /dev/vda1 /mnt/boot
+#
+# 3. Mount other LVs:
+#       sudo mount /dev/vg_root/root /mnt
+#       sudo mount --mkdir /dev/vda1 /mnt/boot
+#       sudo mount --mkdir /dev/vg_root/nix /mnt/nix
+#       sudo mount --mkdir /dev/vg_root/home /mnt/home
+#       sudo mount --mkdir /dev/vg_root/var /mnt/var
+#       sudo mount --mkdir /dev/vg_root/tmp /mnt/tmp
+#       sudo mount --mkdir /dev/vg_root/var_tmp /mnt/var/tmp
+#       sudo mount --mkdir /dev/vg_data/secure /mnt/secure
+#
+# 4. Chroot into the system:
+#       sudo nixos-enter --root /mnt
+#
+# 5. Exit chroot and reboot.
