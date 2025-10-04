@@ -32,12 +32,12 @@
   # endregion
 
   # region [ LUKS encryption ]
-  boot.initrd.luks.devices = {
-    "crypt_root" = {
-      device = "/dev/vda2";
-      preLVM = true;
-    };
-  };
+  # boot.initrd.luks.devices = {
+  #   "crypt_root" = {
+  #     device = "/dev/vda2";
+  #     preLVM = true;
+  #   };
+  # };
   # endregion
 
   # region [ Virtio ]
