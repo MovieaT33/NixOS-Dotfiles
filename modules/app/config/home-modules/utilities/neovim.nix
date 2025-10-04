@@ -23,6 +23,8 @@
   home = {
     packages = with pkgs; [
       gcc
+      go
+      # FIXME: `make`
       neovide
 
       # nix
