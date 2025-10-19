@@ -9,8 +9,8 @@
     # System, dotfiles, utilities and nix
     # FIXME: `l` is slow, `ls` is faster
     b     = "bat";                                          # `cat` alternative
-    c     = "doas sh -c 'printf c > /proc/sysrq-trigger'";  # crash system (REISUB)
-    doc   = "doas nix config check";
+    c     = "sudo sh -c 'printf c > /proc/sysrq-trigger'";  # crash system (REISUB)
+    doc   = "sudo nix config check";
     dump  = "coredumpctl";
     e     = "superfile";                                    # file manager
     f     = "fzf";                                          # fuzzy finder
