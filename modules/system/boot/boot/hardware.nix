@@ -6,17 +6,17 @@
 
   # region [ Partitions ]
   fileSystems = {
-    # "/" = {
-    #   device = "/dev/vg_root/root";
-    #   fsType = "ext4";
-    #   options = [ "noatime" "relatime" "errors=remount-ro" ];
-    # };
-
     "/" = {
-      device = "none";
-      fsType = "tmpfs";
-      options = [ "noatime" "relatime" "ro" "nodev" "nosuid" "noexec" ];
+      device = "/dev/vg_root/root";
+      fsType = "ext4";
+      options = [ "noatime" "relatime" "errors=remount-ro" ];
     };
+
+    # "/" = {
+    #   device = "none";
+    #   fsType = "tmpfs";
+    #   options = [ "noatime" "relatime" "ro" "nodev" "nosuid" "noexec" ];
+    # };
 
     "/boot" = {
       device = "/dev/vda1";
@@ -29,7 +29,7 @@
     "/nix" = {
       device = "/dev/vg_root/nix";
       fsType = "ext4";
-      options = [ "noatime" "relatime" "nodev" "ro" ];
+      options = [ "noatime" "relatime" "nodev" ];
     };
 
     "/home" = {
