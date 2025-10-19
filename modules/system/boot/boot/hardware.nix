@@ -15,7 +15,7 @@
     "/" = {
       device = "none";
       fsType = "tmpfs";
-      options = [ "noatime" "relatime" "errors=remount-ro" "ro" "nodev" "nosuid" "noexec" ];
+      options = [ "noatime" "relatime" "ro" "nodev" "nosuid" "noexec" ];
     };
 
     "/boot" = {
