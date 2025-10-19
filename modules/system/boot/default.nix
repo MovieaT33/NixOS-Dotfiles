@@ -6,12 +6,15 @@ let
   securityDir = builtins.toPath ./security;
 in
 {
-  home-manager.users."mvt33" = import "${modulesDir}/home.nix" {
-    inherit stateVersion pkgs;
-  };
+  # Home manager users
+  home-manager.users = {
+    "mvt33" = import "${modulesDir}/home.nix" {
+      inherit stateVersion pkgs;
+    };
 
-  home-manager.users."root" = import "${modulesDir}/home.nix" {
-    inherit stateVersion pkgs;
+    "root" = import "${modulesDir}/home.nix" {
+      inherit stateVersion pkgs;
+    };
   };
 
   imports = [
