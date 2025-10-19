@@ -1,11 +1,15 @@
 { home-manager, pkgs, ... }:
 
 {
-  home-manager.users."mvt33" = import ../../app/config/home-modules/shells/zsh.nix;
-  home-manager.users."mvt33" = import ../../app/config/home-modules/shells/utilities.nix;
+  home-manager.users."mvt33" = { imports = [
+    ../../app/config/home-modules/shells/zsh.nix
+    ../../app/config/home-modules/shells/utilities.nix
+  ]; };
 
-  # home-manager.users."root" = import ../../app/config/home-modules/shells/zsh.nix;
-  # home-manager.users."root" = import ../../app/config/home-modules/shells/utilities.nix;
+  home-manager.users."root" = { imports = [
+    ../../app/config/home-modules/shells/zsh.nix
+    ../../app/config/home-modules/shells/utilities.nix
+  ]; };
 
   users.users = {
     "mvt33" = {
