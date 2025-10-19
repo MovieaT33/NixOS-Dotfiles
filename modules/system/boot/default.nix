@@ -8,8 +8,7 @@ in
 {
   # Home manager users
   home-manager.users = {
-    "mvt33" = {
-      inherit stateVersion pkgs;
+    "mvt33" = { stateVersion, pkgs, ... }: {
       home = {
         inherit stateVersion;
         username = "mvt33";
@@ -17,8 +16,7 @@ in
       };
     };
 
-    "root" = {
-      inherit stateVersion pkgs;
+    "root" = { stateVersion, pkgs, ... }: {
       home = {
         inherit stateVersion;
         username = "root";
