@@ -18,10 +18,5 @@
       shell = "${pkgs.zsh}/bin/zsh";
       ignoreShellProgramCheck = true;
     };
-
-    "root" = {
-      shell = "${pkgs.zsh}/bin/zsh";
-      ignoreShellProgramCheck = true;
-    };
   };
 }
