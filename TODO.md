@@ -1,14 +1,164 @@
-- `ghostty`
-- Secure Boot
-- `coreutils` -> `uutils`
-- https://pastebin.com/fi6VBm2z
-- https://saylesss88.github.io/nix/hardening_NixOS.html
+# URLs
+
 - https://github.com/nix-community/vulnix
-- https://spectrum-os.org/
 - https://github.com/trimstray/the-practical-linux-hardening-guide
 - https://github.com/imthenachoman/How-To-Secure-A-Linux-Server
 - https://github.com/dev-sec/linux-baseline
+- https://github.com/ibraheemdev/modern-unix
+- https://pastebin.com/fi6VBm2z
+- https://spectrum-os.org/
+- https://saylesss88.github.io/nix/hardening_NixOS.html
 - https://www.reddit.com/r/NixOS/comments/1aqck9l/systemd_hardening_some_preconfigured_options_d
+
+# Other
+
+- `home-modules` -> `home`
+- `zl="z path && ls"`
+- curlie
+- kulala nvim
+- Secure boot
+- Use other FS type
+- Use GRUB
+- pkgs.nerdfetch
+- kdePackages.filelight
+- pkgs.gnome-font-viewer
+- useXkbConfig
+- pandoc
+- Use SELinux
+- README.md
+- cachex
+- Justfile -> justfile
+- firejail
+- app -> apps | programs
+- `/etc/machine-id`
+- vim combinations in Zsh
+- efibootmgr
+- mokutil
+- bastet
+- use hyprland keyboard buffer app
+- vitetris
+- Animated wallpapers
+- pkgs.chkrootkit, pkgs.aide -> services.cron
+- GDB
+- use something instead of `xterm` for wrapped apps
+- wlr-randr
+- linpeas
+- tree
+- .archive
+- links, links2, elinks
+- zen-browser
+- oh-my-posh
+- zork*
+- ching*
+- primes*
+- octopus*
+- pong*
+- music player*
+- advent*
+- bible*
+- minesweeper*
+- enigma*
+- bf*
+- rot13*
+- pig*
+- drill*
+- dnspref*
+- s-tui
+- atop
+- iotop.csysdig
+- nvtop
+- asitop
+- perf
+- wavemon
+- cava
+- call*
+- rain*
+- race*
+- calc*
+- chess*
+- geoip*
+- morse*
+- qr*
+- pub*
+- notes*
+- ped*
+- checkers*
+- rand*
+- rainbow*
+- joke*
+- liff*
+- sudoku*
+- rockets*
+- pipes-rs
+- krusader
+- systemd-analyze security, bloom
+- lynis
+- dnslookup
+- auditd
+- lunarfetch
+- rkhunter
+- chkrootkit
+- dccp
+- sctp
+- rds
+- tipc
+- pokemon-colorscipts
+- gdu
+- ddate
+- proot-distro
+- durdraw
+- caligula
+- pastel
+- isd
+- durfetch
+- coderabbit
+- claude
+- opencode
+- dust
+- pv
+- cava
+- broot
+- bat-extrashyperfine
+- taskwarrior
+- bb
+- nmon
+- watchdog
+- jq
+- yq
+- whomade
+- iotop
+- pkgs.atop
+- aptitude
+- gdu
+- broot
+- whiptail
+- dialog
+- pkgs.dnstop
+- gh
+- stress
+- stress-ng
+- youtube-cli
+- browser
+- bad-apple
+- mandelbrot
+- mc (*midnight commander*)
+- wttr.in
+- glow
+- asciinema
+- xsv
+- finger
+- dry
+- mcfly
+
+- `TODO` and `FIXME`
+- `Wake up, Neo!`
+- `systemctl` only with root
+- `fileSystems."/boot".options = [ "ro" ];`
+
+# Packages
+
+- `ghostty`
+- `coreutils` -> `uutils`
 - `pkgs.aide`
 - `pkgs.kernel-hardening-checker`
 - `pkill` alias
@@ -44,86 +194,3 @@
 - `gpg`
 - setuid, wrappers
 - `tut`
-
-#
-
-- Use other FS type
-- Use GRUB
-- pkgs.nerdfetch
-- kdePackages.filelight
-- pkgs.gnome-font-viewer
-- useXkbConfig
-- pandoc
-- Use SELinux
-- README.md
-- cachex
-- Justfile -> justfile
-- firejail
-- app -> apps | programs
-- `/etc/machine-id`
-- vim combinations in Zsh
-- efibootmgr
-- mokutil
-- bastet
-- use hyprland keyboard buffer app
-- vitetris
-- Animated wallpapers
-- pkgs.chkrootkit, pkgs.aide -> services.cron
-- GDB
-- use something instead of `xterm` for wrapped apps
-- wlr-randr
-- linpeas
-- tree
-- .archive
-- links, links2, elinks
-- zen-browser
-- oh-my-posh
-- pipes-rs
-- krusader
-- systemd-analyze security, bloom
-- lynis
-- dnslookup
-- auditd
-- lunarfetch
-- rkhunter
-- chkrootkit
-- dccp
-- sctp
-- rds
-- tipc
-- pokemon-colorscipts
-- gdu
-- ddate
-- dust
-- pv
-- cava
-- broot
-- bat-extrashyperfine
-- taskwarrior
-- bb
-- nmon
-- watchdog
-- whomade
-- iotop
-- pkgs.atop
-- pkgs.dnstop
-- gh
-- stress
-- stress-ng
-- youtube-cli
-- browser
-- bad-apple
-- mandelbrot
-- mc (*midnight commander*)
-- wttr.in
-- glow
-- asciinema
-- xsv
-- finger
-- dry
-- mcfly
-
-- `TODO` and `FIXME`
-- `Wake up, Neo!`
-- `systemctl` only with root
-- `fileSystems."/boot".options = [ "ro" ];`

@@ -2,6 +2,7 @@
 
 {
   # TODO: Update configuration
+  # TODO: Use `vg0` group instead of `vg_root` for root volume group
 
   # region [ Partitions ]
   fileSystems = {

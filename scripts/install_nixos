@@ -12,8 +12,8 @@ CRYPT_ROOT="crypt_root"
 CRYPT_DATA="crypt_data"
 
 # Volume groups
-VG_ROOT="vg_root"
-VG_DATA="vg_data"
+VG_ROOT="vg0-root"
+VG_DATA="vg0-data"
 
 # Logical volumes
 LV_ROOT_NIX="nix"
@@ -90,20 +90,20 @@ sudo nixos-install
 #       sudo cryptsetup open /dev/vda2 crypt_root
 #       sudo cryptsetup open /dev/vda3 crypt_data
 #
-#       sudo vgchange -ay vg_root
-#       sudo vgchange -ay vg_data
+#       sudo vgchange -ay vg0-root
+#       sudo vgchange -ay vg0-data
 #
 # 2. Mount EFI:
 #       sudo mount /dev/vda1 /mnt/boot
 #
 # 3. Mount other LVs:
-#       sudo mount /dev/vg_root/root /mnt
+#       sudo mount /dev/vg0-root/root /mnt
 #       sudo mount --mkdir /dev/vda1 /mnt/boot
-#       sudo mount --mkdir /dev/vg_root/nix /mnt/nix
-#       sudo mount --mkdir /dev/vg_root/home /mnt/home
-#       sudo mount --mkdir /dev/vg_root/var /mnt/var
-#       sudo mount --mkdir /dev/vg_root/tmp /mnt/tmp
-#       sudo mount --mkdir /dev/vg_root/var_tmp /mnt/var/tmp
+#       sudo mount --mkdir /dev/vg0-root/nix /mnt/nix
+#       sudo mount --mkdir /dev/vg0-root/home /mnt/home
+#       sudo mount --mkdir /dev/vg0-root/var /mnt/var
+#       sudo mount --mkdir /dev/vg0-root/tmp /mnt/tmp
+#       sudo mount --mkdir /dev/vg0-root/var_tmp /mnt/var/tmp
 #
 # 4. Chroot into the system:
 #       sudo nixos-enter --root /mnt
