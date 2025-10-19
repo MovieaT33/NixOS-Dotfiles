@@ -8,12 +8,22 @@ in
 {
   # Home manager users
   home-manager.users = {
-    "mvt33" = import "${modulesDir}/home.nix" {
+    "mvt33" = {
       inherit stateVersion pkgs;
+      home = {
+        inherit stateVersion;
+        username = "mvt33";
+        homeDirectory = "/home/mvt33";
+      };
     };
 
-    "root" = import "${modulesDir}/home.nix" {
+    "root" = {
       inherit stateVersion pkgs;
+      home = {
+        inherit stateVersion;
+        username = "root";
+        homeDirectory = "/home/root";
+      };
     };
   };
 
