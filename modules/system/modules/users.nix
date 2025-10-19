@@ -6,11 +6,6 @@
       ../../app/config/home-modules/shells/zsh.nix
       ../../app/config/home-modules/shells/utilities.nix
     ]; };
-
-    "root" = { imports = [
-      ../../app/config/home-modules/shells/zsh.nix
-      ../../app/config/home-modules/shells/utilities.nix
-    ]; };
   };
 
   users.users = {

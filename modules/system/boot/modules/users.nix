@@ -3,7 +3,7 @@
 {
   users.users = {
     "mvt33" = {
-      # uid = 1002;
+      # uid = 1000;
       isNormalUser = true;
     };
   };
