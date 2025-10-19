@@ -3,8 +3,8 @@
 {
   programs.zsh.shellAliases = {
     # TODO: Temporary aliases for training muscle memory
-    ls = "sl";
-    cd = "sl";
+    # ls = "sl";
+    # cd = "sl";
 
     # System, dotfiles, utilities and nix
     # FIXME: `l` is slow, `ls` is faster
