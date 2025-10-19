@@ -20,7 +20,7 @@ in
       home = {
         inherit stateVersion;
         username = "root";
-        homeDirectory = "/home/root";
+        homeDirectory = "/root";
       };
     };
   };
