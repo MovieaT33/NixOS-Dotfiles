@@ -31,8 +31,8 @@
     # LUKS encryption
     luks-add     = "sudo cryptsetup luksAddKey";     # add a new key  (rotate periodically)
     luks-remove  = "sudo cryptsetup luksRemoveKey";  # remove old key (rotate periodically)
-    secure-open  = "sudo cryptsetup open /dev/vda3 crypt_data && sudo vgchange -ay vg_data; sudo mount --mkdir /dev/vg_data/secure /secure";
-    secure-close = "sudo umount /secure && sudo vgchange -an vg_data && sudo cryptsetup close crypt_data; sudo rmdir /secure";
+    secure-open  = "sudo cryptsetup open /dev/vda3 crypt_data && sudo vgchange -ay vg0-data; sudo mount --mkdir /dev/vg0-data/secure /secure";
+    secure-close = "sudo umount /secure && sudo vgchange -an vg0-data && sudo cryptsetup close crypt_data; sudo rmdir /secure";
     sc           = "cd /security";
 
     # Security

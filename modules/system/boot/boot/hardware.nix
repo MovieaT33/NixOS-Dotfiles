@@ -2,12 +2,11 @@
 
 {
   # TODO: Update configuration
-  # TODO: Use `vg0` group instead of `vg_root` for root volume group
 
   # region [ Partitions ]
   fileSystems = {
     "/" = {
-      device = "/dev/vg_root/root";
+      device = "/dev/vg0-root/root";
       fsType = "ext4";
       options = [ "noatime" "relatime" "errors=remount-ro" ];
     };
@@ -27,19 +26,19 @@
     };
 
     "/nix" = {
-      device = "/dev/vg_root/nix";
+      device = "/dev/vg0-root/nix";
       fsType = "ext4";
       options = [ "noatime" "relatime" "nodev" ];
     };
 
     "/home" = {
-      device = "/dev/vg_root/home";
+      device = "/dev/vg0-root/home";
       fsType = "ext4";
       options = [ "noatime" "noexec" "nosuid" "nodev" ];
     };
 
     "/var" = {
-      device = "/dev/vg_root/var";
+      device = "/dev/vg0-root/var";
       fsType = "ext4";
       options = [ "noatime" "nosuid" "nodev" "noexec" ];
     };
@@ -51,7 +50,7 @@
     };
 
     "/tmp" = {
-      # device = "/dev/vg_root/tmp";
+      # device = "/dev/vg0-root/tmp";
       device = "tmpfs";
       fsType = "tmpfs";
       options = [ "mode=1777" "nosuid" "nodev" "noexec" ];
@@ -64,7 +63,7 @@
     };
 
     # "/secure" = {
-    #   device = "/dev/vg_data/secure";
+    #   device = "/dev/vg0-data/secure";
     #   fsType = "ext4";
     # };
   };
@@ -73,7 +72,7 @@
   # region [ Swap ]
   swapDevices = [
     {
-      device = "/dev/vg_root/swap";
+      device = "/dev/vg0-root/swap";
       randomEncryption = {
         enable = true;
         cipher = "aes-xts-plain64";

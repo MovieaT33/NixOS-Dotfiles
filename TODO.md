@@ -13,6 +13,7 @@
 # Other
 
 - `home-modules` -> `home`
+- Check hyprland background
 - `zl="z path && ls"`
 - curlie
 - kulala nvim

@@ -88,10 +88,7 @@ sudo nixos-install
 #
 # 1. Mount your root partition:
 #       sudo cryptsetup open /dev/vda2 crypt_root
-#       sudo cryptsetup open /dev/vda3 crypt_data
-#
 #       sudo vgchange -ay vg0-root
-#       sudo vgchange -ay vg0-data
 #
 # 2. Mount EFI:
 #       sudo mount /dev/vda1 /mnt/boot
@@ -102,8 +99,8 @@ sudo nixos-install
 #       sudo mount --mkdir /dev/vg0-root/nix /mnt/nix
 #       sudo mount --mkdir /dev/vg0-root/home /mnt/home
 #       sudo mount --mkdir /dev/vg0-root/var /mnt/var
-#       sudo mount --mkdir /dev/vg0-root/tmp /mnt/tmp
-#       sudo mount --mkdir /dev/vg0-root/var_tmp /mnt/var/tmp
+#       # sudo mount --mkdir /dev/vg0-root/tmp /mnt/tmp
+#       # sudo mount --mkdir /dev/vg0-root/var_tmp /mnt/var/tmp
 #
 # 4. Chroot into the system:
 #       sudo nixos-enter --root /mnt
