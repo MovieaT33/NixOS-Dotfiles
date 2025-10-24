@@ -17,6 +17,17 @@
 - curlie
 - kulala nvim
 - Secure boot
+- asciinema
+- croc
+- ttyd
+- jrnl
+- wttr*
+- newsboat
+- qemu
+- virt-manager
+- winboat
+- faker
+- grex
 - Use other FS type
 - Use GRUB
 - pkgs.nerdfetch
