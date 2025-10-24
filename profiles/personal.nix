@@ -10,6 +10,7 @@ in
 
     # WM/DE configurations
     "${modulesDir}/app/config/hyprland.nix"
+    "${modulesDir}/app/config/plasma.nix"
     "${modulesDir}/app/config/sddm.nix"
   ];
 
