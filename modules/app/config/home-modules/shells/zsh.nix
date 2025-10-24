@@ -3,8 +3,8 @@
 {
   programs.zsh.shellAliases = {
     # TODO: Temporary aliases for training muscle memory
-    # ls = "sl";
-    # cd = "sl";
+    ls = "cowsay no!";
+    cd = "cowsay no!";
 
     # System, dotfiles, utilities and nix
     # FIXME: `l` is slow, `ls` is faster
@@ -54,7 +54,7 @@
 
     oh-my-zsh = {
       enable = true;
-      theme = "afowler";
+      theme = "half-life";
       plugins = [
         "git"
         "sudo"

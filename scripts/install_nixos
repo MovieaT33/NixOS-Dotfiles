@@ -47,9 +47,9 @@ sudo vgcreate "$VG_ROOT" "/dev/mapper/$CRYPT_ROOT"
 sudo pvcreate            "/dev/mapper/$CRYPT_DATA"
 sudo vgcreate "$VG_DATA" "/dev/mapper/$CRYPT_DATA"
 
-sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_NIX"     -L 15GiB
-sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_VAR"     -L 1.5GiB
-sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_HOME"    -L 1GiB
+sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_NIX"     -L 24GiB
+sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_VAR"     -L 4GiB
+sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_HOME"    -L 4GiB
 sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_TMP"     -L 64MiB
 sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_VAR_TMP" -L 1MiB
 sudo lvcreate "$VG_ROOT" -n "$LV_ROOT_SWAP"    -L 1MiB

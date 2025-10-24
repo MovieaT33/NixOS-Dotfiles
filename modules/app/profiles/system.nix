@@ -8,6 +8,7 @@
     # d
     disfetch
     duf
+    dust
     dysk
     # e
     # e
@@ -20,6 +21,7 @@
     # l
     # m
     # n
+    ncdu
     neofetch
     nerdfetch
     # o

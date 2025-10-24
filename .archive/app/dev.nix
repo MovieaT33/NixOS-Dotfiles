@@ -11,7 +11,6 @@
     # lf
     ranger
     # tig
-    tree
     # wordgrinder
     # python314
     # ripgrep

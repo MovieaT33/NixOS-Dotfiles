@@ -16,7 +16,6 @@
     inxi
     # iproute2
     # mtr
-    ncdu
     net-tools
     nethogs
     nload

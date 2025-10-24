@@ -18,9 +18,11 @@
 - kulala nvim
 - Secure boot
 - asciinema
+- lazydocker, docker
 - croc
 - ttyd
 - jrnl
+- nix-store --optimise
 - wttr*
 - newsboat
 - qemu
@@ -60,6 +62,9 @@
 - zen-browser
 - oh-my-posh
 - zork*
+
+- ncmpcpp + mpd, cmus, mpg123, musikcube
+
 - ching*
 - primes*
 - octopus*
@@ -97,6 +102,7 @@
 - rand*
 - rainbow*
 - joke*
+- pipewire, pulseaudio, bluetooth
 - liff*
 - sudoku*
 - rockets*
@@ -125,7 +131,6 @@
 - coderabbit
 - claude
 - opencode
-- dust
 - pv
 - cava
 - broot
@@ -177,7 +182,6 @@
 - `librewolf`
 - `nice`
 - `pkgs.wine`
-- `pkgs.dust`
 - `pkgs.cheat`
 - `ntopng`
 - `etherape`
