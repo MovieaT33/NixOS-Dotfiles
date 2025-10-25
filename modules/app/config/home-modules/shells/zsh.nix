@@ -8,7 +8,6 @@
 
     # System, dotfiles, utilities and nix
     # FIXME: `l` is slow, `ls` is faster
-    b     = "bat";                                          # `cat` alternative
     c     = "sudo sh -c 'printf c > /proc/sysrq-trigger'";  # crash system (REISUB)
     doc   = "sudo nix config check";
     dump  = "coredumpctl";
@@ -31,8 +30,8 @@
     # LUKS encryption
     luks-add     = "sudo cryptsetup luksAddKey";     # add a new key  (rotate periodically)
     luks-remove  = "sudo cryptsetup luksRemoveKey";  # remove old key (rotate periodically)
-    secure-open  = "sudo cryptsetup open /dev/vda3 crypt_data && sudo vgchange -ay vg0-data; sudo mount --mkdir /dev/vg0-data/secure /secure";
-    secure-close = "sudo umount /secure && sudo vgchange -an vg0-data && sudo cryptsetup close crypt_data; sudo rmdir /secure";
+    secure-open  = "sudo cryptsetup open /dev/vda3 crypt_data && sudo vgchange -ay vg1-data; sudo mount --mkdir /dev/vg1-data/secure /secure";
+    secure-close = "sudo umount /secure && sudo vgchange -an vg1-data && sudo cryptsetup close crypt_data; sudo rmdir /secure";
     sc           = "cd /security";
 
     # Security

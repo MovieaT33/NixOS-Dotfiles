@@ -50,20 +50,19 @@
     };
 
     "/tmp" = {
-      # device = "/dev/vg0-root/tmp";
-      device = "tmpfs";
+      device = "/dev/vg0-root/tmp";
       fsType = "tmpfs";
       options = [ "mode=1777" "nosuid" "nodev" "noexec" ];
     };
 
     "/var/tmp" = {
-      device = "tmpfs";
+      device = "/dev/vg0-root/var_tmp";
       fsType = "tmpfs";
       options = [ "noatime" ];
     };
 
     # "/secure" = {
-    #   device = "/dev/vg0-data/secure";
+    #   device = "/dev/vg1-data/secure";
     #   fsType = "ext4";
     # };
   };

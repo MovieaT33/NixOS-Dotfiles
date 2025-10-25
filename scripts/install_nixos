@@ -13,7 +13,7 @@ CRYPT_DATA="crypt_data"
 
 # Volume groups
 VG_ROOT="vg0-root"
-VG_DATA="vg0-data"
+VG_DATA="vg1-data"
 
 # Logical volumes
 LV_ROOT_NIX="nix"
