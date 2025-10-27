@@ -3,10 +3,10 @@
 {
   system = {
     stateVersion = stateVersion;
-    nixos.label = "1.2.8-rc1";
+    nixos.label = "1.2.8-rc2";
     copySystemConfiguration = false;
     autoUpgrade = {
-      enable = true;
+      enable = false;
       dates = "daily";
       allowReboot = false;
     };

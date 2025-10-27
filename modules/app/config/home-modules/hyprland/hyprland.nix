@@ -3,7 +3,6 @@
 {
   imports = [
     # Desktop apps
-    ./hyprpaper.nix   # Wallpaper
     ./hyprlock.nix    # Lock screen
     ./swww.nix        # Wallpaper
     ./waybar.nix      # Bar
