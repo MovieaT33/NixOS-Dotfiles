@@ -9,6 +9,7 @@ in
     ../utilities/atuin.nix              # shell history manager
     # b
     ../utilities/bat.nix                # `cat` alternative
+    ../utilities/broot.nix              # directory navigation
     ../utilities/btop.nix               # resource monitor
     # c
     ../utilities/carapace.nix           # shell argument completion
@@ -27,6 +28,7 @@ in
     # j
     # k
     # l
+    ../utilities/lazydocker.nix         # docker UI
     ../utilities/lazygit.nix            # git UI
     # m
     # n

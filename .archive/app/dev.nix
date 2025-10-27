@@ -13,7 +13,6 @@
     # tig
     # wordgrinder
     # python314
-    # ripgrep
     # tokei
     # yazi
   ];

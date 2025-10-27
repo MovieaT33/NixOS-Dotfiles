@@ -19,7 +19,6 @@
 - kulala nvim
 - Secure boot
 - asciinema
-- lazydocker, docker
 - croc
 - ttyd
 - jrnl
@@ -48,11 +47,13 @@
 - vim combinations in Zsh
 - efibootmgr
 - libreoffice
+- ash
 - mokutil
 - bastet
 - use hyprland keyboard buffer app
 - vitetris
 - Animated wallpapers
+- /sys/devices/system/cpu/vulnerabilities/*
 - pkgs.chkrootkit, pkgs.aide -> services.cron
 - GDB
 - use something instead of `xterm` for wrapped apps

@@ -3,9 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     aria2
-    bandwhich
-    bmon
-    bottom
     bsd-finger
     dig
     glances
@@ -17,9 +14,6 @@
     # iproute2
     # mtr
     net-tools
-    nethogs
-    nload
-    speedtest-cli
     tcpdump
     wget
     # wireshark

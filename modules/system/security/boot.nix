@@ -1,11 +1,16 @@
 { ... }:
 
 {
+  hardware.cpu = {
+    intel.updateMicrocode = true;
+    amd.updateMicrocode = true;
+  };
+
   # TODO: Update formatting
   boot.kernelParams = [
     # disable Intel and AMD CPU mitigations, which can have a significant performance impact
     # disable this only if you are sure that your system is not vulnerable
-    "mitigations=off"
+    # "mitigations=off"
 
     # make it harder to influence slab cache layout
     "slab_nomerge"
@@ -42,6 +47,12 @@
 
     # Overwrite free'd memory
     "page_poison=1"
+
+    "spectre_v2=on"
+    "retbleed=auto"
+    "spec_store_bypass_disable=on"
+    "l1tf=on"
+    "mds=full"
   ];
 
   boot.blacklistedKernelModules = [

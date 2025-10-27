@@ -3,11 +3,10 @@
 {
   programs.zsh.shellAliases = {
     # TODO: Temporary aliases for training muscle memory
-    ls = "cowsay no!";
-    cd = "cowsay no!";
+    ls = "cowsay No!";
+    cd = "cowsay No!";
 
     # System, dotfiles, utilities and nix
-    # FIXME: `l` is slow, `ls` is faster
     c     = "sudo sh -c 'printf c > /proc/sysrq-trigger'";  # crash system (REISUB)
     doc   = "sudo nix config check";
     dump  = "coredumpctl";

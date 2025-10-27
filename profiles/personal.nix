@@ -9,6 +9,7 @@ in
     ./system.nix
 
     # WM/DE configurations
+    "${modulesDir}/app/config/docker.nix"
     "${modulesDir}/app/config/hyprland.nix"
     "${modulesDir}/app/config/plasma.nix"
     "${modulesDir}/app/config/sddm.nix"

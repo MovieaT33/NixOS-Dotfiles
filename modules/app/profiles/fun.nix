@@ -6,6 +6,8 @@
     asciiquarium
     astroterm
     # b
+    bb
+    boxes
     # c
     cbonsai
     cmatrix
@@ -28,8 +30,12 @@
     # m
     mapscii
     # n
+    nbsdgames
+    nyancat
     # o
     # p
+    pipes-rs
+    ponysay
     # q
     # r
     rig
@@ -37,6 +43,9 @@
     sl
     starfetch
     # t
+    termusic
+    toilet
+    typespeed
     # u
     unimatrix
     # v
