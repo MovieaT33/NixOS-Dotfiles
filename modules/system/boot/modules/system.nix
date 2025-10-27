@@ -3,7 +3,7 @@
 {
   system = {
     stateVersion = stateVersion;
-    nixos.label = "1.2.5";
+    nixos.label = "1.2.6";
     copySystemConfiguration = false;
     autoUpgrade = {
       enable = true;

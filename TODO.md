@@ -47,6 +47,7 @@
 - `/etc/machine-id`
 - vim combinations in Zsh
 - efibootmgr
+- libreoffice
 - mokutil
 - bastet
 - use hyprland keyboard buffer app
