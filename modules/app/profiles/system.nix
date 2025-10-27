@@ -24,6 +24,7 @@
     # j
     # k
     # l
+    lazyjournal
     librespeed-cli
     # m
     # n
