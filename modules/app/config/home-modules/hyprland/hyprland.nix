@@ -4,8 +4,9 @@
   imports = [
     # Desktop apps
     ./hyprpaper.nix   # Wallpaper
-    ./waybar.nix      # Bar
     ./hyprlock.nix    # Lock screen
+    ./swww.nix        # Wallpaper
+    ./waybar.nix      # Bar
     ./wofi.nix        # Menu
 
     # Apps
