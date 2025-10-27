@@ -8,6 +8,7 @@
     bmon
     bottom
     # c
+    cava
     # d
     disfetch
     duf

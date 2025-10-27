@@ -18,6 +18,7 @@
 - curlie
 - kulala nvim
 - Secure boot
+- https://www.youtube.com/@saneAspect/videos
 - asciinema
 - croc
 - ttyd
@@ -89,7 +90,6 @@
 - asitop
 - perf
 - wavemon
-- cava
 - call*
 - rain*
 - race*
@@ -135,7 +135,6 @@
 - claude
 - opencode
 - pv
-- cava
 - broot
 - bat-extrashyperfine
 - taskwarrior

@@ -1,7 +1,10 @@
-sudo swapoff /dev/vg_root/swap
+sudo swapoff /dev/vg-root/swap
 sudo umount -R /mnt
-sudo vgchange -an vg_data
-sudo vgchange -an vg_root
+
+sudo vgchange -an vg1-data
+sudo vgchange -an vg0-root
+
 sudo cryptsetup close crypt_data
 sudo cryptsetup close crypt_root
+
 sudo reboot
