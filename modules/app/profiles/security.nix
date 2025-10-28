@@ -8,6 +8,7 @@
     # d
     # e
     # f
+    foremost
     # g
     # h
     # i
@@ -24,6 +25,7 @@
     # r
     # s
     # t
+    thc-secure-delete   # `sfill` and `srm`
     # u
     # v
     # w

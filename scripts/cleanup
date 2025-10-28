@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -eux
+
 sudo swapoff /dev/vg-root/swap
 sudo umount -R /mnt
 

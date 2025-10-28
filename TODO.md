@@ -8,29 +8,94 @@
 - https://pastebin.com/fi6VBm2z
 - https://spectrum-os.org/
 - https://saylesss88.github.io/nix/hardening_NixOS.html
+- https://terminaltrove.com/explore
 - https://www.reddit.com/r/NixOS/comments/1aqck9l/systemd_hardening_some_preconfigured_options_d
+- https://www.youtube.com/@saneAspect/videos
+- My obsidian vault urls, programs, etc.
+
+# Packages
+
+## A
+
+- asciinema
+- advent*
+- ash
+
+## B
+
+## C
+
+- choose
+- curlie
+- croc
+
+## D
+
+## E
+
+## F
+
+## G
+
+- grex
+
+## H
+
+## K
+
+## L
+
+## M
+
+## N
+
+## O
+
+## P
+
+- pv
+
+## Q
+
+## R
+
+## S
+
+## T
+
+## U
+
+## V
+
+- virt-manager
+
+## W
+
+## X
+
+## Y
+
+## Z
 
 # Other
 
 - `home-modules` -> `home`
-- Check hyprland background
+- Update SWWW wallpaper with high quality and add service
 - `zl="z path && ls"`
-- curlie
 - kulala nvim
 - Secure boot
-- https://www.youtube.com/@saneAspect/videos
-- asciinema
-- croc
 - ttyd
 - jrnl
+- fx
+- hyperfine
+- visidata
+- slides
 - nix-store --optimise
 - wttr*
 - newsboat
 - qemu
-- virt-manager
 - winboat
 - faker
-- grex
 - Use other FS type
 - Use GRUB
 - pkgs.nerdfetch
@@ -48,7 +113,6 @@
 - vim combinations in Zsh
 - efibootmgr
 - libreoffice
-- ash
 - mokutil
 - bastet
 - use hyprland keyboard buffer app
@@ -74,7 +138,6 @@
 - octopus*
 - pong*
 - music player*
-- advent*
 - bible*
 - minesweeper*
 - enigma*

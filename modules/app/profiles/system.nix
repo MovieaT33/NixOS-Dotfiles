@@ -19,6 +19,7 @@
     # f
     fastfetch
     # g
+    g-ls
     gping
     # h
     # j
@@ -27,6 +28,8 @@
     lazyjournal
     librespeed-cli
     # m
+    macchina
+    mtr
     # n
     ncdu
     neofetch
@@ -41,6 +44,7 @@
     # q
     # r
     # s
+    s-tui
     screenfetch
     speedtest-cli
     # t

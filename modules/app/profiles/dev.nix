@@ -6,6 +6,8 @@
     # b
     # c
     calc
+    calcure
+    calcurse
     # d
     # e
     # f
@@ -27,6 +29,7 @@
     # tree
     # u
     # v
+    viddy
     # w
     # x
     # y

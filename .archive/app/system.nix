@@ -12,7 +12,6 @@
     iftop
     inxi
     # iproute2
-    # mtr
     net-tools
     tcpdump
     wget
