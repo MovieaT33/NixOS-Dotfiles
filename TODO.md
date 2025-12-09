@@ -100,6 +100,8 @@
 - Use GRUB
 - pkgs.nerdfetch
 - kdePackages.filelight
+- zip2john
+- john
 - pkgs.gnome-font-viewer
 - useXkbConfig
 - pandoc
