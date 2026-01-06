@@ -29,7 +29,7 @@
     zen-browser,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
+    stdenv.hostPlatform.system = "x86_64-linux";
     stateVersion = "25.11";
   in {
     nixosConfigurations = {
