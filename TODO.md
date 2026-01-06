@@ -10,6 +10,7 @@
 - https://saylesss88.github.io/nix/hardening_NixOS.html
 - https://terminaltrove.com/explore
 - https://www.reddit.com/r/NixOS/comments/1aqck9l/systemd_hardening_some_preconfigured_options_d
+- https://github.com/nix-tricks/nix-prompt
 - https://www.youtube.com/@saneAspect/videos
 - My obsidian vault urls, programs, etc.
 
@@ -45,7 +46,11 @@
 
 ## L
 
+- lsd
+
 ## M
+
+- mc (*midnight commander*)
 
 ## N
 
@@ -61,13 +66,15 @@
 
 ## S
 
+- openssh
+
 ## T
 
 ## U
 
 ## V
 
-- virt-manager
+- virt-manager (programs.virt-manager, qemu)
 
 ## W
 
@@ -76,6 +83,8 @@
 ## Y
 
 ## Z
+
+- zathura
 
 # Other
 
@@ -93,8 +102,13 @@
 - nix-store --optimise
 - wttr*
 - newsboat
-- qemu
 - winboat
+- GRUB
+- xxd
+- od
+- hexdump
+- objdump
+- file
 - faker
 - Use other FS type
 - Use GRUB
@@ -222,7 +236,6 @@
 - browser
 - bad-apple
 - mandelbrot
-- mc (*midnight commander*)
 - wttr.in
 - glow
 - asciinema

@@ -30,7 +30,7 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    stateVersion = "25.05";
+    stateVersion = "25.11";
   in {
     nixosConfigurations = {
       "boot" = nixpkgs.lib.nixosSystem {

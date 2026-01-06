@@ -64,7 +64,7 @@ If you use Windows install WSL and virt-manager first.
 
 6. `View -> Scale Display -> Never`
 
-7. Change `Video` -> `Virtio`
+7. Change `Video` -> `QXL`
 
 ---
 
