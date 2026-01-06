@@ -29,12 +29,12 @@
     zen-browser,
     ...
   } @ inputs: let
-    stdenv.hostPlatform.system = "x86_64-linux";
+    system = "x86_64-linux";
     stateVersion = "25.11";
   in {
     nixosConfigurations = {
       "boot" = nixpkgs.lib.nixosSystem {
-        inherit system;
+        stdenv.hostPlatform.system = system;
         specialArgs = {
           inherit system stateVersion;
         };
@@ -45,7 +45,7 @@
       };
 
       "system" = nixpkgs.lib.nixosSystem {
-        inherit system;
+        stdenv.hostPlatform.system = system;
         specialArgs = {
           inherit system stateVersion;
         };
@@ -56,7 +56,7 @@
       };
 
       "personal" = nixpkgs.lib.nixosSystem {
-        inherit system;
+        stdenv.hostPlatform.system = system;
         specialArgs = {
           inherit system stateVersion;
         };
