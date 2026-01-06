@@ -34,7 +34,7 @@
   in {
     nixosConfigurations = {
       "boot" = nixpkgs.lib.nixosSystem {
-        stdenv.hostPlatform.system = system;
+        inherit system;
         specialArgs = {
           inherit system stateVersion;
         };
@@ -45,7 +45,7 @@
       };
 
       "system" = nixpkgs.lib.nixosSystem {
-        stdenv.hostPlatform.system = system;
+        inherit system;
         specialArgs = {
           inherit system stateVersion;
         };
@@ -56,7 +56,7 @@
       };
 
       "personal" = nixpkgs.lib.nixosSystem {
-        stdenv.hostPlatform.system = system;
+        inherit system;
         specialArgs = {
           inherit system stateVersion;
         };
