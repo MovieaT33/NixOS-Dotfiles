@@ -40,7 +40,6 @@
         };
         modules = [
           ./profiles/boot.nix
-          home-manager.nixosModules.home-manager
         ];
       };
 
@@ -51,7 +50,6 @@
         };
         modules = [
           ./profiles/system.nix
-          home-manager.nixosModules.home-manager
         ];
       };
 

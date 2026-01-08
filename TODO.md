@@ -18,7 +18,7 @@
 
 ## A
 
-- asciinema
+- asciinema, asciinema-agg
 - advent*
 - ash
 
@@ -29,6 +29,8 @@
 - choose
 - curlie
 - croc
+- countryfetch
+- countryguess
 
 ## D
 
@@ -47,6 +49,7 @@
 ## L
 
 - lsd
+- linux_logo
 
 ## M
 
@@ -55,6 +58,8 @@
 ## N
 
 ## O
+
+- orbiton
 
 ## P
 
@@ -67,6 +72,7 @@
 ## S
 
 - openssh
+- s-search
 
 ## T
 
@@ -78,6 +84,8 @@
 
 ## W
 
+- wego
+
 ## X
 
 ## Y
@@ -85,6 +93,15 @@
 ## Z
 
 - zathura
+
+## Commands
+
+- curl https://raw.githubusercontent.com/sergiolepore/ChristBASHTree/master/tree-EN.sh | bash
+- curl parrot_live
+
+## Scripts
+
+- https://gist.github.com/hikiko4ern/03762591a19c94650c8acb9f9a25cf7d
 
 # Other
 
@@ -96,6 +113,7 @@
 - ttyd
 - jrnl
 - fx
+- drawHelix
 - hyperfine
 - visidata
 - slides
@@ -240,7 +258,8 @@
 - mandelbrot
 - wttr.in
 - glow
-- asciinema
+- durview
+- obsidian_metadata
 - xsv
 - finger
 - dry
