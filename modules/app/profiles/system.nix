@@ -10,18 +10,21 @@
     # c
     cava
     # d
+    dig
     disfetch
     duf
     dust
     dysk
     # e
-    # e
     # f
     fastfetch
     # g
     g-ls
+    gdu
+    glances
     gping
     # h
+    htop
     # j
     # k
     # l
@@ -29,6 +32,7 @@
     librespeed-cli
     # m
     macchina
+    mc
     mtr
     # n
     ncdu
@@ -43,6 +47,7 @@
     procs
     # q
     # r
+    ranger
     # s
     s-tui
     screenfetch
@@ -52,8 +57,10 @@
     # u
     # v
     # w
+    wget
     # x
     # y
+    yazi
     # z
   ];
 }

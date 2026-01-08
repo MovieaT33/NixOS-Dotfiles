@@ -9,6 +9,7 @@
     calcure
     calcurse
     # d
+    delta
     # e
     # f
     # g

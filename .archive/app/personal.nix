@@ -3,10 +3,10 @@
 {
   environment.systemPackages = with pkgs; [
     inetutils
-    # mprocs
-    # procs
-    # tealdeer
-    # curlie
+    mprocs
+    procs
+    tealdeer
+    curlie
     tty-clock
   ];
 }

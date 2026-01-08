@@ -12,6 +12,8 @@
     cbonsai
     cmatrix
     cool-retro-term
+    countryfetch
+    countryguess
     cowsay
     # d
     # e
@@ -26,7 +28,9 @@
     # j
     # k
     # l
+    linux_logo
     lolcat
+    lsd
     # m
     mapscii
     # n
@@ -35,6 +39,7 @@
     # o
     # p
     pipes-rs
+    # pokemonsay
     ponysay
     # q
     # r

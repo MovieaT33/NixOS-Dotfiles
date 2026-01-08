@@ -13,6 +13,11 @@
 - https://github.com/nix-tricks/nix-prompt
 - https://www.youtube.com/@saneAspect/videos
 - My obsidian vault urls, programs, etc.
+- https://www.terminalizer.com/install
+- https://github.com/peterbrittain/asciimatics?tab=readme-ov-file
+- https://github.com/Aloxaf/fzf-tab?tab=readme-ov-file#install
+- https://asciinema.org/a/137149
+- https://github.com/tree-sitter/tree-sitter/tree/master
 
 # Packages
 
@@ -29,8 +34,6 @@
 - choose
 - curlie
 - croc
-- countryfetch
-- countryguess
 
 ## D
 
@@ -48,12 +51,7 @@
 
 ## L
 
-- lsd
-- linux_logo
-
 ## M
-
-- mc (*midnight commander*)
 
 ## N
 
@@ -220,7 +218,6 @@
 - rds
 - tipc
 - pokemon-colorscipts
-- gdu
 - ddate
 - proot-distro
 - durdraw
@@ -244,7 +241,6 @@
 - iotop
 - pkgs.atop
 - aptitude
-- gdu
 - broot
 - whiptail
 - dialog

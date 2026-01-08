@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     # a
+    age
     # b
     # c
     # d
@@ -19,16 +20,18 @@
     lynis
     # m
     # n
+    nmap
     # o
     # p
     # q
     # r
     # s
     # t
-    thc-secure-delete   # `sfill` and `srm`
+    # thc-secure-delete # `sfill` and `srm`. Error.
     # u
     # v
     # w
+    websploit
     # x
     # y
     # z

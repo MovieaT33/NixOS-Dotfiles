@@ -2,18 +2,13 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # delta
-    # difftastic
-    # docker
-    # jless
-    # kondo
-    # lazygit
-    # lf
-    ranger
-    # tig
-    # wordgrinder
-    # python314
-    # tokei
-    # yazi
+    difftastic
+    jless
+    kondo
+    lf
+    tig
+    wordgrinder
+    python314
+    tokei
   ];
 }
