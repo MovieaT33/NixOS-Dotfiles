@@ -19,7 +19,7 @@
 
   # FIXME:
   boot.kernel.sysctl = {
-    "kernel.modules_disabled" = false;
+    # FIXME: "kernel.modules_disabled" = false;
     "kernel.ftrace_enabled" = false;
     "kernel.core_uses_pid" = 1;
     "kernel.ctrl-alt-del" = false;
@@ -31,12 +31,12 @@
     "kernel.unprivileged_bpf_disabled" = 1;
     "kernel.yama.ptrace_scope" = 3;
     "kernel.dmesg_restrict" = 1;
-    "kernel.exec-shield" = 1;
+    # FIXME: "kernel.exec-shield" = 1;
 
     "fs.protected_fifos" = 2;
     "fs.protected_hardlinks" = 1;
     "fs.protected_regular" = 2;
-    "fs.protected_mounts" = 1;
+    # FIXME: "fs.protected_mounts" = 1;
     "fs.protected_symlinks" = 1;
     "fs.suid_dumpable" = 0;
 
