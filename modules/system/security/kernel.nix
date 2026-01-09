@@ -17,6 +17,7 @@
   # TODO: Use bool (`false/true` instead of 0).
   # TODO: Use `sysctl -a`.
 
+  # FIXME:
   boot.kernel.sysctl = {
     "kernel.modules_disabled" = false;
     "kernel.ftrace_enabled" = false;
@@ -77,9 +78,9 @@
 
     # IPv6
     # FIXME: "net.ipv6.conf.all.disable_ipv6" = true;
-    "net.ipv6.conf.all.accept_ra" = false;
-    "net.ipv6.conf.all.accept_redirects" = false;
-    "net.ipv6.conf.all.accept_source_route" = false;
+    # FIXME: "net.ipv6.conf.all.accept_ra" = false;
+    # FIXME: "net.ipv6.conf.all.accept_redirects" = false;
+    # FIXME: "net.ipv6.conf.all.accept_source_route" = false;
     # FIXME: "net.ipv6.conf.all.forwarding" = false;
     # FIXME: "net.ipv6.conf.default.disable_ipv6" = true;
     # FIXME: "net.ipv6.conf.default.accept_redirects" = false;

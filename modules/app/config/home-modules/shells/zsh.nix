@@ -14,6 +14,7 @@
     stats = "atuin stats";
     sys   = "nix-info -m";
     ta    = "type -a";
+    v     = "nvim";
 
     # LUKS encryption
     luks-add     = "sudo cryptsetup luksAddKey";
