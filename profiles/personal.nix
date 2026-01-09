@@ -1,4 +1,4 @@
-{ stateVersion, home-manager, ... }:
+{ stateVersion, home, home-manager, ... }:
 
 let
   modulesDir = builtins.toPath ../modules;
