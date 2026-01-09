@@ -4,63 +4,66 @@
   home.packages = with pkgs; [
     # a
     # b
-    bandwhich
-    bmon
-    bottom
+    # bandwhich
+    # bmon
+    # bottom
     # c
-    cava
+    # cava
     # d
-    dig
-    disfetch
+    # dig
+    # disfetch
     duf
-    dust
-    dysk
+    # dust
+    # dysk
     # e
     # f
     fastfetch
     # g
     g-ls
-    gdu
-    glances
-    gping
+    # gdu
+    # glances
+    # gping
     # h
-    htop
+    # htop
+    # i
     # j
     # k
     # l
-    lazyjournal
-    librespeed-cli
+    # lazyjournal
+    # librespeed-cli
+    # lsd
     # m
-    macchina
-    mc
-    mtr
+    # macchina
+    # mc
+    # mtr
     # n
-    ncdu
-    neofetch
-    nerdfetch
-    nethogs
-    nload
-    nnn
+    # ncdu
+    # neofetch
+    # nerdfetch
+    # nethogs
+    # nload
+    # nnn
     # o
     # p
-    pfetch
-    procs
+    # pfetch
+    # procs
     # q
     # r
-    ranger
+    # ranger
     # s
-    s-tui
-    screenfetch
-    speedtest-cli
+    # s-tui
+    # screenfetch
+    # speedtest-cli
     # t
-    tmate
+    # tmate
+    # tree
     # u
     # v
     # w
-    wget
+    # wget
     # x
     # y
-    yazi
+    # yazi
     # z
   ];
 }

@@ -5,11 +5,11 @@
     # a
     # b
     # c
-    calc
-    calcure
-    calcurse
+    # calc
+    # calcure
+    # calcurse
     # d
-    delta
+    # delta
     # e
     # f
     # g
@@ -27,10 +27,9 @@
     # r
     # s
     # t
-    # tree
     # u
     # v
-    viddy
+    # viddy
     # w
     # x
     # y

@@ -2,16 +2,16 @@
 
 {
   # boot.kernelPackages = pkgs.linuxPackages_hardened;  # use hardened linux kernel
-  # security = {
-    # protectKernelImage = true;
-    # lockKernelModules = true;
+  security = {
+    protectKernelImage = true;
+    lockKernelModules = true;
 
     # forcePageTableIsolation = true;
     # allowSimultaneousMultithreading = false;  # commented here, because may cause failings
 
     # unprivilegedUsernsClone = true;
     # virtualisation.flushL1DataCache = "always";
-  # };
+  };
 
   # TODO: Check configuration
   # TODO: Use bool (`false/true` instead of 0)

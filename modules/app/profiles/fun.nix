@@ -3,56 +3,55 @@
 {
   home.packages = with pkgs; [
     # a
-    asciiquarium
-    astroterm
+    # asciiquarium
+    # astroterm
     # b
-    bb
-    boxes
+    # bb
+    # boxes
     # c
-    cbonsai
-    cmatrix
-    cool-retro-term
-    countryfetch
-    countryguess
-    cowsay
+    # cbonsai
+    # cmatrix
+    # cool-retro-term
+    # countryfetch
+    # countryguess
+    # cowsay
     # d
     # e
     # f
-    figlet
-    fortune
+    # figlet
+    # fortune
     # g
     # h
-    hello
-    hollywood
+    # hello
+    # hollywood
     # i
     # j
     # k
     # l
-    linux_logo
-    lolcat
-    lsd
+    # linux_logo
+    # lolcat
     # m
-    mapscii
+    # mapscii
     # n
-    nbsdgames
-    nyancat
+    # nbsdgames
+    # nyancat
     # o
     # p
-    pipes-rs
+    # pipes-rs
     # pokemonsay
-    ponysay
+    # ponysay
     # q
     # r
-    rig
+    # rig
     # s
-    sl
-    starfetch
+    # sl
+    # starfetch
     # t
-    termusic
-    toilet
-    typespeed
+    # termusic
+    # toilet
+    # typespeed
     # u
-    unimatrix
+    # unimatrix
     # v
     # w
     # x
