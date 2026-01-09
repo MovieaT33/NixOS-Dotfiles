@@ -1,17 +1,17 @@
 { pkgs, config, ... }:
 
 {
-  boot.kernelPackages = pkgs.linuxPackages_hardened;  # use hardened linux kernel
-  security = {
-    protectKernelImage = true;
-    lockKernelModules = true;
+  # boot.kernelPackages = pkgs.linuxPackages_hardened;  # use hardened linux kernel
+  # security = {
+    # protectKernelImage = true;
+    # lockKernelModules = true;
 
-    forcePageTableIsolation = true;
+    # forcePageTableIsolation = true;
     # allowSimultaneousMultithreading = false;  # commented here, because may cause failings
 
-    unprivilegedUsernsClone = true;
-    virtualisation.flushL1DataCache = "always";
-  };
+    # unprivilegedUsernsClone = true;
+    # virtualisation.flushL1DataCache = "always";
+  # };
 
   # TODO: Check configuration
   # TODO: Use bool (`false/true` instead of 0)
