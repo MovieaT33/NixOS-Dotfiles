@@ -15,6 +15,7 @@
     wayland.enable = true;
 
     extraPackages = with pkgs; [
+      # TODO: Check if really needed.
       kdePackages.qtbase
       kdePackages.qtwayland
       kdePackages.qtmultimedia

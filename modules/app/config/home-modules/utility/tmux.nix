@@ -1,5 +1,6 @@
 { pkgs, ...}:
 
+# TODO: Update.
 let
   bg = "default";
   fg = "default";
