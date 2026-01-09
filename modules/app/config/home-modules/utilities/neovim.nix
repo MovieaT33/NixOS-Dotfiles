@@ -4,7 +4,7 @@
   home.file.".config/nvim" = {
     source = ../../dotfiles/nvim;
     recursive = true;
-  }; };
+  };
 
   programs = {
     neovim = {
