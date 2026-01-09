@@ -22,7 +22,7 @@ in
       "${modulesDir}/app/profiles/fun.nix"
       "${modulesDir}/app/profiles/security.nix"
       "${modulesDir}/app/profiles/system.nix"
-      "${modulesDir}/app/profiles/hyprland.nix"
+      "${modulesDir}/app/profiles/we.nix"
 
       "${modulesDir}/app/config/home-modules/shells/fish.nix"
       "${modulesDir}/app/config/home-modules/shells/nushell.nix"
