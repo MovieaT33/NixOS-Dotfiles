@@ -107,6 +107,20 @@
 
 # Other
 
+- gnumake
+- coreutils
+- findutils
+- diffutils
+- gnused
+- gawk
+- gzip
+- unzip
+- zip
+- xz
+- file
+- which
+- shadow  # for `change` command (password expiration management)
+
 - `home-modules` -> `home`
 - Update SWWW wallpaper with high quality and add service
 - `zl="z path && ls"`

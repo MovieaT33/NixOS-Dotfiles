@@ -39,7 +39,6 @@
     # mc
     # mtr
     # n
-    # ncdu
     # neofetch
     # nerdfetch
     # nethogs
@@ -58,11 +57,9 @@
     # speedtest-cli
     # t
     # tmate
-    # tree
     # u
     # v
     # w
-    # wget
     # x
     # y
     # yazi

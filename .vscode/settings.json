@@ -20,6 +20,7 @@
         "cmatrix",
         "Confinables",
         "coredump",
+        "coredumpctl",
         "countryfetch",
         "countryguess",
         "cowsay",

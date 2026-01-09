@@ -6,84 +6,107 @@ in
 {
   imports = [
     # a
-    ../utilities/atuin.nix              # shell history manager
+    ../utility/atuin.nix
     # b
-    ../utilities/bat.nix                # `cat` alternative
-    ../utilities/broot.nix              # directory navigation
-    ../utilities/btop.nix               # resource monitor
+    ../utility/bat.nix
+    ../utility/broot.nix
+    ../utility/btop.nix
     # c
-    ../utilities/carapace.nix           # shell argument completion
-    ../utilities/command-not-found.nix  # suggests packages for unknown commands
-    # TODO: ../utilities/curl.nix       # network downloader
+    ../utility/carapace.nix
+    ../utility/command-not-found.nix
+    # TODO: ../utility/curl.nix
     # d
-    # TODO: ../utilities/delta.nix      # git diff viewer
+    # TODO: ../utility/delta.nix
     # e
-    ../utilities/eza.nix                # `ls` alternative
+    ../utility/eza.nix
     # f
-    ../utilities/fd.nix                 # `find` alternative
-    ../utilities/fzf.nix                # fuzzy finder
+    ../utility/fd.nix
+    ../utility/fzf.nix
     # g
-    ../utilities/git.nix                # git configuration
+    ../utility/git.nix
     # h
+    # i
     # j
     # k
     # l
-    ../utilities/lazydocker.nix         # docker UI
-    ../utilities/lazygit.nix            # git UI
+    ../utility/lazydocker.nix
+    ../utility/lazygit.nix
     # m
     # n
-    ../utilities/navi.nix               # interactive cheatsheet
-    # ../utilities/ncdu.nix             # disk usage analyzer
-    ../utilities/neovim.nix             # neovim editor
+    ../utility/navi.nix
+    # ../utility/ncdu.nix
+    ../utility/neovim.nix
     # o
     # p
     # q
     # r
-    ../utilities/ripgrep.nix            # `grep` alternative
-    ../utilities/ripgrep-all.nix        # `grep` alternative with more features
+    ../utility/ripgrep.nix
+    ../utility/ripgrep-all.nix
     # s
-    ../utilities/starship.nix           # shell prompt
-    ../utilities/superfile.nix          # the best file manager
+    ../utility/starship.nix
+    ../utility/superfile.nix
     # t
-    ../utilities/tmux.nix               # terminal multiplexer
-    # ../utilities/tree.nix             # directory tree
+    ../utility/tmux.nix
+    # ../utility/tree.nix
     # u
     # v
     # w
-    # ../utilities/wget.nix             # network downloader
+    # ../utility/wget.nix
     # x
     # y
     # z
-    ../utilities/zellij.nix             # terminal workspace manager
-    ../utilities/zoxide.nix             # `cd` alternative
+    ../utility/zellij.nix
+    ../utility/zoxide.nix
   ];
 
-  # TODO: Check which packages are really needed
+  # FIXME: Does not work.
   home.packages = with pkgs; [
-    nix-info  # does not work
-    # gnumake
-    # coreutils
-    # findutils
-    # diffutils
-    # gnused
-    # gawk
-    # gzip
-    # unzip
-    # zip
-    # xz
-    # file
-    # which
-    # shadow  # for `chage` command (password expiration management)
+    nix-info
   ];
 
   home.shellAliases = {
-    d  = "${configDir}";
-    l  = "eza";
-    la = "eza";
-    lg = "lazygit";
-    ll = "eza";
-    s  = "doas";
-    j  = "just";
-    jj = "${configDir}; just";
+    # a
+    # b
+    # c
+    c     = "sudo sh -c 'printf c > /proc/sysrq-trigger'";
+    # d
+    d     = "${configDir}";
+    d-sec = "systemd-analyze security";
+    dump  = "coredumpctl";
+    # e
+    e     = "superfile";
+    # f
+    f     = "fastfetch -c examples/13.jsonc";
+    # g
+    # h
+    # i
+    i     = "uname -a";
+    # j
+    jj    = "${configDir}; just";
+    # k
+    # l
+    l     = "eza";
+    # m
+    m     = "btop";
+    # n
+    n     = "navi";
+    ns    = "nix-shell --run zsh -p";
+    # o
+    # p
+    # r
+    # s
+    s     = "doas";
+    s-sec = "sudo lynis audit system";
+    stats = "atuin stats";
+    sys   = "nix-info -m";
+    # t
+    t     = "type -a";
+    # u
+    # v
+    v     = "nvim";
+    # w
+    # x
+    # y
+    # z
   };
 }
