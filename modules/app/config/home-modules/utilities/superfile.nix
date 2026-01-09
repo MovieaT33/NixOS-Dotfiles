@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # TODO: Update.
   programs.superfile = {
     enable = true;
     settings = {

@@ -76,15 +76,15 @@
     "net.ipv4.tcp_congestion_control" = "bbr";
 
     # IPv6
-    "net.ipv6.conf.all.disable_ipv6" = 1;
+    # FIXME: "net.ipv6.conf.all.disable_ipv6" = true;
     "net.ipv6.conf.all.accept_ra" = false;
     "net.ipv6.conf.all.accept_redirects" = false;
     "net.ipv6.conf.all.accept_source_route" = false;
-    "net.ipv6.conf.all.forwarding" = false;
-    "net.ipv6.conf.default.disable_ipv6" = 1;
-    "net.ipv6.conf.default.accept_redirects" = false;
-    "net.ipv6.conf.default.accept_ra" = false;
-    "net.ipv6.conf.default.accept_source_route" = false;
+    # FIXME: "net.ipv6.conf.all.forwarding" = false;
+    # FIXME: "net.ipv6.conf.default.disable_ipv6" = true;
+    # FIXME: "net.ipv6.conf.default.accept_redirects" = false;
+    # FIXME: "net.ipv6.conf.default.accept_ra" = false;
+    # FIXME: "net.ipv6.conf.default.accept_source_route" = false;
 
     # Virtual machine
     "vm.unprivileged_userfaultfd" = false;
