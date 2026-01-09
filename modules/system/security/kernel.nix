@@ -1,21 +1,21 @@
 { pkgs, config, ... }:
 
 {
-  # boot.kernelPackages = pkgs.linuxPackages_hardened;  # use hardened linux kernel
+  # boot.kernelPackages = pkgs.linuxPackages_hardened;  # FIXME: Use hardened linux kernel.
   security = {
     protectKernelImage = true;
     lockKernelModules = true;
 
-    # forcePageTableIsolation = true;
-    # allowSimultaneousMultithreading = false;  # commented here, because may cause failings
+    forcePageTableIsolation = true;
+    # allowSimultaneousMultithreading = false;  # FIXME: Commented here, because may cause failings.
 
-    # unprivilegedUsernsClone = true;
-    # virtualisation.flushL1DataCache = "always";
+    unprivilegedUsernsClone = true;
+    virtualisation.flushL1DataCache = "always";
   };
 
-  # TODO: Check configuration
-  # TODO: Use bool (`false/true` instead of 0)
-  # TODO: Use `sysctl -a`
+  # TODO: Check configuration.
+  # TODO: Use bool (`false/true` instead of 0).
+  # TODO: Use `sysctl -a`.
 
   boot.kernel.sysctl = {
     "kernel.modules_disabled" = false;

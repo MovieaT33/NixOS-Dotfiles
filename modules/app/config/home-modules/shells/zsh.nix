@@ -2,33 +2,22 @@
 
 {
   programs.zsh.shellAliases = {
-    # TODO: Temporary aliases for training muscle memory
-    ls = "cowsay No!";
-    cd = "cowsay No!";
-
     # System, dotfiles, utilities and nix
-    c     = "sudo sh -c 'printf c > /proc/sysrq-trigger'";  # crash system (REISUB)
-    doc   = "sudo nix config check";
+    c     = "sudo sh -c 'printf c > /proc/sysrq-trigger'";
     dump  = "coredumpctl";
-    e     = "superfile";                                    # file manager
-    f     = "fzf";                                          # fuzzy finder
-    fonts = "gnome-font-viewer";
+    e     = "superfile";
     i     = "uname -a";
-    m     = "btop";                                         # monitor: `htop` alternative
-    n     = "navi";                                         # interactive cheatsheet
+    m     = "btop";
+    n     = "navi";
     ns    = "nix-shell --run zsh -p";
     nl    = "nix-shell --run zsh -p !!";
     stats = "atuin stats";
     sys   = "nix-info -m";
-    t     = "tldr";                                         # tldr pages
-    ta    = "type -a";                                      # show all locations of a command
-    tm    = "tmux";                                         # terminal multiplexer
-    v     = "nvim";                                         # neovim
-    zj    = "zellij";                                       # terminal workspace manager
+    ta    = "type -a";
 
     # LUKS encryption
-    luks-add     = "sudo cryptsetup luksAddKey";     # add a new key  (rotate periodically)
-    luks-remove  = "sudo cryptsetup luksRemoveKey";  # remove old key (rotate periodically)
+    luks-add     = "sudo cryptsetup luksAddKey";
+    luks-remove  = "sudo cryptsetup luksRemoveKey";
     secure-open  = "sudo cryptsetup open /dev/vda3 crypt_data && sudo vgchange -ay vg1-data; sudo mount --mkdir /dev/vg1-data/secure /secure";
     secure-close = "sudo umount /secure && sudo vgchange -an vg1-data && sudo cryptsetup close crypt_data; sudo rmdir /secure";
     sc           = "cd /security";

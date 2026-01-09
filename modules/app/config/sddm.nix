@@ -2,7 +2,7 @@
 
 {
   services.displayManager = {
-    defaultSession = "hyprland";
+    defaultSession = "plasma";
     autoLogin.user = "mvt33";
   };
 

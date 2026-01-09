@@ -22,8 +22,10 @@
     g-ls
     # gdu
     # glances
+    # gnome-font-viewer
     # gping
     # h
+    hardinfo2
     # htop
     # i
     # j

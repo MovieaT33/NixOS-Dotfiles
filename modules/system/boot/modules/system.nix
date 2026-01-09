@@ -3,12 +3,12 @@
 {
   system = {
     stateVersion = stateVersion;
-    nixos.label = "1.3.7";
+    nixos.label = "1.3.8";
     copySystemConfiguration = false;
     autoUpgrade = {
       enable = true;
-      dates = "weekly";
-      allowReboot = false;
+      dates = "monthly";
+      allowReboot = true;
     };
   };
 }

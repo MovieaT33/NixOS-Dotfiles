@@ -1,4 +1,4 @@
-{ pkgs, home-manager, ... }:
+{ home, pkgs, home-manager, ... }:
 
 {
   programs.hyprland = {
@@ -7,10 +7,12 @@
   };
 
   # Cursor theme
-  environment.systemPackages = with pkgs; [ bibata-cursors ];
+  home.packages = with pkgs; [
+    bibata-cursors
+    wl-clipboard
+  ];
   
   home-manager.users."mvt33" = import ./home-modules/hyprland/hyprland.nix;
 
-  # TODO: Use modern app for "Application Not Responding" error.
   # TODO: Notification app.
 }

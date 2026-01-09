@@ -9,7 +9,6 @@
     # calcure
     # calcurse
     # d
-    # delta
     # e
     # f
     # g
@@ -18,6 +17,7 @@
     # i
     # j
     # k
+    kdePackages.kolourpaint
     # l
     # m
     # n

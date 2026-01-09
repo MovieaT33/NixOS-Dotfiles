@@ -1,3 +1,7 @@
+# Other
+
+- system has been renamed
+
 # URLs
 
 - https://github.com/nix-community/vulnix
