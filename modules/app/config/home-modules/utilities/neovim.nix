@@ -1,12 +1,10 @@
 { home, pkgs, ... }:
 
 {
-  home.file = {
-    ".config/nvim" = {
-      recursive = true;
-      source = "../../dotfiles/nvim";
-    };
-  };
+  home.file.".config/nvim" = {
+    source = ../../dotfiles/nvim;
+    recursive = true;
+  }; };
 
   programs = {
     neovim = {
