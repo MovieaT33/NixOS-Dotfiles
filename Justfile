@@ -7,9 +7,9 @@ alias v := version
 alias i := install
 
 alias s := sync
-alias f := update-flake
 alias u := update
-alias U := fast-update
+alias d := deploy
+alias D := fast-deploy
 
 alias r := repair
 alias c := clean
@@ -41,12 +41,12 @@ sync:
 update-flake:
     sudo nix flake update
 
-# rebuild NixOS with current profile
-update:
+# deploy configuration with current profile
+deploy:
     sudo nixos-rebuild switch --flake .#{{PROFILE}} --quiet
 
-# fast update: rebuild without re-exec
-fast-update:
+# deploy without re-exec
+fast-deploy:
     sudo nixos-rebuild switch --flake .#{{PROFILE}} --quiet --no-reexec
 
 # verify Nix store integrity and repair if necessary
@@ -71,3 +71,5 @@ upgrade: sync update update-flake version
 
 # sync repository, rebuild without re-exec, and show current version
 fast-upgrade: sync fast-update version
+
+# TODO: nix flake check / show
