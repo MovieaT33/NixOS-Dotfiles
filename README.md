@@ -102,9 +102,9 @@ If you use Windows install WSL and virt-manager first.
 
 9. `cd nixos`
 
-10. Sync NixOS with the configuration:
+10. Deploy the configuration:
     ```bash
-    just u
+    just d
 
 11. Change password for user:
     ```bash
