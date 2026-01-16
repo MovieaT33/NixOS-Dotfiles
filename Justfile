@@ -10,7 +10,7 @@ alias D := fast-deploy
 alias r := repair
 alias c := clean
 
-alias l := list
+alias l := profiles
 
 alias p := packages-upgrade
 alias g := upgrade
@@ -55,7 +55,7 @@ clean:
     sudo nix-collect-garbage -d
 
 # list all profiles
-list:
+profiles:
     sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
 # upgrade all system packages and rebuild NixOS
@@ -63,7 +63,7 @@ packages-upgrade:
     sudo nixos-rebuild switch --upgrade
 
 # sync repository, rebuild NixOS, update flake.lock, and show current version 
-upgrade: sync deploy update-flake version
+upgrade: sync deploy update version
 
 # sync repository, rebuild without re-exec, and show current version
 fast-upgrade: sync fast-deploy version
