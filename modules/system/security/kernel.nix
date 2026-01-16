@@ -2,6 +2,15 @@
 
 {
   # boot.kernelPackages = pkgs.linuxPackages_hardened;  # FIXME: Use hardened linux kernel.
+  boot = {
+    kernelPackages = pkgs.linuxPackages_cachyos-lto;
+    microcode = {
+      enable = true;
+      intel = true;
+      amd = true;
+    };
+  };
+
   security = {
     protectKernelImage = true;
     lockKernelModules = true;
