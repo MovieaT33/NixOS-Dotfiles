@@ -1,19 +1,19 @@
 { pkgs, config, ... }:
 
 {
-  # boot.kernelPackages = pkgs.linuxPackages_hardened;  # FIXME: Use hardened linux kernel.
-  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
-  hardware.cpu = {
-    intel.updateMicrocode = true;
-    amd.updateMicrocode = true;
-  };
+  # boot.kernelPackages = pkgs.linuxPackages_hardened; # FIXME: Use hardened linux kernel.
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos-lto; # TODO:
+  # hardware.cpu = {
+  #   intel.updateMicrocode = true;
+  #   amd.updateMicrocode = true;
+  # };
 
   security = {
     protectKernelImage = true;
     lockKernelModules = true;
 
     forcePageTableIsolation = true;
-    # allowSimultaneousMultithreading = false;  # FIXME: Commented here, because may cause failings.
+    # allowSimultaneousMultithreading = false; # FIXME: Commented here, because may cause failings.
 
     unprivilegedUsernsClone = true;
     virtualisation.flushL1DataCache = "always";
