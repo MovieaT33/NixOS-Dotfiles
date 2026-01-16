@@ -39,11 +39,11 @@ update:
 
 # deploy configuration with current profile
 deploy:
-    sudo nixos-rebuild switch --flake nixos --quiet
+    sudo nixos-rebuild switch --flake .#nixos --quiet
 
 # deploy without re-exec
 fast-deploy:
-    sudo nixos-rebuild switch --flake nixos --quiet --no-reexec
+    sudo nixos-rebuild switch --flake .#nixos --quiet --no-reexec
 
 # verify nix store integrity and repair if necessary
 repair:
