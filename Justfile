@@ -1,7 +1,3 @@
-# Variables
-# WARNING: Do not change PROFILE; "nixos" is reserved
-PROFILE := "nixos"
-
 # Aliases
 alias v := version
 alias i := install
@@ -37,19 +33,19 @@ sync:
     sudo git fetch --depth 1
     sudo git reset --hard origin/main
 
-# update flake.lock to the latest versions
-update-flake:
+# update flake.lock to the latest version
+update:
     sudo nix flake update
 
 # deploy configuration with current profile
 deploy:
-    sudo nixos-rebuild switch --flake .#{{PROFILE}} --quiet
+    sudo nixos-rebuild switch --flake nixos --quiet
 
 # deploy without re-exec
 fast-deploy:
-    sudo nixos-rebuild switch --flake .#{{PROFILE}} --quiet --no-reexec
+    sudo nixos-rebuild switch --flake nixos --quiet --no-reexec
 
-# verify Nix store integrity and repair if necessary
+# verify nix store integrity and repair if necessary
 repair:
     sudo nix-store --verify --check-contents --repair
 
@@ -58,7 +54,7 @@ clean:
     sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system
     sudo nix-collect-garbage -d
 
-# list all system generations (profiles)
+# list all profiles
 list:
     sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
@@ -67,9 +63,7 @@ packages-upgrade:
     sudo nixos-rebuild switch --upgrade
 
 # sync repository, rebuild NixOS, update flake.lock, and show current version 
-upgrade: sync update update-flake version
+upgrade: sync deploy update-flake version
 
 # sync repository, rebuild without re-exec, and show current version
-fast-upgrade: sync fast-update version
-
-# TODO: nix flake check / show
+fast-upgrade: sync fast-deploy version
