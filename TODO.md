@@ -32,6 +32,7 @@
 - advent*
 - ash
 - androidStudio
+- auto-cpufreq
 
 ## B
 

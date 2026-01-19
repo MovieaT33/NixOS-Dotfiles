@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  services.autoCpuFreq = {
+    enable = true;
+  };
+}

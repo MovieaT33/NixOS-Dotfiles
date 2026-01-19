@@ -22,6 +22,7 @@ in
     "${servicesDir}/antivirus.nix"
     "${servicesDir}/apparmor.nix"
     "${servicesDir}/audit.nix"
+    "${servicesDir}/auto-cpufreq.nix"
     "${servicesDir}/dbus.nix"
     "${servicesDir}/journald.nix"
     "${servicesDir}/logrotate.nix"
