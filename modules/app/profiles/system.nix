@@ -39,6 +39,7 @@
     # mc
     # mtr
     # n
+    # nix-output-monitor
     # neofetch
     # nerdfetch
     # nethogs

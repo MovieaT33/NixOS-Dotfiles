@@ -14,20 +14,20 @@
   # region [ Internationalization ]
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    # extraLocaleSettings = {
-    #   LC_CTYPE =          "en_US.UTF-8";
-    #   LC_NUMERIC =        "en_US.UTF-8";
-    #   LC_TIME =           "en_US.UTF-8";
-    #   LC_COLLATE =        "en_US.UTF-8";
-    #   LC_MONETARY =       "en_US.UTF-8";
-    #   LC_MESSAGES =       "en_US.UTF-8";
-    #   LC_PAPER =          "en_US.UTF-8";
-    #   LC_NAME =           "en_US.UTF-8";
-    #   LC_ADDRESS =        "en_US.UTF-8";
-    #   LC_TELEPHONE =      "en_US.UTF-8";
-    #   LC_MEASUREMENT =    "en_US.UTF-8";
-    #   LC_IDENTIFICATION = "en_US.UTF-8";
-    # };
+    extraLocaleSettings = {
+      LC_CTYPE =          config.i18m.defaultLocale;
+      LC_NUMERIC =        config.i18m.defaultLocale;
+      LC_TIME =           config.i18m.defaultLocale;
+      LC_COLLATE =        config.i18m.defaultLocale;
+      LC_MONETARY =       config.i18m.defaultLocale;
+      LC_MESSAGES =       config.i18m.defaultLocale;
+      LC_PAPER =          config.i18m.defaultLocale;
+      LC_NAME =           config.i18m.defaultLocale;
+      LC_ADDRESS =        config.i18m.defaultLocale;
+      LC_TELEPHONE =      config.i18m.defaultLocale;
+      LC_MEASUREMENT =    config.i18m.defaultLocale;
+      LC_IDENTIFICATION = config.i18m.defaultLocale;
+    };
   };
   # endregion
 }

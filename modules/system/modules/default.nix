@@ -9,6 +9,7 @@
     ./fonts.nix
     ./groups.nix
     ./locale.nix
+    ./plymouth.nix
     ./tty.nix
     ./users.nix
     ./zram.nix

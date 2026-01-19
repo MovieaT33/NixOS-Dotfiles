@@ -2,6 +2,7 @@
 
 {
   nix = {
+    download-buffer-size = 8388608;
     settings = {
       sandbox = true;
       auto-optimise-store = true;
