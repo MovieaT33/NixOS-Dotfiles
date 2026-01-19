@@ -52,9 +52,13 @@
 
 ## H
 
+## I
+
 ## K
 
 ## L
+
+- libre-office
 
 ## M
 
@@ -62,7 +66,9 @@
 
 ## O
 
+- obs-studio
 - orbiton
+- obsidian
 
 ## P
 
@@ -76,14 +82,18 @@
 
 - openssh
 - s-search
+- steam
 
 ## T
+
+- telegram-desktop
 
 ## U
 
 ## V
 
 - virt-manager (programs.virt-manager, qemu)
+- vlc
 
 ## W
 
@@ -96,6 +106,7 @@
 ## Z
 
 - zathura
+- zoom-us
 
 ## Commands
 
@@ -110,6 +121,12 @@
 
 - gnumake
 - coreutils
+-  cpu-x
+    mission-center
+    resources
+- aria2
+- rsync
+- proton
 - findutils
 - diffutils
 - gnused
