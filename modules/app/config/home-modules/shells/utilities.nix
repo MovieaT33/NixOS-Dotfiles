@@ -54,6 +54,7 @@ in
     # ../utility/wget.nix
     # x
     # y
+    ../utility/yazi.nix
     # z
     ../utility/zellij.nix
     ../utility/zoxide.nix
