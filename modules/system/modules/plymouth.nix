@@ -3,12 +3,12 @@
 {
   environment.systemPackages = with pkgs; [
     plymouth
-    plymouth-themes
+    plymouth-matrix-theme
   ];
 
   boot.initrd.kernelModules = [ "virtio_gpu" ];
   boot.plymouth = {
     enable = true;
-    theme = "spinner";
+    theme = "matrix";
   };
 }

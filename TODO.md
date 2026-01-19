@@ -180,7 +180,6 @@
 - Use SELinux
 - README.md
 - cachex
-- Justfile -> justfile
 - firejail
 - app -> apps | programs
 - `/etc/machine-id`
