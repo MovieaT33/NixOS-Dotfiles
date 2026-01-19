@@ -94,6 +94,7 @@ in
     # o
     # p
     # r
+    r     = "pkill -KILL -u $USER";
     # s
     s     = "doas";
     s-sec = "sudo lynis audit system";
