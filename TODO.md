@@ -1,6 +1,7 @@
 # Other
 
 - system has been renamed
+- tuxmate.com wine discordo bluetui impala wiremix lynx kooha sysmontask timeshift warp term
 
 # URLs
 
