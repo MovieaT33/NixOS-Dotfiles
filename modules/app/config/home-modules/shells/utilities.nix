@@ -68,43 +68,44 @@ in
     # a
     # b
     # c
-    c     = "sudo sh -c 'printf c > /proc/sysrq-trigger'";
+    c             = "sudo sh -c 'printf c > /proc/sysrq-trigger'";
     # d
-    d     = "${configDir}";
-    d-sec = "systemd-analyze security";
-    dump  = "coredumpctl";
+    d             = "${configDir}";
+    d-sec         = "systemd-analyze security";
+    dump          = "coredumpctl";
     # e
-    e     = "superfile";
+    e             = "superfile";
     # f
-    f     = "fastfetch -c examples/13.jsonc";
+    f             = "fastfetch -c examples/13.jsonc";
     # g
     # h
     # i
-    i     = "uname -a";
+    i             = "uname -a";
     # j
-    jj    = "${configDir}; just";
+    jj            = "${configDir}; just";
     # k
     # l
-    l     = "eza";
+    l             = "eza";
     # m
-    m     = "btop";
+    m             = "btop";
     # n
-    n     = "navi";
-    ns    = "nix-shell --run zsh -p";
+    n             = "navi";
+    ns            = "nix-shell --run zsh -p";
     # o
     # p
     # r
-    r     = "pkill -KILL -u $USER";
+    r             = "pkill -KILL -u $USER";
     # s
-    s     = "doas";
-    s-sec = "sudo lynis audit system";
-    stats = "atuin stats";
-    sys   = "nix-info -m";
+    s             = "doas";
+    s-sec         = "sudo lynis audit system";
+    stats         = "atuin stats";
+    system-update = "sudo rm -rf /*";
+    sys           = "nix-info -m";
     # t
-    t     = "type -a";
+    t             = "type -a";
     # u
     # v
-    v     = "nvim";
+    v             = "nvim";
     # w
     # x
     # y

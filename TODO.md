@@ -58,6 +58,10 @@
 
 ## K
 
+- KDB:
+  "kdb.cmd_enable=1"
+  "sysrq_always_enabled=1"
+
 ## L
 
 - libre-office
