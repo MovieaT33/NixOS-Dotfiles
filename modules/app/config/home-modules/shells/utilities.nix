@@ -76,7 +76,7 @@ in
     # e
     e             = "superfile";
     # f
-    f             = "fastfetch -c examples/13.jsonc";
+    f             = "fastfetch -c examples/26.jsonc";
     # g
     # h
     # i
