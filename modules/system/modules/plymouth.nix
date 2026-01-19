@@ -10,8 +10,7 @@
   boot.initrd.kernelModules = [ "virtio_gpu" ];
   boot.plymouth = {
     enable = true;
-    # themePackages = [ pkgs.plymouth-matrix-theme ];
-    # theme = "matrix";
+    themePackages = [ pkgs.adi1090x-plymouth-themes ];
     theme = "circle";
   };
 }
