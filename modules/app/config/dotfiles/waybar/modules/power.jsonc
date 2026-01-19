@@ -4,7 +4,6 @@
         "exec": "echo ; echo  logout",
         "on-click": "logoutlaunch.sh 2",
         "on-click-right": "logoutlaunch.sh 1",
-        "interval" : 86400, // once every day
+        "interval" : 86400,
         "tooltip": true
     },
-

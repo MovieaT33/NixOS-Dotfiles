@@ -5,7 +5,6 @@
         "on-click": "themeswitch.sh -n",
         "on-click-right": "themeswitch.sh -p",
         "on-click-middle": "sleep 0.1 && themeselect.sh",
-        "interval" : 86400, // once every day
+        "interval" : 86400,
         "tooltip": true
     },
-
