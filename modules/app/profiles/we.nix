@@ -31,6 +31,7 @@
     # v
     # viddy
     # w
+    # wine
     wl-clipboard
     # x
     # y

@@ -1,7 +1,7 @@
 # Other
 
 - system has been renamed
-- tuxmate.com wine discordo bluetui impala wiremix lynx kooha sysmontask timeshift warp term
+- tuxmate.com discordo bluetui impala wiremix lynx kooha sysmontask timeshift warp-term
 
 # URLs
 
@@ -31,6 +31,7 @@
 - asciinema, asciinema-agg
 - advent*
 - ash
+- androidStudio
 
 ## B
 
