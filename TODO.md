@@ -211,6 +211,7 @@
 - primes*
 - octopus*
 - pong*
+- caido postman bloodhoud dirsearch dirbuster dirb gobuster hydra enum4linux smbclient samba ssh2john john
 - music player*
 - bible*
 - minesweeper*
